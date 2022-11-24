@@ -1,0 +1,20 @@
+.App {
+    background-color: white;
+}
+.ww{
+  width: 54% !important;
+  background-color: rgb(238, 25, 25);
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+/* .ww:hover{
+  background-color: rgb(228, 57, 57);
+} */
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}

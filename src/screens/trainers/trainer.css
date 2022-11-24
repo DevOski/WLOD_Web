@@ -1,0 +1,47 @@
+.App {
+    background-color: white;
+}
+.wwtrai{
+  width: 54% !important;
+  background-color: rgb(243, 243, 243);
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+/* .ww:hover{
+  background-color: rgb(228, 57, 57);
+} */
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}
+.img22{
+  width: 25%;
+  height: 90%;
+  
+}
+.trwi{
+
+}
+.top{
+  margin-top: 5%;
+}
+.brder {
+  border: 1px solid;
+  width: 26%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2%;
+  padding-top: 2%;
+}
+.fle{
+display: flex;
+justify-content: space-between;
+    width: 90%;
+}
+.padingtrainer {
+  padding-left: 3%;
+}

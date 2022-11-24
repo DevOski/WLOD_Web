@@ -1,0 +1,28 @@
+.topbody {
+    background-color: rgb(190, 29, 45);
+    transition: margin-top 1s;
+   
+    
+}
+.topbody3{
+    margin-top: -46px;
+    transition:'margin-top 2s' ;
+}
+.tex{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.closebutton{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.top{
+    top:0px,
+}
+.topbody1{
+    position: absolute;
+    top: 1px;
+    right: 16px;
+}

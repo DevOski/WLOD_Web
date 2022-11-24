@@ -1,0 +1,25 @@
+.navtext{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px;
+    /* margin-bottom: 15px; */
+}
+.navtext1{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px !important;
+    margin-left: 11px;
+   
+}
+.regbutton{
+    background-color: rgb(190, 29, 45);
+    color: white;
+}
+.textcolor{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px !important;
+}
+.margin6{
+    margin-left: 104px;
+}

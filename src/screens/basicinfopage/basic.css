@@ -1,0 +1,58 @@
+.wi{
+    width:65% !important;
+}
+.input{
+    width:'35%'
+
+}
+.input2{
+    width: 96% !important;
+}
+.fl {
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    width: 72% !important;
+}
+.f2 {
+    width: 65%;
+}
+.pp{
+    padding-left: 17%;
+    padding-right: 11%;
+}
+.bg2{
+background-color: beige;
+}
+.btn-primary {
+    width: 40%;
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #d13a25 !important;
+    border: #992a35 !important;
+}
+.btn:hover {
+    color: var(--bs-btn-hover-color) !important;
+    background-color: #992a35 !important;
+    border-color: #ed4f11 !important;
+}
+input.input {
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    padding-left: 2% !important;
+}
+.wiiii{
+    width: 100% !important;
+}
+.wo{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.pad{
+    padding-bottom: 3%;
+}
+.custom-control-label {
+    font-weight: 400;
+  }
+  .width{
+
+  }

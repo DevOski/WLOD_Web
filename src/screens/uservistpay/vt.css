@@ -1,0 +1,34 @@
+.App {
+    background-color: white;
+}
+.ww{
+  width: 54% !important;
+  background-color: white;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}
+.in {
+  width: 50%;
+  border:none;
+  border-bottom: 1px solid;
+}
+.in:focus-visible {
+  outline: 0px solid red;
+  border-bottom: 1px solid;
+/* border:none; */
+
+}
+.indi {
+  padding: 2%;
+}
+.CAP{
+text-transform: capitalize;
+}
