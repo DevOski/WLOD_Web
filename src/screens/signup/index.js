@@ -4,16 +4,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import mother from "../../assets/mother.png";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
-import "./aboutus.css";
+import "./signup.css";
 import Form from "react-bootstrap/Form";
 import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
-const About = () => {
+const SignUp = () => {
+  let navigate = useNavigate(); 
   const [email, setEmail] = useState(null);
   const [date, setdate] = useState(null);
   const [Password, setPassword] = useState(null);
@@ -32,6 +33,7 @@ const About = () => {
     if (id === "password") {
       setPassword(value);
     }
+    navigate('/basic')
   };
 
   return (
@@ -180,4 +182,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default SignUp;

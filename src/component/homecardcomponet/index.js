@@ -3,15 +3,18 @@ import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import book from "../../assets/book.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 export const CardHome = () => {
+  
   let navigate = useNavigate(); 
   const Sechule =()=>{
-    navigate('/booksession');
+    navigate(`/visittype`,{id:1});
   }
   const goto =()=>{
-    navigate('/visittype');
+    navigate('/booksession');
   }
+  
   return (
     <Col lg='9' md="6" sm="2" className="d-flex gap-5 flex-Wrap ">
     <Card style={{ width: '19rem' }} className="topcrd">
@@ -24,7 +27,7 @@ export const CardHome = () => {
     <Card.Text>
     Estimated less than 5 wait
     </Card.Text>
-    <Button variant="primary" onClick={Sechule}>Check Your Availablilty</Button>
+    <Button variant="primary"style={{width: "100%"}}  onClick={Sechule}>Check Your Availablilty</Button>
   </Card.Body>
 </Card>
 <Card style={{ width: '19rem' }} className="topcrd">

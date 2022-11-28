@@ -1,0 +1,79 @@
+.App {
+    background-color: white;
+}
+.ww{
+  width: 54% !important;
+  background-color: white;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.calbox {
+  width: 15%;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin:1%
+}
+.calbox:hover {
+  width: 15%;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: brown;
+  color: white;
+}
+.slotbox {
+  width: 15%;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.slotbox:hover {
+  width: 15%;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: brown;
+  color: white;
+}
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}
+.caltext {
+  font-family: sans-serif;
+  font-weight: bolder;
+  margin-top: 5%;
+}
+.slotdiv {
+  width: 30%;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+.timeslot{
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+.newpassbutt:hover {
+  width: 22%;
+  background-color: #e0858e;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+}
+.classextbutton{
+  margin-top: 3% !important;
+  display: flex;
+  justify-content: center;
+}

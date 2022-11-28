@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,6 +12,8 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 const Questionpage = () => {
+  const [title, setTitle] = useState('')
+  console.log(title,'=>>');
   let navigate = useNavigate(); 
   const goto =()=>{
     navigate('/question2');
@@ -31,10 +33,19 @@ const Questionpage = () => {
         <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
           <div className="d-flex justify-content-between   align-items-center ww">
             
-        <p>Question no 1</p>
+        <h4>General Health Information</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-          <div className="d-flex justify-content-between  align-items-center  ww">
+          <div className="mb-3 inwi">
+          <label>List any health problems and physical limitations:</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event => setTitle(event.target.value)}  />
+        </div>
+        {/* <div className="mb-3 inwi">
+          <label>List any health problems and physical limitations:</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div> */}
+
+          {/* <div className="d-flex justify-content-between  align-items-center  ww">
           <div>
               <p>reaon</p>
             </div>
@@ -78,10 +89,10 @@ const Questionpage = () => {
           />      
           </div>))}
           </div>
-          </div>
+          </div> */}
           <div >
 
-          <Button className="bdiv" onClick={goto}>submit</Button>
+          <Button className="bdiv" onClick={goto}>Next</Button>
           </div>
           </div>
         </Col>

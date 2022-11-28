@@ -8,17 +8,27 @@
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
-margin-top: 1%;
 }
 .iconcolor{
  color: brown;
 } 
-.bdiv {
-  width: 100% !important;
-  justify-content: center;
-  align-items: center;
-  margin-top: 34%;
+.of{
+  overflow-x: clip !important;
 }
-.inwi{
-width: 100% !important;
+.in {
+  width: 50%;
+  border:none;
+  border-bottom: 1px solid;
+}
+.in:focus-visible {
+  outline: 0px solid red;
+  border-bottom: 1px solid;
+/* border:none; */
+
+}
+.indi {
+  padding: 2%;
+}
+.CAP{
+text-transform: capitalize;
 }

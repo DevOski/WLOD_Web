@@ -31,10 +31,34 @@ const Questionpagefour = () => {
         <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
           <div className="d-flex justify-content-between   align-items-center ww">
             
-        <p>Question no 4</p>
+        <h4>Physical Activity Information:</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-          <div className="d-flex justify-content-between  align-items-center  ww">
+          <div className="mb-3 inwi">
+          <label>What is the most physically active thing you do in a day? </label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+        <div className="mb-3 inwi">
+          <label>What, if any, regular exercises do you do? </label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+        <div className="mb-3 inwi">
+          <label>How many days a week? ____________ How many minutes per day?</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+        <div className="mb-3 inwi">
+          <label>At what level of intensity (light, moderate, or high)?</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+        <div className="mb-3 inwi">
+          <label>What time(s) of day can you fit exercise into your schedule? </label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+        <div className="mb-3 inwi">
+          <label>List any physical limitations to exercising:</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+        </div>
+          {/* <div className="d-flex justify-content-between  align-items-center  ww">
           <div>
               <p>reaon</p>
             </div>
@@ -78,10 +102,10 @@ const Questionpagefour = () => {
           />      
           </div>))}
           </div>
-          </div>
+          </div> */}
           <div >
 
-          <Button className="bdiv" onClick={goto}>submit</Button>
+          <Button className="bdiv" onClick={goto}>Next</Button>
           </div>
           </div>
         </Col>

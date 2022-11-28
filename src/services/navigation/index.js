@@ -4,7 +4,7 @@ import {
     Routes,
     Route,
   } from "react-router-dom";
-import { About, Basic, Confirmpay, DocumentPage, Home, Provider, Questionpage, Questionpagefive, Questionpagefour, Questionpagethree, Questionpagetwo, Rewiewpage, SessionBook, Siging, Trainer, Visitpage, VType } from '../../screens'
+import { SignUp, Addnew, Appointmentdate, Basic, Confirmpay, Cupon, DocumentPage, Forget, Home, PayButtonTyp, Provider, Questionpage, Questionpagefive, Questionpagefour, Questionpagethree, Questionpagetwo, ReaonForVisit, Rewiewpage, SelectDatePage, SessionBook, Siging, Trainer, Visitpage, VType, TrainerList, ChooseSlot } from '../../screens'
 
 
 
@@ -14,10 +14,19 @@ const Navigation = () => {
     <Routes>
       <Route>
          <Route path="/" element={<Siging />} /> 
-        <Route path="/sigin" element={<Siging />} />
-        <Route path="/aboutus" element={<About />} />
+         <Route path="/sigin" element={<Siging />} /> 
+        <Route path="/forget" element={<Forget />} />
+        <Route path="/newpass" element={<Addnew />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/basic" element={<Basic />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/selectdatepage" element={<SelectDatePage />} />
+        <Route path="/resonfor" element={<ReaonForVisit />} />
+        <Route path="/paybutton" element={<PayButtonTyp />} />
+        <Route path="/cuponpage" element={<Cupon />} />
+
+        
+        <Route path="/apointmentdate" element={<Appointmentdate />} />
          <Route path="/visit" element={<Visitpage />} />
          <Route path="/document" element={<DocumentPage />} />
          <Route path="/provider" element={<Provider />} />
@@ -31,6 +40,8 @@ const Navigation = () => {
            <Route path="/Confirmpay" element={<Confirmpay/>} /> 
            <Route path="/booksession" element={<SessionBook/>} /> 
            <Route path="/trainer" element={<Trainer/>} /> 
+           <Route path="/tl" element={<TrainerList/>} /> 
+           <Route path="/slots" element={<ChooseSlot/>} /> 
            
 
            

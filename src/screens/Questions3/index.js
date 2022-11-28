@@ -10,12 +10,12 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 const Questionpagethree = () => {
-  let navigate = useNavigate(); 
-  const goto =()=>{
-    navigate('/question4');
-  }
+  let navigate = useNavigate();
+  const goto = () => {
+    navigate("/question4");
+  };
   return (
     <>
       <Container fluid>
@@ -28,13 +28,96 @@ const Questionpagethree = () => {
         </Navbar>
       </Container>
       <Row class="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
-        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
+        <Col
+          lg="12"
+          className="d-flex justify-content-center flex-column align-items-center"
+        >
           <div className="d-flex justify-content-between   align-items-center ww">
-            
-        <p>Question no 3</p>
+            <h4>Weight Information:</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-          <div className="d-flex justify-content-between  align-items-center  ww">
+            <div className="mb-3 inwi">
+              <label>Current Weight: _______ Height: _________</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+                What was your lowest and highest adult weight? __________lb
+                __________lb
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+                Describe any weight changes (gain or loss) in the past 2 years:{" "}
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+                Have you dieted in the past for weight loss? No Yes If yes,
+                please indicate what you have done:
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+              What makes it hard for you to lose weight and keep it off?
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+              What has helped you lose weight?
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+              How much weight would you like to lose?
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>
+              How will you benefit from this weight loss?
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add your stress rate"
+              />
+            </div>
+           
+            {/* <div className="d-flex justify-content-between  align-items-center  ww">
           <div>
               <p>reaon</p>
             </div>
@@ -48,8 +131,8 @@ const Questionpagethree = () => {
           />      
           </div>))}
           </div>
-          </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          </div> */}
+            {/* <div className="d-flex justify-content-between  align-items-center ww">
           <div>
               <p>reason</p>
             </div>
@@ -63,8 +146,8 @@ const Questionpagethree = () => {
           />      
           </div>))}
           </div>
-          </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          </div> */}
+            {/* <div className="d-flex justify-content-between  align-items-center ww">
           <div>
               <p>reason</p>
             </div>
@@ -78,15 +161,15 @@ const Questionpagethree = () => {
           />      
           </div>))}
           </div>
-          </div>
-          <div >
-
-          <Button className="bdiv" onClick={goto}>submit</Button>
-          </div>
+          </div> */}
+            <div>
+              <Button className="bdiv" onClick={goto}>
+              Next
+              </Button>
+            </div>
           </div>
         </Col>
-       
-      </Row> 
+      </Row>
     </>
   );
 };

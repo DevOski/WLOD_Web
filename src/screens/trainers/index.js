@@ -16,8 +16,8 @@ import { Button } from "react-bootstrap";
 const Trainer = () => {
   const [show, setshow] = useState(false);
   let navigate = useNavigate();
-  const goto = () => {
-    // navigate('/booksession');
+  const checkavailablity = () => {
+    navigate('/slots');
   };
   const Open=()=>{
     setshow(!show)
@@ -36,7 +36,7 @@ const Trainer = () => {
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center"
         >
-          <div onClick={goto} className="d-flex flex-column   wwtrai">
+          <div  className="d-flex flex-column   wwtrai">
             <div className="d-flex justify-content-space-between align-items-center gap-2 trwi">
               <div className="img22">
                 <img
@@ -111,8 +111,10 @@ const Trainer = () => {
             <h6 onClick={Open}>
                 Show full profile { !show? <IoIosArrowUp/>:<IoIosArrowDown />}
               </h6>
+              <button onClick={checkavailablity} className="checkAvailblity">Check Availablilty</button>
             </div>
           </div>
+          
         </Col>
       </Row>
     </div>

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Col, Container, Row } from "react-bootstrap"
 import './basic.css';
 import Form from 'react-bootstrap/Form';
 const Basic = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <>
       <Navbar expand="lg" variant="light" bg="light">
@@ -16,34 +20,156 @@ const Basic = () => {
       </Navbar>
       <Container className="pad">
       <form>
-        <h3>Sign Up</h3>
+        <h3>Basic</h3>
         <div className="mb-3">
-          <label>First name</label>
+          <label>Age</label>
           <input
             type="text"
             className="form-control"
-            placeholder="First name"
+            placeholder="Age"
           />
         </div>
         <div className="mb-3">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name" />
+          <label>Preferred Phone Number</label>
+          <input type="text" className="form-control" placeholder="Preferred Phone Number" />
         </div>
         <div className="mb-3">
-          <label>Email address</label>
+          <label>Occupation:</label>
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Occupation:"
           />
         </div>
         <div className="mb-3">
-          <label>Password</label>
+          <label>Work Hours:</label>
           <input
             type="password"
             className="form-control"
-            placeholder="Enter password"
+            placeholder="Work Hours:"
           />
+        </div>
+        <div className="mb-3">
+          <label>Highest Level of Education::</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Highest Level of Education"
+          />
+        </div>
+        <div className="mb-3">
+          <label>Marital Status:</label>
+          <div className="d">
+          <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Paneer"
+          className="topping"
+          checked={isChecked}
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Female</p>
+      </div>
+      <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Paneer"
+          checked={isChecked}
+          className="topping"
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Male</p>
+      </div>
+          </div>
+      
+        </div>
+        <div className="mb-3">
+          <label>Primary Language :</label>
+          <div className="d">
+          <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="English"
+          className="topping"
+          checked={isChecked}
+          onChange={handleOnChange}
+        />
+        <p className="pleft">English</p>
+      </div>
+      <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Spanish"
+          checked={isChecked}
+          className="topping"
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Spanish</p>
+      </div>
+      <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="others"
+          checked={isChecked}
+          className="topping"
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Others</p>
+      </div>
+          </div>
+      
+        </div>
+        <div className="mb-3">
+          <label>Smoking status:</label>
+          <div className="d">
+          <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Never"
+          className="topping"
+          checked={isChecked}
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Never</p>
+      </div>
+      <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Former"
+          checked={isChecked}
+          className="topping"
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Former</p>
+      </div>
+      <div className="topping">
+        <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Current"
+          checked={isChecked}
+          className="topping"
+          onChange={handleOnChange}
+        />
+        <p className="pleft">Current</p>
+      </div>
+          </div>
+      
         </div>
      
  
@@ -53,7 +179,7 @@ const Basic = () => {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered <a href="/sigin">sign in?</a>
         </p>
       </form>
 

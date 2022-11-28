@@ -13,7 +13,7 @@ import { Button } from "react-bootstrap";
 const Rewiewpage = () => {
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/Confirmpay');
+    navigate('/paybutton');
   }
   return (
     <div className="of">

@@ -1,13 +1,25 @@
 .App {
     background-color: white;
 }
-.wwtrai{
+
+.wwtrailist{
   width: 54% !important;
   background-color: rgb(243, 243, 243);
   padding: 2%;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+margin-top: 2% !important;
+
+}
+.wwtrailist:hover{
+  width: 54% !important;
+  background-color: rgb(241, 192, 192);
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+margin-top: 2% !important;
 }
 /* .ww:hover{
   background-color: rgb(228, 57, 57);
@@ -18,8 +30,8 @@
 .of{
   overflow-x: clip !important;
 }
-.img22{
-  width: 25%;
+.imgtrainerlist{
+  width: 70%;
   height: 90%;
   
 }

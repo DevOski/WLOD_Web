@@ -53,6 +53,17 @@ input.input {
 .custom-control-label {
     font-weight: 400;
   }
-  .width{
-
-  }
+  .d {
+    display: flex;
+    justify-content: flex-start;
+    width: 12% !important;
+}
+.topping {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-left: 11%;
+}
+.pleft {
+    padding-left: 10%;
+}

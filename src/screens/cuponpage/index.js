@@ -8,18 +8,18 @@ import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
+// import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
-import { useLocation,useParams } from "react-router-dom";
-const VType = () => {
-  
+const Cupon = () => {
   let navigate = useNavigate(); 
   const goto =()=>{
     navigate('/question');
   }
   return (
-    <div className="of">
       <Container fluid>
+    <div className="of">
         <Navbar expand="lg" variant="light" bg="light">
          
             <Navbar.Brand href="#">
@@ -27,24 +27,31 @@ const VType = () => {
             </Navbar.Brand>
           
         </Navbar>
-      </Container>
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
-          <div onClick={goto} className="d-flex justify-content-between  align-items-center ww">
-            <div>
-              <h3>Jeff </h3>
-              
-            </div>
-           
-            <div>
-              <IoIosArrowForward className="iconcolor" />
-            </div>
-          </div>
-        </Col>
+      <Row class="d-flex justify-content-center  align-items-center gap-5 pt-5">
+
+     <Col lg='12' className="d-flex justify-content-center  align-items-center">
+     <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Apply Cupon</Form.Label>
+        <Form.Control type="numberic" placeholder="Add Cupon" />
+        <Form.Text className="text-muted">
+          Add your Cupon Number Here
+        </Form.Text>
+      </Form.Group>
+
+     
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+     </Col>
+
+       
       
       </Row>
     </div>
+      </Container>
   );
 };
 
-export default VType;
+export default Cupon;

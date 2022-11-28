@@ -8,6 +8,8 @@ import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
+// import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 const Confirmpay = () => {
@@ -25,8 +27,40 @@ const Confirmpay = () => {
             </Navbar.Brand>
           
         </Navbar>
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
+      <Row class="d-flex justify-content-center  align-items-center gap-5 pt-5">
+
+     <Col lg='12' className="d-flex justify-content-center  align-items-center">
+     <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Credit card number</Form.Label>
+        <Form.Control type="numberic" placeholder="Add your credit card number" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Expiration(MM)</Form.Label>
+        <Form.Control type="text" placeholder="Expiration(MM)" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Cvv</Form.Label>
+        <Form.Control type="text" placeholder="Cvv" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Expiration(MM)</Form.Label>
+        <Form.Control type="text" placeholder="Expiration(YY)" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+     </Col>
+
+        {/* <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
           <div  className="d-flex justify-content-center flex-column   ww">
             <div className="indi">
               <h5 className="CAP">ADD PAYMENT </h5>
@@ -46,7 +80,7 @@ const Confirmpay = () => {
            
            
           </div>
-        </Col>
+        </Col> */}
       
       </Row>
     </div>

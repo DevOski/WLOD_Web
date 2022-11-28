@@ -1,0 +1,42 @@
+.box1{
+    border-bottom: 1px solid black;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.boxadd{
+    width: 50%;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.recoverbutt{
+    border: none;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 14px;
+    background-color: #be1d2c;
+    color: white;
+    font-weight: bold;
+}
+.forgetinput {
+    width: 55%;
+    padding: 2%;
+}
+.newpassbutt {
+    width: 22%;
+    background-color: #bf1e2d;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+}
+.newpassbutt:hover {
+    width: 22%;
+    background-color: #e0858e;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+}

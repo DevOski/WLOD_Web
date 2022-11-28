@@ -1,10 +1,35 @@
 .App {
     background-color: white;
 }
-.ww{
+.ww2{
   width: 54% !important;
-  background-color: rgb(238, 25, 25);
+  margin: 3%;
   padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.ww2:hover{
+  width: 54% !important;
+  margin: 3%;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.ww3{
+  width: 54% !important;
+  margin: 2%;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.ww3:hover{
+  width: 54% !important;
+  margin: 2%;
+  padding: 2%;
+  background-color: brown;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
@@ -17,4 +42,14 @@
 } 
 .of{
   overflow-x: clip !important;
+}
+.nice-dates-navigation, .nice-dates-day {
+  color: rgb(248, 6, 6);
+}
+.nice-dates-popover {
+  box-shadow: none;
+  border: 1px solid rgb(224, 4, 4);
+  border-radius: 2px;
+  max-width: 480px;
+  transition: none;
 }

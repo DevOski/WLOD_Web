@@ -1,0 +1,29 @@
+.box1{
+    border-bottom: 1px solid black;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.box2{
+    /* border-bottom: 1px solid black; */
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.recoverbutt{
+    border: none;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 14px;
+    background-color: #be1d2c;
+    color: white;
+    font-weight: bold;
+}
+.forgetinput {
+    width: 55%;
+    padding: 2%;
+}

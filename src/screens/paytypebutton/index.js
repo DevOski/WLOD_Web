@@ -1,5 +1,5 @@
 import React from "react";
-import "./vt.css";
+import "./paytype.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,13 +10,15 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
-import { useLocation,useParams } from "react-router-dom";
-const VType = () => {
-  
+const PayButtonTyp = () => {
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/question');
+    navigate('/Confirmpay');
   }
+  const gotoConfirmpay =()=>{
+    navigate('/cuponpage');
+  }
+  
   return (
     <div className="of">
       <Container fluid>
@@ -29,17 +31,16 @@ const VType = () => {
         </Navbar>
       </Container>
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
-          <div onClick={goto} className="d-flex justify-content-between  align-items-center ww">
-            <div>
-              <h3>Jeff </h3>
-              
-            </div>
+        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center pt-5">
+         
            
-            <div>
-              <IoIosArrowForward className="iconcolor" />
-            </div>
-          </div>
+              <button className="paybutt" onClick={goto}>Add payment  </button>
+              <button className="paybutt" onClick={gotoConfirmpay}>Apply Cupon  </button>
+              
+          
+           
+           
+        
         </Col>
       
       </Row>
@@ -47,4 +48,4 @@ const VType = () => {
   );
 };
 
-export default VType;
+export default PayButtonTyp;

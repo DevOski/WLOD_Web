@@ -13,8 +13,12 @@ import { Button } from "react-bootstrap";
 const SessionBook = () => {
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/trainer');
+    navigate('/tl');
   }
+  const gotodate =()=>{
+    navigate('/apointmentdate');
+  }
+  
   return (
     <div className="of">
       <Container fluid>
@@ -28,7 +32,7 @@ const SessionBook = () => {
       </Container>
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
-          <div onClick={goto} className="d-flex justify-content-center align-items-center ww">
+          <div onClick={goto} className="d-flex justify-content-center align-items-center ww2 ww3">
             <div>
               <h3 style={{color:'#000'}}>Find Your Consultant </h3>
               
@@ -36,9 +40,9 @@ const SessionBook = () => {
            
            
           </div>
-          <div  className="d-flex justify-content-center align-items-center ww">
+          <div  className="d-flex justify-content-center align-items-center ww2 ww3">
             <div>
-              <h3 style={{color:'#000'}}>Find Your Time </h3>
+              <h3 style={{color:'#000'}} onClick={gotodate}>Find Your Time </h3>
               
             </div>
            
