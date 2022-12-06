@@ -1,6 +1,9 @@
 .App {
     background-color: white;
 }
+.header-logo {
+  width: 100%;
+}
 .ww{
   width: 54% !important;
   background-color: white;
@@ -17,8 +20,30 @@ margin-top: 1%;
   width: 100% !important;
   justify-content: center;
   align-items: center;
-  margin-top: 34%;
+  margin-top: 10% !important;
+  border-radius: 50px !important;
+  background: #bd3434 !important;
+  padding: 12px 12px !important;
+  font-weight: 700 !important;
 }
 .inwi{
-width: 100% !important;
+  
+  width: 100% !important;
+}
+.q-next-btn-div {
+  width: 100%;
+  max-width: 30%;
+}
+.mb-3 .form-control {
+  border-radius: 50px;
+}
+.lb {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  #root .ww {
+    width: 96% !important;
+    margin-top: 20px;
+ }
 }

@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header-logo {
+  width: 50% !important;
+}
+.main-logo {
+  width: 50% !important;
+}

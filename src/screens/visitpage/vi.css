@@ -181,10 +181,10 @@ input.input {
 
 
 .vishpage {
-    width: 26% !important;
+    width: 22% !important;
     background-color: #dee2e6;
     border: 1px solid #d9caca;
-    margin-left: -9%;
+    margin-left: -8% !important;
     height: 100vh;
 }
 .visitt {
@@ -221,4 +221,9 @@ input.input {
 }
 .bbbb {
     width: 72% !important;
+}
+.visit-book-btn {
+    border-radius: 50px !important;
+    background: #bd3434 !important;
+    padding: 12px 12px !important;
 }

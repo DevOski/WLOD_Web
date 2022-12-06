@@ -24,7 +24,9 @@ import Visitpage from "./visitpage";
 import VType from "./Visittype";
 import TrainerList from "./trainerlist";
 import ChooseSlot from "./chooseslot";
-
+import Videocalling from "./videocalingscreen";
+import VerificationCode from "./verificationcode";
+import MessageScreen from "./messagepage";
 
 export {
   Siging,
@@ -52,5 +54,9 @@ export {
   PayButtonTyp,
   Cupon,
   TrainerList,
-  ChooseSlot
+  ChooseSlot,
+  Videocalling,
+  VerificationCode,
+  MessageScreen
+
 };

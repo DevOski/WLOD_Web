@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./trainer.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import theropist from "../../assets/theropist.png";
@@ -13,9 +13,33 @@ import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 import { IoIosArrowUp, } from "@react-icons/all-files/io/IoIosArrowUp";
 
 import { Button } from "react-bootstrap";
+import { selectedTrainer } from "../../services/utilities/api";
 const Trainer = () => {
+  const location = useLocation();
+  console.log(location.state.trainer,'====>trainer');
   const [show, setshow] = useState(false);
+  const [trainer, setTrainer] = useState();
+  const [slot, setSlot] = useState([]);
   let navigate = useNavigate();
+  
+  useEffect(() => {
+    getTrainer();
+  }, []);
+  const getTrainer = () => {
+    // setLoader(true);
+    setTimeout(async () => {
+      try {
+        let response = await selectedTrainer(location?.state?.trainer?.tr_id);
+        setTrainer(response.data.trainers);
+        setSlot(response.data.slots);
+        console.log(response.data.slots,'====>slot');
+        // setLoader(false);
+      } catch (error) {
+        console.log('--->', error);
+        // setLoader(false);
+      }
+    }, 100);
+  };
   const checkavailablity = () => {
     navigate('/slots');
   };
@@ -41,18 +65,20 @@ const Trainer = () => {
               <div className="img22">
                 <img
                   style={{ width: "100%", height: "100%" }}
-                  src={theropist}
+                  src={trainer?.images}
                 />
               </div>
               <div className="padingtrainer">
-                <h5>Michelle Klotz, PhD, MA, LCSW</h5>
-                <p>Clinical Social Worker</p>
+                <h5>{trainer?.tr_name}</h5>
+                <p>{trainer?.type}</p>
               </div>
             </div>
             <div className="top">
               <h6>next</h6>
             </div>
+            
             <div className="top  fle">
+
               <div className="brder">
                 <p>Tue, 11/29 3:00 AM</p>
               </div>
@@ -64,17 +90,12 @@ const Trainer = () => {
               </div>
             </div>
             <div className="top">
-              <h6>BACKGROUND</h6>
+              {/* <h6>BACKGROUND</h6> */}
             </div>
             <div className="top">
-              <p>
-                Alexandra Rocheleau is a licensed independent clinical social
-                worker who enjoys working with adolescents and adults on several
-                different mental health areas, including anxiety and depression,
-                relation...
-              </p>
-             {!show ?<> <p>
-                Alexandra Rocheleau is a licensed independent clinical social
+            <p>
+            {trainer?.tr_desc}
+                {/* Alexandra Rocheleau is a licensed independent clinical social
                 worker who enjoys working with adolescents and adults on several
                 different mental health areas, including anxiety and depression,
                 relationship issues, trauma and PTSD, stress management,
@@ -87,11 +108,12 @@ const Trainer = () => {
                 with clients who are experiencing borderline personality
                 disorder and other types of behavioral issues. In her free time,
                 Alexandra enjoys spending time with her family and playing
-                softball.
+                softball. */}
               </p>
               <h6>FOCUS AREAS</h6>
               <p>
-                Anxiety, Depression, Relationship Issues, Insomnia / Sleep
+                {trainer?.focus_area}
+                {/* Anxiety, Depression, Relationship Issues, Insomnia / Sleep
                 Issues, Trauma and PTSD, Anger Management, Gender Identity, Drug
                 / Substance Abuse, Work Stress / Burnout, Active Military /
                 Veterans, Addiction, Alcohol Abuse, Behavioral Issues, Bipolar
@@ -100,12 +122,12 @@ const Trainer = () => {
                 Issues, Grief, Learning Disabilities, Life Transitions,
                 Obsessive-Compulsive (OCD), Panic Disorders, Parenting,
                 Personality Disorders, Pregnancy, Prenatal, Postpartum, Self
-                Esteem / Self Worth, Sexuality, Stress Management
+                Esteem / Self Worth, Sexuality, Stress Management */}
               </p>
               <h6>LANGUAGES</h6>
-              <h6>English</h6>
+              <p>{trainer?.languages}</p>
               <h6>QUALIFICATIONS</h6>
-              <p>Florida License (#TPSW2057), Vermont License (#089.0131983), West Virginia License (#TH00946334)</p></>:null}
+              <p>{trainer?.qualifications}</p>
             </div>
             <div className="top">
             <h6 onClick={Open}>

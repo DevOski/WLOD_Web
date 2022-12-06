@@ -2,42 +2,20 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import book from "../../assets/book.png";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 import "./vi.css";
 import Form from "react-bootstrap/Form";
 // import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { CardHome, Visitcom } from "../../component";
-import { Link } from "react-router-dom";
+import { BasicExample, CardHome, Visitcom } from "../../component";
+import { Link, useNavigate } from "react-router-dom";
 
-// function getWindowDimensions() {
-//   const { innerWidth: width, innerHeight: height } = window;
-//   return {
-//     width,
-//     height
-//   };
-// }
 
-//  function useWindowDimensions() {
-//   const [windowDimensions, setWindowDimensions] = useState(
-//     getWindowDimensions()
-//   );
-
-//   useEffect(() => {
-//     function handleResize() {
-//       setWindowDimensions(getWindowDimensions());
-//     }
-
-//     window.addEventListener("resize", handleResize);
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   return windowDimensions;
-// }
 
 const Visitpage = () => {
+  let navigate = useNavigate();
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
   const [Visit, setVisit] = useState("");
@@ -54,13 +32,12 @@ const Visitpage = () => {
   const visit = () => {
     setVisit("'0'");
   };
+  const goto =()=>{
+    navigate('/booksession');
+  }
   return (
     <div className="wi55" fluid>
-      <Navbar variant="light" bg="light">
-        <Navbar.Brand href="#">
-          <img style={{ width: "50%" }} src={logo} />
-        </Navbar.Brand>
-      </Navbar>
+       <BasicExample/>
       <Row>
         <Col lg="3">
           <div
@@ -91,7 +68,7 @@ const Visitpage = () => {
                 <div className="backkk"></div>
                 <div className="back3">
                 <Link className="tit" to="/visit">
-                Session
+                Sessions
                   </Link>
 
                   <Link className="tit" to="/provider">
@@ -100,7 +77,7 @@ const Visitpage = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  <Link className="tit" to="/provider">
+                  <Link className="tit" to="/chat">
                     Message
                   </Link>
                 </div>
@@ -129,10 +106,12 @@ const Visitpage = () => {
               <p>No past sessions</p>
             </div>
             <div className="visitt2but">
-              <Button className="bbbb">Book a Sessions</Button>
+              <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div>
+          
         </Col>
+       
       </Row>
     </div>
   );

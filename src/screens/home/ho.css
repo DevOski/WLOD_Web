@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600 !important;
+}
 .wi{
     width:65% !important;
 }
@@ -51,14 +55,14 @@ input.input {
     padding-bottom: 3%;
 }
 .maindeowercontainer {
-    width: 19%;
+    width: 20% !important;
     height: 100vh;
     background-color: brown;
     position: absolute;
     transition: left 1s;
 }
 .maindeowercontainer2 {
-    width: 19%;
+    width: 21% !important;
     height: 100vh;
     background-color: brown;
     position: absolute;
@@ -80,7 +84,7 @@ input.input {
     background-color: #c5adada3;
     width: 81%;
     height: 45%;
-    border-radius: 7%;
+    border-radius: 0% !important;
     display: flex;
     align-items: center;
     padding-left: 5%;
@@ -91,7 +95,7 @@ input.input {
     color: white;
     text-transform: capitalize;
     font-weight: 800;
-    padding-top: 8%;
+    padding-top: 0 !important;
     text-decoration: none !important;
 }
 .tit:hover {
@@ -113,13 +117,16 @@ input.input {
     background-color: #c5adada3;
     width: 81%;
     height: 45%;
-    border-radius: 7%;
+    border-radius: 0 !important;
     display: flex;
     align-items: center;
     padding-left: 5%;
     justify-content: space-between;
     padding-right: 5%;
 }
+.back3 .tit {
+    margin-top: 15px;
+ }
 .expand {
     color: #fff;
     margin-top: 16px;
@@ -173,8 +180,21 @@ input.input {
 }
 
 .ham {
-    margin-left: 90%;
+    margin: 15px 15px 0 auto !important;
+    display: flex;
+    color: #fff;
+   font-size: 24px;
 }
 .wi55 {
     overflow-x: clip;
+}
+
+.pad{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.padingright {
+    margin-right: 39px !important;
+    margin-top: 27px;
 }

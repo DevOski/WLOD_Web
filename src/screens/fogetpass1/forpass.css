@@ -1,13 +1,14 @@
 .box1{
-    border-bottom: 1px solid black;
-    width: 50%;
-    margin-left: 10%;
+    border-bottom: none !important;
+    width: 100% !important;
     margin-top: 2%;
+    margin-left: 0% !important;
+    text-align: center;
 }
 .box2{
     /* border-bottom: 1px solid black; */
-    width: 50%;
-    margin-left: 10%;
+    width: 100%;
+    margin-left: 0 !important;
     margin-top: 2%;
     display: flex;
     justify-content: center;
@@ -17,13 +18,23 @@
 .recoverbutt{
     border: none;
     margin-top: 2%;
-    padding: 2%;
-    border-radius: 14px;
-    background-color: #be1d2c;
+    border-radius: 50px !important;
+    background: #bd3434 !important;
+    padding: 12px 40px !important;
     color: white;
     font-weight: bold;
 }
 .forgetinput {
-    width: 55%;
-    padding: 2%;
+    width: 55% !important;
+    padding: 1% !important;
+}
+
+@media screen and (max-width: 767px) {
+    .forgetinput {
+        width: 98% !important;
+    }
+    .box1 {
+        margin-top: 8% !important;
+        margin-bottom: 6%;
+    }
 }

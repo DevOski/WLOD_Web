@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import book from "../../assets/book.png";
+import Nav from 'react-bootstrap/Nav';
 import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./provider.css";
 import Form from "react-bootstrap/Form";
@@ -9,7 +11,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { CardHome, Visitcom } from "../../component";
+import { BasicExample, CardHome, Visitcom } from "../../component";
 import { Link } from "react-router-dom";
 
 // function getWindowDimensions() {
@@ -56,11 +58,19 @@ const Provider = () => {
   };
   return (
     <div className="wi55" fluid>
-      <Navbar variant="light" bg="light">
+       <BasicExample/>
+      {/* <Navbar variant="light" bg="light" className="main-header">
         <Navbar.Brand href="#">
-          <img style={{ width: "50%" }} src={logo} />
+          <img className="main-logo" src={logo} />
         </Navbar.Brand>
-      </Navbar>
+        <div className="nav-links">
+        <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
+        <Nav.Link href="https://weightlossondemand.com/services" className="center-link">Services</Nav.Link>
+        <Nav.Link href="https://weightlossondemand.com/contact-us">Contact Us</Nav.Link>
+        </div>
+        
+      </Navbar> */}
+
       <Row>
         <Col lg="3">
           <div
@@ -100,7 +110,7 @@ const Provider = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  <Link className="tit" to="/provider">
+                  <Link className="tit" to="/chat">
                     Message
                   </Link>
                 </div>
@@ -111,7 +121,7 @@ const Provider = () => {
         <Col lg="9">
           <div className={drawer ? "vish" : "vish2"}>
             <div className="divprov">
-            <h3>My Favorite consultants</h3>
+            <h3 style={{color: "#be1d2d"}}>My Favorite consultants</h3>
             <p>
               When you give your consultant a positive rating, we'll automatically
               add them to your favorites list. Return here to see if any of your

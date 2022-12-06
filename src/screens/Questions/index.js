@@ -12,8 +12,8 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 const Questionpage = () => {
-  const [title, setTitle] = useState('')
-  console.log(title,'=>>');
+  const [physicallimitations,setphysicallimitations] = useState('')
+  // console.log(title,'=>>');
   let navigate = useNavigate(); 
   const goto =()=>{
     navigate('/question2');
@@ -24,7 +24,7 @@ const Questionpage = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -37,8 +37,8 @@ const Questionpage = () => {
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
           <div className="mb-3 inwi">
-          <label>List any health problems and physical limitations:</label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event => setTitle(event.target.value)}  />
+          <label className="lb">List any health problems and physical limitations:</label>
+          <input type="text" className="form-control" placeholder="health problems and physical limitations"  onChange={event => setphysicallimitations(event.target.value)}  />
         </div>
         {/* <div className="mb-3 inwi">
           <label>List any health problems and physical limitations:</label>
@@ -90,7 +90,7 @@ const Questionpage = () => {
           </div>))}
           </div>
           </div> */}
-          <div >
+          <div className="q-next-btn-div">
 
           <Button className="bdiv" onClick={goto}>Next</Button>
           </div>

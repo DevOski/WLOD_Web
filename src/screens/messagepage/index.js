@@ -1,0 +1,156 @@
+import React, { useState, useEffect } from "react";
+import logo from "../../assets/logo.png";
+import book from "../../assets/book.png";
+import Navbar from "react-bootstrap/Navbar";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
+import "./chat.css";
+import Form from "react-bootstrap/Form";
+// import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
+import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
+import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
+import { BasicExample, CardHome, Visitcom } from "../../component";
+import { Link, useNavigate } from "react-router-dom";
+
+// function getWindowDimensions() {
+//   const { innerWidth: width, innerHeight: height } = window;
+//   return {
+//     width,
+//     height
+//   };
+// }
+
+//  function useWindowDimensions() {
+//   const [windowDimensions, setWindowDimensions] = useState(
+//     getWindowDimensions()
+//   );
+
+//   useEffect(() => {
+//     function handleResize() {
+//       setWindowDimensions(getWindowDimensions());
+//     }
+
+//     window.addEventListener("resize", handleResize);
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+
+//   return windowDimensions;
+// }
+
+const MessageScreen = () => {
+  let navigate = useNavigate();
+  const [show, setshow] = useState(false);
+  const [drawer, setdrawer] = useState(true);
+  const [Visit, setVisit] = useState("");
+  const [trainer, settrainer] = useState();
+  const [Document, setDocument] = useState();
+  const [Message, setMessage] = useState();
+  const [home, sethome] = useState("");
+  const open = () => {
+    setshow(!show);
+  };
+  const opendarwer = () => {
+    setdrawer(!drawer);
+  };
+  const visit = () => {
+    setVisit("'0'");
+  };
+  const goto =()=>{
+    navigate('/booksession');
+  }
+  return (
+    <div className="wi55" fluid>
+       <BasicExample/>
+    
+      <Row>
+        <Col  lg='2' >
+          <div
+            className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
+          >
+            <GiHamburgerMenu onClick={opendarwer} className="ham" />
+
+            <div className="cent">
+              <div
+                className="back"
+              
+              >
+                <Link className="tit" to="/home">
+                  home
+                </Link>
+              </div>
+            </div>
+            <div className="cent">
+              <div className="back2">
+                <p className="tit">my Health</p>
+                <p>
+                  <MdExpandLess onClick={open} className="expand" />
+                </p>
+              </div>
+            </div>
+            {!show ? (
+              <div className="cent2">
+                <div className="backkk"></div>
+                <div className="back3">
+                <Link className="tit" to="/visit">
+                Sessions
+                  </Link>
+
+                  <Link className="tit" to="/provider">
+                    My Consultants
+                  </Link>
+                  <Link className="tit" to="/document">
+                    Document
+                  </Link>
+                  <Link className="tit" to="/provider">
+                    ok
+                  </Link>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </Col>
+        <Col lg='2' >
+          <div className={drawer?"vishpagechat":'vish2Pchat'}>
+            <div className="visitt">
+              <p className="tit">SESSIONS REQUESTS</p>
+            </div>
+            <div className="visitt2">
+              <p >No follow up requests</p>
+            </div>
+            <div className="visitt">
+              <p className="tit">UPCOMING SESSIONS</p>
+            </div>
+            <div className="visitt2">
+              <p >No upcoming sessions</p>
+            </div>
+            <div className="visitt">
+              <p className="tit">Jeff PAST SESSIONS</p>
+            </div>
+            <div className="visitt2">
+              <p>No past sessions</p>
+            </div>
+            <div className="visitt2but">
+              <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
+            </div>
+          </div>
+        </Col>
+        <Col lg='4'>
+        <div className="chatdivmain">
+          <div>
+            <p>text</p>
+          </div>
+          <div className="inputdivmessage">
+          <input className="messinput" type={'text'} placeholder='enter your message'/>
+          <p>send</p>
+          </div>
+        </div>
+
+
+        </Col>
+       
+      </Row>
+    </div>
+  );
+};
+
+export default MessageScreen;

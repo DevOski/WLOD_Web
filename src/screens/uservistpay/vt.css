@@ -32,3 +32,11 @@
 .CAP{
 text-transform: capitalize;
 }
+.con-col {
+  margin-top: 20px !important;
+}
+.comfirm-pay-submit {
+  border-radius: 50px !important;
+  background: #bd3434 !important;
+  padding: 12px 12px !important;
+}

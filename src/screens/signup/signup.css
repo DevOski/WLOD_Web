@@ -54,6 +54,7 @@ input#email {
 .lastchild{
     display: flex;
     justify-content: space-between!important;
+    align-items: center;
     margin-top: 6%;
 }
 .bg{
@@ -62,7 +63,7 @@ input#email {
     padding: 3% 0 24px 0%;
 }
 .bg2{
-    background-color: rgb(189, 52, 52);
+    background-color: rgb(189, 52, 52) !important;
     padding: 3%;
 }
 .rate{
@@ -81,4 +82,47 @@ input#email {
 .over{
     overflow-x: hidden;
 }
+.signup-create-btn {
+    border-radius: 50px !important;
+    background: #bd3434 !important;
+    padding: 12px 12px !important;
+ }
+ .signup-already-member-text {
+    margin-bottom: 0;
+ }
+ .signuponsingin{
+    text-decoration: none;
+    color: #BE1D2D;
+    }
+    .signuponsingin:hover{
+      text-decoration: none;
+      color: #BE1D2D;
+      }
 
+@media screen and (max-width: 991px) {
+    .imm {
+       position: inherit;
+       width: 100%;
+    }
+    }
+
+@media screen and (max-width: 767px) {
+    .grandgrandparent {
+        width: 95%;
+        margin: 0 auto !important;
+        padding: 4%;
+     }
+     .emaildiv {
+        width: 20%;
+     }
+}
+
+@media screen and (max-width: 480px) {
+    .signup-create-btn {
+        margin-bottom: 10px;
+        width: 70% !important;
+      }
+      .lastchild {
+        flex-direction: column;
+      }
+}

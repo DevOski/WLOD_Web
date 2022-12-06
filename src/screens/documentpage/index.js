@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import book from "../../assets/book.png";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 import "./di.css";
 import Form from "react-bootstrap/Form";
 // import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { CardHome, Visitcom } from "../../component";
+import { BasicExample, CardHome, Visitcom } from "../../component";
 import { Link } from "react-router-dom";
 
 // function getWindowDimensions() {
@@ -56,11 +56,21 @@ const DocumentPage = () => {
   };
   return (
     <div className="wi55" fluid>
-      <Navbar variant="light" bg="light">
+       <BasicExample/>
+      {/* <Navbar variant="light" bg="light">
         <Navbar.Brand href="#">
           <img style={{ width: "50%" }} src={logo} />
         </Navbar.Brand>
-      </Navbar>
+        <div className="nav-links">
+        <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
+        <Nav.Link href="https://weightlossondemand.com/services" className="center-link">Services</Nav.Link>
+        <Nav.Link href="https://weightlossondemand.com/contact-us">Contact Us</Nav.Link>
+        </div>
+        <div className="signs-btns">
+        <Nav.Link href="/sigin">Sign In</Nav.Link>
+        <Nav.Link href="/signup">Sign Up</Nav.Link>
+        </div>
+      </Navbar> */}
       <Row>
         <Col lg="3">
           <div
@@ -88,7 +98,7 @@ const DocumentPage = () => {
                 <div className="backkk"></div>
                 <div className="back3">
                   <Link className="tit" to="/visit">
-                    Session
+                    Sessions
                   </Link>
 
                   <Link className="tit" to="/provider">
@@ -97,7 +107,7 @@ const DocumentPage = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  <Link className="tit" to="/provider">
+                  <Link className="tit" to="/chat">
                     Message
                   </Link>
                 </div>
@@ -118,7 +128,7 @@ const DocumentPage = () => {
             </div>
 
             <div className="visitt2but">
-              <Button className="bbbb">Upload Document</Button>
+              <Button className="bbbb visit-book-btn">Upload Document</Button>
             </div>
           </div>
         </Col>

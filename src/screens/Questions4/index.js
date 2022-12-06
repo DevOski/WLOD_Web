@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,6 +12,13 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 const Questionpagefour = () => {
+  const [physicallyactive, setphysicallyactive] = useState('')
+  const [regularexercises, setregularexercises] = useState('')
+  const [Howmanyminutesperday, setHowmanyminutesperday] = useState('')
+  const [levelofintensity, setlevelofintensity] = useState('')
+  const [exerciseintoyourschedule, setexerciseintoyourschedule] = useState('')
+  const [limitationstoexercising, setlimitationstoexercising] = useState('')
+
   let navigate = useNavigate(); 
   const goto =()=>{
     navigate('/question5');
@@ -22,7 +29,7 @@ const Questionpagefour = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -36,27 +43,27 @@ const Questionpagefour = () => {
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
           <div className="mb-3 inwi">
           <label>What is the most physically active thing you do in a day? </label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event => setphysicallyactive(event.target.value)} />
         </div>
         <div className="mb-3 inwi">
           <label>What, if any, regular exercises do you do? </label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event => setregularexercises(event.target.value)} />
         </div>
         <div className="mb-3 inwi">
           <label>How many days a week? ____________ How many minutes per day?</label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event =>setHowmanyminutesperday(event.target.value)} />
         </div>
         <div className="mb-3 inwi">
           <label>At what level of intensity (light, moderate, or high)?</label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations"  onChange={event =>  setlevelofintensity(event.target.value)} />
         </div>
         <div className="mb-3 inwi">
           <label>What time(s) of day can you fit exercise into your schedule? </label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations" onChange={event =>  setexerciseintoyourschedule(event.target.value)} />
         </div>
         <div className="mb-3 inwi">
           <label>List any physical limitations to exercising:</label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
+          <input type="text" className="form-control" placeholder="health problems and physical limitations"  onChange={event =>  setlimitationstoexercising(event.target.value)} />
         </div>
           {/* <div className="d-flex justify-content-between  align-items-center  ww">
           <div>
@@ -103,7 +110,7 @@ const Questionpagefour = () => {
           </div>))}
           </div>
           </div> */}
-          <div >
+          <div className="q-next-btn-div">
 
           <Button className="bdiv" onClick={goto}>Next</Button>
           </div>

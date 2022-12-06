@@ -15,7 +15,7 @@ const VType = () => {
   
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/question');
+    navigate('/question2');
   }
   return (
     <div className="of">
@@ -23,7 +23,7 @@ const VType = () => {
         <Navbar expand="lg" variant="light" bg="light">
          
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="vt-logo" src={logo} />
             </Navbar.Brand>
           
         </Navbar>

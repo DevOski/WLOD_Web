@@ -1,0 +1,14 @@
+.overlay {
+    background-color: #000000f2;
+    position: absolute;
+    width: -webkit-fill-available;
+    /* padding: 20px 20px 10% 20px; */
+    height: 142vh;
+    top: 0;
+}
+.butwidth {
+    width: 30% !important;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}

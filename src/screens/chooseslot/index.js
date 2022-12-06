@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
@@ -14,16 +14,43 @@ import { format } from "date-fns";
 import { enGB } from "date-fns/locale";
 import { DatePickerCalendar } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
+import { selectedTrainer } from "../../services/utilities/api";
+import { useEffect } from "react";
 const ChooseSlot = () => {
   const [date, setDate] = useState();
   const [calendshow, setcalendshow] = useState(true)
+  const [slot, setSlot] = useState([]);
+  const [trainer, setTrainer] = useState();
+  const location=useLocation()
+
+
+
+  useEffect(() => {
+    getTrainer();
+  },[]);
+
+  const getTrainer = () => {
+    // setLoader(true);
+    setTimeout(async () => {
+      try {
+        let response = await selectedTrainer(location?.state?.trainer?.tr_id);
+        setTrainer(response.data.trainers);
+        console.log(response.data.slots);
+        setSlot(response.data.slots);
+        // setLoader(false);
+      } catch (error) {
+        console.log('--->', error);
+        // setLoader(false);
+      }
+    }, 100);
+  };
   let navigate = useNavigate(); 
   const Show =()=>{
     setcalendshow(!calendshow)
   }
   const onSelectDate = () => {
     if (date) {
-      navigate("/question");
+      navigate("/question2");
     }
   };
   return (
@@ -57,7 +84,7 @@ const ChooseSlot = () => {
               locale={enGB}
             />
           </div>:<div className="slotdiv">
-            <p className="timeslot">Time:am</p>
+            <p className="timeslot">Time:{slot}</p>
           </div>}
 
           

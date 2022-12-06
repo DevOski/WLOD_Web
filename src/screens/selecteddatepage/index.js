@@ -39,7 +39,7 @@ const SelectDatePage = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>

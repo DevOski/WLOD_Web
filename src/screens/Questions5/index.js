@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,6 +14,25 @@ import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 
 const Questionpagefive = () => {
+const [Meal, setMeal] = useState('')
+const [Time, setTime] = useState('')
+const [FoodsandBeverages, setFoodsandBeverages] = useState('')
+const [Snack, setSnack] = useState('')
+const [SnackTime, setSnackTime] = useState('')
+const [snackbevrage, setsnackbevrage] = useState('')
+const [Lunch, setLunch] = useState('')
+const [LunchTime, setLunchTime] = useState('')
+const [LunchTimebevrage, setLunchbevrage] = useState('')
+const [Dinner, setDinner] = useState('')
+const [DinnerTime,, setDinnerTime] = useState('')
+const [Dinnerbevrage, setDinnerbevrage] = useState('')
+const [outatrestaurantsfastfood, setoutatrestaurantsfastfood] = useState('')
+const [Whichgrocerystores, setWhichgrocerystores] = useState('')
+const [groceryshopping, setgroceryshopping] = useState('')
+const [plansthemeals, setplansthemeals] = useState('')
+const [preparesthemeal, setpreparesthemeal] = useState('')
+const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
+
   let navigate = useNavigate();
   const goto = () => {
     navigate("/Reviewpage");
@@ -24,7 +43,7 @@ const Questionpagefive = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -55,6 +74,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setMeal(event.target.value)}
                     />
                   </td>
                   <td>
@@ -62,6 +82,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setTime(event.target.value)}
                     />
                   </td>
                   <td colSpan={3}>
@@ -69,6 +90,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setFoodsandBeverages(event.target.value)}
                     />
                   </td>
                   
@@ -80,6 +102,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setSnack(event.target.value)}
                     />
                   </td>
                   <td>
@@ -87,6 +110,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setsnackbevrage(event.target.value)}
                     />
                   </td>
                   <td colSpan={3}>
@@ -94,6 +118,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setSnackTime(event.target.value)}
                     />
                   </td>
                   
@@ -105,6 +130,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setLunch(event.target.value)}
                     />
                   </td>
                   <td>
@@ -112,6 +138,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setLunchTime(event.target.value)}
                     />
                   </td>
                   <td colSpan={3}>
@@ -119,11 +146,12 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setLunchbevrage(event.target.value)}
                     />
                   </td>
                   
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>Snack</td>
                   <td >
                     <input
@@ -147,7 +175,7 @@ const Questionpagefive = () => {
                     />
                   </td>
                   
-                </tr>
+                </tr> */}
                 <tr>
                   <td>Dinner</td>
                   <td >
@@ -155,6 +183,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setDinner(event.target.value)}
                     />
                   </td>
                   <td>
@@ -162,6 +191,7 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setDinnerTime(event.target.value)}
                     />
                   </td>
                   <td colSpan={3}>
@@ -169,11 +199,12 @@ const Questionpagefive = () => {
                       type="text"
                       className="form-control"
                       placeholder="Enter your Quries"
+                      onChange={event =>  setDinnerbevrage(event.target.value)}
                     />
                   </td>
                   
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>Snack</td>
                   <td >
                     <input
@@ -197,7 +228,7 @@ const Questionpagefive = () => {
                     />
                   </td>
                   
-                </tr>
+                </tr> */}
             
                
              
@@ -210,6 +241,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  setoutatrestaurantsfastfood(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -218,6 +250,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  setWhichgrocerystores(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -226,6 +259,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  setgroceryshopping(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -234,6 +268,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  setplansthemeals(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -242,6 +277,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  setpreparesthemeal(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -250,6 +286,7 @@ const Questionpagefive = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event =>  settochangewithyourdiet(event.target.value)}
               />
             </div>
 
@@ -298,7 +335,7 @@ const Questionpagefive = () => {
           </div>))}
           </div>
           </div> */}
-            <div>
+            <div className="q-next-btn-div">
               <Button className="bdiv" onClick={goto}>
               Next
               </Button>

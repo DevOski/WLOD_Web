@@ -1,3 +1,44 @@
+.wi55 .main-header {
+    max-width: 1120px;
+    margin: 0 auto;
+    background-color: #fff !important;
+ }
+ .main-logo {
+    width: 90%;
+ }
+ .nav-links {
+    width: 50%;
+    padding-left: 10%;
+ }
+ .nav-links .center-link {
+    margin: 0 40px;
+ }
+ .nav-links a {
+    display: inline;
+    color: #1b1b1b;
+    text-decoration: none;
+    font-family: "Roboto", Sans-serif;
+    font-weight: 600;
+ }
+ .nav-links a:hover {
+    color: #be1d2d;
+ }
+ .signs-btns a {
+    display: inline;
+    background: #be1d2d;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 25px;
+}
+.signs-btns a:nth-child(2) {
+    margin-left: 12px;
+ }
+ .signs-btns a:hover {
+    background: #EB273A;
+    color: #fff;
+ }
+
 .wi{
     width:65% !important;
 }
@@ -229,3 +270,29 @@ input.input {
     /* background-color: #bb4122; */
     padding: 10%;
 }
+
+
+/*** RESPONSIVE ***/
+@media screen and (max-width: 1070px) {
+    .nav-links {
+        width: 40%;
+        padding-left: 0;
+    }
+    }
+    @media screen and (max-width: 820px) {
+        .wi55 .main-header {
+            flex-direction: column;
+            padding-bottom: 20px;
+         }
+         .nav-links {
+            width: 100%;
+            margin: 10px 0 20px 0;
+            text-align: center;
+        }
+        .navbar-brand {
+            text-align: center;
+         }
+         .main-logo {
+            width: 80%;
+         }
+        }

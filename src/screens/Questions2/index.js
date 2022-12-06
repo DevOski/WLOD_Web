@@ -14,12 +14,32 @@ import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 const Questionpagetwo = () => {
   let navigate = useNavigate();
+  const [allergiesintolerances, setallergiesintolerances] = useState('')
+  const [list1, setlist1] = useState('')
+  const [dose1, setdose1] = useState('')
+  const [list2, setlist2] = useState('')
+  const [dose2, setdose2] = useState('')
+  const [list3, setlist3] = useState('')
+  const [dose3, setdose3] = useState('')
+  const [list4, setlist4] = useState('')
+  const [dose4, setdose4] = useState('')
+  const [list5, setlist5] = useState('')
+  const [dose5, setdose5] = useState('')
+  const [stressinyourlife, setstressinyourlife] = useState('')
+  const [copewithstress, setcopewithstress] = useState('')
+  const [culturalorreligious, setculturalorreligious] = useState('')
+  const [readinesstomakelifestyle, setreadinesstomakelifestyle] = useState('')
+  const [confidencetomakelifestyle, setconfidencetomakelifestyle] = useState('')
+  const [physicallimitations,setphysicallimitations] = useState('')
   const goto = () => {
     navigate("/question3");
   };
-  const [isChecked, setIsChecked] = useState(false);
+  
+  const [isrestfulsleepNo, setisrestfulsleepNo] = useState(false);
+  const [isrestfulsleepyes, setisrestfulsleepyes] = useState(false);
   const handleOnChange = () => {
-    setIsChecked(!isChecked);
+    setisrestfulsleepyes(!isrestfulsleepyes);
+    setisrestfulsleepNo(!isrestfulsleepNo)
   };
   return (
     <>
@@ -27,7 +47,7 @@ const Questionpagetwo = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -47,8 +67,19 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="List any allergies/intolerances"
+                onChange={event => setallergiesintolerances(event.target.value)}
               />
             </div>
+            <div className="mb-3 inwi">
+              <label>List any health problems and physical limitations: </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="List any allergies/intolerances"
+                onChange={event => setphysicallimitations(event.target.value)} 
+              />
+            </div>
+            
 
             <Table striped bordered hover>
               <thead>
@@ -61,24 +92,24 @@ const Questionpagetwo = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist1(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter your Quries"  onChange={event => setdose1(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist2(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose2(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist3(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose3(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Preferred Phone Number" /></td>
-                  <td><input type="text" className="form-control" placeholder="Preferred Phone Number" /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Preferred Phone Number" onChange={event => setlist4(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Preferred Phone Number" onChange={event => setdose4(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist5(event.target.value)}  /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose5(event.target.value)}  /></td>
                 </tr>
               </tbody>
             </Table>
@@ -92,7 +123,7 @@ const Questionpagetwo = () => {
           name="topping"
           value="Yes"
           className="topping"
-          checked={isChecked}
+          checked={isrestfulsleepyes}
           onChange={handleOnChange}
         />
         <p className="pleft">Yes</p>
@@ -103,7 +134,7 @@ const Questionpagetwo = () => {
           id="topping"
           name="topping"
           value="No"
-          checked={isChecked}
+          checked={isrestfulsleepNo}
           className="topping"
           onChange={handleOnChange}
         />
@@ -118,6 +149,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setstressinyourlife(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -126,6 +158,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setcopewithstress(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -134,6 +167,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setculturalorreligious(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -142,6 +176,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setreadinesstomakelifestyle(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -150,6 +185,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setconfidencetomakelifestyle(event.target.value)} 
               />
             </div>
            
@@ -199,7 +235,7 @@ const Questionpagetwo = () => {
           </div>))}
           </div>
           </div> */}
-            <div>
+            <div className="q-next-btn-div">
               <Button className="bdiv" onClick={goto}>
               Next
               </Button>

@@ -34,6 +34,7 @@
     border: none;
     color: white;
     text-transform: capitalize;
+    padding: 1%;
 }
 .newpassbutt:hover {
     width: 22%;
@@ -41,12 +42,13 @@
     border: none;
     color: white;
     text-transform: capitalize;
-}
-.calender{
-    width: 51%;
-    align-items: center;
+    padding: 1%;
 }
 .classextbutton{
     display: flex;
     justify-content: center;
+}
+.calender{
+    width: 51%;
+    align-items: center;
 }

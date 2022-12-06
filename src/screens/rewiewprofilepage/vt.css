@@ -17,5 +17,11 @@
 }
 .reviewbutton {
   width: 100% !important;
-  margin-top: 38%  !important;
+  margin-top: 15%  !important;
+  border-radius: 50px !important;
+  background: #bd3434 !important;
+  padding: 12px 60px !important;
+}
+.vt-logo {
+  width: 50% !important;
 }

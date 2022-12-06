@@ -21,7 +21,7 @@ const Rewiewpage = () => {
         <Navbar expand="lg" variant="light" bg="light">
          
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           
         </Navbar>

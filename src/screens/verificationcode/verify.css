@@ -1,0 +1,40 @@
+.box1{
+    border-bottom: none !important;
+    width: 100% !important;
+    margin-top: 2%;
+    margin-left: 0% !important;
+    text-align: center;
+}
+.box2{
+    /* border-bottom: 1px solid black; */
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.recoverbutt{
+    border: none;
+    margin-top: 2%;
+    border-radius: 50px !important;
+    background: #bd3434 !important;
+    padding: 12px 40px !important;
+    color: white;
+    font-weight: bold;
+}
+.forgetinput1 {
+    width: 10% !important;
+    padding: 1% !important;
+}
+
+@media screen and (max-width: 767px) {
+    .forgetinput1 {
+        /* width: 98% !important; */
+    }
+    .box1 {
+        margin-top: 8% !important;
+        margin-bottom: 6%;
+    }
+}

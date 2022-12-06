@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,6 +12,14 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 const Questionpagethree = () => {
+  const [CurrentWeight, setCurrentWeight] = useState('')
+  const [lowestandhighestadultweight, setlowestandhighestadultweight] = useState('')
+  const [weightchangesgainorloss, setweightchangesgainorloss] = useState('')
+  const [dietedinthepast, setdietedinthepast] = useState('')
+  const [hardforyoutoloseweight, sethardforyoutoloseweight] = useState('')
+  const [helpedyouloseweight, sethelpedyouloseweight] = useState('')
+  const [weightwouldyouliketolose, setweightwouldyouliketolose] = useState('')
+  const [benefitfromthisweightloss, setbenefitfromthisweightloss] = useState('')
   let navigate = useNavigate();
   const goto = () => {
     navigate("/question4");
@@ -22,7 +30,7 @@ const Questionpagethree = () => {
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
-              <img src={logo} />
+              <img className="header-logo" src={logo} />
             </Navbar.Brand>
           </Container>
         </Navbar>
@@ -42,6 +50,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setCurrentWeight(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -53,6 +62,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setlowestandhighestadultweight(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -63,6 +73,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setweightchangesgainorloss(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -74,6 +85,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setdietedinthepast(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -84,6 +96,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => sethardforyoutoloseweight(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -94,6 +107,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => sethelpedyouloseweight(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -104,6 +118,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setweightwouldyouliketolose(event.target.value)}
               />
             </div>
             <div className="mb-3 inwi">
@@ -114,6 +129,7 @@ const Questionpagethree = () => {
                 type="text"
                 className="form-control"
                 placeholder="Add your stress rate"
+                onChange={event => setbenefitfromthisweightloss(event.target.value)}
               />
             </div>
            
@@ -162,7 +178,7 @@ const Questionpagethree = () => {
           </div>))}
           </div>
           </div> */}
-            <div>
+            <div className="q-next-btn-div">
               <Button className="bdiv" onClick={goto}>
               Next
               </Button>
