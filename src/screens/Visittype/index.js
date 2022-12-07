@@ -15,7 +15,27 @@ const VType = () => {
   
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/question2');
+    let page ="hello";
+    var formdata = new FormData();
+    formdata.append("sl_date", "05/12/2022");
+    formdata.append("sl_time", "06:50");
+    
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
+    
+    fetch("http://alsyedmmtravel.com/api/finding_VTr", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log("&&",result.data))
+      .catch(error => console.log('error', error));
+      // navigate("/question2", {
+      //   state:{
+      //       page
+      //     },
+      // });
+    // navigate('/question2');
   }
   return (
     <div className="of">
