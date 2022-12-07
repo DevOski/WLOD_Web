@@ -21,29 +21,14 @@ const ChooseSlot = () => {
   const [calendshow, setcalendshow] = useState(true)
   const [slot, setSlot] = useState([]);
   const [trainer, setTrainer] = useState();
+  
   const location=useLocation()
 
 
 
-  useEffect(() => {
-    getTrainer();
-  },[]);
 
-  const getTrainer = () => {
-    // setLoader(true);
-    setTimeout(async () => {
-      try {
-        let response = await selectedTrainer(location?.state?.trainer?.tr_id);
-        setTrainer(response.data.trainers);
-        console.log(response.data.slots);
-        setSlot(response.data.slots);
-        // setLoader(false);
-      } catch (error) {
-        console.log('--->', error);
-        // setLoader(false);
-      }
-    }, 100);
-  };
+
+
   let navigate = useNavigate(); 
   const Show =()=>{
     setcalendshow(!calendshow)

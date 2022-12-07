@@ -3,7 +3,13 @@ import "./Siging.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Error, Loader, Navbarmenu, TopBar } from "../../component";
+import {
+  BasicExample,
+  Error,
+  Loader,
+  Navbarmenu,
+  TopBar,
+} from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -26,8 +32,8 @@ const Siging = () => {
   const Close = () => {
     seterror(false);
   };
-  const token = useSelector(state=>state.token)
-  console.log('-------->>',token);
+  const token = useSelector((state) => state.token);
+  console.log("-------->>", token);
   const Sigin = async () => {
     if (email && password) {
       console.log(email, password);
@@ -78,7 +84,8 @@ const Siging = () => {
   };
   return (
     <>
-      <Container fluid>
+      <BasicExample />
+      {/* <Container fluid>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
@@ -86,7 +93,7 @@ const Siging = () => {
             </Navbar.Brand>
           </Container>
         </Navbar>
-      </Container>
+      </Container> */}
       <div className="cen">
         <p className="well">Welcome</p>
       </div>
@@ -126,14 +133,15 @@ const Siging = () => {
             </div>
             <div className="d-flex justify-content-between">
               <p className="forgot-password text-right mt-2">
-                Forgot{" "}
                 <a href="/forget" className="signuponsingin">
-                  password?
+                  Forgot password?
                 </a>
               </p>
-              <p className="forgot-password text-right mt-2">
+              <p className="forgot-password d-flex text-right mt-2">
+                <p>Don't have an account yet?</p>{" "}
                 <a href="/signup" className="signuponsingin">
-                  SignUp ?
+                  {" "}
+                  SignUp{" "}
                 </a>
               </p>
             </div>
@@ -141,6 +149,15 @@ const Siging = () => {
         </form>
         {loder && <Loader />}
         {error && <Error onClick={Close} tittle={errorMessage} />}
+      </div>
+      <div className="d-flex justify-content-center mt-2">
+        <p>
+          Sign InDon’t have an account yet?
+          <a href="/signup" className="signuponsingin">
+            {" "}
+            Create an Account
+          </a>
+        </p>
       </div>
     </>
   );

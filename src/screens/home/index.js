@@ -10,9 +10,9 @@ import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import { BasicExample, CardHome, OffcanvasExample, Visitcom } from "../../component";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
-import { storeUserData } from "../../store/action";
+import { removeData, storeUserData } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
 
 // function getWindowDimensions() {
@@ -50,6 +50,12 @@ const Home = () => {
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
+  let navigate = useNavigate(); 
+  // const dispatch=useDispatch();
+  const handleLogout=()=>{
+    dispatch(removeData());
+    navigate('/')
+  }
   const token=useSelector(state=> state.token)
   useEffect(() => {
     getUserDetails();
@@ -64,6 +70,7 @@ const Home = () => {
         // console.log(response.data.data.first_name,'====>name');
 
         dispatch(storeUserData(response.data.data));
+        // console.log(response.data.data,'====>dispatchlog');
         // setLoader(false);
       } catch (error) {
         console.log(error);
@@ -126,9 +133,9 @@ const Home = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  <Link className="tit" to="/chat">
+                  {/* <Link className="tit" to="/chat">
                     Message
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ) : null}

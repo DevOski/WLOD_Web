@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -30,12 +31,14 @@ import {
   ChooseSlot,
   Videocalling,
   VerificationCode,
-  MessageScreen
+  MessageScreen,
+  Membership,
 } from "../../screens";
-
 
 const Navigation = () => {
   const token = useSelector((state) => state.token);
+  console.log(token, "====>token");
+  const [tok, settok] = useState(token);
   return (
     <BrowserRouter>
       <Routes>
@@ -46,10 +49,10 @@ const Navigation = () => {
           <Route path="/newpass" element={<Addnew />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/basic" element={<Basic />} />
-          <Route path="/Verificationcode" element={< VerificationCode />} />
-          <Route path="/chat" element={< MessageScreen />} />
-
+          <Route path="/Verificationcode" element={<VerificationCode />} />
+          <Route path="/member" element={<Membership />} />
          
+
           <Route path="/home" element={<Home />} />
           <Route path="/selectdatepage" element={<SelectDatePage />} />
           <Route path="/resonfor" element={<ReaonForVisit />} />
@@ -73,6 +76,7 @@ const Navigation = () => {
           <Route path="/trainer" element={<Trainer />} />
           <Route path="/tl" element={<TrainerList />} />
           <Route path="/slots" element={<ChooseSlot />} />
+          <Route path="/chat" element={<MessageScreen />} />
         </Route>
       </Routes>
     </BrowserRouter>

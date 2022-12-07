@@ -3,7 +3,7 @@ import "./forpass.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -43,64 +43,67 @@ const Forget = () => {
   // const handleEmail = () => {
   //   openInbox();
   // };
-
+const recoverPassword=()=>{
+  navigate('/Verificationcode');
+}
  
-  const recoverPassword = () => {
+//   const recoverPassword = () => {
 
-    var formdata = new FormData();
-    formdata.append('email', email);
+//     var formdata = new FormData();
+//     formdata.append('email', email);
 
-    var requestOptions = {
-      method: 'POST',
-      body: formdata,
-      redirect: 'follow',
-    };
+//     var requestOptions = {
+//       method: 'POST',
+//       body: formdata,
+//       redirect: 'follow',
+//     };
 
-    fetch('http://alsyedmmtravel.com/api/check_email', requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        console.log(result,'====>log');
-        if (result.message !== 'Email already exists ') {
-          // setError(true);
-          // setEmailError('Invalid Email');
-        } else {
-          // setIsModalVisible(true);
-          var formdata = new FormData();
-          formdata.append('email', email.toLowerCase());
-console.log(email,'works');
-          var requestOptions = {
-            method: 'POST',
-            body: formdata,
-            redirect: 'follow',
-          };
+//     fetch('http://alsyedmmtravel.com/api/check_email', requestOptions)
+//       .then(response => response.json())
+//       .then(result => {
+//         console.log(result,'====>log');
+//         if (result.message !== 'Email already exists') {
+//           // setError(true);
+//           // setEmailError('Invalid Email');
+//         } else {
+//           // setIsModalVisible(true);
+//           var formdata = new FormData();
+//           formdata.append('email', email.toLowerCase());
+// console.log(email,'works');
+//           var requestOptions = {
+//             method: 'POST',
+//             body: formdata,
+//             redirect: 'follow',
+//           };
 
-          fetch('http://alsyedmmtravel.com/api/forgot_pass', requestOptions)
-            .then(response => response.json())
-            .then(result => {
-              console.log(result,'result');
-              // setIsModalVisible(false);
-              if (result.message.includes('Check')) {
-                // setIsModalVisible(false);
+//           fetch('http://alsyedmmtravel.com/api/forgot_pass', requestOptions)
+//             .then(response => response.json())
+//             .then(result => {
+//               console.log(result,'result');
+//               // setIsModalVisible(false);
+//               if (result.message.includes('Check')) {
+//                 // setIsModalVisible(false);
                 
-              }
-            })
-            .catch(error => {
-              console.log('error', error);
-              // setIsModalVisible(false);
-            });
-        }
-      })
-      .catch(error => console.log('error', error));
-  };
+//               }
+//             })
+//             .catch(error => {
+//               console.log('error', error);
+//               // setIsModalVisible(false);
+//             });
+//         }
+//       })
+//       .catch(error => console.log('error', error));
+//   };
   return (
     <>
-      <Container fluid>
+   <BasicExample signup="signUp" logout='logout'/>
+      {/* <Container fluid>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#"><img className="header-logo" src={logo}/></Navbar.Brand>
           </Container>
         </Navbar>
-      </Container>
+      </Container> */}
       <Row>
         <Col lg='12'>
            <div className="box1">
