@@ -15,7 +15,7 @@ const VerificationCode = () => {
   const [code, setcode] = useState('')
  
   const submit=()=>{
-    console.log(code);
+    navigate('/newpass')
   }
   return (
     <>

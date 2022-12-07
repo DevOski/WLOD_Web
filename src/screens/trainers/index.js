@@ -74,21 +74,19 @@ const Trainer = () => {
               </div>
             </div>
             <div className="top">
-              <h6>next</h6>
+              <h6>{trainer?.login_status}</h6>
             </div>
-            
-            <div className="top  fle">
+            {slot.map((item, index)=>{
+              console.log(item,'itemslot');
+               return  <div className="top  fle">
 
-              <div className="brder">
-                <p>Tue, 11/29 3:00 AM</p>
-              </div>
-              <div className="brder">
-                <p>Tue, 11/29 3:00 AM</p>
-              </div>
-              <div className="brder">
-                <p>Tue, 11/29 3:00 AM</p>
-              </div>
-            </div>
+               <div className="brder">
+                 <p>{item?.tr_day}, {item?.tr_date} {item?.sl_time}</p>
+               </div>
+             
+             </div>
+            })}
+           
             <div className="top">
               {/* <h6>BACKGROUND</h6> */}
             </div>

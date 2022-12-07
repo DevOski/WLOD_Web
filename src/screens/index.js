@@ -27,6 +27,8 @@ import ChooseSlot from "./chooseslot";
 import Videocalling from "./videocalingscreen";
 import VerificationCode from "./verificationcode";
 import MessageScreen from "./messagepage";
+import Membership from "./memebershipterms";
+
 
 export {
   Siging,
@@ -57,6 +59,7 @@ export {
   ChooseSlot,
   Videocalling,
   VerificationCode,
-  MessageScreen
+  MessageScreen,
+  Membership
 
 };

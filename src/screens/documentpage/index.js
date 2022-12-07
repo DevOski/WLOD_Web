@@ -107,9 +107,9 @@ const DocumentPage = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  <Link className="tit" to="/chat">
+                  {/* <Link className="tit" to="/chat">
                     Message
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ) : null}

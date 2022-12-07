@@ -5,7 +5,7 @@ import { Button, Col, Container, Row } from "react-bootstrap"
 import './basic.css';
 import Form from 'react-bootstrap/Form';
 import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
-import { Error, Loader } from "../../component";
+import { BasicExample, Error, Loader } from "../../component";
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 const Basic = () => {
@@ -177,13 +177,14 @@ const Close=()=>{
   };
   return (
     <>
-      <Navbar expand="lg" variant="light" bg="light">
+    <BasicExample />
+      {/* <Navbar expand="lg" variant="light" bg="light">
         <Container fluid>
           <Navbar.Brand href="#">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
         </Container>
-      </Navbar>
+      </Navbar> */}
       <Container className="pad">
       <form>
         <h3>Basic</h3>

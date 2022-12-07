@@ -62,10 +62,12 @@
 .signuponsingin{
 text-decoration: none;
 color: #BE1D2D;
+margin-left: 6px;
 }
 .signuponsingin:hover{
   text-decoration: none;
   color: #BE1D2D;
+  margin-left: 6px;
   }
 @media screen and (max-width: 991px) {
   .Auth-form-content {
