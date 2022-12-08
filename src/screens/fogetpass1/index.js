@@ -3,7 +3,7 @@ import "./forpass.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BasicExample, Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Navbarmenu, TopBar ,Error, Loader, Error2} from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -14,8 +14,12 @@ const Forget = () => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [errorModal, setErrorModal] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, seterror] = useState(false);
+  const [error2, seterror2] = useState(false);
+
   const [emailError, setEmailError] = useState('');
+  
+  const [loder, setloder] = useState(false);
   const handleChangeemail = event => {
     // setemail(event.target.value);
 
@@ -40,11 +44,55 @@ const Forget = () => {
     setIsModalVisible(!isModalVisible);
   };
 
+  const Close = () => {
+    seterror(false);
+  };
+  const Close2 = () => {
+    seterror2(false);
+  navigate('/Verificationcode', {
+      state:{
+          email
+        },
+    });
+
+  };
   // const handleEmail = () => {
   //   openInbox();
   // };
 const recoverPassword=()=>{
-  navigate('/Verificationcode');
+  setloder(true);
+
+  var formdata = new FormData();
+formdata.append("email", email);
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("http://alsyedmmtravel.com/api/forgot_pass", requestOptions)
+  .then(response => response.json())
+  .then(function(result){
+    console.log("^^",result.status);
+    if(result.status == "200"){
+      
+      setloder(false);
+      setErrorMessage(result.message);
+      seterror2(true);
+      // alert(result.message)
+
+    }else{
+      setloder(false);
+      setErrorMessage(result.message);
+      seterror(true);
+      // alert(result.message)
+
+    }
+
+  })
+  .catch(error => console.log('error', error));
+  // navigate('/Verificationcode');
 }
  
 //   const recoverPassword = () => {
@@ -120,6 +168,9 @@ const recoverPassword=()=>{
       </Row>
 
       
+        {loder && <Loader />}
+        {error2 && <Error2 onClick={Close2} tittle={errorMessage} />}
+        {error && <Error onClick={Close} tittle={errorMessage} />}
     </>
   );
 };
