@@ -12,7 +12,10 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
+import { useLocation } from "react-router-dom";
 const Questionpagetwo = () => {
+  const params = useLocation();
+console.log("^^^",params.state);
   let navigate = useNavigate();
   const [allergiesintolerances, setallergiesintolerances] = useState('')
   const [list1, setlist1] = useState('')

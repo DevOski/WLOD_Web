@@ -5,6 +5,7 @@ import Loader from "./loder";
 import Navbarmenu from "./navbar";
 import TopBar from "./topbar";
 import Visitcom from "./visitComponet";
+import Error2 from "./errorscreen/index2"
 
 
-export{TopBar,Navbarmenu,CardHome,Visitcom,Loader,Error,BasicExample}
+export{TopBar,Navbarmenu,CardHome,Visitcom,Loader,Error,BasicExample,Error2}
