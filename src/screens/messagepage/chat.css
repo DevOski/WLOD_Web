@@ -307,7 +307,7 @@ margin-top: 36.5rem !IMPORTANT;
     overflow-y: scroll;
 }
 .chbox {
-    width: 25%;
+    width: 50%;
     background-color: azure;
     height: 13%;
     display: flex;

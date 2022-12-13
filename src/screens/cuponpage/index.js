@@ -12,7 +12,8 @@ import logo from "../../assets/logo.png";
 import Form from "react-bootstrap/Form";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { storeCoupon } from "../../store/action";
 const Cupon = () => {
   let navigate = useNavigate();
   const [ApplyCupon, setApplyCupon] = useState("");
@@ -24,6 +25,7 @@ const Cupon = () => {
   const token = useSelector((state) => state.token);
   const promoCode = useSelector((state) => state.user.promo_code);
 
+  const dispatch = useDispatch();
   const Close = () => {
     seterror(false);
   };
@@ -65,7 +67,7 @@ const Cupon = () => {
               seterror(true);
               setErrorMessage("");
               // setTitle('Congratulations!');
-              // dispatch(storeCoupon(coupon));
+              dispatch(storeCoupon(ApplyCupon));
             }
             setLoader(false);
           })
