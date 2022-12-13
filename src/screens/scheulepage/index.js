@@ -40,9 +40,9 @@ const SessionBook = () => {
            
            
           </div>
-          <div  className="d-flex justify-content-center align-items-center ww2 ww3">
+          <div onClick={gotodate}  className="d-flex justify-content-center align-items-center ww2 ww3">
             <div>
-              <h3 style={{color:'#000'}} onClick={gotodate}>Find Your Time </h3>
+              <h3 style={{color:'#000'}} >Find Your Time </h3>
               
             </div>
            

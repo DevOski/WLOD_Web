@@ -21,15 +21,6 @@ const ChooseSlot = () => {
   const [calendshow, setcalendshow] = useState(true)
   const [slot, setSlot] = useState([]);
   const [trainer, setTrainer] = useState();
-  
-  const location=useLocation()
-
-
-
-
-
-
-  let navigate = useNavigate(); 
   const Show =()=>{
     setcalendshow(!calendshow)
   }
@@ -38,6 +29,17 @@ const ChooseSlot = () => {
       navigate("/question2");
     }
   };
+  const location=useLocation()
+  
+  
+  
+  useEffect(() => {
+    getTrainer();
+  },[]);
+
+
+
+  let navigate = useNavigate(); 
   return (
     <div className="of">
       <Container fluid>

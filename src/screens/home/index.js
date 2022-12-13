@@ -9,8 +9,13 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, OffcanvasExample, Visitcom } from "../../component";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  BasicExample,
+  CardHome,
+  OffcanvasExample,
+  Visitcom,
+} from "../../component";
+import { Link } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,7 +46,7 @@ import { useDispatch, useSelector } from "react-redux";
 // }
 
 const Home = () => {
-  const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState("");
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
   const [Visit, setVisit] = useState("");
@@ -50,16 +55,9 @@ const Home = () => {
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
-  let navigate = useNavigate(); 
-  // const dispatch=useDispatch();
-  const handleLogout=()=>{
-    dispatch(removeData());
-    navigate('/')
-  }
-  const token=useSelector(state=> state.token)
+  const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
-    
   }, []);
   const getUserDetails = async () => {
     // setLoader(true);
@@ -90,7 +88,7 @@ const Home = () => {
   };
   return (
     <div className="wi55" fluid>
-      <BasicExample name={userName}/>
+      <BasicExample name={userName} />
       {/* <Navbar variant="light" bg="light" className="d-flex justify-content-between ">
         <Navbar.Brand href="#">
           <img style={{ width: "50%" }} src={logo} />
@@ -133,9 +131,9 @@ const Home = () => {
                   <Link className="tit" to="/document">
                     Document
                   </Link>
-                  {/* <Link className="tit" to="/chat">
+                  <Link className="tit" to="/chat">
                     Message
-                  </Link> */}
+                  </Link>
                 </div>
               </div>
             ) : null}

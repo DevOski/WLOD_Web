@@ -30,12 +30,13 @@ const Trainer = () => {
     setTimeout(async () => {
       try {
         let response = await selectedTrainer(location?.state?.trainer?.tr_id);
+        console.log('----------->>tr',response.data);
         setTrainer(response.data.trainers);
         setSlot(response.data.slots);
         console.log(response.data.slots,'====>slot');
         // setLoader(false);
       } catch (error) {
-        console.log('--->', error);
+        console.log('err--->', error);
         // setLoader(false);
       }
     }, 100);
