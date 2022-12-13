@@ -15,6 +15,18 @@ import "react-nice-dates/build/style.css";
 
 const Appointmentdate = () => {
   const [date, setDate] = useState();
+  // const [date, setDate] = useState();
+  const [calendshow, setcalendshow] = useState(true)
+  const [slot, setSlot] = useState([]);
+  const [trainer, setTrainer] = useState();
+  const Show =()=>{
+    setcalendshow(!calendshow)
+  }
+  const onSelectDatee = () => {
+    if (date) {
+      navigate("/question2");
+    }
+  };
   let navigate = useNavigate();
   const [password, setpassword] = useState("");
   const [email, setemail] = useState("");
@@ -51,7 +63,7 @@ const Appointmentdate = () => {
             <h5>Please choose an appointment window:</h5>
           </div>
         </Col>
-        <Col lg="12" className="d-flex justify-content-center">
+        {/* <Col lg="12" className="d-flex justify-content-center">
           <div className="calender">
             <p>
               Selected date:{" "}
@@ -63,9 +75,40 @@ const Appointmentdate = () => {
               locale={enGB}
             />
           </div>
+        </Col> */}
+        {/* <div className="classextbutton">
+            <button className="newpassbutt" onClick={onSelectDate}>Next</button>
+          </div> */}
+      </Row>
+      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+        <Col lg="12"className="d-flex justify-content-center align-items-center">
+         <div className="calbox" onClick={Show} ><p className="caltext">Calender</p></div>
+         <div className="slotbox" onClick={Show}  ><p className="caltext">List</p></div>
+        </Col>
+      
+      </Row>
+      <Row>
+      <Col lg="12" className="d-flex justify-content-center">
+{calendshow ?<div className="calender">
+            <p>
+              Selected date:{" "}
+              {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "none"}.
+            </p>
+            <DatePickerCalendar
+              date={date}
+              onDateChange={setDate}
+              locale={enGB}
+            />
+          </div>:<div className="slotdiv">
+            <p className="timeslot">Time:{slot}</p>
+          </div>}
+
+          
+          
+          
         </Col>
         <div className="classextbutton">
-            <button className="newpassbutt" onClick={onSelectDate}>Next</button>
+            <button className="newpassbutt" onClick={onSelectDatee}>Next</button>
           </div>
       </Row>
     </>

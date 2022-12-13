@@ -206,6 +206,9 @@ input.input {
     justify-content: center;
     align-items: center;
 }
+.visittmess {
+height: 16.4%;
+}
 .visitt2 {
     border: 1px solid #d3cacab8;
     display: flex;
@@ -232,6 +235,17 @@ input.input {
         padding-bottom: 4%;
   
 }
+.visitt2butmess{
+margin-top: 36.5rem !IMPORTANT;
+    border: 1px solid #d3cacab8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* margin-top: 88%; */
+    padding-bottom: 8%;
+    padding-top: 19px;
+}
 .bbbb {
     width: 72% !important;
 }
@@ -241,23 +255,64 @@ input.input {
     padding: 12px 12px !important;
 }
 .chatdivmain {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     margin-left: 18px;
-    width: 55rem;
+    width: 78rem;
     height: 100vh;
 }
 .inputdivmessage {
     display: flex;
     position: relative;
-    top: 29.5rem;
+    /* top: 0.5rem; */
     width: 99%;
-    height: 17%;
+    height: 12%;
 }
 .messinput {
-    width: 100%;
-    border: none !important;
+    /* margin-top: 20.7rem !important; */
+    width: 92% !important;
+    /* border: none !important; */
+    position: relative;
+    border: 1px solid black;
+    padding: 4%;
+    left: 1.5%;
+    height: 85px !important;
 }
 .messinput:focus-visible {
     width: 100%;
     border: none !important;
+}
+.sendbutton {
+    font-weight: bold;
+}
+.sendbuttondiv {
+    background-color: #bd3434;
+    position: relative;
+    /* top: 20.8rem; */
+    width: 6%;
+    height: 88%;
+    left: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.textbox {
+    height: 52rem;
+    /* padding-left: 4%; */
+    padding: 2%;
+    border: 1px solid;
+    width: 77.4rem;
+    position: relative;
+    left: 1.4%;
+    overflow-y: scroll;
+}
+.chbox {
+    width: 25%;
+    background-color: azure;
+    height: 13%;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 18px;
+    padding: 1%;
 }

@@ -102,7 +102,7 @@ const MessageScreen = () => {
                     Document
                   </Link>
                   <Link className="tit" to="/provider">
-                    ok
+                   Message
                   </Link>
                 </div>
               </div>
@@ -126,22 +126,31 @@ const MessageScreen = () => {
             <div className="visitt">
               <p className="tit">Jeff PAST SESSIONS</p>
             </div>
-            <div className="visitt2">
+            <div className="visitt">
               <p>No past sessions</p>
             </div>
-            <div className="visitt2but">
+            <div className="visitt2butmess">
               <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div>
         </Col>
         <Col lg='4'>
         <div className="chatdivmain">
-          <div>
+          <div className="textbox">
+        
+            <div className="chbox" >
             <p>text</p>
+
+            </div>
+           
+            
           </div>
           <div className="inputdivmessage">
           <input className="messinput" type={'text'} placeholder='enter your message'/>
-          <p>send</p>
+          <div className="sendbuttondiv">
+          <p className="sendbutton">send</p>
+
+          </div>
           </div>
         </div>
 
