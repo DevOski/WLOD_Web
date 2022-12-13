@@ -34,7 +34,7 @@ const ChooseSlot = () => {
   
   
   useEffect(() => {
-    getTrainer();
+    // getTrainer();
   },[]);
 
 
