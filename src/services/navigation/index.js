@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import {
   SignUp,
   Addnew,
@@ -34,24 +35,27 @@ import {
   MessageScreen,
   Membership,
 } from "../../screens";
+import Privateroute from "./privateroute";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const token = useSelector((state) => state.token);
-  console.log(token, "====>token");
+  console.log(token, "====>tokennnnnavi");
   const [tok, settok] = useState(token);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route>
-          <Route path="/" element={<Siging />} />
-          <Route path="/sigin" element={<Siging />} />
-          <Route path="/forget" element={<Forget />} />
-          <Route path="/newpass" element={<Addnew />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/basic" element={<Basic />} />
-          <Route path="/Verificationcode" element={<VerificationCode />} />
-          <Route path="/member" element={<Membership />} />
-         
+       <Route>
+
+    <Route path="/" element={<Siging />} />
+    <Route path="/sigin" element={<Siging />} />
+    <Route path="/forget" element={<Forget />} />
+    <Route path="/newpass" element={<Addnew />} />
+    <Route path="/signup" element={<SignUp />} />
+    <Route path="/basic" element={<Basic />} />
+    <Route path="/Verificationcode" element={<VerificationCode />} />
+    <Route path="/member" element={<Membership />} />
+   
 
           <Route path="/home" element={<Home />} />
           <Route path="/selectdatepage" element={<SelectDatePage />} />
@@ -77,7 +81,11 @@ const Navigation = () => {
           <Route path="/tl" element={<TrainerList />} />
           <Route path="/slots" element={<ChooseSlot />} />
           <Route path="/chat" element={<MessageScreen />} />
-        </Route>
+          </Route>
+
+{/* <Route path="/" element={<Siging />} /> */}
+
+        
       </Routes>
     </BrowserRouter>
   );
