@@ -14,7 +14,7 @@ function BasicExample({name}) {
   const dispatch=useDispatch();
   const handleLogout=()=>{
     dispatch(removeData());
-    navigate('/')
+    navigate('/sigin')
   }
 
   const handlesignup=()=>{
@@ -29,7 +29,7 @@ function BasicExample({name}) {
   return (
     <Navbar bg="light" expand="lg">
      {tok? <Container>
-        <Navbar.Brand href="#home"><img style={{ width: "50%" }} src={logo} /></Navbar.Brand>
+        <Navbar.Brand href="/"><img style={{ width: "50%" }} src={logo} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -41,9 +41,10 @@ function BasicExample({name}) {
       
        
           </Nav>
+          <p className='proname'>{name}</p>
           <Button className='logbutt' onClick={handleLogout}>Logout</Button>
           
-          <p className='proname'>{name}</p>
+         
         </Navbar.Collapse>
       </Container>: <Container>
         <Navbar.Brand href="#home"><img style={{ width: "50%" }} src={logo} /></Navbar.Brand>

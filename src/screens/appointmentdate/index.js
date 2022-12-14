@@ -3,7 +3,7 @@ import "./appoint.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -48,7 +48,7 @@ const Appointmentdate = () => {
   console.log(date,'=====>');
   return (
     <>
-      <Container fluid>
+      {/* <Container fluid>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
@@ -56,7 +56,8 @@ const Appointmentdate = () => {
             </Navbar.Brand>
           </Container>
         </Navbar>
-      </Container>
+      </Container> */}
+      <BasicExample/>
       <Row>
         <Col lg="10">
           <div className="boxadd">

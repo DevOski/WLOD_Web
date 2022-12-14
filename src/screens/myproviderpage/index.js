@@ -11,7 +11,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, Visitcom } from "../../component";
+import { BasicExample, CardHome, SideBar, Visitcom } from "../../component";
 import { Link } from "react-router-dom";
 
 // function getWindowDimensions() {
@@ -73,50 +73,7 @@ const Provider = () => {
 
       <Row>
         <Col lg="3">
-          <div
-            className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
-          >
-            <GiHamburgerMenu onClick={opendarwer} className="ham" />
-
-            <div className="cent">
-              <div
-                className="back"
-              
-              >
-               <Link className="tit" to="/home">
-                  home
-                </Link>
-              </div>
-            </div>
-            <div className="cent">
-              <div className="back2">
-                <p className="tit">my Health</p>
-                <p>
-                  <MdExpandLess onClick={open} className="expand" />
-                </p>
-              </div>
-            </div>
-            {!show ? (
-              <div className="cent2">
-                <div className="backkk"></div>
-                <div className="back3">
-                <Link className="tit" to="/visit">
-                Sessions
-                  </Link>
-
-                  <Link className="tit" to="/provider">
-                    My consultants
-                  </Link>
-                  <Link className="tit" to="/document">
-                    Document
-                  </Link>
-                  {/* <Link className="tit" to="/chat">
-                    Message
-                  </Link> */}
-                </div>
-              </div>
-            ) : null}
-          </div>
+        <SideBar/>
         </Col>
         <Col lg="9">
           <div className={drawer ? "vish" : "vish2"}>

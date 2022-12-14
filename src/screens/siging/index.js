@@ -48,7 +48,7 @@ const Siging = () => {
           console.log(response.data);
           setloder(false);
           dispatch(storeData(response.data.token));
-          navigate("/home");
+          navigate("/");
           // dispatch(storeData(response.data.token));
           // console.log(response.data.data.fingerprint);
           // if (response.data.data.fingerprint == 1) {
@@ -64,7 +64,7 @@ const Siging = () => {
           console.log(response.data.type);
           setloder(false);
 
-          navigate("/home");
+          navigate("/");
           // seterror(true);
           // dispatch(storeData("$2y$10$kl2gP4WxK7V/IFAyBblRSOorRI3.VpxYsol6fjnJcebb0WwbtwjUi"));
           // dispatch(trainerStack(response.data.type));

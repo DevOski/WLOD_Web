@@ -13,6 +13,7 @@ import {
   BasicExample,
   CardHome,
   OffcanvasExample,
+  SideBar,
   Visitcom,
 } from "../../component";
 import { Link } from "react-router-dom";
@@ -55,6 +56,7 @@ const Home = () => {
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
+  
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
@@ -88,7 +90,7 @@ const Home = () => {
   };
   return (
     <div className="wi55" fluid>
-      <BasicExample name={userName} />
+      <BasicExample name={userName}/>
       {/* <Navbar variant="light" bg="light" className="d-flex justify-content-between ">
         <Navbar.Brand href="#">
           <img style={{ width: "50%" }} src={logo} />
@@ -97,7 +99,8 @@ const Home = () => {
       </Navbar> */}
       <Row>
         <Col lg="3">
-          <div
+        <SideBar/>
+          {/* <div
             className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
           >
             <GiHamburgerMenu onClick={opendarwer} className="ham" />
@@ -137,7 +140,7 @@ const Home = () => {
                 </div>
               </div>
             ) : null}
-          </div>
+          </div> */}
         </Col>
         <CardHome />
       </Row>

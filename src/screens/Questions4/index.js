@@ -3,7 +3,7 @@ import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -25,7 +25,8 @@ const Questionpagefour = () => {
   }
   return (
     <>
-      <Container fluid>
+    <BasicExample/>
+      {/* <Container fluid>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
@@ -33,7 +34,7 @@ const Questionpagefour = () => {
             </Navbar.Brand>
           </Container>
         </Navbar>
-      </Container>
+      </Container> */}
       <Row class="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
           <div className="d-flex justify-content-between   align-items-center ww">

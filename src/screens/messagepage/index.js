@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, Visitcom } from "../../component";
+import { BasicExample, CardHome, SideBar, Visitcom } from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getUser } from "../../services/utilities/api";
@@ -147,7 +147,8 @@ const MessageScreen = () => {
 
       <Row>
         <Col lg="2">
-          <div
+        <SideBar/>
+          {/* <div
             className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
           >
             <GiHamburgerMenu onClick={opendarwer} className="ham" />
@@ -187,9 +188,9 @@ const MessageScreen = () => {
                 </div>
               </div>
             ) : null}
-          </div>
+          </div> */}
         </Col>
-        <Col lg="2">
+        {/* <Col lg="2">
           <div className={drawer ? "vishpagechat" : "vish2Pchat"}>
             <div className="visitt">
               <p className="tit">SESSIONS REQUESTS</p>
@@ -215,8 +216,8 @@ const MessageScreen = () => {
               </Button>
             </div>
           </div>
-        </Col>
-        <Col lg="4">
+        </Col> */}
+        <Col lg="10">
           <div className="chatdivmain">
             <div className="textbox">
               {msgList?.map((item, index) => {
@@ -224,17 +225,18 @@ const MessageScreen = () => {
                   <div>
                     {item.sender == "user" ? (
                       <div className="chbox">
-                        <p>
+                        <p className="msgtext">
                           {moment(new Date(item.created_at)).format(
                             "MM/DD/YYYY hh:MMA"
                           )}
                         </p>
-                        <br />
-                        <p>
-                          &nbsp; &nbsp; &nbsp; {userName} {middleName}{" "}
+                     
+                        <p className="msgtext">
+                          {userName} {middleName}{" "}
                           {lastName}
                         </p>
-                        <p>&nbsp; &nbsp; &nbsp; {item.message}</p>
+                        <p className="msgtext">
+                           {item.message}</p>
                       </div>
                     ) : (
                       <div>
