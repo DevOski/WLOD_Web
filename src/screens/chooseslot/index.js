@@ -51,6 +51,7 @@ const ChooseSlot = () => {
   const location = useLocation();
   console.log(location.state.trainer, "slotwaliscreen====>trainer");
   useEffect(() => {
+<<<<<<< HEAD
     var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
     setCurrentDate(utc);
     const time = new Date().getTime();
@@ -58,6 +59,10 @@ const ChooseSlot = () => {
     console.log(currentTime);
     setCurrentTime(currentTime);
   }, []);
+=======
+    // getTrainer();
+  },[]);
+>>>>>>> 13a23d4ffc8c860fcf782c6edc8ed849e9f1c69d
 
   const getSelectedDayEvents = (date) => {
     console.log(date, "====>date");
