@@ -28,8 +28,7 @@ const Privateroute = (props) => {
      
     },[])
     
-    // const [tok, settok] = useState(token);
-    // settok(token);
+    
   return ( 
     <>
    

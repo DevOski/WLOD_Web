@@ -13,11 +13,6 @@ import { enGB } from "date-fns/locale";
 import { DatePickerCalendar } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
 import moment from "moment";
-<<<<<<< HEAD
-import { getSlotDate, getSlotTime } from "../../services/utilities/api";
-import { useEffect } from "react";
-=======
->>>>>>> 13a23d4ffc8c860fcf782c6edc8ed849e9f1c69d
 
 const Appointmentdate = () => {
   const location = useLocation();
@@ -27,22 +22,10 @@ const Appointmentdate = () => {
   const [calendshow, setcalendshow] = useState(true);
   const [slot, setSlot] = useState([]);
   const [trainer, setTrainer] = useState();
-<<<<<<< HEAD
-  const [timeSlot, setTimeSlot] = useState([]);
-  const [dateSlot, setDateSlot] = useState([]);
-  const [currentDTime, setCurrentTime] = useState("");
-  const [currentDate, setCurrentDate] = useState("");
-  const [markedDates, setMarkedDates] = useState("");
-  const [month, setMonth] = useState("");
-  const [day, setDay] = useState("");
-  const [calendar, setCalendar] = useState(true);
-  const [list, setList] = useState(false);
-=======
   const [currentDate, setCurrentDate] = useState("");
   const [currentDTime, setCurrentTime] = useState("");
   const [dateSlot, setDateSlot] = useState([]);
 
->>>>>>> 13a23d4ffc8c860fcf782c6edc8ed849e9f1c69d
   const Show = () => {
     setcalendshow(!calendshow);
   };
@@ -62,7 +45,6 @@ const Appointmentdate = () => {
   const handleChangepass = (event) => {
     setpassword(event.target.value);
 
-    // console.log('value is:', event.target.value);
   };
   const onSelectDate = () => {
     if (date) {
@@ -75,7 +57,6 @@ const Appointmentdate = () => {
     setCurrentDate(utc);
     const time = new Date().getTime();
     let currentTime = `${moment(time).format("hh:mma")}`;
-    // console.log(currentTime,utc);
     setCurrentTime(currentTime);
   }, []);
 

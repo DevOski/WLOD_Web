@@ -49,25 +49,13 @@ const Siging = () => {
           setloder(false);
           dispatch(storeData(response.data.token));
           navigate("/");
-          // dispatch(storeData(response.data.token));
-          // console.log(response.data.data.fingerprint);
-          // if (response.data.data.fingerprint == 1) {
-          //   handleBiometric();
-          // }
-          // else{
-          //   navigation.navigate('BottomNavs');
-          // }
-
-          // setError(false);
-          // setLoader(false);
+         
         } else if (response.data.message == "Trainer found") {
           console.log(response.data.type);
           setloder(false);
 
           navigate("/");
-          // seterror(true);
-          // dispatch(storeData("$2y$10$kl2gP4WxK7V/IFAyBblRSOorRI3.VpxYsol6fjnJcebb0WwbtwjUi"));
-          // dispatch(trainerStack(response.data.type));
+        
         } else {
           console.log(response.data.message);
           setloder(false);
@@ -76,24 +64,14 @@ const Siging = () => {
         }
       } catch (error) {
         console.log("err", error);
-        // setError(true);
-        // setErrorMessage(error.message);
-        // setLoader(false);
+      
       }
     }
   };
   return (
     <>
       <BasicExample />
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#">
-              <img className="signin-logo" src={logo} />
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container> */}
+   
       <div className="cen">
         <p className="well">Welcome</p>
       </div>
@@ -109,7 +87,7 @@ const Siging = () => {
                 className="form-control mt-1"
                 placeholder="Enter email"
                 onChange={(event) => setemail(event.target.value)}
-                // value={email}
+               
               />
             </div>
             <div className="form-group mt-3">
@@ -119,14 +97,13 @@ const Siging = () => {
                 className="form-control mt-1"
                 placeholder="Enter password"
                 onChange={(event) => setpassword(event.target.value)}
-                // value={password}
+             
               />
             </div>
             <div className="d-grid gap-2 mt-3">
               <Button
                 onClick={Sigin}
-                // className="btn btn-primary
-                //  "
+              
               >
                 Submit
               </Button>
@@ -147,8 +124,6 @@ const Siging = () => {
             </div>
           </div>
         </form>
-        {loder && <Loader />}
-        {error && <Error onClick={Close} tittle={errorMessage} />}
       </div>
       <div className="d-flex justify-content-center mt-2">
         <p>
@@ -159,6 +134,8 @@ const Siging = () => {
           </a>
         </p>
       </div>
+        {loder && <Loader />}
+        {error && <Error onClick={Close} tittle={errorMessage} />}
     </>
   );
 };

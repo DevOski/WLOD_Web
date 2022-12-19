@@ -21,13 +21,7 @@ const PayButtonTyp = () => {
 
   return (
     <div className="of">
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <img className="header-logo" src={logo} />
-          </Navbar.Brand>
-        </Navbar>
-      </Container> */}
+     
       <BasicExample/>
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col

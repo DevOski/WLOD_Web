@@ -77,13 +77,7 @@ const VType = () => {
   return (
     <div className="of">
       <BasicExample/>
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <img className="vt-logo" src={logo} />
-          </Navbar.Brand>
-        </Navbar>
-      </Container> */}
+      
       <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
           lg="12"

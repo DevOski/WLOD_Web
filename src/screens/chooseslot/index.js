@@ -51,18 +51,8 @@ const ChooseSlot = () => {
   const location = useLocation();
   console.log(location.state.trainer, "slotwaliscreen====>trainer");
   useEffect(() => {
-<<<<<<< HEAD
-    var utc = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-    setCurrentDate(utc);
-    const time = new Date().getTime();
-    let currentTime = `${moment(time).format("hh:mma")}`;
-    console.log(currentTime);
-    setCurrentTime(currentTime);
-  }, []);
-=======
     // getTrainer();
   },[]);
->>>>>>> 13a23d4ffc8c860fcf782c6edc8ed849e9f1c69d
 
   const getSelectedDayEvents = (date) => {
     console.log(date, "====>date");
@@ -165,13 +155,7 @@ const ChooseSlot = () => {
   let navigate = useNavigate();
   return (
     <div className="of">
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <img src={logo} />
-          </Navbar.Brand>
-        </Navbar>
-      </Container> */}
+     
       <BasicExample />
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
@@ -201,7 +185,6 @@ const ChooseSlot = () => {
               />
               {dateSlot?.length ? (
                 dateSlot.map((item,index)=>{
-                  // console.log("dta",item);
                   return(
                   <div key={index} className="classextbuttonsl">
                     <p className="timeslot">Time:{item.sl_time}</p> 
@@ -210,11 +193,7 @@ const ChooseSlot = () => {
                   )
 
                 })
-                // <div className="classextbutton">
-                //   <button className="newpassbutt" onClick={onSelectDate}>
-                //     Next
-                //   </button>
-                // </div>
+               
               ) : (
                 <div className="classextbutton">
                   <p>No record found</p>
@@ -224,7 +203,7 @@ const ChooseSlot = () => {
           )}
           {calendshowlist && (
             <div className="slotdiv">
-             {timeSlot.length ?  <p className="timeslot">Time:{slot}</p>  :<p className="timeslot">There is no slot</p>}
+             {timeSlot?.length ?  <p className="timeslot">Time:{slot}</p>  :<p className="timeslot">There is no slot</p>}
             </div>
           )}
         </Col>

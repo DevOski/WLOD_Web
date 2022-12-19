@@ -57,20 +57,7 @@ const DocumentPage = () => {
   return (
     <div className="wi55">
        <BasicExample/>
-      {/* <Navbar variant="light" bg="light">
-        <Navbar.Brand href="#">
-          <img style={{ width: "50%" }} src={logo} />
-        </Navbar.Brand>
-        <div className="nav-links">
-        <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
-        <Nav.Link href="https://weightlossondemand.com/services" className="center-link">Services</Nav.Link>
-        <Nav.Link href="https://weightlossondemand.com/contact-us">Contact Us</Nav.Link>
-        </div>
-        <div className="signs-btns">
-        <Nav.Link href="/sigin">Sign In</Nav.Link>
-        <Nav.Link href="/signup">Sign Up</Nav.Link>
-        </div>
-      </Navbar> */}
+    
       <Row>
         <Col lg="3">
         <SideBar/>

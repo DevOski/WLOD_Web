@@ -35,18 +35,11 @@ const TrainerList = () => {
     }
   };
 
-  // const Open = () => {
-  //   setshow(!show);
-  // };
+
+ 
   return (
     <div className="of">
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <img src={logo} />
-          </Navbar.Brand>
-        </Navbar>
-      </Container> */}
+    
       <BasicExample/>
       <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
@@ -88,26 +81,7 @@ const TrainerList = () => {
             );
           })}
 
-          {/* <div onClick={goto} className="d-flex flex-column   wwtrailist">
-            <div className="d-flex justify-content-space-between align-items-center gap-2 trwi">
-              <div className="imgtrainerlist">
-                <img
-                  style={{ width: "100%", height: "100%" }}
-                  src={theropist}
-                />
-              </div>
-              <div className="padingtrainer">
-                <h5>Michelle Klotz, PhD, MA, LCSW</h5>
-                <p>Clinical Social Worker</p>
-                <p>
-                  Alexandra Rocheleau is a licensed independent clinical social
-                  worker who enjoys working with adolescents and adults on
-                  several different mental health areas, including anxiety and
-                  depression, relation...
-                </p>
-              </div>
-            </div>
-          </div> */}
+         
         </Col>
       </Row>
     </div>

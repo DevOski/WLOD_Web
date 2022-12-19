@@ -40,15 +40,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
   return (
     <>
     <BasicExample/>
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#">
-              <img className="header-logo" src={logo} />
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container> */}
+     
       <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col
           lg="12"

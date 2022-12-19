@@ -27,7 +27,6 @@ const  Trainer = () => {
     getTrainer();
   }, []);
   const getTrainer = () => {
-    // setLoader(true);
     setTimeout(async () => {
       try {
         const time = new Date().getTime();
@@ -37,10 +36,8 @@ const  Trainer = () => {
         setTrainer(response.data.trainers);
         setSlot(response.data.slots);
         console.log(response.data.slots,'====>slot');
-        // setLoader(false);
       } catch (error) {
         console.log('err--->', error);
-        // setLoader(false);
       }
     }, 100);
   };
@@ -52,13 +49,7 @@ const  Trainer = () => {
   }
   return (
     <div className="of">
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <img src={logo} />
-          </Navbar.Brand>
-        </Navbar>
-      </Container> */}
+     
       <BasicExample/>
       <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
@@ -93,7 +84,7 @@ const  Trainer = () => {
             })}
            
             <div className="top">
-              {/* <h6>BACKGROUND</h6> */}
+             
             </div>
             <div className="top">
             <p>

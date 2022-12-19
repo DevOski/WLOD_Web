@@ -26,15 +26,7 @@ const Questionpagethree = () => {
   };
   return (
     <>
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#">
-              <img className="header-logo" src={logo} />
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container> */}
+    
       <BasicExample/>
       <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col
@@ -134,51 +126,7 @@ const Questionpagethree = () => {
               />
             </div>
            
-            {/* <div className="d-flex justify-content-between  align-items-center  ww">
-          <div>
-              <p>reaon</p>
-            </div>
-          <div>
-          {['checkbox', ].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div> */}
-            {/* <div className="d-flex justify-content-between  align-items-center ww">
-          <div>
-              <p>reason</p>
-            </div>
-          <div>
-          {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div> */}
-            {/* <div className="d-flex justify-content-between  align-items-center ww">
-          <div>
-              <p>reason</p>
-            </div>
-          <div>
-          {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div> */}
+            
             <div className="q-next-btn-div">
               <Button className="bdiv" onClick={goto}>
               Next

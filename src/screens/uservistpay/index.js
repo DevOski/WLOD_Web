@@ -107,27 +107,7 @@ const Confirmpay = () => {
             </Form>
           </Col>
 
-          {/* <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
-          <div  className="d-flex justify-content-center flex-column   ww">
-            <div className="indi">
-              <h5 className="CAP">ADD PAYMENT </h5>
-              <input type='text' className="in" placeholder="Add your payment type here"/>
-            </div>
-            <div className="indi">
-              <h5 className="CAP" >Coupon </h5>
-              <input type='text' className="in" placeholder="Coupon"/>
-            </div>
-            <div className="indi">
-              <h5 className="CAP">Your cost </h5>
-              <p>25$</p>
-            </div>
-            <div>
-              <Button>Confirm and pay</Button>
-            </div>
-           
-           
-          </div>
-        </Col> */}
+         
         </Row>
       </div>
     </Container>
