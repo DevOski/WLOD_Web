@@ -30,7 +30,7 @@ const Cupon = () => {
     seterror(false);
   };
   const goto = () => {
-    navigate("/question");
+    navigate("/Confrimandpay");
   };
   const handleCoupon = () => {
     setLoader(true);
@@ -110,7 +110,7 @@ const Cupon = () => {
               <Button
                 variant="primary"
                 className="coupon-submit"
-                onClick={handleCoupon}
+                onClick={goto}
               >
                 Submit
               </Button>

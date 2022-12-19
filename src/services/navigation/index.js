@@ -35,6 +35,7 @@ import {
   VerificationCode,
   MessageScreen,
   Membership,
+  ConfirmAndPay,
 } from "../../screens";
 import Privateroute from "./privateroute";
 
@@ -139,6 +140,11 @@ const Navigation = () => {
           path="/Confirmpay"
           element={<Privateroute Component={Confirmpay} />}
         />
+        <Route
+          path="/Confrimandpay"
+          element={<Privateroute Component={ConfirmAndPay} />}
+        />
+        
         <Route
           path="/booksession"
           element={<Privateroute Component={SessionBook} />}

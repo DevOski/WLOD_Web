@@ -55,7 +55,7 @@ const DocumentPage = () => {
     setVisit("'0'");
   };
   return (
-    <div className="wi55" fluid>
+    <div className="wi55">
        <BasicExample/>
       {/* <Navbar variant="light" bg="light">
         <Navbar.Brand href="#">

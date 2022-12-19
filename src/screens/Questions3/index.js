@@ -36,7 +36,7 @@ const Questionpagethree = () => {
         </Navbar>
       </Container> */}
       <BasicExample/>
-      <Row class="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
+      <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center"

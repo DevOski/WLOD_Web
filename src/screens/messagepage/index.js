@@ -142,7 +142,7 @@ const MessageScreen = () => {
       .catch((error) => console.log("error", error));
   };
   return (
-    <div className="wi55" fluid>
+    <div className="wi55" >
       <BasicExample />
 
       <Row>

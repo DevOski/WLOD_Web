@@ -1,0 +1,45 @@
+.App {
+    background-color: white;
+}
+.ww{
+  width: 54% !important;
+  background-color: white;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}
+.paybutt1 {
+  /* background-color: #c02230; */
+  width: 20%;
+  color: white;
+  border: none;
+  border: none !important;
+  margin: 0.4%;
+  height: 55px;
+  border-radius: 50px !important;
+    background: #bd3434 !important;
+    padding: 0px 12px !important;
+}
+.paybutt1:hover {
+  background-color: #9d2a2a;
+}
+.paybutt12{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.cost {
+  margin: 4%;
+  font-family: sans-serif;
+  font-weight: bold;
+}

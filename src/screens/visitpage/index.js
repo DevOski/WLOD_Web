@@ -36,7 +36,7 @@ const Visitpage = () => {
     navigate('/booksession');
   }
   return (
-    <div className="wi55" fluid>
+    <div className="wi55">
        <BasicExample/>
       <Row>
        <Col>

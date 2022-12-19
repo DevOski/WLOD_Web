@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 const Privateroute = (props) => {
   const{Component}=props;
+  console.log(props,'===========>propscomponent');
     const navigate=useNavigate()
     const token = useSelector((state) => state.token);
     const [pressed, setPressed] = useState(false)

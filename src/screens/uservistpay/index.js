@@ -28,7 +28,7 @@ const Confirmpay = () => {
 
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/question");
+    navigate("/Confrimandpay");
   };
 
   const saveCreditCard = () => {
@@ -100,7 +100,7 @@ const Confirmpay = () => {
               <Button
                 variant="primary"
                 className="comfirm-pay-submit"
-                onClick={saveCreditCard}
+                onClick={goto}
               >
                 Submit
               </Button>

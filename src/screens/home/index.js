@@ -51,7 +51,7 @@ const Home = () => {
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
   const [Visit, setVisit] = useState("");
-  const [trainer, settrainer] = useState();
+  const [trainer, settrainer] = useState('');
   const [Document, setDocument] = useState();
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
@@ -89,7 +89,7 @@ const Home = () => {
     setVisit("'0'");
   };
   return (
-    <div className="wi55" fluid>
+    <div className="wi55" >
       <BasicExample name={userName}/>
       {/* <Navbar variant="light" bg="light" className="d-flex justify-content-between ">
         <Navbar.Brand href="#">
