@@ -46,11 +46,18 @@ const VType = () => {
     fetch("http://alsyedmmtravel.com/api/finding_VTr", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        console.log(result.data);
         if (result.data) {
-          navigate("/question2");
+          let tr_id = result.data.tr_id;
+          let tr_name = result.data.tr_name;
+          navigate("/question2", {
+          state:{
+            tr_id,
+            tr_name
+            },
+        });
 
-          console.log("works");
+          console.log("works",tr_id,tr_name);
         } else {
           seterror(true);
           setErrorMessage(result.message);

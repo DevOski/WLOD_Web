@@ -10,7 +10,11 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 const PayButtonTyp = () => {
+  
+  const params = useLocation();
+console.log("^^^",params.state);
   let navigate = useNavigate();
   const goto = () => {
     navigate("/Confirmpay");

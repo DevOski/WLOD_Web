@@ -34,8 +34,17 @@ console.log("^^^",params.state);
   const [readinesstomakelifestyle, setreadinesstomakelifestyle] = useState('')
   const [confidencetomakelifestyle, setconfidencetomakelifestyle] = useState('')
   const [physicallimitations,setphysicallimitations] = useState('')
-  const goto = () => {
-    navigate("/question3");
+  function handleNext() {
+    console.log("hello");
+    const response2={"medication1":list1,"dosage1":dose1,"medication2":list2,"dosage2":dose2,"medication3":list3,"dosage3":dose3,"medication4":list4,"dosage4":dose4,"medication5":list5,"dosage5":dose5};
+    const response1=physicallimitations;
+    console.log("array", response1);
+    navigate("/question3",{
+      state :{
+        response1,
+        response2
+      }
+    });
   };
   
   const [isrestfulsleepNo, setisrestfulsleepNo] = useState(false);
@@ -64,21 +73,21 @@ console.log("^^^",params.state);
             <h4>General Health Information</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-            <div className="mb-3 inwi">
+            {/* <div className="mb-3 inwi">
               <label>List any allergies/intolerances: </label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="List any allergies/intolerances"
+                placeholder="Enter allergies/intolerances"
                 onChange={event => setallergiesintolerances(event.target.value)}
               />
-            </div>
+            </div> */}
             <div className="mb-3 inwi">
               <label>List any health problems and physical limitations: </label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="List any allergies/intolerances"
+                placeholder="Enter health problems/physical limitations"
                 onChange={event => setphysicallimitations(event.target.value)} 
               />
             </div>
@@ -95,28 +104,28 @@ console.log("^^^",params.state);
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist1(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries"  onChange={event => setdose1(event.target.value)} /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist1(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter Dosage"  onChange={event => setdose1(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist2(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose2(event.target.value)} /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist2(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose2(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist3(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose3(event.target.value)} /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist3(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose3(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Preferred Phone Number" onChange={event => setlist4(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Preferred Phone Number" onChange={event => setdose4(event.target.value)} /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist4(event.target.value)} /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose4(event.target.value)} /></td>
                 </tr>
                 <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setlist5(event.target.value)}  /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter your Quries" onChange={event => setdose5(event.target.value)}  /></td>
+                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist5(event.target.value)}  /></td>
+                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose5(event.target.value)}  /></td>
                 </tr>
               </tbody>
             </Table>
-            <div className="mb-3 w-100">
+            {/* <div className="mb-3 w-100">
           <label>How many hours of sleep do you average per night? _____ Is your sleep restful?</label>
           <div className="d">
           <div className="topping">
@@ -145,8 +154,8 @@ console.log("^^^",params.state);
       </div>
           </div>
       
-        </div>
-        <div className="mb-3 inwi">
+        </div> */}
+        {/* <div className="mb-3 inwi">
               <label>How do you rate the stress in your life, 10 being the highest? 1 2 3 4 5 6 7 8 9 10</label>
               <input
                 type="text"
@@ -154,8 +163,8 @@ console.log("^^^",params.state);
                 placeholder="Add your stress rate"
                 onChange={event => setstressinyourlife(event.target.value)} 
               />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* <div className="mb-3 inwi">
               <label>How do you cope with stress?</label>
               <input
                 type="text"
@@ -163,8 +172,8 @@ console.log("^^^",params.state);
                 placeholder="Add your stress rate"
                 onChange={event => setcopewithstress(event.target.value)} 
               />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* <div className="mb-3 inwi">
               <label>List any cultural or religious practices related to your health or diet:</label>
               <input
                 type="text"
@@ -172,8 +181,8 @@ console.log("^^^",params.state);
                 placeholder="Add your stress rate"
                 onChange={event => setculturalorreligious(event.target.value)} 
               />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* <div className="mb-3 inwi">
               <label>How do you rate your readiness to make lifestyle changes, 5 being most ready? 1 2 3 4 5</label>
               <input
                 type="text"
@@ -181,8 +190,8 @@ console.log("^^^",params.state);
                 placeholder="Add your stress rate"
                 onChange={event => setreadinesstomakelifestyle(event.target.value)} 
               />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* <div className="mb-3 inwi">
               <label>How do you rate your confidence to make lifestyle changes, 5 being most confident? 1 2 3 4 5</label>
               <input
                 type="text"
@@ -190,7 +199,7 @@ console.log("^^^",params.state);
                 placeholder="Add your stress rate"
                 onChange={event => setconfidencetomakelifestyle(event.target.value)} 
               />
-            </div>
+            </div> */}
            
 
             {/* <div className="d-flex justify-content-between  align-items-center  ww">
@@ -239,7 +248,7 @@ console.log("^^^",params.state);
           </div>
           </div> */}
             <div className="q-next-btn-div">
-              <Button className="bdiv" onClick={goto}>
+              <Button className="bdiv" onClick={handleNext}>
               Next
               </Button>
             </div>

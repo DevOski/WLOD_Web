@@ -5,7 +5,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import "./basic.css";
 import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { Error, Loader } from "../../component";
+import { Error, Loader, BasicExample } from "../../component";
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 const Basic = () => {

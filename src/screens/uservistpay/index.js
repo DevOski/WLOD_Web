@@ -34,6 +34,15 @@ const Confirmpay = () => {
   const saveCreditCard = () => {
     if (cardnumber && Expiration && ExpirationYY && Cvv) {
       console.log(cardnumber , Expiration , ExpirationYY , Cvv);
+    navigate("/paybutton",{
+      state :{
+        cardnumber,
+        Expiration,
+        ExpirationYY,
+        Cvv
+      }
+    });
+
       // let paymentData = { cardNum, expirationMonth, expirationYear, cvv };
       // dispatch(storePayment(paymentData));
     }
