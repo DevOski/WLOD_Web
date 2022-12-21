@@ -62,6 +62,7 @@ export {
   VerificationCode,
   MessageScreen,
   Membership,
-  ConfirmAndPay
+  ConfirmAndPay,
+  
 
 };

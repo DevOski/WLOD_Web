@@ -13,7 +13,7 @@ import { Button } from "react-bootstrap";
 const ConfirmAndPay = () => {
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/Confirmpay");
+    navigate("/Videocall");
   };
   const gotoConfirmpay = () => {
     navigate("/cuponpage");
@@ -38,7 +38,7 @@ const ConfirmAndPay = () => {
           <button className="paybutt12" >
             <p className="cost">Cost</p> <p className="cost"> 20$</p>   
           </button>
-          <button className="paybutt1" >
+          <button className="paybutt1" onClick={goto} >
             Confirm and Pay 
           </button>
        
