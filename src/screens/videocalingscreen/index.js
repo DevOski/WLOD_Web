@@ -7,7 +7,7 @@ import VideoCall from "./VideoCall";
 const Videocalling = () => {
     const [inCall,setInCall] = useState(false);
     return (
-        <div className="App" style={{ height: "100%" }}>
+        <div  >
       {inCall ? (
         <VideoCall setInCall={setInCall} />
       ) : (
