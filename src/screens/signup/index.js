@@ -105,13 +105,7 @@ const SignUp = () => {
     <>
       <div className="over">
         <BasicExample />
-        {/* <Navbar expand="lg" variant="light" bg="light">
-        <Container fluid>
-          <Navbar.Brand href="#">
-            <img style={{ width: "50%" }} src={logo} />
-          </Navbar.Brand>
-        </Container>
-      </Navbar> */}
+       
         <Row>
           <Col lg="6">
             <div className="imm">
@@ -131,7 +125,6 @@ const SignUp = () => {
                         type="email"
                         id="email"
                         className="in"
-                        // value={email}
                         onChange={(event) => setEmail(event.target.value)}
                         placeholder="Email"
                       />{" "}
@@ -144,7 +137,6 @@ const SignUp = () => {
                         type="date"
                         id="email"
                         className="in"
-                        // value={email}
                         onChange={(event) => setdate(event.target.value)}
                         placeholder="Date of Birth"
                       />{" "}
@@ -156,7 +148,6 @@ const SignUp = () => {
                       <input
                         type="email"
                         id="email"
-                        // value={email}
                         className="in"
                         onChange={(event) => setPassword(event.target.value)}
                         placeholder="Password"
@@ -170,7 +161,6 @@ const SignUp = () => {
                           <Form.Check
                             type={type}
                             id={`default-${type}`}
-                            // label={`default ${type}`}
                           />
                         </div>
                       ))}

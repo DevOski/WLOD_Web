@@ -38,7 +38,6 @@ const [email, setemail] = useState('')
   const handleChangepass = event => {
     setpassword(event.target.value);
 
-    // console.log('value is:', event.target.value);
   };
   const UpdatePass=()=>{
     setloder(true)
@@ -64,18 +63,15 @@ const [email, setemail] = useState('')
               setloder(false);
               setErrorMessage(result.message);
               seterror2(true);
-              // alert(result.message)
         
             }else{
               setloder(false);
               setErrorMessage(result.message);
               seterror(true);
-              // alert(result.message)
         
             }
           })
           .catch(error => console.log('error', error));
-        // navigate('/sigin');
         
       }else{
         setloder(false);

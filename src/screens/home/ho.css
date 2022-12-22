@@ -54,32 +54,15 @@ input.input {
 .pad{
     padding-bottom: 3%;
 }
-.maindeowercontainer {
-    width: 20% !important;
-    height: 100vh;
-    background-color: brown;
-    position: absolute;
-    transition: left 1s;
-}
-.maindeowercontainer2 {
-    width: 21% !important;
-    height: 100vh;
-    background-color: brown;
-    position: absolute;
-    left: -232px;
-    transition: left 2s ;
-}
+
 .cent {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 15%;
 }
-.tit {
-    color: white;
-    text-transform: capitalize;
-    font-weight: 800;
-}
+
+
 .back {
     background-color: #c5adada3;
     width: 81%;

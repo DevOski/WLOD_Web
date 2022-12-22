@@ -3,9 +3,9 @@ import "./appoint.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { format } from "date-fns";
@@ -15,6 +15,8 @@ import "react-nice-dates/build/style.css";
 import moment from "moment";
 
 const Appointmentdate = () => {
+  const location = useLocation();
+  // console.log(location.state.trainer,'====>apointment');
   const [date, setDate] = useState();
   // const [date, setDate] = useState();
   const [calendshow, setcalendshow] = useState(true);
@@ -43,7 +45,6 @@ const Appointmentdate = () => {
   const handleChangepass = (event) => {
     setpassword(event.target.value);
 
-    // console.log('value is:', event.target.value);
   };
   const onSelectDate = () => {
     if (date) {
@@ -56,7 +57,6 @@ const Appointmentdate = () => {
     setCurrentDate(utc);
     const time = new Date().getTime();
     let currentTime = `${moment(time).format("hh:mma")}`;
-    // console.log(currentTime,utc);
     setCurrentTime(currentTime);
   }, []);
 
@@ -82,7 +82,7 @@ const Appointmentdate = () => {
   };
   return (
     <>
-      <Container fluid>
+      {/* <Container fluid>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#">
@@ -90,7 +90,8 @@ const Appointmentdate = () => {
             </Navbar.Brand>
           </Container>
         </Navbar>
-      </Container>
+      </Container> */}
+      <BasicExample />
       <Row>
         <Col lg="10">
           <div className="boxadd">

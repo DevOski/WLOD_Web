@@ -3,6 +3,8 @@ button.logbutt {
     margin: 6px !important;
 }
 .proname{
-    padding-left: 2%;
     padding-top: 2%;
+    padding-right: 2%;
+    font-family: sans-serif;
+    font-weight: bold;
 }

@@ -4,9 +4,9 @@ import Navigation from './services/navigation';
 
 function App() {
   return (
-    <>
+    <div>
     <Navigation/>
-    </>
+    </div>
   );
 }
 

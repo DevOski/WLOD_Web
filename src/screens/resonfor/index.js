@@ -52,9 +52,7 @@ const ReaonForVisit = () => {
             
 
           </div>
-          {/* <div className="nextbuttonclass">
-            <button className="nextbut">Next</button>
-          </div> */}
+         
 
      
     

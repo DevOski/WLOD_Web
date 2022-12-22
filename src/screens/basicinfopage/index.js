@@ -5,7 +5,11 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import "./basic.css";
 import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+// <<<<<<< HEAD
 import { Error, Loader, BasicExample } from "../../component";
+
+// import { BasicExample, Error, Loader } from "../../component";
+// >>>>>>> 640590151c96e6af5a3541c97535cd7622aada5a
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 const Basic = () => {
@@ -160,13 +164,7 @@ const Basic = () => {
   return (
     <>
     <BasicExample />
-      {/* <Navbar expand="lg" variant="light" bg="light">
-        <Container fluid>
-          <Navbar.Brand href="#">
-            <img style={{ width: "50%" }} src={logo} />
-          </Navbar.Brand>
-        </Container>
-      </Navbar> */}
+   
       <Container className="pad">
         <form>
           <h3>Basic</h3>
@@ -411,139 +409,7 @@ const Basic = () => {
           </p>
         </form>
 
-        {/* <Row className="d-flex justify-content-center ">
-        <h2 className="d-flex justify-content-center wo">Basic Info</h2>
-          <Col lg='5'className="d-flex justify-content-center align-items-center flex-column bg2">
-            <div lg='10' className="d-flex justify-content-center align-items-center flex-column">
-                <h2>Set Up Your Profile</h2>
-                <p>Let’s get started with some basic information</p>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label>First Name</label>
-                <input className="input" type='first name' placeholder="first name"/>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label>Middle Name (optional)</label>
-                <input  className="input" type='first name' placeholder="Middle Name (optional)"/>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label>Last Name</label>
-                <input className="input" type='first name' placeholder="Last Name"/>
-            </div>
-            <div className="d-flex justify-content-between f2">
-            <div className="d-flex justify-content-center  flex-column  ">
-                <label>Phone Number</label>
-                <input className="input2" type='first name' placeholder="Last Name"/>
-            </div>
-            
-           
-            <div className="d-flex justify-content-center  flex-column ">
-                <label>Type</label>
-                <input className="input2" type='first name' placeholder="Last Name"/>
-            </div>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label> Marital Status:</label>
-                <input className="input" type='first name' placeholder="Last Name"/>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label> Occupation</label>
-                <input className="input" type='first name' placeholder="Last Name"/>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label>  Work Hours:</label>
-                <input className="input" type='first name' placeholder="Last Name"/>
-            </div>
-            <div className="d-flex justify-content-center  flex-column wi">
-                <label> Highest Level of Education:</label>
-                <input className="input" type='first name' placeholder="Last Name"/>
-            </div>
-           
-            <div lg="6" className="fl flex-column">
-            <label style={{paddingbottom:"1%"}}>Primary Language </label>
-           <div className='fl justify-content-space-between' > 
-           {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-           </div>
-            </div>
-            <div lg="6" className="fl flex-column">
-            <label style={{paddingbottom:"1%"}}>Smoking status:  </label>
-           <div className='fl justify-content-space-between' > 
-           {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-           </div>
-            </div>
-            <div lg="6" className="fl">
-            {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-              {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            // id={`default-${type}`}
-            label={`Male `}
-          /></div>))}
-            </div>
-            <div className="d-flex justify-content-center align-items-center ">
-                <p className="pp">
-                By providing your mobile number, you give us permission to contact you via text. View Terms
-                </p>
-            </div>
-            <div className="d-flex justify-content-center align-items-center mt-10 wiiii ">
-               <Button className="bu">Continue</Button>
-            </div>
-          </Col>
-        </Row> */}
+      
       </Container>
       {loder && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}

@@ -29,7 +29,7 @@ const Questionpage = () => {
           </Container>
         </Navbar>
       </Container>
-      <Row class="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
+      <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
           <div className="d-flex justify-content-between   align-items-center ww">
             
@@ -40,56 +40,7 @@ const Questionpage = () => {
           <label className="lb">List any health problems and physical limitations:</label>
           <input type="text" className="form-control" placeholder="health problems and physical limitations"  onChange={event => setphysicallimitations(event.target.value)}  />
         </div>
-        {/* <div className="mb-3 inwi">
-          <label>List any health problems and physical limitations:</label>
-          <input type="text" className="form-control" placeholder="health problems and physical limitations" />
-        </div> */}
-
-          {/* <div className="d-flex justify-content-between  align-items-center  ww">
-          <div>
-              <p>reaon</p>
-            </div>
-          <div>
-          {['checkbox', ].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
-          <div>
-              <p>reason</p>
-            </div>
-          <div>
-          {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
-          <div>
-              <p>reason</p>
-            </div>
-          <div>
-          {['checkbox',].map((type) => (
-        <div key={`default-${type}`} className="mb-3">
-          <Form.Check 
-            type={type}
-            id={`default-${type}`}
-            // label={`default ${type}`}
-          />      
-          </div>))}
-          </div>
-          </div> */}
+       
           <div className="q-next-btn-div">
 
           <Button className="bdiv" onClick={goto}>Next</Button>

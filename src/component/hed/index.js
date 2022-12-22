@@ -30,7 +30,7 @@ function BasicExample({ name }) {
     <Navbar bg="light" expand="lg">
       {tok ? (
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

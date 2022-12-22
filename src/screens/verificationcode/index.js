@@ -71,7 +71,6 @@ const VerificationCode = () => {
       setErrorMessage("Code should be provided");
       seterror(true);
     }
-    // navigate('/newpass')
   }
   return (
     <>
@@ -94,23 +93,9 @@ const VerificationCode = () => {
            <VerificationInput
            length={4}
            onChange={(text)=>{setcode(text)}}
-          //  validChars={0-9}
            />
           </div>
-           {/* <div className="d-flex justify-content-center">
-           <input type='text' placeholder="enter your Code here" className="forgetinput1"
-             onChange={(event) => setVerification(event.target.value)}
-            />
-            <input type='text' placeholder="enter your Code here" className="forgetinput1"
-             onChange={(event) => setVerification(event.target.value)}
-            />
-            <input type='text' placeholder="enter your Code here" className="forgetinput1"
-             onChange={(event) => setVerification(event.target.value)}
-            />
-            <input type='text' placeholder="enter your Code here" className="forgetinput1"
-             onChange={(event) => setVerification(event.target.value)}
-            />
-           </div> */}
+         
             <button  className="recoverbutt" onClick={submit}>submit</button>
            </div>
         </Col>
