@@ -101,6 +101,7 @@ const Pay = () =>{
                 console.log(result.message)
                 seterror(true)
                 setErrorMessage(result.message)
+                navigate("/Videocall");
               })
               .catch(error => {
                 console.log('error', error);
@@ -166,6 +167,8 @@ const Pay = () =>{
             <p className="cost">Cost</p> <p className="cost">{cost}</p>   
           </button>
           <button className="paybutt1" onClick={Pay}>
+
+          {/* <button className="paybutt1" onClick={goto} > */}
             Confirm and Pay 
           </button>
        

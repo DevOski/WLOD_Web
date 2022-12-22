@@ -26,7 +26,6 @@ const SelectDatePage = () => {
   const handleChangepass = (event) => {
     setpassword(event.target.value);
 
-    // console.log('value is:', event.target.value);
   };
   const Reason = () => {
   

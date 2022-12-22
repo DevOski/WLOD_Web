@@ -56,9 +56,7 @@ const Forget = () => {
     });
 
   };
-  // const handleEmail = () => {
-  //   openInbox();
-  // };
+  
 const recoverPassword=()=>{
   setloder(true);
 
@@ -80,13 +78,13 @@ fetch("http://alsyedmmtravel.com/api/forgot_pass", requestOptions)
       setloder(false);
       setErrorMessage(result.message);
       seterror2(true);
-      // alert(result.message)
+    
 
     }else{
       setloder(false);
       setErrorMessage(result.message);
       seterror(true);
-      // alert(result.message)
+    
 
     }
 
