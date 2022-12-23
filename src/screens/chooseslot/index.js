@@ -24,11 +24,17 @@ import moment from "moment";
 
 const pageStyles ={
   div1 :{
-    display:'flex',
-    flexDirection:'column',
-    padding:30,
-    border:'solid',
+    display:'inline',
+    // flexDirection:'row',
+    padding:'13px 17px 13px 17px',
+    margin:5,
+    border:'1px solid',
    
+  },
+  mainDiv :{
+    border:'none',
+    backgroundColor:'white',
+    // text-align:'center'
   }
   
 }
@@ -93,13 +99,14 @@ const ChooseSlot = () => {
 
     // getAllDateSlots(selectedDate);
     console.log("works---------------------->>>",selectedDate);
+    console.log("trainer details",location.state.tr_name);
     console.log("time",time);
 
     // =========================================================================
             var formdata = new FormData();
             formdata.append("id", location.state.trainer);
-            formdata.append("date","22/12/2022");
-            formdata.append("time","09:35");
+            formdata.append("date",selectedDate);
+            formdata.append("time",time);
 
             var requestOptions = {
               method: 'POST',
@@ -111,7 +118,10 @@ const ChooseSlot = () => {
               .then(response => response.json())
               .then(result => {
                 console.log("trainer slots",result.data)
-                settrslot(result.data)
+                if(result.message != "No records found"){
+                  settrslot(result.data)
+                }
+
                 console.log("tr_slot",tr_slot);
             // alert(result.message)
             })
@@ -119,7 +129,19 @@ const ChooseSlot = () => {
 
   };
 
-
+  const SelectSlot = (vtr_id, vsl_time, vtr_date, vtr_day) =>{
+    console.log("->",vtr_id,vsl_time);
+    navigate('/question2',{
+      state:{
+        vtr_id,
+        vsl_time,
+        vtr_date,
+        vtr_day,
+        vtr_name:location.state.tr_name
+      }
+  
+    })
+  }
 
   // const getAllDateSlots = async (updatedDate) => {
   //   console.log("works---------------------->>>");
@@ -235,11 +257,11 @@ const ChooseSlot = () => {
                 })
                
               ) : (
-                <div >
-                  {tr_slot ? tr_slot.map(item => {
-          return <><div className="classextbutton">{item.sl_time}</div><div className="classextbutton">{item.sl_time}</div><div className="classextbutton">{item.sl_time}</div></>;
-        }): <p>No record found</p>}
-                </div>
+                <div className="classextbutton">
+                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1}>{obj.sl_time}</div></button>)
+                   : <p>No record found</p>
+                   }                   
+              </div>
               )}
               <DatePickerCalendar
                 date={date}

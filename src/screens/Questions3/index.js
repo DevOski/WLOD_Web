@@ -33,6 +33,7 @@ console.log("navigate to 3",params.state.response1);
 
     navigate("/question4",{
         state :{
+          trainer:params.state.trainer,
           response1:params.state.response1,
           response2:params.state.response2,
           response3:CurrentHeight,

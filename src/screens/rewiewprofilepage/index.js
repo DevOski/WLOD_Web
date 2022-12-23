@@ -13,10 +13,14 @@ import { Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 const Rewiewpage = () => {
   const params = useLocation();
-console.log("^^^",params.state.params.params.response1);
+console.log("^^^",params.state);
   let navigate = useNavigate(); 
   const goto =()=>{
-    navigate('/Confrimandpay');
+    navigate('/Confrimandpay',{
+      state:{
+        data:params.state
+      }
+    });
   }
   return (
     <div className="of">

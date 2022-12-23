@@ -15,7 +15,8 @@ import Table from "react-bootstrap/Table";
 import { useLocation } from "react-router-dom";
 const Questionpagetwo = () => {
   const params = useLocation();
-console.log("^^^",params.state);
+  console.log("^^^",params.state);
+const trainer =params.state;
   let navigate = useNavigate();
   const [allergiesintolerances, setallergiesintolerances] = useState('')
   const [list1, setlist1] = useState('')
@@ -41,6 +42,7 @@ console.log("^^^",params.state);
     console.log("array", response1);
     navigate("/question3",{
       state :{
+        trainer,
         response1,
         response2
       }

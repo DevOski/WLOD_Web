@@ -11,7 +11,11 @@ import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
+import { useLocation } from "react-router-dom";
 const Questionpage = () => {
+  
+  const params = useLocation();
+console.log("heloo",params.state);
   const [physicallimitations,setphysicallimitations] = useState('')
   // console.log(title,'=>>');
   let navigate = useNavigate(); 

@@ -18,13 +18,14 @@ import { useLocation } from "react-router-dom";
 const Confirmpay = () => {
   
   const params = useLocation();
-console.log("@",params?.state?.bparams);
+console.log("@",params?.state?.data);
   const [cardnumber, setcardnumber] = useState("");
   const [Expiration, setExpiration] = useState("");
   const [Cvv, setCvv] = useState("");
   const [ExpirationYY, setExpirationYY] = useState("");
   const [isChecked, setisisChecked] = useState(false);
  const ApplyCupon =params?.state?.bparams?.ApplyCupon;
+ const data =params?.state?.data;
  
   const dispatch = useDispatch();
   const handleOnChange = () => {
@@ -50,7 +51,8 @@ console.log("@",params?.state?.bparams);
         Expiration,
         ExpirationYY,
         Cvv,
-        ApplyCupon
+        ApplyCupon,
+        data
       }
     });
 
