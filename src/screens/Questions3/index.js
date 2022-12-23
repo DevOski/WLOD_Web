@@ -11,7 +11,13 @@ import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { useLocation } from "react-router-dom";
+
 const Questionpagethree = () => {
+  
+  const params = useLocation();
+console.log("^^^",params.state);
+const [CurrentHeight, setCurrentHeight] = useState('')
   const [CurrentWeight, setCurrentWeight] = useState('')
   const [lowestandhighestadultweight, setlowestandhighestadultweight] = useState('')
   const [weightchangesgainorloss, setweightchangesgainorloss] = useState('')
@@ -22,7 +28,23 @@ const Questionpagethree = () => {
   const [benefitfromthisweightloss, setbenefitfromthisweightloss] = useState('')
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/question4");
+
+console.log("navigate to 3",params.state.response1);
+
+    navigate("/question4",{
+        state :{
+          trainer:params.state.trainer,
+          response1:params.state.response1,
+          response2:params.state.response2,
+          response3:CurrentHeight,
+          response4:CurrentWeight,
+          response5:lowestandhighestadultweight,
+          response6:weightchangesgainorloss,
+          response7:dietedinthepast,
+          response8:weightwouldyouliketolose,
+          response9:benefitfromthisweightloss,
+        }
+  });
   };
   return (
     <>
@@ -37,13 +59,22 @@ const Questionpagethree = () => {
             <h4>Weight Information:</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-            <div className="mb-3 inwi">
-              <label>Current Weight: _______ Height: _________</label>
+          <div className="mb-3 inwi">
+              <label>Current Weight:</label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Current weight"
                 onChange={event => setCurrentWeight(event.target.value)} 
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label>Current Height:</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Current height"
+                onChange={event => setCurrentHeight(event.target.value)} 
               />
             </div>
             <div className="mb-3 inwi">
@@ -54,7 +85,7 @@ const Questionpagethree = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Lowest adult weight"
                 onChange={event => setlowestandhighestadultweight(event.target.value)} 
               />
             </div>
@@ -65,7 +96,7 @@ const Questionpagethree = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Weight change"
                 onChange={event => setweightchangesgainorloss(event.target.value)}
               />
             </div>
@@ -77,11 +108,11 @@ const Questionpagethree = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Past diet details"
                 onChange={event => setdietedinthepast(event.target.value)}
               />
             </div>
-            <div className="mb-3 inwi">
+            {/* <div className="mb-3 inwi">
               <label>
               What makes it hard for you to lose weight and keep it off?
               </label>
@@ -91,8 +122,8 @@ const Questionpagethree = () => {
                 placeholder="Add your stress rate"
                 onChange={event => sethardforyoutoloseweight(event.target.value)}
               />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* <div className="mb-3 inwi">
               <label>
               What has helped you lose weight?
               </label>
@@ -102,7 +133,7 @@ const Questionpagethree = () => {
                 placeholder="Add your stress rate"
                 onChange={event => sethelpedyouloseweight(event.target.value)}
               />
-            </div>
+            </div> */}
             <div className="mb-3 inwi">
               <label>
               How much weight would you like to lose?
@@ -110,7 +141,7 @@ const Questionpagethree = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Enter amount of weight"
                 onChange={event => setweightwouldyouliketolose(event.target.value)}
               />
             </div>
@@ -121,7 +152,7 @@ const Questionpagethree = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
+                placeholder="Enter benefits"
                 onChange={event => setbenefitfromthisweightloss(event.target.value)}
               />
             </div>

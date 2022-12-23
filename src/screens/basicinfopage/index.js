@@ -5,7 +5,11 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import "./basic.css";
 import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { BasicExample, Error, Loader } from "../../component";
+// <<<<<<< HEAD
+import { Error, Loader, BasicExample } from "../../component";
+
+// import { BasicExample, Error, Loader } from "../../component";
+// >>>>>>> 640590151c96e6af5a3541c97535cd7622aada5a
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 const Basic = () => {

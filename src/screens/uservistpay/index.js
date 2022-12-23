@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./vt.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,13 +14,19 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import { storePayment } from "../../store/action";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 const Confirmpay = () => {
+  
+  const params = useLocation();
+console.log("@",params?.state?.data);
   const [cardnumber, setcardnumber] = useState("");
   const [Expiration, setExpiration] = useState("");
   const [Cvv, setCvv] = useState("");
   const [ExpirationYY, setExpirationYY] = useState("");
   const [isChecked, setisisChecked] = useState(false);
-
+ const ApplyCupon =params?.state?.bparams?.ApplyCupon;
+ const data =params?.state?.data;
+ 
   const dispatch = useDispatch();
   const handleOnChange = () => {
     setisisChecked(!isChecked);
@@ -28,16 +34,65 @@ const Confirmpay = () => {
 
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/Confrimandpay");
+    navigate("/Confrimandpay",{
+      state :{
+        card:params.state.bparams
+      }
+    });
   };
 
   const saveCreditCard = () => {
     if (cardnumber && Expiration && ExpirationYY && Cvv) {
       console.log(cardnumber , Expiration , ExpirationYY , Cvv);
+    //   setcardnumber(cardnumber)
+    navigate("/Confrimandpay",{
+      state :{
+        cardnumber,
+        Expiration,
+        ExpirationYY,
+        Cvv,
+        ApplyCupon,
+        data
+      }
+    });
+
       // let paymentData = { cardNum, expirationMonth, expirationYear, cvv };
       // dispatch(storePayment(paymentData));
     }
   };
+  useEffect(() => {
+    if(params?.state?.bparams?.cardnumber != null){
+            console.log('works00000000000000');
+            setcardnumber(params?.state?.bparams?.cardnumber);
+            setExpiration(params?.state?.bparams?.Expiration);
+            setCvv(params?.state?.bparams?.Cvv);
+            setExpirationYY(params?.state?.bparams?.ExpirationYY);
+    }else if(params?.state?.bparams?.coupon?.cardnumber != null){
+      console.log('work');
+      setcardnumber(params?.state?.bparams?.coupon?.cardnumber);
+      setExpiration(params?.state?.bparams?.coupon?.Expiration);
+      setCvv(params?.state?.bparams?.coupon?.Cvv);
+      setExpirationYY(params?.state?.bparams?.coupon?.ExpirationYY);
+    }
+  },[])
+  
+  // useEffect(() => {
+  //   // return () => {
+  //     if(params?.state?.bparams?.cardnumber != null){
+  //       console.log('works00000000000000');
+  //       // setcardnumber(params?.state?.bparams?.cardnumber);
+  //       setExpiration(params?.state?.bparams?.Expiration);
+  //       setCvv(params?.state?.bparams?.Cvv);
+  //       setExpirationYY(params?.state?.bparams?.ExpirationYY);
+
+  //       // setbtext("Card Added");
+  //       // setbparams(params.state)
+  //       // }else{
+  //         // setbtext("Add Card");
+  //         // setbparams("card not entered")
+  //       // }
+  //   }
+  // },)
   return (
     <Container fluid>
       <div className="of">
@@ -57,6 +112,7 @@ const Confirmpay = () => {
                 <Form.Label>Credit card number</Form.Label>
                 <Form.Control
                   type="numberic"
+                  defaultValue={cardnumber}
                   placeholder="Add your credit card number"
                   onChange={(event) => setcardnumber(event.target.value)}
                 />
@@ -68,6 +124,7 @@ const Confirmpay = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Expiration(MM)</Form.Label>
                 <Form.Control
+                  defaultValue={Expiration}
                   type="text"
                   placeholder="Expiration(MM)"
                   onChange={(event) => setExpiration(event.target.value)}
@@ -76,6 +133,7 @@ const Confirmpay = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Cvv</Form.Label>
                 <Form.Control
+                  defaultValue={Cvv}
                   type="text"
                   placeholder="Cvv"
                   onChange={(event) => setCvv(event.target.value)}
@@ -84,6 +142,7 @@ const Confirmpay = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Expiration(YY)</Form.Label>
                 <Form.Control
+                  defaultValue={ExpirationYY}
                   type="text"
                   placeholder="Expiration(YY)"
                   onChange={(event) => setExpirationYY(event.target.value)}
@@ -100,7 +159,7 @@ const Confirmpay = () => {
               <Button
                 variant="primary"
                 className="comfirm-pay-submit"
-                onClick={goto}
+                onClick={saveCreditCard}
               >
                 Submit
               </Button>

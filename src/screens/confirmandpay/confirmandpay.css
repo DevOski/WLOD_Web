@@ -27,6 +27,18 @@
     background: #bd3434 !important;
     padding: 0px 12px !important;
 }
+.paybutt11 {
+  /* background-color: #c02230; */
+  width: 20%;
+  color: white;
+  border: none;
+  border: none !important;
+  margin: 0.4%;
+  height: 55px;
+  border-radius: 50px !important;
+    /* background: #bd3434 !important; */
+    padding: 0px 12px !important;
+}
 .paybutt1:hover {
   background-color: #9d2a2a;
 }

@@ -42,7 +42,8 @@ const  Trainer = () => {
     }, 100);
   };
   const checkavailablity = () => {
-    navigate('/slots',{state:{trainer: location.state.trainer.tr_id}});
+    console.log("trainer is here",location.state.trainer)
+    navigate('/slots',{state:{trainer: location.state.trainer.tr_id,tr_name:location.state.trainer.tr_name}});
   };
   const Open=()=>{
     setshow(!show)

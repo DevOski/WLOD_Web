@@ -21,6 +21,23 @@ import {
 } from "../../services/utilities/api";
 import { useEffect } from "react";
 import moment from "moment";
+
+const pageStyles ={
+  div1 :{
+    display:'inline',
+    // flexDirection:'row',
+    padding:'13px 17px 13px 17px',
+    margin:5,
+    border:'1px solid',
+   
+  },
+  mainDiv :{
+    border:'none',
+    backgroundColor:'white',
+    // text-align:'center'
+  }
+  
+}
 const ChooseSlot = () => {
   const [date, setDate] = useState();
   const [calendshow, setcalendshow] = useState(true);
@@ -34,6 +51,9 @@ const ChooseSlot = () => {
 
   const [currentDate, setCurrentDate] = useState("");
   const [markedDates, setMarkedDates] = useState("");
+  const [tr_slot,settrslot] = useState("");
+
+
   const Show = () => {
     setcalendshow(true);
     setcalendshowlist(false);
@@ -49,6 +69,7 @@ const ChooseSlot = () => {
     }
   };
   const location = useLocation();
+  console.log("tr checking");
   console.log(location.state.trainer, "slotwaliscreen====>trainer");
   useEffect(() => {
     // getTrainer();
@@ -74,32 +95,78 @@ const ChooseSlot = () => {
     setMarkedDates(markedDates);
 
     let selectedDate = moment(date).format("DD/MM/YYYY");
-    getAllDateSlots(selectedDate);
+    let time = moment().format("h:mma");
+
+    // getAllDateSlots(selectedDate);
+    console.log("works---------------------->>>",selectedDate);
+    console.log("trainer details",location.state.tr_name);
+    console.log("time",time);
+
+    // =========================================================================
+            var formdata = new FormData();
+            formdata.append("id", location.state.trainer);
+            formdata.append("date",selectedDate);
+            formdata.append("time",time);
+
+            var requestOptions = {
+              method: 'POST',
+              body: formdata,
+              redirect: 'follow'
+            };
+
+            fetch("http://alsyedmmtravel.com/api/trCalenderSlots", requestOptions)
+              .then(response => response.json())
+              .then(result => {
+                console.log("trainer slots",result.data)
+                if(result.message != "No records found"){
+                  settrslot(result.data)
+                }
+
+                console.log("tr_slot",tr_slot);
+            // alert(result.message)
+            })
+              .catch(error => console.log('error', error));
+
   };
-  const getAllDateSlots = async (updatedDate) => {
-    console.log("works---------------------->>>");
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify({
-      date: updatedDate,
-      time: currentDTime,
-    });
-    console.log(raw);
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-    fetch("http://alsyedmmtravel.com/api/all_trCalenderSlots", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        console.log( result);
-        setDateSlot(result.data);
-        console.log("kch--------->>",result.data);
-      })
-      .catch((error) => console.log("error", error));
-  };
+
+  const SelectSlot = (vtr_id, vsl_time, vtr_date, vtr_day) =>{
+    console.log("->",vtr_id,vsl_time);
+    navigate('/question2',{
+      state:{
+        vtr_id,
+        vsl_time,
+        vtr_date,
+        vtr_day,
+        vtr_name:location.state.tr_name
+      }
+  
+    })
+  }
+
+  // const getAllDateSlots = async (updatedDate) => {
+  //   console.log("works---------------------->>>");
+  //   var myHeaders = new Headers();
+  //   myHeaders.append("Content-Type", "application/json");
+  //   var raw = JSON.stringify({
+  //     date: updatedDate,
+  //     time: currentDTime,
+  //   });
+  //   console.log(raw);
+  //   var requestOptions = {
+  //     method: "POST",
+  //     headers: myHeaders,
+  //     body: raw,
+  //     redirect: "follow",
+  //   };
+  //   fetch("http://alsyedmmtravel.com/api/all_trCalenderSlots", requestOptions)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       console.log( result);
+  //       setDateSlot(result.data);
+  //       console.log("kch--------->>",result.data);
+  //     })
+  //     .catch((error) => console.log("error", error));
+  // };
   useEffect(() => {
     // getTrainer();
   }, []);
@@ -178,11 +245,6 @@ const ChooseSlot = () => {
                 Selected date:{" "}
                 {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "none"}.
               </p>
-              <DatePickerCalendar
-                date={date}
-                onDateChange={getSelectedDayEvents}
-                locale={enGB}
-              />
               {dateSlot?.length ? (
                 dateSlot.map((item,index)=>{
                   return(
@@ -196,9 +258,18 @@ const ChooseSlot = () => {
                
               ) : (
                 <div className="classextbutton">
-                  <p>No record found</p>
-                </div>
+                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1}>{obj.sl_time}</div></button>)
+                   : <p>No record found</p>
+                   }                   
+              </div>
               )}
+              <DatePickerCalendar
+                date={date}
+                onDateChange={getSelectedDayEvents}
+                locale={enGB}
+                
+              />
+              
             </div>
           )}
           {calendshowlist && (

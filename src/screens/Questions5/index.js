@@ -12,8 +12,10 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
-
+import { useLocation } from "react-router-dom";
 const Questionpagefive = () => {
+  const params = useLocation();
+console.log("^^^",params.state);
 const [Meal, setMeal] = useState('')
 const [Time, setTime] = useState('')
 const [FoodsandBeverages, setFoodsandBeverages] = useState('')
@@ -35,7 +37,13 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
 
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/Reviewpage");
+    navigate("/Reviewpage",{
+      state : {
+        params:params.state,
+        plansthemeals,
+        preparesthemeal
+      }
+    });
   };
   return (
     <>
@@ -50,8 +58,8 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
             <h4>Nutrition Information:</h4>
           </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-            <Table striped bordered hover>
-              <thead>
+            {/* <Table striped bordered hover> */}
+             {/*  <thead>
                 <tr>
                   <th >Meal</th>
                   <th >Time</th>
@@ -143,7 +151,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                     />
                   </td>
                   
-                </tr>
+                </tr> */}
                 {/* <tr>
                   <td>Snack</td>
                   <td >
@@ -169,7 +177,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                   </td>
                   
                 </tr> */}
-                <tr>
+                {/* <tr>
                   <td>Dinner</td>
                   <td >
                     <input
@@ -196,7 +204,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                     />
                   </td>
                   
-                </tr>
+                </tr> */}
                 {/* <tr>
                   <td>Snack</td>
                   <td >
@@ -226,9 +234,9 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                
              
                 
-              </tbody>
-            </Table>
-            <div className="mb-3 inwi">
+              {/* </tbody>*/}
+            {/* </Table>  */}
+            {/* <div className="mb-3 inwi">
               <label>How often do you eat out at restaurants/fast food?</label>
               <input
                 type="text"
@@ -236,17 +244,10 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                 placeholder="Add your stress rate"
                 onChange={event =>  setoutatrestaurantsfastfood(event.target.value)}
               />
-            </div>
-            <div className="mb-3 inwi">
-              <label>Which grocery stores do your foods come from? </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event =>  setWhichgrocerystores(event.target.value)}
-              />
-            </div>
-            <div className="mb-3 inwi">
+            </div> */}
+            {/* 
+             */}
+            {/* <div className="mb-3 inwi">
               <label>Who does the grocery shopping?</label>
               <input
                 type="text"
@@ -254,7 +255,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                 placeholder="Add your stress rate"
                 onChange={event =>  setgroceryshopping(event.target.value)}
               />
-            </div>
+            </div> */}
             <div className="mb-3 inwi">
               <label>Who plans the meals at home?</label>
               <input
@@ -273,7 +274,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                 onChange={event =>  setpreparesthemeal(event.target.value)}
               />
             </div>
-            <div className="mb-3 inwi">
+            {/* <div className="mb-3 inwi">
               <label>What 1 or 2 things would you like to change with your diet? </label>
               <input
                 type="text"
@@ -281,7 +282,7 @@ const [tochangewithyourdiet, settochangewithyourdiet] = useState('')
                 placeholder="Add your stress rate"
                 onChange={event =>  settochangewithyourdiet(event.target.value)}
               />
-            </div>
+            </div> */}
 
             {/* <div className="d-flex justify-content-between  align-items-center  ww">
           <div>
