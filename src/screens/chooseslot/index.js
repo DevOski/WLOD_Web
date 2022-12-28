@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./chooseslot.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -31,6 +31,14 @@ const pageStyles ={
     border:'1px solid',
    
   },
+  div2 :{
+    // display:'inline',
+    // flexDirection:'row',
+    padding:'13px 17px 13px 17px',
+    margin:10,
+    border:'1px solid',
+   
+  },
   mainDiv :{
     border:'none',
     backgroundColor:'white',
@@ -41,7 +49,9 @@ const pageStyles ={
 const ChooseSlot = () => {
   const [date, setDate] = useState();
   const [calendshow, setcalendshow] = useState(true);
+  const calendshowValidation = useRef(true);
   const [calendshowlist, setcalendshowlist] = useState(false);
+  const calendshowlistValidation = useRef(false);
   const [slot, setSlot] = useState([]);
   const [trainer, setTrainer] = useState();
   const [timeSlot, setTimeSlot] = useState([]);
@@ -53,16 +63,62 @@ const ChooseSlot = () => {
   const [markedDates, setMarkedDates] = useState("");
   const [tr_slot,settrslot] = useState("");
 
+  let time = moment().format("h:mma");
 
   const Show = () => {
     setcalendshow(true);
     setcalendshowlist(false);
+    calendshowValidation.current = true;
+    calendshowlistValidation.current = false;
+    console.log("data",calendshowlistValidation.current,calendshowValidation.current);
   };
+  // useEffect(() => {
+  //   if (calendshowlist) {
+  //     console.log('run something here');
+  //   }
+  // }, [calendshowlist]);
   const Showlist = () => {
-    setcalendshowlist(true);
-    setcalendshow(false);
-    getTimeSlots();
+    try {
+      // setcalendshow(false);
+      // setcalendshowlist(true);
+      var formdata = new FormData();
+      var requestOptions = {
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+      };
+      fetch(`https://dashboard.weightlossondemand.com/backend/api/trTimeSlots/${location.state.trainer}/${time}`, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log("data",result)
+    //  if(!calendshowlistValidation.current){
+      calendshowlistValidation.current= true;
+      calendshowValidation.current= false;
+      // setcalendshow(false);
+      setcalendshowlist(true)
+          setSlot(result.data)
+          console.log("setdata-----------------------------",slot);
+          console.log("=====>",calendshowlist+" "+calendshow+"---"+calendshowlistValidation.current);
+        // }else{
+        //   alert("states "+calendshowlist+" "+calendshow+"---"+calendshowlistValidation.current)
+        // }
+      
+      })
+        .catch(error => console.log('error', error));
+        // setSlot("response.data.data");
+      
+      } catch (error) {
+        console.log(error);
+      }
+    
+    // getTimeSlots();
   };
+  // useEffect(() => {
+  //   return () => {
+  //     slot
+  //   }
+  // }, [])
+  
   const onSelectDate = () => {
     if (date) {
       navigate("/question2");
@@ -114,7 +170,7 @@ const ChooseSlot = () => {
               redirect: 'follow'
             };
 
-            fetch("http://alsyedmmtravel.com/api/trCalenderSlots", requestOptions)
+            fetch("https://dashboard.weightlossondemand.com/backend/api/trCalenderSlots", requestOptions)
               .then(response => response.json())
               .then(result => {
                 console.log("trainer slots",result.data)
@@ -127,6 +183,28 @@ const ChooseSlot = () => {
             })
               .catch(error => console.log('error', error));
 
+  };
+  const getTimeSlots = async () => {
+    // try {
+    //   var formdata = new FormData();
+    //   var requestOptions = {
+    //     method: 'POST',
+    //     body: formdata,
+    //     redirect: 'follow'
+    //   };
+
+    //   fetch(`https://dashboard.weightlossondemand.com/backend/api/trTimeSlots/${1}/${time}`, requestOptions)
+    //     .then(response => response.json())
+    //     .then(result => {
+    //       console.log("data",result.data)
+    //       setSlot(result.data)
+    //     })
+    //     .catch(error => console.log('error', error));
+    //   // setSlot("response.data.data");
+
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const SelectSlot = (vtr_id, vsl_time, vtr_date, vtr_day) =>{
@@ -158,7 +236,7 @@ const ChooseSlot = () => {
   //     body: raw,
   //     redirect: "follow",
   //   };
-  //   fetch("http://alsyedmmtravel.com/api/all_trCalenderSlots", requestOptions)
+  //   fetch("https://dashboard.weightlossondemand.com/backend/api/all_trCalenderSlots", requestOptions)
   //     .then((response) => response.json())
   //     .then((result) => {
   //       console.log( result);
@@ -186,31 +264,26 @@ const ChooseSlot = () => {
     }
   };
 
-  const getTimeSlots = async () => {
-    try {
-      // console.log('-----------?>',location.state.trainer.tr_id, currentDTime);
-      let response = await getSlotTime(
-        location.state.trainer.tr_id,
-        currentDTime
-      );
-      // console.log(response.data.data, "====>slooottime");
-      // console.log(response.data.data, "====>slooottime");
-      setTimeSlot(response.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-    // getAllSlotList();
-    // if (route?.params?.from === 'All Trainer') {
+ 
+  // getAllSlotList();
+  // if (route?.params?.from === 'All Trainer') {
     //
     // }
-  };
+    // // console.log('-----------?>',location.state.trainer.tr_id, currentDTime);
+    // let response = await getSlotTime(
+    //   location.state.trainer.tr_id,
+    //   currentDTime
+    // );
+    // // console.log(response.data.data, "====>slooottime");
+    // // console.log(response.data.data, "====>slooottime");
+    // setTimeSlot(response.data.data);
   const getAllSlotList = async () => {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    fetch(`http://alsyedmmtravel.com/api/Slots/${currentDTime}`, requestOptions)
+    fetch(`https://dashboard.weightlossondemand.com/backend/api/Slots/${currentDTime}`, requestOptions)
       .then((response) => response.json())
 
       .then((result) => {
@@ -239,7 +312,8 @@ const ChooseSlot = () => {
       </Row>
       <Row>
         <Col lg="12" className="d-flex justify-content-center">
-          {calendshow && (
+          {
+          !calendshowlistValidation.current && (
             <div className="calender">
               <p>
                 Selected date:{" "}
@@ -258,7 +332,7 @@ const ChooseSlot = () => {
                
               ) : (
                 <div className="classextbutton">
-                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1}>{obj.sl_time}</div></button>)
+                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1} key={obj.sl_id}>{obj.sl_time}</div></button>)
                    : <p>No record found</p>
                    }                   
               </div>
@@ -272,9 +346,10 @@ const ChooseSlot = () => {
               
             </div>
           )}
-          {calendshowlist && (
-            <div className="slotdiv">
-             {timeSlot?.length ?  <p className="timeslot">Time:{slot}</p>  :<p className="timeslot">There is no slot</p>}
+          {
+          calendshowlistValidation.current && (
+            <div className="slotdiv1">
+             {slot ? slot.map(obj => <div className="slotdiv1"> <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div2} key={obj.sl_id}>{obj.sl_time}</div></button></div>) : <div className="slotdiv"><p className="timeslot">There is no slot</p></div>}
             </div>
           )}
         </Col>

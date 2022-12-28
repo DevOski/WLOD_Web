@@ -54,13 +54,24 @@
   margin-top: 5%;
 }
 .slotdiv {
-  width: 30%;
+  width: 70%;
   border: 1px solid;
   display: flex;
   align-items: center;
   padding-left: 1%;
   padding-top: 1%;
 }
+
+.slotdiv1 {
+  width: 30%;
+  /* border: 1px solid; */
+  /* margin-top: 5%; */
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+
 .timeslot{
   font-family: sans-serif;
   font-weight: bolder;
