@@ -29,16 +29,16 @@ const SessionBook = () => {
           {/* <div className="d-flex justify-content-center align-items-center ww2 ww3"> */}
             <div>
 
-              <h3 style={{color:'#000'}}>Appointment By Provider</h3>
+              <h3 style={{color:'#000'}}>Choose Consultant</h3>
               
             </div>
               </button>
            
-              <button  onClick={goto} className="d-flex justify-content-center align-items-center ww2 ww3">
+              <button  onClick={gotodate} className="d-flex justify-content-center align-items-center ww2 ww3">
           {/* <div className="d-flex justify-content-center align-items-center ww2 ww3"> */}
             <div>
 
-              <h3 style={{color:'#000'}}>Appointment By Time</h3>
+              <h3 style={{color:'#000'}}>Choose  Time</h3>
               
             </div>
               </button>

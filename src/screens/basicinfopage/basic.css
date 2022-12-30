@@ -67,3 +67,19 @@ input.input {
 .pleft {
     padding-left: 10%;
 }
+.bdivsignup {
+    display: flex;
+    justify-content: center;
+}
+input#date {
+    width: 100%;
+    border: navy;
+}
+.bader {
+    border: 1px solid #ced4da;
+    border-radius: 41px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}

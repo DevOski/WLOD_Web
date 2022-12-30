@@ -41,7 +41,7 @@ const TrainerList = () => {
     <div className="of">
     
       <BasicExample/>
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5 pb-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center pl-5"

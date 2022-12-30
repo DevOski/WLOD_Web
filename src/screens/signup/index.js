@@ -240,8 +240,8 @@ const SignUp = () => {
           </Row>
         </Container>
 
-        {loder && <Loader />}
       </div>
+        {loder && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
     </>
   );
