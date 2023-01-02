@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
-
 import { Button } from "@material-ui/core";
 import VideoCall from "./VideoCall";
 
 
 const Videocalling = () => {
-    const [inCall,setInCall] = useState(false);
-    return (
-        <div  >
+  const [inCall, setInCall] = useState(false);
+
+  return (
+    <div className="App" style={{ height: "100%" }}>
       {inCall ? (
         <VideoCall setInCall={setInCall} />
       ) : (
@@ -20,7 +20,7 @@ const Videocalling = () => {
         </Button>
       )}
     </div>
-    )}
+  );}
 
 
 export default Videocalling

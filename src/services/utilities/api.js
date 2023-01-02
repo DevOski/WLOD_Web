@@ -474,3 +474,9 @@ export async function getAmount() {
 export async function getAgoraToken() {
   return await axios.get(`${baseURL}/agoraToken`);
 }
+export async function getTokenFromAPI(channel) {
+  console.log(channel);
+  return await axios.get(
+    `https://agratoken.herokuapp.com/rtc/${channel}/audience/userAccount/0`,
+  );
+}

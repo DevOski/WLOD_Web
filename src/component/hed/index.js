@@ -46,6 +46,9 @@ function BasicExample({ name }) {
               <Nav.Link href="https://weightlossondemand.com/contact-us">
                 Contact Us
               </Nav.Link>
+              <Nav.Link href="https://weightlossondemand.com/shop/">
+                Shop
+              </Nav.Link>
             </Nav>
             <p className="proname">{name}</p>
             <Button className="logbutt" onClick={handleLogout}>
@@ -72,7 +75,11 @@ function BasicExample({ name }) {
               <Nav.Link href="https://weightlossondemand.com/contact-us">
                 Contact Us
               </Nav.Link>
+              <Nav.Link href="https://weightlossondemand.com/shop/">
+                Shop
+              </Nav.Link>
             </Nav>
+           
 
             <Button className="logbutt" onClick={handlesignIn}>
               Signin
