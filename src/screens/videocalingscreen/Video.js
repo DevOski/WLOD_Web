@@ -15,19 +15,18 @@ export default function Video(props) {
       <Grid item xs={gridSpacing}>
         <AgoraVideoPlayer
           videoTrack={tracks[1]}
-          style={{ height: "100%", width: "100%" ,position:"absolute"}}
+          style={{ height: "100%", width: "100%" }}
         />
       </Grid>
       {users.length > 0 &&
         users.map((user) => {
           if (user.videoTrack) {
             return (
-              <Grid item xs={gridSpacing} >
+              <Grid item xs={gridSpacing}>
                 <AgoraVideoPlayer
-                
                   videoTrack={user.videoTrack}
                   key={user.uid}
-                  style={{ height: "100%", width: "100%",position:"absolute"}}
+                  style={{ height: "100%", width: "100%" }}
                 />
               </Grid>
             );
