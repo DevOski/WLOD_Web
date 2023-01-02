@@ -46,7 +46,7 @@ const SignUp = () => {
         redirect: "follow",
       };
 
-      fetch("http://alsyedmmtravel.com/api/check_email", requestOptions)
+      fetch("https://dashboard.weightlossondemand.com/backend/api/check_email", requestOptions)
         .then((response) => response.json())
         .then((result) => {
           console.log(result);

@@ -34,7 +34,7 @@ const SessionBook = () => {
             </div>
               </button>
            
-              <button  onClick={goto} className="d-flex justify-content-center align-items-center ww2 ww3">
+              <button  onClick={gotodate} className="d-flex justify-content-center align-items-center ww2 ww3">
           {/* <div className="d-flex justify-content-center align-items-center ww2 ww3"> */}
             <div>
 

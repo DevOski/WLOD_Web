@@ -83,7 +83,7 @@ const Basic = () => {
       redirect: "follow",
     };
 
-    fetch("http://alsyedmmtravel.com/api/signup", requestOptions)
+    fetch("https://dashboard.weightlossondemand.com/backend/api/signup", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

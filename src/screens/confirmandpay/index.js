@@ -25,6 +25,7 @@ const [cost,setcost]=useState("$20");
 const [bstatus,setbstatus]=useState(true);
 const [bcolor,setbcolor]=useState("#979797");
 const [paystatus,setpaystatus]=useState(false);
+const [apt,setapt]=useState(false);
 const [paycolor,setpaycolor]=useState("#bd3434");
 const [cuopontext,setcuopontext]=useState("Apply Cuopon &get 10% discount");
 
@@ -61,7 +62,11 @@ useEffect(() => {
   }
 },)
 
-        
+const dialog_Close = () =>{
+  setapt(false)
+  navigate("/")
+
+}  
 const Close = () => {
   seterror(false);
 };
@@ -104,7 +109,7 @@ const Pay = () =>{
               redirect: 'follow'
             };
 
-            fetch("http://alsyedmmtravel.com/api/pay", requestOptions)
+            fetch("https://dashboard.weightlossondemand.com/backend/api/pay", requestOptions)
               .then(response => response.json())
               .then(result => {
                 console.log(result)
@@ -200,15 +205,14 @@ const Pay = () =>{
                       redirect: 'follow'
                     };
                     
-                    fetch("http://alsyedmmtravel.com/api/appointmentByProvider", requestOptions)
+                    fetch("https://dashboard.weightlossondemand.com/backend/api/appointmentByProvider", requestOptions)
                       .then(response => response.json())
                       .then(result => {
                      console.log("appt result",result); 
                      if(result.status == 200){
-                       seterror(true)
+                       setapt(true)
                        setErrorMessage("Your Appointment has been booked!")
                        setLoader(false);  
-                       navigate("/")
                       }else{
                         seterror(true)
                         setErrorMessage(result.message)
@@ -219,7 +223,56 @@ const Pay = () =>{
                   // }else{
 
                   // }
-                }
+                }else if(params.state?.data?.params?.params?.trainer.asl_time || params?.state?.coupon?.data?.params?.params?.trainer.asl_time){
+                  
+                  var myHeaders = new Headers();
+                  myHeaders.append("Authorization", token);
+                  var formdata = new FormData();
+                  formdata.append("user_token", token);
+                  formdata.append("response_1", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
+                  formdata.append("response_2", params.state?.data?.params?.params?.trainer.asl_time ? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
+                  formdata.append("response_3", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
+                  formdata.append("response_4", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
+                  formdata.append("response_5", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
+                  formdata.append("response_6",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
+                  formdata.append("response_7",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
+                  formdata.append("response_8",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
+                  formdata.append("response_9",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
+                  formdata.append("response_10",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
+                  formdata.append("response_11",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
+                  formdata.append("response_12",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
+                  // formdata.append("trainer_id", params.state?.data?.params?.params?.trainer?.asl_time ? params.state?.data?.params?.params?.trainer?.atr_id : params?.state?.coupon?.data?.params?.params?.trainer?.atr_id);
+                  // formdata.append("tr_name", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer?.atr_name : params?.state?.coupon?.data?.params?.params?.trainer?.atr_name);
+                  formdata.append("reason", "Weight loss");
+                  formdata.append("apt_date", params.state?.data?.params?.params?.trainer.asl_time ? moment(params.state?.data?.params?.params?.trainer?.atr_date,"DD/MM/YYYY").format("MM/DD/YYYY") : moment(params?.state?.coupon?.data?.params?.params?.trainer?.atr_date,"DD/MM/YYYY").format("MM/DD/YYYY"));
+                  formdata.append("apt_day", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer?.atr_day : params?.state?.coupon?.data?.params?.params?.trainer?.atr_day);
+                  formdata.append("apt_time", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer.asl_time : params?.state?.coupon?.data?.params?.params?.trainer?.asl_time);
+                  formdata.append("amount", cost);
+                  var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: 'follow'
+                  };
+                  fetch("https://dashboard.weightlossondemand.com/backend/api/appointmentBytime", requestOptions)
+                    .then(response => response.json())
+                    .then(result => {
+                   console.log("appt result",result); 
+                   if(result.status == 200){
+                     setapt(true)
+                     setErrorMessage("Your Appointment has been booked!")
+                     setLoader(false);  
+                    }else{
+                      seterror(true)
+                      setErrorMessage(result.message)
+                      setLoader(false);
+                    }
+                    }
+                    ).catch(error => console.log('error', error));
+                // }else{
+
+                // }
+              }
                   // seterror(true)
                   // setErrorMessage("your session is going to start")
                   // navigate("/Videocall");
@@ -251,7 +304,7 @@ const Pay = () =>{
               redirect: 'follow'
             };
 
-            fetch("http://alsyedmmtravel.com/api/pay", requestOptions)
+            fetch("https://dashboard.weightlossondemand.com/backend/api/pay", requestOptions)
               .then(response => response.json())
               .then(result => {
                 console.log(result)
@@ -334,7 +387,7 @@ const Pay = () =>{
                       formdata.append("tr_name", params.state?.data?.params?.params?.trainer.vsl_time ? params.state?.data?.params?.params?.trainer?.vtr_name : params?.state?.coupon?.data?.params?.params?.trainer?.vtr_name);
                       formdata.append("reason", "Weight loss");
                       // formdata.append("apt_date", params.state?.data?.params?.params?.trainer.vsl_time ? params.state?.data?.params?.params?.trainer?.vtr_date : params?.state?.coupon?.data?.params?.params?.trainer?.vtr_date);
-                  formdata.append("apt_date", params.state?.data?.params?.params?.trainer.vsl_time ? moment(params.state?.data?.params?.params?.trainer?.vtr_date,"DD/MM/YYYY").format("MM/DD/YYYY") : moment(params?.state?.coupon?.data?.params?.params?.trainer?.vtr_date,"DD/MM/YYYY").format("MM/DD/YYYY"));
+                      formdata.append("apt_date", params.state?.data?.params?.params?.trainer.vsl_time ? moment(params.state?.data?.params?.params?.trainer?.vtr_date,"DD/MM/YYYY").format("MM/DD/YYYY") : moment(params?.state?.coupon?.data?.params?.params?.trainer?.vtr_date,"DD/MM/YYYY").format("MM/DD/YYYY"));
                       formdata.append("apt_day", params.state?.data?.params?.params?.trainer.vsl_time ? params.state?.data?.params?.params?.trainer?.vtr_day : params?.state?.coupon?.data?.params?.params?.trainer?.vtr_day);
                       formdata.append("apt_time", params.state?.data?.params?.params?.trainer.vsl_time ? params.state?.data?.params?.params?.trainer.vsl_time : params?.state?.coupon?.data?.params?.params?.trainer?.vsl_time);
                       formdata.append("amount", cost);
@@ -345,20 +398,14 @@ const Pay = () =>{
                         redirect: 'follow'
                       };
                       
-                      fetch("http://alsyedmmtravel.com/api/appointmentByProvider", requestOptions)
+                      fetch("https://dashboard.weightlossondemand.com/backend/api/appointmentByProvider", requestOptions)
                         .then(response => response.json())
                         .then(result => {
                        console.log("appt result",result); 
                        if(result.status ==200 ){
-                         seterror(true)
+                         setapt(true)
                          setErrorMessage("Your Appointment has been booked!")
-
                          setLoader(false);
-                         setTimeout(()=> {
-                          navigate("/")
-                         }, 2000);
-                        
-                         
                         }else{
                           seterror(true)
                           setErrorMessage(result.message)
@@ -375,7 +422,56 @@ const Pay = () =>{
                     // }else{
 
                     // }
-                  }
+                  }else if(params.state?.data?.params?.params?.trainer.asl_time || params?.state?.coupon?.data?.params?.params?.trainer.asl_time){
+                  
+                    var myHeaders = new Headers();
+                    myHeaders.append("Authorization", token);
+                    var formdata = new FormData();
+                    formdata.append("user_token", token);
+                    formdata.append("response_1", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
+                    formdata.append("response_2", params.state?.data?.params?.params?.trainer.asl_time ? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
+                    formdata.append("response_3", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
+                    formdata.append("response_4", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
+                    formdata.append("response_5", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
+                    formdata.append("response_6",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
+                    formdata.append("response_7",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
+                    formdata.append("response_8",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
+                    formdata.append("response_9",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
+                    formdata.append("response_10",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
+                    formdata.append("response_11",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
+                    formdata.append("response_12",params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
+                    // formdata.append("trainer_id", params.state?.data?.params?.params?.trainer?.asl_time ? params.state?.data?.params?.params?.trainer?.atr_id : params?.state?.coupon?.data?.params?.params?.trainer?.atr_id);
+                    // formdata.append("tr_name", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer?.atr_name : params?.state?.coupon?.data?.params?.params?.trainer?.atr_name);
+                    formdata.append("reason", "Weight loss");
+                    formdata.append("apt_date", params.state?.data?.params?.params?.trainer.asl_time ? moment(params.state?.data?.params?.params?.trainer?.atr_date,"DD/MM/YYYY").format("MM/DD/YYYY") : moment(params?.state?.coupon?.data?.params?.params?.trainer?.atr_date,"DD/MM/YYYY").format("MM/DD/YYYY"));
+                    formdata.append("apt_day", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer?.atr_day : params?.state?.coupon?.data?.params?.params?.trainer?.atr_day);
+                    formdata.append("apt_time", params.state?.data?.params?.params?.trainer.asl_time ? params.state?.data?.params?.params?.trainer.asl_time : params?.state?.coupon?.data?.params?.params?.trainer?.asl_time);
+                    formdata.append("amount", cost);
+                    var requestOptions = {
+                      method: 'POST',
+                      headers: myHeaders,
+                      body: formdata,
+                      redirect: 'follow'
+                    };
+                    fetch("https://dashboard.weightlossondemand.com/backend/api/appointmentBytime", requestOptions)
+                      .then(response => response.json())
+                      .then(result => {
+                     console.log("appt result",result); 
+                     if(result.status == 200){
+                       setapt(true)
+                       setErrorMessage("Your Appointment has been booked!")
+                       setLoader(false);  
+                      }else{
+                        seterror(true)
+                        setErrorMessage(result.message)
+                        setLoader(false);
+                      }
+                      }
+                      ).catch(error => console.log('error', error));
+                  // }else{
+  
+                  // }
+                }
                   // navigate("/Videocall");
                 }else{
                   seterror(true)
@@ -430,6 +526,12 @@ const Pay = () =>{
       {error && (
         <Error
           onClick={Close}
+          tittle={errorMessage}
+        />
+      )}
+      {apt && (
+        <Error
+          onClick={dialog_Close}
           tittle={errorMessage}
         />
       )}

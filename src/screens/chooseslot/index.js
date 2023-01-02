@@ -102,7 +102,6 @@ const ChooseSlot = () => {
         // }else{
         //   alert("states "+calendshowlist+" "+calendshow+"---"+calendshowlistValidation.current)
         // }
-      
       })
         .catch(error => console.log('error', error));
         // setSlot("response.data.data");
@@ -110,7 +109,6 @@ const ChooseSlot = () => {
       } catch (error) {
         console.log(error);
       }
-    
     // getTimeSlots();
   };
   // useEffect(() => {
@@ -325,11 +323,8 @@ const ChooseSlot = () => {
                   <div key={index} className="classextbuttonsl">
                     <p className="timeslot">Time:{item.sl_time}</p> 
                   </div>
-
                   )
-
                 })
-               
               ) : (
                 <div className="classextbutton">
                 {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1} key={obj.sl_id}>{obj.sl_time}</div></button>)
