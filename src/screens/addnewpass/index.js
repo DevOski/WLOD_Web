@@ -54,7 +54,7 @@ const [email, setemail] = useState('')
           redirect: 'follow'
         };
         
-        fetch("http://alsyedmmtravel.com/api/new_password", requestOptions)
+        fetch("https://dashboard.weightlossondemand.com/backend/api/new_password", requestOptions)
           .then(response => response.json())
           .then(result => {
             console.log(result)

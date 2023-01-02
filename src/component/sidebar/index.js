@@ -22,7 +22,7 @@ const SideBar = () => {
     <div className="cent">
       <div className="back">
         <Link className="tit" to="/">
-          home
+          Home
         </Link>
       </div>
     </div>
@@ -39,7 +39,7 @@ const SideBar = () => {
         <div className="backkk"></div>
         <div className="back3">
           <Link className="tit" to="/visit">
-            Session
+            Recent Session
           </Link>
 
           {/* <Link className="tit" to="/provider">

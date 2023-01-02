@@ -102,7 +102,7 @@ const MessageScreen = () => {
         redirect: "follow",
       };
 
-      fetch("http://alsyedmmtravel.com/api/msg_sent", requestOptions)
+      fetch("https://dashboard.weightlossondemand.com/backend/api/msg_sent", requestOptions)
         .then((response) => response.json())
         .then((result) => {
           setMessage(" ");
@@ -132,7 +132,7 @@ const MessageScreen = () => {
       redirect: "follow",
     };
 
-    fetch("http://alsyedmmtravel.com/api/chat_display", requestOptions)
+    fetch("https://dashboard.weightlossondemand.com/backend/api/chat_display", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result.data);

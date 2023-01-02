@@ -69,7 +69,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://alsyedmmtravel.com/api/forgot_pass", requestOptions)
+fetch("https://dashboard.weightlossondemand.com/backend/api/forgot_pass", requestOptions)
   .then(response => response.json())
   .then(function(result){
     console.log("^^",result.status);
@@ -104,7 +104,7 @@ fetch("http://alsyedmmtravel.com/api/forgot_pass", requestOptions)
 //       redirect: 'follow',
 //     };
 
-//     fetch('http://alsyedmmtravel.com/api/check_email', requestOptions)
+//     fetch('https://dashboard.weightlossondemand.com/backend/api/check_email', requestOptions)
 //       .then(response => response.json())
 //       .then(result => {
 //         console.log(result,'====>log');
@@ -122,7 +122,7 @@ fetch("http://alsyedmmtravel.com/api/forgot_pass", requestOptions)
 //             redirect: 'follow',
 //           };
 
-//           fetch('http://alsyedmmtravel.com/api/forgot_pass', requestOptions)
+//           fetch('https://dashboard.weightlossondemand.com/backend/api/forgot_pass', requestOptions)
 //             .then(response => response.json())
 //             .then(result => {
 //               console.log(result,'result');

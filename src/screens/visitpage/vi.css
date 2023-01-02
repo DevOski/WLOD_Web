@@ -192,6 +192,8 @@ input.input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20%;
+    margin-right: 6%;
 }
 .visitt2 {
     border: 1px solid #d3cacab8;

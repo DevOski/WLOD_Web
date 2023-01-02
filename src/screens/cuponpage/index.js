@@ -57,7 +57,7 @@ const Cupon = () => {
         redirect: "follow",
       };
       setTimeout(() => {
-        fetch("http://alsyedmmtravel.com/api/coupon_check", requestOptions)
+        fetch("https://dashboard.weightlossondemand.com/backend/api/coupon_check", requestOptions)
           .then((response) => response.json())
           .then((result) => {
             console.log(result.status);

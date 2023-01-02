@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'http://alsyedmmtravel.com/api';
+const baseURL = 'https://dashboard.weightlossondemand.com/backend/api';
 
 export async function signIn(email, password) {
   return await axios.post(`${baseURL}/signin`, {
