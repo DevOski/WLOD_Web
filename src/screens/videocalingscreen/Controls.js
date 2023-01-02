@@ -7,8 +7,12 @@ import VideocamIcon from "@material-ui/icons/Videocam";
 import VideocamOffIcon from "@material-ui/icons/VideocamOff";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Controls(props) {
+  const params = useLocation();
+  console.log("trainer details",params.state);
+
   const client = useClient();
   const { tracks, setStart, setInCall } = props;
   const [trackState, setTrackState] = useState({ video: true, audio: true });
@@ -28,6 +32,7 @@ export default function Controls(props) {
   };
 
   const leaveChannel = async () => {
+    console.log("trainer",params.state);
     await client.leave();
     client.removeAllListeners();
     tracks[0].close();

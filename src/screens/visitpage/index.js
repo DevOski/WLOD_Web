@@ -11,9 +11,9 @@ import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import { BasicExample, CardHome, SideBar, Visitcom } from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 const textStyles ={
   circle:{
-    
       // display: 'inline-block',
   // margin:"auto",
   // padding: 10,
@@ -31,6 +31,18 @@ const textStyles ={
   // position: 'relative',
   top: '-3px',
   border:'solid'
+  },
+  list :{
+    marginTop:'7%',
+    display:'flex',
+    flexDirection:'column'
+  },
+  ul :{
+    listStyleType: 'none'
+  },
+  link :{
+    textDecoration: 'none',
+    color:'black'
   }
 }
 
@@ -40,10 +52,13 @@ const Visitpage = () => {
   const [drawer, setdrawer] = useState(true);
   const [Visit, setVisit] = useState("");
   const [trainer, settrainer] = useState();
-  const [Document, setDocument] = useState();
+  const [username, setusername] = useState("");
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
   const visitValidation = useRef("");
+  const [visitdate,setVisitdate] =useState("")
+  const [desc,setdesc] =useState("")
+
 
   const open = () => {
     setshow(!show);
@@ -70,14 +85,17 @@ const Visitpage = () => {
     fetch("https://dashboard.weightlossondemand.com/backend/api/past_visit", requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log("==>",result.trainer); 
+        console.log("==>",result); 
         settrainer(result.trainer[0].tr_name)
         sethome(result.trainer[0].images)
         setVisit(result)
         console.log("visitttt",Object.keys(Visit).length);
         visitValidation.current = result;
-        console.log("dataaa",visitValidation.current.visit);
-       
+        console.log("dataaa", visitValidation.current);
+        console.log("logssssssssssssssssssssssssssssssssssssssssssssssssss",visitValidation.current.visit.visit_id);
+          setVisitdate(moment(visitValidation.current.visit.created_at).format("DD/MM/YYYY"))
+          setusername(visitValidation.current.user.first_name+" "+visitValidation.current.user.last_name)
+          setdesc(visitValidation.current.visit.session_desc)
       })
       .catch(error => console.log('error', error));
   }, [])
@@ -92,35 +110,72 @@ const Visitpage = () => {
        </Col>
         
         <Col lg="9">
-            <div className="text-center mt-4 mr-4">
+          {Object.keys(Visit).length ? (
+            <div> 
+
+                <div className="text-center mt-4 mr-4">
               <h3>Visit Details</h3>
               </div>
-              <Row >
+              <Row className="mt-4 pt-4">
+                <Col sm={6} className="mt-4">
+                <h5>Visit Date</h5>
+                {visitdate}
+                <div style={textStyles.list}>
+                <Link style={textStyles.link}> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+              </svg>  &nbsp;Message Support</Link>
+                <Link style={textStyles.link}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+              </svg>  &nbsp;Get Reciept</Link>
+                </div>
+              
+                </Col>
                 <Col sm={6} >
-                  <h5>Consultant Name</h5>
+                  <img src={home} style={textStyles.circle}/>
+                  <h5 className="mt-2">Consultant Name</h5>
                   {trainer}
                 </Col>
-                <Col sm={6}>
-                  <img src={home} style={textStyles.circle}/>
-                </Col>
               </Row>
-              <h4>User Name</h4>
-          {Object.keys(Visit).length ? (
+              <Row className="mt-4 pt-4">
+              <Col sm={6}>
+                <h5>User Name</h5>
+                {username}
+                </Col>
+           
+              {desc != 'none' ?
+                <Col sm={6}>
+                <h5>Session Description</h5>
+                {desc}
+              </Col>: ""}
+            </Row>
+                </div> ) : (
+                <div className="text-center "><h4 className="visitt">No recent Visit</h4> </div>
+              )}
 
+            {/*   {
           //  visitValidation.current["visit_id"]
-          Object.entries(visitValidation.current).map((item)=>
-               { return (
-                <div>
-                  
-                {/* <tr>
-                <td>{item[1].visit_id}</td> */}
-                <span>{item[1].first_name}</span> <span>{item[1].last_name}</span>
-              {/* </tr> */}
-           {/* <td>{trainer.map(item => {return (<p>{item.tr_name}</p>)})}</td>  */}
-           </div>
-                )
-                })
-            // <h5>hello</h5>
+          // Object.entries(visitValidation.current).map((item)=>
+          //      { return (
+                // <div>
+                <tr>
+                <td>{item[1].visit_id}</td> 
+                {/* <span>{item[1].first_name}</span> <span>{item[1].last_name}</span> 
+              {/* </tr> 
+           {/* <td>{trainer.map(item => {return (<p>{item.tr_name}</p>)})}</td>  
+          //  </div>
+              //   )
+              //   })
+              // }
+              
+               
+
+             
+       
+        
+             {/* <h5>hello</h5>
                 // Visit.map( item =>{
                 //   return(
                 //     <div className="text-center">
@@ -131,14 +186,8 @@ const Visitpage = () => {
                 //   </div> 
                 //   )
                 // })
-              ) : (
-                <div className="text-center "><h4 className="visitt">No recent Visit</h4> </div>
-              )}
-       
-        
-           
           
-          {/* <div className="vishpage">
+           <div className="vishpage">
             <div className="visitt">
               <p className="tit">SESSIONS REQUESTS</p>
             </div>

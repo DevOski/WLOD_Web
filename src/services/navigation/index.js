@@ -38,6 +38,7 @@ import {
   ConfirmAndPay,
   RatingScreen,
 } from "../../screens";
+import Control from '../../screens/videocalingscreen/Controls'
 import ThankYou from "../../screens/thankyouscreen";
 
 
@@ -101,7 +102,10 @@ const Navigation = () => {
           path="/Videocall"
           element={<Privateroute Component={Videocalling} />}
         />
-
+        <Route
+          path="/sessioncall"
+          element={<Privateroute Component={Control} />}
+        />
         <Route
           path="/apointmentdate"
           element={<Privateroute Component={Appointmentdate} />}

@@ -18,8 +18,8 @@ import moment from "moment";
 const ConfirmAndPay = () => {
   const params = useLocation();
 
-console.log("response",params?.state?.coupon?.data);
-console.log("^^^",params.state);
+console.log("response",params.state?.data?.params?.params?.trainer?.tr_id);
+console.log("^^^",params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
 const [btext,setbtext]=useState("");
 const [cost,setcost]=useState("$20");
 const [bstatus,setbstatus]=useState(true);
@@ -116,24 +116,24 @@ const Pay = () =>{
                 console.log(result.message)
                
                 if(result.status == 200 && result.message == "succeeded"){
-                  if(params.state?.data?.params?.params?.trainer.tr_id || params?.state?.coupon?.data?.params?.params?.trainer.tr_id){
+                  if(params.state?.data?.params?.params?.trainer?.tr_id || params?.state?.coupon?.data?.params?.params?.trainer?.tr_id){
                     console.log("visit ka kam");
                     var formdata = new FormData();
                       formdata.append("user_token", token);
-                      formdata.append("response_1", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
-                      formdata.append("response_2", params.state?.data?.params?.params?.trainer.tr_id ? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
-                      formdata.append("response_3", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
-                      formdata.append("response_4", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
-                      formdata.append("response_5", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
-                      formdata.append("response_6",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
-                      formdata.append("response_7",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
-                      formdata.append("response_8",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
-                      formdata.append("response_9",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
-                      formdata.append("response_10",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
-                      formdata.append("response_11",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
-                      formdata.append("response_12",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
-                      formdata.append("trainer_id", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
-                      formdata.append("tr_name", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.trainer?.tr_name : params?.state?.coupon?.data?.params?.params?.trainer?.tr_name);
+                      formdata.append("response_1", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
+                      formdata.append("response_2", params.state?.data?.params?.params?.trainer?.tr_id? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
+                      formdata.append("response_3", params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
+                      formdata.append("response_4", params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
+                      formdata.append("response_5", params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
+                      formdata.append("response_6",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
+                      formdata.append("response_7",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
+                      formdata.append("response_8",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
+                      formdata.append("response_9",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
+                      formdata.append("response_10",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
+                      formdata.append("response_11",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
+                      formdata.append("response_12",params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
+                      formdata.append("trainer_id", params.state?.data?.params?.params?.trainer?.tr_id? params.state?.data?.params?.params?.trainer?.tr_id: params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
+                      formdata.append("tr_name", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_name : params?.state?.coupon?.data?.params?.params?.trainer?.tr_name);
                       // formdata.append("tr_name", "tr");
                       formdata.append("reason", "Weight loss");
                       formdata.append("amount", cost);
@@ -152,10 +152,10 @@ const Pay = () =>{
                             setLoader(false);
                             seterror(true)
                             setErrorMessage("Your Session is going to start!")
-                            navigate("/Videocall",{
+                            navigate("/sessioncall",{
                               state :{
                                 token,
-                                tr_id:params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
+                                tr_id:params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
                               }
                             });
                           }else{
@@ -310,24 +310,24 @@ const Pay = () =>{
                 console.log(result)
                 // tr_id: 1, tr_name: 'Lisa G.'
                 if(result.status == 200 && result.message == "succeeded"){
-                  if(params.state?.data?.params?.params?.trainer.tr_id || params?.state?.coupon?.data?.params?.params?.trainer.tr_id){
+                  if(params.state?.data?.params?.params?.trainer?.tr_id || params?.state?.coupon?.data?.params?.params?.trainer.tr_id){
                       console.log("visit ka kam");
                       var formdata = new FormData();
                         formdata.append("user_token", token);
-                        formdata.append("response_1", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
-                        formdata.append("response_2", params.state?.data?.params?.params?.trainer.tr_id ? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
-                        formdata.append("response_3", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
-                        formdata.append("response_4", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
-                        formdata.append("response_5", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
-                        formdata.append("response_6",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
-                        formdata.append("response_7",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
-                        formdata.append("response_8",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
-                        formdata.append("response_9",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
-                        formdata.append("response_10",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
-                        formdata.append("response_11",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
-                        formdata.append("response_12",params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
-                        formdata.append("trainer_id", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
-                        formdata.append("tr_name", params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.trainer?.tr_name : params?.state?.coupon?.data?.params?.params?.trainer?.tr_name);
+                        formdata.append("response_1", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response1 : params?.state?.coupon?.data?.params?.params?.response1);
+                        formdata.append("response_2", params.state?.data?.params?.params?.trainer?.tr_id ? JSON.stringify(params.state?.data?.params?.params?.response2) : JSON.stringify(params?.state?.coupon?.data?.params?.params?.response2));
+                        formdata.append("response_3", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response3 : params?.state?.coupon?.data?.params?.params?.response3);
+                        formdata.append("response_4", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response4 : params?.state?.coupon?.data?.params?.params?.response4);
+                        formdata.append("response_5", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response5 : params?.state?.coupon?.data?.params?.params?.response5);
+                        formdata.append("response_6",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response6 : params?.state?.coupon?.data?.params?.params?.response6);
+                        formdata.append("response_7",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response7 : params?.state?.coupon?.data?.params?.params?.response7);
+                        formdata.append("response_8",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response8 : params?.state?.coupon?.data?.params?.params?.response8);
+                        formdata.append("response_9",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.response9 : params?.state?.coupon?.data?.params?.params?.response9);
+                        formdata.append("response_10",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.regularexercises : params?.state?.coupon?.data?.params?.regularexercises)
+                        formdata.append("response_11",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.plansthemeals : params?.state?.coupon?.data?.regularexercises);
+                        formdata.append("response_12",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.preparesthemeal : params?.state?.coupon?.data?.preparesthemeal);
+                        formdata.append("trainer_id",params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
+                        formdata.append("tr_name", params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_name : params?.state?.coupon?.data?.params?.params?.trainer?.tr_name);
                         // formdata.append("tr_name", "tr");
                         formdata.append("reason", "Weight loss");
                         formdata.append("amount", cost);
@@ -346,10 +346,10 @@ const Pay = () =>{
                               seterror(true)
                               setErrorMessage("Your Session is going to start!")
                               setLoader(false);
-                              navigate("/Videocall",{
+                              navigate("/sessioncall",{
                                 state :{
                                   token,
-                                  tr_id:params.state?.data?.params?.params?.trainer.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
+                                  tr_id: params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
                                 }
                               });
                             }else{
