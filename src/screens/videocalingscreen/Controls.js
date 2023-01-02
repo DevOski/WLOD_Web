@@ -6,12 +6,13 @@ import MicOffIcon from "@material-ui/icons/MicOff";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import VideocamOffIcon from "@material-ui/icons/VideocamOff";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { useNavigate } from "react-router-dom";
 
 export default function Controls(props) {
   const client = useClient();
   const { tracks, setStart, setInCall } = props;
   const [trackState, setTrackState] = useState({ video: true, audio: true });
-
+  let navigate = useNavigate();
   const mute = async (type) => {
     if (type === "audio") {
       await tracks[0].setEnabled(!trackState.audio);
@@ -33,7 +34,14 @@ export default function Controls(props) {
     tracks[1].close();
     setStart(false);
     setInCall(false);
+   
+ navigate('/rating')
+ 
   };
+  // const goto = () => {
+    
+  //   alert("han bhai ")
+  // };
 
   return (
     <Grid container spacing={2} alignItems="center">
@@ -59,7 +67,7 @@ export default function Controls(props) {
         <Button
           variant="contained"
           color="default"
-          onClick={() => leaveChannel()}
+          onClick={() => {leaveChannel()}}
         >
           Leave
           <ExitToAppIcon />

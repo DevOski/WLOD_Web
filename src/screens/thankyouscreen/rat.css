@@ -1,0 +1,33 @@
+.App {
+    background-color: white;
+}
+.ww{
+  width: 54% !important;
+  background-color: white;
+  padding: 2%;
+  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+}
+.iconcolor{
+ color: brown;
+} 
+.of{
+  overflow-x: clip !important;
+}
+.vt-logo {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .of .ww {
+    width: 96% !important;
+    margin-top: 20px;
+ }
+}
+.colorrating{
+  color: brown;
+}
+.colorrating:hover{
+  color: rgb(185, 162, 162);
+}

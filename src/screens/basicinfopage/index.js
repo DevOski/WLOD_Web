@@ -44,6 +44,7 @@ const Basic = () => {
   const [maritalStatus, setMaritalStatus] = useState("");
   const [loder, setloder] = useState(false);
   const [error, seterror] = useState(false);
+  const [date, setdate] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const token = useSelector((state) => state.token);
   console.log(token, "===>token");
@@ -163,12 +164,12 @@ const Basic = () => {
   };
   return (
     <>
-    <BasicExample />
-   
+      <BasicExample />
+
       <Container className="pad">
-        <form>
-          <h3>Basic</h3>
-          <div className="mb-3">
+        <form className="mb-3 w-100">
+          <h3>Basic Info</h3>
+          <div className="mb-3 w-100">
             <label>First-Name</label>
             <input
               type="text"
@@ -186,13 +187,15 @@ const Basic = () => {
               onChange={(event) => setLastname(event.target.value)}
             />
           </div>
-          <div className="mb-3">
-            <label>Middel-Name</label>
+          <label>Date</label>
+          <div className="mb-3 bader">
+          
             <input
-              type="text"
-              className="form-control"
-              placeholder="Middel-Name"
-              onChange={(event) => setMiddle(event.target.value)}
+              type="date"
+              id="date"
+              className="in"
+              onChange={(event) => setdate(event.target.value)}
+              placeholder="Date of Birth"
             />
           </div>
           <div className="mb-3">
@@ -399,7 +402,7 @@ const Basic = () => {
             </div>
           </div>
 
-          <div className="d-grid">
+          <div className="bdivsignup">
             <Button onClick={goHome} className="btn btn-primary">
               Sign Up
             </Button>
@@ -408,8 +411,6 @@ const Basic = () => {
             Already registered <a href="/sigin">sign in?</a>
           </p>
         </form>
-
-      
       </Container>
       {loder && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}

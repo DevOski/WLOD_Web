@@ -29,6 +29,8 @@ import VerificationCode from "./verificationcode";
 import MessageScreen from "./messagepage";
 import Membership from "./memebershipterms";
 import ConfirmAndPay from "./confirmandpay";
+import RatingScreen from "./ratingscreen";
+import ThankYou from "./thankyouscreen";
 
 
 export {
@@ -63,6 +65,7 @@ export {
   MessageScreen,
   Membership,
   ConfirmAndPay,
+  RatingScreen
   
 
 };

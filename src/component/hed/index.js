@@ -14,7 +14,7 @@ function BasicExample({ name }) {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(removeData());
-    navigate("/");
+    navigate("/sigin");
   };
 
   const handlesignup = () => {

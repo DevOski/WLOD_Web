@@ -42,12 +42,12 @@ const SideBar = () => {
             Recent Session
           </Link>
 
-          <Link className="tit" to="/provider">
+          {/* <Link className="tit" to="/provider">
             My consultants
-          </Link>
-          <Link className="tit" to="/document">
+          </Link> */}
+          {/* <Link className="tit" to="/document">
             Document
-          </Link>
+          </Link> */}
           <Link className="tit" to="/chat">
             Message
           </Link>

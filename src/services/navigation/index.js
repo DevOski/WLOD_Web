@@ -36,7 +36,9 @@ import {
   MessageScreen,
   Membership,
   ConfirmAndPay,
+  RatingScreen,
 } from "../../screens";
+import ThankYou from "../../screens/thankyouscreen";
 
 
 import Privateroute from "./privateroute";
@@ -162,7 +164,9 @@ const Navigation = () => {
           element={<Privateroute Component={MessageScreen} />}
         />
 
-        {/* <Route path="/" element={<Siging />} /> */}
+        <Route path="/rating" element={<Privateroute Component={RatingScreen} />} />
+        <Route path="/thankyou" element={<Privateroute Component={ThankYou} />} />
+
       </Routes>
     </BrowserRouter>
   );

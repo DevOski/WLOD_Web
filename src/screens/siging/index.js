@@ -125,7 +125,7 @@ const Siging = () => {
           </div>
         </form>
       </div>
-      <div className="d-flex justify-content-center mt-2">
+      {/* <div className="d-flex justify-content-center mt-2">
         <p>
           Sign InDon’t have an account yet?
           <a href="/signup" className="signuponsingin">
@@ -133,7 +133,7 @@ const Siging = () => {
             Create an Account
           </a>
         </p>
-      </div>
+      </div> */}
         {loder && <Loader />}
         {error && <Error onClick={Close} tittle={errorMessage} />}
     </>
