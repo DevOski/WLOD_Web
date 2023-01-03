@@ -147,7 +147,7 @@ const SignUp = () => {
                     <div className="inputmain">
                       <input
                         type="email"
-                        id="email"
+                        id="pass"
                         className="in"
                         onChange={(event) => setPassword(event.target.value)}
                         placeholder="Password"
