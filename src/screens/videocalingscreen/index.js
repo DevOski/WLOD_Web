@@ -1,25 +1,22 @@
-import React, { useRef, useState } from 'react'
-import { Button } from "@material-ui/core";
-import VideoCall from "./VideoCall";
-
+import React, {useState} from 'react';
+import AgoraUIKit from 'agora-react-uikit';
 
 const Videocalling = () => {
-  const [inCall, setInCall] = useState(false);
-
-  return (
-    <div className="App" style={{ height: "100%" }}>
-      {inCall ? (
-        <VideoCall setInCall={setInCall} />
-      ) : (
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => setInCall(true)}
-        >
-          Join Call
-        </Button>
-      )}
+  const [videoCall, setVideoCall] = useState(true);
+  const rtcProps = {
+    appId: '440edd9ffde44494a537d58b9d73bb1a',
+    channel: 'Testing', // your agora channel
+    token: '007eJxTYEhan8y16F/nrknVjnIbv39OOu51suO43rpdr08Yb/2xPfGmAoOJiUFqSoplWlpKqomJiaVJoqmxeYqpRZJlirlxUpJh4j7zLckNgYwMSi8OMTBCIYjPzhCSWlySmZfOwAAA4tYk3w==' // use null or skip if using app in testing mode
+  };
+  const callbacks = {
+    EndCall: () => setVideoCall(false),
+  };
+  return videoCall ? (
+    <div style={{display: 'flex', width: '100vw', height: '100vh'}}>
+      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
+  ) : (
+    <h3 onClick={() => setVideoCall(true)}>Start Call</h3>
   );}
 
 
