@@ -17,7 +17,7 @@ const Basic = () => {
   let search = useSearchParams();
   const location = useLocation();
 
-  console.log(location.state.email, "====>");
+  console.log(location?.state?.email, "====>");
   const [isCheckedsingle, setisCheckedsingle] = useState(false);
   const [isCheckedmarried, setisCheckedmarried] = useState(false);
   const [isCheckedenglish, setisCheckedmarriedenglish] = useState(false);

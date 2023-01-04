@@ -36,7 +36,7 @@ const SignUp = () => {
   };
   const handleSubmit = () => {
     setloder(true);
-    if (email && Password && date) {
+    // if (email && Password && date) {
       var formdata = new FormData();
       formdata.append("email", email.toLowerCase());
 
@@ -75,7 +75,10 @@ const SignUp = () => {
       //   isEnabled,
       //   date,
       // });
-    }
+    // }else{
+    //   setloder(false)
+    //   alert("email should be provided")
+    // }
 
     // navigate('/')
     // navigate('/basic', {state:{
