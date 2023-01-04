@@ -1,26 +1,52 @@
-import React, { useRef, useState } from 'react'
-import { Button } from "@material-ui/core";
-import VideoCall from "./VideoCall";
-
+import React, { useEffect, useState } from "react";
+import AgoraUIKit from "agora-react-uikit";
+import { getTokenFromAPI, getUser } from "../../services/utilities/api";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const Videocalling = () => {
-  const [inCall, setInCall] = useState(false);
+  
+  const params = useLocation();
 
-  return (
-    <div className="App" style={{ height: "100%" }}>
-      {inCall ? (
-        <VideoCall setInCall={setInCall} />
-      ) : (
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => setInCall(true)}
-        >
-          Join Call
-        </Button>
-      )}
+console.log("response",params.state)
+  const [videoCall, setVideoCall] = useState(false);
+  const [channelName, setChannelName] = useState("");
+  const [tokenAPI, setTokenAPI] = useState("");
+
+  const usertoken = useSelector((state) => state.token);
+  useEffect(() => {
+    console.log("123------------------->>>");
+    getUserDetails();
+  }, []);
+
+  const getUserDetails = async () => {
+    try {
+      let response = await getUser(usertoken);
+      console.log("chane--->", response.data.data.channel);
+      setChannelName(response.data.data.channel);
+      let resToken = await getTokenFromAPI(response.data.data.channel);
+      let token = resToken.data.rtcToken;
+      setTokenAPI(token);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const rtcProps = {
+    appId: "270b512970864b0a93b14650e52e8f9c",
+    channel: channelName, // your agora channel
+    token: tokenAPI, // use null or skip if using app in testing mode
+  };
+  console.log(rtcProps,'====>rctprops');
+  const callbacks = {
+    EndCall: () => setVideoCall(false),
+  };
+  return videoCall ? (
+    <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
+      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
-  );}
+  ) : (
+    <h3 onClick={() => setVideoCall(true)}>Start Call</h3>
+  );
+};
 
-
-export default Videocalling
+export default Videocalling;

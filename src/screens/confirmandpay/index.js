@@ -152,7 +152,7 @@ const Pay = () =>{
                             setLoader(false);
                             seterror(true)
                             setErrorMessage("Your Session is going to start!")
-                            navigate("/sessioncall",{
+                            navigate("/Videocall",{
                               state :{
                                 token,
                                 tr_id:params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
@@ -346,7 +346,7 @@ const Pay = () =>{
                               seterror(true)
                               setErrorMessage("Your Session is going to start!")
                               setLoader(false);
-                              navigate("/sessioncall",{
+                              navigate("/Videocall",{
                                 state :{
                                   token,
                                   tr_id: params.state?.data?.params?.params?.trainer?.tr_id ? params.state?.data?.params?.params?.trainer?.tr_id : params?.state?.coupon?.data?.params?.params?.trainer?.tr_id

@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { removeData } from "../../store/action";
+import { getUser } from "../../services/utilities/api";
+import { removeData, storeUserData } from "../../store/action";
 import "./nav.css";
-function BasicExample({ name }) {
+function BasicExample() {
+  
+  const [userName, setUserName] = useState("");
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
@@ -24,6 +27,27 @@ function BasicExample({ name }) {
     navigate("/sigin");
   };
   const token = useSelector((state) => state.token);
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+  const getUserDetails = async () => {
+    // setLoader(true);
+    setTimeout(async () => {
+      try {
+        let response = await getUser(token);
+        setUserName(response.data.data.first_name);
+        // console.log(response.data.data.first_name,'====>name');
+
+        dispatch(storeUserData(response.data.data));
+        // console.log(response.data.data,'====>dispatchlog');
+        // setLoader(false);
+      } catch (error) {
+        console.log(error);
+        // setLoader(false);
+      }
+    }, 100);
+  };
+
   console.log(token, "====>token");
   const [tok, settok] = useState(token);
   return (
@@ -50,7 +74,7 @@ function BasicExample({ name }) {
                 Shop
               </Nav.Link>
             </Nav>
-            <p className="proname">{name}</p>
+            <p className="proname">{userName}</p>
             <Button className="logbutt" onClick={handleLogout}>
               Logout
             </Button>
@@ -87,7 +111,7 @@ function BasicExample({ name }) {
             <Button className="logbutt" onClick={handlesignup}>
               Signup
             </Button>
-            <p className="proname">{name}</p>
+            
           </Navbar.Collapse>
         </Container>
       )}

@@ -8,3 +8,6 @@ button.logbutt {
     font-family: sans-serif;
     font-weight: bold;
 }
+.me-auto.navbar-nav {
+    margin-left: 87px !important;
+}

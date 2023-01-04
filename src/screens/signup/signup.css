@@ -14,6 +14,10 @@
     width: 15%;
     margin-left: 3%;
 }
+input#pass {
+    width: 50%;
+    border: none;
+}
 input#email {
     width: 62%;
     border: none;

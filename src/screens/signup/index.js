@@ -36,7 +36,11 @@ const SignUp = () => {
   };
   const handleSubmit = () => {
     setloder(true);
+
     // if (email && Password && date) {
+
+    // if (email && Password ) {
+
       var formdata = new FormData();
       formdata.append("email", email.toLowerCase());
 
@@ -61,7 +65,7 @@ const SignUp = () => {
                 Password,
                 // checked,
                 // isEnabled,
-                date,
+                // date,
               },
             });
           }
@@ -130,7 +134,7 @@ const SignUp = () => {
                         className="in"
                         onChange={(event) => setEmail(event.target.value)}
                         placeholder="Email"
-                      />{" "}
+                      />
                     </div>
                   </div>
                   <div className="inputdiv">
@@ -142,7 +146,7 @@ const SignUp = () => {
                         className="in"
                         onChange={(event) => setdate(event.target.value)}
                         placeholder="Date of Birth"
-                      />{" "}
+                      />
                     </div>
                   </div>
                   <div className="inputdiv">
@@ -150,11 +154,11 @@ const SignUp = () => {
                     <div className="inputmain">
                       <input
                         type="email"
-                        id="email"
+                        id="pass"
                         className="in"
                         onChange={(event) => setPassword(event.target.value)}
                         placeholder="Password"
-                      />{" "}
+                      />
                     </div>
                   </div>
                   <div className="inputdiv">
@@ -189,7 +193,7 @@ const SignUp = () => {
                   Already a member?{" "}
                   <a href="/sigin" className="signuponsingin">
                     Sign in
-                  </a>{" "}
+                  </a>
                 </p>
               </div>
             </div>

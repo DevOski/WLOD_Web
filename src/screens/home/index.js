@@ -90,7 +90,7 @@ const Home = () => {
   };
   return (
     <div className="wi55">
-      <BasicExample name={userName} />
+      <BasicExample  />
 
       <Row>
         <Col lg="3">

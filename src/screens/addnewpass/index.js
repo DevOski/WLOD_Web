@@ -3,7 +3,7 @@ import "./addnew.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar,Error, Loader, Error2 } from "../../component";
+import { Navbarmenu, TopBar,Error, Loader, Error2, BasicExample } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -93,13 +93,7 @@ const [email, setemail] = useState('')
   }
   return (
     <>
-      <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#"><img src={logo}/></Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container>
+      <BasicExample  />
       <Row>
         <Col lg='10'>
          
