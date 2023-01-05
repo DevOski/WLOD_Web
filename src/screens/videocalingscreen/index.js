@@ -41,37 +41,30 @@ const Videocalling = () => {
     try {
       let response = await createChannel(tr_id, userID);
       console.log("----------->>>>>>", response.data.message);
-      // if (response.data.message == "Channel created successfully") {
+      if (response.data.message == "Channel created successfully") {
 
-      //   var myHeaders = new Headers();
-      //   myHeaders.append("Authorization", usertoken);
-      //   var formdata = new FormData();
-      //   formdata.append("tr_id", tr_id);
-      //   var requestOptions = {
-      //     method: "POST",
-      //     headers: myHeaders,
-      //     body: formdata,
-      //     redirect: "follow",
-      //   };
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", usertoken);
+        var formdata = new FormData();
+        formdata.append("tr_id", tr_id);
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: formdata,
+          redirect: "follow",
+        };
 
-      //   fetch(
-      //     "https://dashboard.weightlossondemand.com/backend/api/notification",
-      //     requestOptions
-      //   )
-      //     .then((response) => response.json())
-      //     .then((result) => {
-      //       console.log(result);
-      //       setTimeout(() => {
-      //         navigation.navigate('videocallingscreen', {
-      //           tr_id: route?.params?.tr_id,
-      //           tr_name: route?.params?.tr_name,
-      //           tr_image: route?.params?.tr_image,
-      //           tr_amount: route?.params?.tr_amount,
-      //         });
-      //       }, 5000);
-      //     })
-      //     .catch((error) => console.log("error", error));
-      // }
+        fetch(
+          "https://dashboard.weightlossondemand.com/backend/api/notification",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+            
+          })
+          .catch((error) => console.log("error", error));
+      }
     } catch (error) {
       console.log(error);
     }

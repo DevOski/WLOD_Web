@@ -27,7 +27,7 @@ const [bcolor,setbcolor]=useState("#979797");
 const [paystatus,setpaystatus]=useState(false);
 const [apt,setapt]=useState(false);
 const [paycolor,setpaycolor]=useState("#bd3434");
-const [cuopontext,setcuopontext]=useState("Apply Cuopon &get 10% discount");
+const [cuopontext,setcuopontext]=useState("Apply Coupon & get 10% discount");
 
 const [loader, setLoader] = useState(false);
 const [error, seterror] = useState(false);
@@ -533,6 +533,7 @@ const Pay = () =>{
         <Error
           onClick={dialog_Close}
           tittle={errorMessage}
+          congrats={true}
         />
       )}
         </Col>

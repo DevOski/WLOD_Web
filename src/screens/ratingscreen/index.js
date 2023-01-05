@@ -56,7 +56,7 @@ const changrating=(newRating,name)=>{
           
             }}
           >
-            <div style={{ width: "30%" }}>
+            <div style={{ width: "200px",height: "200px",padding:"4%" }}>
               <Card.Img
                 style={{ width: "100%", height: "100%", borderRadius: "100px" }}
                 variant="top"
@@ -79,7 +79,7 @@ const changrating=(newRating,name)=>{
                 alignItems: "center",
               }}
             >
-              <Button onClick={goto} variant="primary">skip</Button>
+              <Button onClick={goto} variant="primary">Skip</Button>
               
             </Card.Body>
           </Card>
