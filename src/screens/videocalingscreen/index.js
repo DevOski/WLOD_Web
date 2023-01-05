@@ -76,7 +76,14 @@ const Videocalling = () => {
   };
   console.log(rtcProps, "====>rctprops");
   const callbacks = {
-    EndCall: () => {setVideoCall(false);navigate('/rating');}
+    EndCall: () => {setVideoCall(false);navigate('/rating',{
+      state : {
+        tr_id:tr_id,
+       
+      }
+    }
+    
+    );}
   };
   const getChannel = () => {
     // getUserDetails();
