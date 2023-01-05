@@ -137,7 +137,7 @@ const SignUp = () => {
                       />
                     </div>
                   </div>
-                  <div className="inputdiv">
+                  {/* <div className="inputdiv">
                     <div className="emaildiv">Date </div>
                     <div className="inputmain">
                       <input
@@ -148,7 +148,7 @@ const SignUp = () => {
                         placeholder="Date of Birth"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div className="inputdiv">
                     <div className="emaildiv">Password</div>
                     <div className="inputmain">

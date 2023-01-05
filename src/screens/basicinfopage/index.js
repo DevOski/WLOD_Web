@@ -87,8 +87,9 @@ const Basic = () => {
     fetch("https://dashboard.weightlossondemand.com/backend/api/signup", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        console.log(result,'====>res');
         if (result.token) {
+          console.log("works");
           setloder(false);
           dispatch(storeData(result.token));
           navigate("/home");
@@ -170,20 +171,20 @@ const Basic = () => {
         <form className="mb-3 w-100">
           <h3>Basic Info</h3>
           <div className="mb-3 w-100">
-            <label>First-Name</label>
+            <label>First name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="First-name"
+              placeholder="First name"
               onChange={(event) => setfirstname(event.target.value)}
             />
           </div>
           <div className="mb-3">
-            <label>Last-Name</label>
+            <label>Last name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Last-name"
+              placeholder="Last name"
               onChange={(event) => setLastname(event.target.value)}
             />
           </div>
@@ -198,7 +199,7 @@ const Basic = () => {
               placeholder="Date of Birth"
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label>Age</label>
             <input
               type="text"
@@ -206,8 +207,8 @@ const Basic = () => {
               placeholder="Age"
               onChange={(event) => setAge(event.target.value)}
             />
-          </div>
-          <div className="mb-3">
+          </div> */}
+          {/* <div className="mb-3">
             <label>Suffix</label>
             <input
               type="text"
@@ -215,8 +216,8 @@ const Basic = () => {
               placeholder="sufix"
               onChange={(event) => setSuffix(event.target.value)}
             />
-          </div>
-          <div className="mb-3">
+          </div> */}
+          {/* <div className="mb-3">
             <label>prefix</label>
             <input
               type="text"
@@ -224,17 +225,17 @@ const Basic = () => {
               placeholder="sufix"
               onChange={(event) => setprefix(event.target.value)}
             />
-          </div>
+          </div> */}
           <div className="mb-3">
-            <label>Preferred Phone Number</label>
+            <label>Phone number</label>
             <input
-              type="text"
+              type="number"
               className="form-control"
               placeholder="Preferred Phone Number"
               onChange={(event) => setPhoneNumber(event.target.value)}
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label>Occupation:</label>
             <input
               type="text"
@@ -242,8 +243,8 @@ const Basic = () => {
               placeholder="Occupation:"
               onChange={(event) => setOccupation(event.target.value)}
             />
-          </div>
-          <div className="mb-3">
+          </div> */}
+          {/* <div className="mb-3">
             <label>Work Hours:</label>
             <input
               type="text"
@@ -251,8 +252,8 @@ const Basic = () => {
               placeholder="Work Hours:"
               onChange={(event) => setWorkHours(event.target.value)}
             />
-          </div>
-          <div className="mb-3">
+          </div> */}
+          {/* <div className="mb-3">
             <label>Highest Level of Education::</label>
             <input
               type="text"
@@ -260,6 +261,35 @@ const Basic = () => {
               placeholder="Highest Level of Education"
               onChange={(event) => setEducation(event.target.value)}
             />
+          </div> */}
+           <div className="mb-3">
+            <label>Gender:</label>
+            <div className="d">
+              <div className="topping">
+                <input
+                  type="checkbox"
+                  id="topping"
+                  name="topping"
+                  value="Paneer"
+                  className="topping"
+                  checked={CheckedMale}
+                  onChange={handleOnChangemale}
+                />
+                <p className="pleft">Male</p>
+              </div>
+              <div className="topping">
+                <input
+                  type="checkbox"
+                  id="topping"
+                  name="topping"
+                  value="Paneer"
+                  checked={CheckedFemale}
+                  className="topping"
+                  onChange={handleOnChangeFemale}
+                />
+                <p className="pleft">Female</p>
+              </div>
+            </div>
           </div>
           <div className="mb-3">
             <label>Marital Status:</label>
@@ -290,35 +320,7 @@ const Basic = () => {
               </div>
             </div>
           </div>
-          <div className="mb-3">
-            <label>Gender:</label>
-            <div className="d">
-              <div className="topping">
-                <input
-                  type="checkbox"
-                  id="topping"
-                  name="topping"
-                  value="Paneer"
-                  className="topping"
-                  checked={CheckedMale}
-                  onChange={handleOnChangemale}
-                />
-                <p className="pleft">Male</p>
-              </div>
-              <div className="topping">
-                <input
-                  type="checkbox"
-                  id="topping"
-                  name="topping"
-                  value="Paneer"
-                  checked={CheckedFemale}
-                  className="topping"
-                  onChange={handleOnChangeFemale}
-                />
-                <p className="pleft">Female</p>
-              </div>
-            </div>
-          </div>
+         
           <div className="mb-3">
             <label>Primary Language :</label>
             <div className="d">
@@ -408,12 +410,12 @@ const Basic = () => {
             </Button>
           </div>
           <p className="forgot-password text-right">
-            Already registered <a href="/sigin">sign in?</a>
+            Already registered <a href="/sigin">Sign in?</a>
           </p>
         </form>
-      </Container>
       {loder && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
+      </Container>
     </>
   );
 };

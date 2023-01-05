@@ -157,10 +157,10 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/forgot_pass", reques
            </div>
 
            <div className="box2"> 
-            <input type='text' placeholder="enter your email" className="forgetinput"
+            <input type='text' placeholder="Enter your email" className="forgetinput"
              onChange={(event) => setEmail(event.target.value)}
             />
-            <button onClick={recoverPassword} className="recoverbutt">Recover My password </button>
+            <button onClick={recoverPassword} className="recoverbutt">Recover my password </button>
            </div>
         </Col>
       </Row>

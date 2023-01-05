@@ -115,6 +115,7 @@ console.log("@",params?.state?.data);
                   defaultValue={cardnumber}
                   placeholder="Add your credit card number"
                   onChange={(event) => setcardnumber(event.target.value)}
+                  maxLength={16}
                 />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
@@ -128,6 +129,7 @@ console.log("@",params?.state?.data);
                   type="text"
                   placeholder="Expiration(MM)"
                   onChange={(event) => setExpiration(event.target.value)}
+                  maxLength={2}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -137,6 +139,7 @@ console.log("@",params?.state?.data);
                   type="text"
                   placeholder="Cvv"
                   onChange={(event) => setCvv(event.target.value)}
+                  maxLength={4}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -146,16 +149,17 @@ console.log("@",params?.state?.data);
                   type="text"
                   placeholder="Expiration(YY)"
                   onChange={(event) => setExpirationYY(event.target.value)}
+                  maxLength={2}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
                   label="Check me out"
                   checked={isChecked}
                   onChange={handleOnChange}
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Button
                 variant="primary"
                 className="comfirm-pay-submit"

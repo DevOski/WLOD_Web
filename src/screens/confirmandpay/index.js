@@ -534,13 +534,15 @@ const Pay = () =>{
         <Error
           onClick={Close}
           tittle={errorMessage}
+          congrats={congrats}
+
         />
       )}
       {apt && (
         <Error
           onClick={dialog_Close}
           tittle={errorMessage}
-          congrats={congrats}
+          congrats={true}
         />
       )}
         </Col>
