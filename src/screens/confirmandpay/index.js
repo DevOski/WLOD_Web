@@ -18,16 +18,17 @@ import moment from "moment";
 const ConfirmAndPay = () => {
   const params = useLocation();
 
-console.log("response",params.state?.data?.params?.params?.trainer?.tr_id);
-console.log("^^^",params?.state?.coupon?.data?.params?.params?.trainer?.tr_id);
+console.log("response",params.state);
+console.log("^^^",params?.state);
 const [btext,setbtext]=useState("");
 const [cost,setcost]=useState("$20");
 const [bstatus,setbstatus]=useState(true);
 const [bcolor,setbcolor]=useState("#979797");
 const [paystatus,setpaystatus]=useState(false);
 const [apt,setapt]=useState(false);
+const [congrats,setcongrats]=useState("");
 const [paycolor,setpaycolor]=useState("#bd3434");
-const [cuopontext,setcuopontext]=useState("Apply Coupon & get 10% discount");
+const [cuopontext,setcuopontext]=useState("Apply Cuopon & get 10% discount");
 
 const [loader, setLoader] = useState(false);
 const [error, seterror] = useState(false);
@@ -149,6 +150,7 @@ const Pay = () =>{
                         .then(result => {
                           console.log(result)
                           if(result.status ==200 || result.message == "Visit created successfully"){
+                            setcongrats("Congratulations");
                             setLoader(false);
                             seterror(true)
                             setErrorMessage("Your Session is going to start!")
@@ -211,6 +213,7 @@ const Pay = () =>{
                      console.log("appt result",result); 
                      if(result.status == 200){
                        setapt(true)
+                       setcongrats("Congratulations");
                        setErrorMessage("Your Appointment has been booked!")
                        setLoader(false);  
                       }else{
@@ -260,6 +263,7 @@ const Pay = () =>{
                    console.log("appt result",result); 
                    if(result.status == 200){
                      setapt(true)
+                     setcongrats("Congratulations");
                      setErrorMessage("Your Appointment has been booked!")
                      setLoader(false);  
                     }else{
@@ -344,6 +348,7 @@ const Pay = () =>{
                             console.log(result)
                             if(result.status ==200 || result.message == "Visit created successfully"){
                               seterror(true)
+                              setcongrats("Congratulations");
                               setErrorMessage("Your Session is going to start!")
                               setLoader(false);
                               navigate("/Videocall",{
@@ -404,6 +409,7 @@ const Pay = () =>{
                        console.log("appt result",result); 
                        if(result.status ==200 ){
                          setapt(true)
+                        setcongrats("Congratulations");
                          setErrorMessage("Your Appointment has been booked!")
                          setLoader(false);
                         }else{
@@ -459,6 +465,7 @@ const Pay = () =>{
                      console.log("appt result",result); 
                      if(result.status == 200){
                        setapt(true)
+                     setcongrats("Congratulations");
                        setErrorMessage("Your Appointment has been booked!")
                        setLoader(false);  
                       }else{
@@ -527,6 +534,8 @@ const Pay = () =>{
         <Error
           onClick={Close}
           tittle={errorMessage}
+          congrats={congrats}
+
         />
       )}
       {apt && (

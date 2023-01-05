@@ -145,7 +145,7 @@ const Appointmentdate = () => {
             fetch("https://dashboard.weightlossondemand.com/backend/api/all_trCalenderSlots", requestOptions)
               .then(response => response.json())
               .then(result => {
-                console.log("trainer slots",result.data)
+                console.log("trainer slots",result)
                 if(result.message != "No records found"){
                   settrslot(result.data)
                 }
