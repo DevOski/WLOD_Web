@@ -4,8 +4,7 @@ import MoonLoader from "react-spinners/MoonLoader";
 const Loader = () => {
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center overlay">
-      <MoonLoader color="#fff" size={60} />
-      
+      <MoonLoader color="#fff" size={60} className="loader-icon"/>
     </div>
   );
 };

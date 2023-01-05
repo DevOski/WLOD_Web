@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, SideBar, Visitcom } from "../../component";
+import { BasicExample, CardHome, Loader, SideBar, Visitcom } from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
@@ -50,6 +50,7 @@ const Visitpage = () => {
   let navigate = useNavigate();
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
+  const [loader, setloader] = useState(false)
   const [Visit, setVisit] = useState("");
   const [trainer, settrainer] = useState();
   const [username, setusername] = useState("");
@@ -75,6 +76,7 @@ const Visitpage = () => {
   const token = useSelector((state) => state.token);
   console.log(token, "====>token");
   useEffect(() => {
+    setloader(true)
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     var requestOptions = {
@@ -97,8 +99,10 @@ const Visitpage = () => {
           setusername(visitValidation.current.user.first_name+" "+visitValidation.current.user.last_name)
           setdesc(visitValidation.current.visit.session_desc)
         setreason()
+        setloader(false)
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {console.log('error', error);setloader(false)});
+      
   }, [])
   
    const abc =Object.keys(Visit);
@@ -215,6 +219,7 @@ const Visitpage = () => {
         </Col>
        
       </Row>
+      {loader && <Loader />}
     </div>
   );
 };

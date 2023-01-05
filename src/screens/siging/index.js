@@ -118,7 +118,7 @@ const Siging = () => {
                 <p>Don't have an account yet?</p>{" "}
                 <a href="/signup" className="signuponsingin">
                   {" "}
-                  SignUp{" "}
+                  Sign Up{" "}
                 </a>
               </p>
             </div>

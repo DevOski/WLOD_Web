@@ -71,7 +71,7 @@ const  Trainer = () => {
               </div>
             </div>
             <div className="top">
-              <h6>{trainer?.login_status}</h6>
+              <h6>Status:{trainer?.login_status}</h6>
             </div>
             {slot.map((item, index)=>{
               console.log(item,'itemslot');
