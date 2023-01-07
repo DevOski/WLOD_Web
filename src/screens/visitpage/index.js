@@ -49,7 +49,7 @@ const textStyles ={
 const Visitpage = () => {
   let navigate = useNavigate();
   const [show, setshow] = useState(false);
-  const [drawer, setdrawer] = useState(true);
+  const [fee, setfee] = useState("");
   const [Visit, setVisit] = useState("");
   const [trainer, settrainer] = useState();
   const [username, setusername] = useState("");
@@ -64,7 +64,7 @@ const Visitpage = () => {
     setshow(!show);
   };
   const opendarwer = () => {
-    setdrawer(!drawer);
+    // setfee(!fee);
   };
   const visit = () => {
     setVisit("'0'");
@@ -75,6 +75,15 @@ const Visitpage = () => {
   const token = useSelector((state) => state.token);
   console.log(token, "====>token");
   useEffect(() => {
+  //   setVisit("hi")
+  //   settrainer("Lisa")
+  //   sethome("")
+  //   setVisitdate(moment("05/01/2023").format("DD/MM/YYYY"))
+  //   setusername("Maha Khan")
+  //   setdesc("")
+  // setreason("Wieght Loss")
+  // setfee("$20")
+
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     var requestOptions = {
@@ -96,11 +105,11 @@ const Visitpage = () => {
           setVisitdate(moment(visitValidation.current.visit.created_at).format("DD/MM/YYYY"))
           setusername(visitValidation.current.user.first_name+" "+visitValidation.current.user.last_name)
           setdesc(visitValidation.current.visit.session_desc)
-        setreason()
+        setreason(visitValidation.current.visit.reason)
+        setfee(visitValidation.current.visit.amount)
       })
       .catch(error => console.log('error', error));
   }, [])
-  
    const abc =Object.keys(Visit);
   return (
     <div className="wi55">
@@ -135,8 +144,8 @@ const Visitpage = () => {
               
                 </Col>
                 <Col sm={6} >
-                  <img src={home} style={textStyles.circle}/>
-                  <h5 className="mt-2">Consultant Name</h5>
+                  <img src={home} style={textStyles.circle} className="ml-4 pl-4"/>
+                  <h5 className="mt-2 ml-4 pl-4" >Consultant Name</h5>
                   {trainer}
                 </Col>
               </Row>
@@ -145,12 +154,23 @@ const Visitpage = () => {
                 <h5>User Name</h5>
                 {username}
                 </Col>
-           
-              {desc != 'none' ?
-                <Col sm={6}>
-                <h5>Session Description</h5>
-                {desc}
-              </Col>: ""}
+                <Col sm={6} >
+              <h5>Session Reason</h5>
+                {reason}
+              </Col>
+                
+            </Row>
+            <Row  className="mt-4 pt-4">
+            <Col sm={6} style={{ overflowWrap:"break-word"}}>
+              
+              <h5>Session Description</h5>
+              {desc != 'none' && desc ? desc : "Nothing to show"}
+            </Col>
+              <Col sm={6}>
+              <h5>Total Cost</h5>
+              {fee}
+              </Col>
+
             </Row>
                 </div> ) : (
                 <div className="text-center "><h4 className="visitt">No recent Visit</h4> </div>
