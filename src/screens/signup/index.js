@@ -248,8 +248,10 @@ const SignUp = () => {
         </Container>
 
       </div>
-        {loder && <Loader />}
+     
+       {loder && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
+      
     </>
   );
 };

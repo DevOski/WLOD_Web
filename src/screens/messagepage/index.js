@@ -156,7 +156,7 @@ const MessageScreen = () => {
             <div className="textbox">
               {msgList?.map((item, index) => {
                 return (
-                  <div>
+                  <div className="scr">
                     {item.sender == "user" ? (
                       <div className="chbox">
                         <p className="msgtext">

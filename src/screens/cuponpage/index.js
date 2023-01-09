@@ -111,16 +111,15 @@ const Cupon = () => {
             lg="12"
             className="d-flex justify-content-center  align-items-center coupon-col"
           >
-            <Form>
+            <Form className="w-60 d-flex justify-content-center  align-items-center flex-column">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Apply Coupon</Form.Label>
                 <Form.Control
                   type="numberic"
-                  placeholder="Add Cupon"
+                  placeholder="Add Coupon"
                   onChange={(event) => setApplyCupon(event.target.value)}
                 />
                 <Form.Text className="text-muted">
-                  Add your Cupon Number Here
                 </Form.Text>
               </Form.Group>
 

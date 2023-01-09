@@ -499,7 +499,7 @@ const Pay = () =>{
   }else{
     // console.log(result.message)
                 seterror(true)
-                setErrorMessage("card not added")
+                setErrorMessage("Card not added")
                 setLoader(false);
     // alert("card not added")
   }

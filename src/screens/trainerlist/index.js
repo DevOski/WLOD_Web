@@ -3,7 +3,7 @@ import "./trainerlist.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BasicExample, Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Loader, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -17,6 +17,7 @@ import { getAllTrainers } from "../../services/utilities/api";
 const TrainerList = () => {
   const [show, setshow] = useState(false);
   const [trainerList, setTrainerList] = useState([]);
+  const [loader, setloader] = useState(false)
   let navigate = useNavigate();
   // const goto = () => {
   //   navigate("/trainer",state:{trainer: item});
@@ -26,10 +27,12 @@ const TrainerList = () => {
   }, []);
 
   const getTrainers = async () => {
+    setloader(true)
     try {
       let response = await getAllTrainers();
       setTrainerList(response.data.data);
       console.log(response.data.data);
+      setloader(false)
     } catch (error) {
       console.log(error);
     }
@@ -84,6 +87,7 @@ const TrainerList = () => {
          
         </Col>
       </Row>
+      {loader && <Loader />}
     </div>
   );
 };

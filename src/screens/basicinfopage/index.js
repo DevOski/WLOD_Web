@@ -51,6 +51,7 @@ const Basic = () => {
   const dispatch = useDispatch();
   const Close = () => {
     seterror(false);
+    setloder(false)
   };
   const goHome = () => {
     setTimeout(() => {
@@ -103,7 +104,7 @@ const Basic = () => {
           seterror(true);
         }
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {console.log("error", error);setloder(false);});
   };
 
   const handleOnChangesingle = () => {
@@ -164,7 +165,7 @@ const Basic = () => {
     setisSmokingstatusFormer(false);
   };
   return (
-    <>
+    <div className="fulllod" >
       <BasicExample />
 
       <Container className="pad">
@@ -413,10 +414,11 @@ const Basic = () => {
             Already registered <a href="/sigin">Sign in?</a>
           </p>
         </form>
-      {loder && <Loader />}
+      {loder && 
+      <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
       </Container>
-    </>
+    </div>
   );
 };
 

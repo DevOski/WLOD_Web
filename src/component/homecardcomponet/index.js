@@ -25,7 +25,7 @@ export const CardHome = () => {
      Certified consultant
     </Card.Text>
     <Card.Text>
-    Estimated less than 5 wait
+    Estimated less than 5min wait
     </Card.Text>
     <Button variant="primary"style={{width: "100%"}}  onClick={Sechule}>Check Your Availablilty</Button>
   </Card.Body>
