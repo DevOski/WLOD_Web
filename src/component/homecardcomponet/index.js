@@ -25,9 +25,9 @@ export const CardHome = () => {
      Certified consultant
     </Card.Text>
     <Card.Text>
-    Estimated less than 5min wait
+    Estimated time less than 5min 
     </Card.Text>
-    <Button variant="primary"style={{width: "100%"}}  onClick={Sechule}>Check Your Availablilty</Button>
+    <Button variant="primary"style={{width: "100%"}}  onClick={Sechule}>Check Availablilty</Button>
   </Card.Body>
 </Card>
 <Card style={{ width: '19rem' }} className="topcrd">
@@ -38,7 +38,7 @@ export const CardHome = () => {
      Certified consultant
     </Card.Text>
     <Card.Text>
-   Choose your consultant and time
+   Choose your consultant or time
     </Card.Text>
     <Button style={{width: "100%"}} variant="primary" onClick={goto}>Book Session</Button>
   </Card.Body>

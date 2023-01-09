@@ -26,15 +26,15 @@ const SideBar = () => {
         </Link>
       </div>
     </div>
-    <div className="cent">
+    {/* <div className="cent">
       <div className="back2">
         <p className="tit">MY PROFILE</p>
         <p>
           <MdExpandLess onClick={open} className="expand" />
         </p>
       </div>
-    </div>
-    {!show ? (
+    </div> */}
+    {/* {!show ? ( */}
       <div className="cent2">
         <div className="backkk"></div>
         <div className="back3">
@@ -53,7 +53,7 @@ const SideBar = () => {
           </Link>
         </div>
       </div>
-    ) : null}
+    {/* ) : null} */}
   </div>
   )
 }

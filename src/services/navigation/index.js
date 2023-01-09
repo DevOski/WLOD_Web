@@ -37,6 +37,7 @@ import {
   Membership,
   ConfirmAndPay,
   RatingScreen,
+  UpdateBasic,
 } from "../../screens";
 import Control from '../../screens/videocalingscreen/Controls'
 import ThankYou from "../../screens/thankyouscreen";
@@ -163,6 +164,11 @@ const Navigation = () => {
           path="/slots"
           element={<Privateroute Component={ChooseSlot} />}
         />
+          <Route
+          path="/updateinfo"
+          element={<Privateroute Component={UpdateBasic} />}
+        />
+        
         <Route
           path="/chat"
           element={<Privateroute Component={MessageScreen} />}

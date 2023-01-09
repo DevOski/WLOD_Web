@@ -21,7 +21,7 @@ margin-top: 1%;
   justify-content: center;
   align-items: center;
   margin-top: 10% !important;
-  border-radius: 50px !important;
+  /* border-radius: 50px !important; */
   background: #bd3434 !important;
   padding: 12px 12px !important;
   font-weight: 700 !important;
@@ -35,7 +35,7 @@ margin-top: 1%;
   max-width: 30%;
 }
 .mb-3 .form-control {
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .lb {
   margin-bottom: 10px;

@@ -54,7 +54,7 @@ function BasicExample() {
     <Navbar bg="light" expand="lg">
       {tok ? (
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="https://weightlossondemand.com/">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -75,15 +75,18 @@ function BasicExample() {
               </Nav.Link>
             </Nav>
             <p className="proname">{userName}</p>
-            <Button className="logbutt" onClick={handleLogout}>
+            <div className="logbutt">
+            <Button  onClick={handleLogout}>
               Logout
             </Button>
+            </div>
+           
 
           </Navbar.Collapse>
         </Container>
       ) : (
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="https://weightlossondemand.com/">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

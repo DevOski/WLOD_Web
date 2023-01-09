@@ -30,8 +30,8 @@ const RatingScreen = () => {
   const [loader, setLoader] = useState("");
   const [error, seterror] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [trainerName, setTrainerName] = useState("Test");
-  const [trImg, setTrImg] = useState(tr);
+  const [trainerName, setTrainerName] = useState("");
+  const [trImg, setTrImg] = useState();
 
   const changrating = async (newRating, name) => {
     setrating(newRating);

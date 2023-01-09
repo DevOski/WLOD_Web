@@ -22,6 +22,7 @@ import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
 import { useDispatch } from "react-redux";
 const SignUp = () => {
   let navigate = useNavigate();
+  const [checked, setchecked] = useState(false)
   const [email, setEmail] = useState(null);
   const [date, setdate] = useState(null);
   const [Password, setPassword] = useState(null);
@@ -34,10 +35,17 @@ const SignUp = () => {
   const Close = () => {
     seterror(false);
   };
+ const handleagrement=()=>{
+    setchecked(!checked)
+   
+  }
   const handleSubmit = () => {
-    setloder(true);
+   
+    console.log(checked,'=====>signup');
 
-    // if (email && Password && date) {
+    if (email && Password && checked) {
+      setloder(true);
+   
 
     // if (email && Password ) {
 
@@ -70,7 +78,7 @@ const SignUp = () => {
             });
           }
         })
-        .catch((error) => console.log("error", error));
+        .catch((error) => {console.log("error", error); setloder(false);});
 
       // navigation.navigate('basicInfoscreens', {
       //   email,
@@ -92,6 +100,7 @@ const SignUp = () => {
     //   // isEnabled,
     //   date,
     // }})
+  }
   };
   // const handleInputChange = (e) => {
   //   const { id, value } = e.target;
@@ -157,20 +166,21 @@ const SignUp = () => {
                         id="pass"
                         className="in"
                         onChange={(event) => setPassword(event.target.value)}
-                        placeholder="Password"
+                        placeholder="Create password"
                       />
                     </div>
                   </div>
                   <div className="inputdiv">
                     <div className="emaildiv">
-                      {["checkbox"].map((type) => (
-                        <div key={`default-${type}`} className="mb-3">
-                          <Form.Check
-                            type={type}
-                            id={`default-${type}`}
-                          />
-                        </div>
-                      ))}
+                    <input
+                  type="checkbox"
+                  id="topping"
+                  name="topping"
+                  value="Current"
+                  checked={checked}
+                  className="topping"
+                  onChange={handleagrement}
+                />
                     </div>
                     <div className="inputmain2">
                       I agree to Weight Loss On Demand's

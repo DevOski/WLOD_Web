@@ -115,7 +115,7 @@ const Visitpage = () => {
        </Col>
         
         <Col lg="9">
-          {Object.keys(Visit).length ? (
+          {!Object.keys(Visit).length ? (
             <div> 
 
                 <div className="text-center mt-4 mr-4">
@@ -157,7 +157,7 @@ const Visitpage = () => {
               </Col>: ""}
             </Row>
                 </div> ) : (
-                <div className="text-center "><h4 className="visitt">No recent Visit</h4> </div>
+                <div className="text-center "><h4 className="visittno">No recent Visit</h4> </div>
               )}
 
             {/*   {

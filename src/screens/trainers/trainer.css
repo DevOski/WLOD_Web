@@ -1,32 +1,30 @@
 .App {
-    background-color: white;
+  background-color: white;
 }
-.wwtrai{
+.wwtrai {
   width: 54% !important;
-  background-color: rgb(243, 243, 243);
+  background-color: "#fff";
   padding: 2%;
-  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
--webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
--moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.45);
 }
 /* .ww:hover{
   background-color: rgb(228, 57, 57);
 } */
-.iconcolor{
- color: brown;
-} 
-.of{
+.iconcolor {
+  color: brown;
+}
+.of {
   overflow-x: clip !important;
 }
-.img22{
+.img22 {
   width: 25%;
   height: 90%;
-  
 }
-.trwi{
-
+.trwi {
 }
-.top{
+.top {
   margin-top: 5%;
 }
 .brder {
@@ -37,10 +35,10 @@
   padding-left: 6%;
   padding-top: 2%;
 }
-.fle{
-display: flex;
-justify-content: space-between;
-    width: 90%;
+.fle {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }
 .padingtrainer {
   padding-left: 3%;
@@ -48,15 +46,20 @@ justify-content: space-between;
 .checkAvailblity {
   background-color: #bf1f2e;
   border: none;
-  padding: 1%;
+  /* padding: 1%; */
   border-radius: 8px;
   text-transform: capitalize;
-
+  color: white;
+  width: 30% !important;
+  height: 10% !important;
 }
 .checkAvailblity:hover {
-  background-color: #e96d79;
+  background-color: #bf1f2e;
   border: none;
-  padding: 1%;
+  /* padding: 1%; */
   border-radius: 8px;
   text-transform: capitalize;
+  width: 30% !important;
+  height: 10% !important;
+  color: white;
 }

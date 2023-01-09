@@ -301,10 +301,10 @@ const ChooseSlot = () => {
           className="d-flex justify-content-center align-items-center"
         >
           <div className="calbox" onClick={Show}>
-            <p className="caltext">Calender</p>
+            <p className="caltext">Choose date</p>
           </div>
           <div className="slotbox" onClick={Showlist}>
-            <p className="caltext">List</p>
+            <p className="caltext">Available slots</p>
           </div>
         </Col>
       </Row>
@@ -315,7 +315,7 @@ const ChooseSlot = () => {
             <div className="calender">
               <p>
                 Selected date:{" "}
-                {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "none"}.
+                {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
               {dateSlot?.length ? (
                 dateSlot.map((item,index)=>{

@@ -52,7 +52,7 @@ const  Trainer = () => {
     <div className="of">
      
       <BasicExample/>
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5 pb-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center"
@@ -70,9 +70,9 @@ const  Trainer = () => {
                 <p>{trainer?.type}</p>
               </div>
             </div>
-            <div className="top">
-              <h6>Status:{trainer?.login_status}</h6>
-            </div>
+            {/* <div className="top"> */}
+              {/* <h6>Status:{trainer?.login_status}</h6> */}
+            {/* </div> */}
             {slot.map((item, index)=>{
               console.log(item,'itemslot');
                return  <div className="top  fle">
@@ -89,24 +89,26 @@ const  Trainer = () => {
             </div>
             <div className="top">
             <p>
+            <h6>Consultant Description</h6>
+
             {trainer?.tr_desc}
               
               </p>
-              <h6>FOCUS AREAS</h6>
+              <h6>Consultant Type</h6>
               <p>
                 {trainer?.focus_area}
                 
               </p>
-              <h6>LANGUAGES</h6>
+              <h6>Language</h6>
               <p>{trainer?.languages}</p>
-              <h6>QUALIFICATIONS</h6>
+              <h6>Qualifications</h6>
               <p>{trainer?.qualifications}</p>
             </div>
             <div className="top">
-            <h6 onClick={Open}>
+            {/* <h6 onClick={Open}>
                 Show full profile {!show?<IoIosArrowUp/>:<IoIosArrowDown />}
-              </h6>
-              <button onClick={checkavailablity} className="checkAvailblity">Check Availablilty</button>
+              </h6> */}
+              <Button onClick={checkavailablity} className="checkAvailblity">View Availablilty</Button>
             </div>
           </div>
           

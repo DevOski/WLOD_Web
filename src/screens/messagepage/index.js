@@ -3,13 +3,19 @@ import logo from "../../assets/logo.png";
 import book from "../../assets/book.png";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Col, Container, Nav, Row } from "react-bootstrap";
-import "./chat.css";
+import "./mess.css";
 import Form from "react-bootstrap/Form";
 // import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
-import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
+import { IoMdSend } from "@react-icons/all-files/io/IoMdSend";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, SideBar, Visitcom } from "../../component";
+import {
+  BasicExample,
+  CardHome,
+  Loader,
+  SideBar,
+  Visitcom,
+} from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getUser } from "../../services/utilities/api";
@@ -49,7 +55,7 @@ const MessageScreen = () => {
   const [Document, setDocument] = useState();
   const [message, setMessage] = useState();
   const [home, sethome] = useState("");
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   const [msgList, setMsgList] = useState([]);
   const [userName, setUserName] = useState("");
   const [middleName, setMiddleName] = useState("");
@@ -87,6 +93,7 @@ const MessageScreen = () => {
   };
 
   const handleMsg = async () => {
+    setLoader(true);
     if (message !== "") {
       var myHeaders = new Headers();
       myHeaders.append("Authorization", token);
@@ -102,14 +109,21 @@ const MessageScreen = () => {
         redirect: "follow",
       };
 
-      fetch("https://dashboard.weightlossondemand.com/backend/api/msg_sent", requestOptions)
+      fetch(
+        "https://dashboard.weightlossondemand.com/backend/api/msg_sent",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => {
           setMessage(" ");
+          setLoader(false);
           console.log(result);
           getChat();
         })
-        .catch((error) => console.log("error", error));
+        .catch((error) => {
+          console.log("error", error);
+          setLoader(false);
+        });
     }
 
     // if (message != '') {
@@ -132,7 +146,10 @@ const MessageScreen = () => {
       redirect: "follow",
     };
 
-    fetch("https://dashboard.weightlossondemand.com/backend/api/chat_display", requestOptions)
+    fetch(
+      "https://dashboard.weightlossondemand.com/backend/api/chat_display",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result) => {
         console.log(result.data);
@@ -142,15 +159,14 @@ const MessageScreen = () => {
       .catch((error) => console.log("error", error));
   };
   return (
-    <div className="wi55" >
+    <div className="wi55">
       <BasicExample />
 
       <Row>
         <Col lg="2">
-        <SideBar/>
-      
+          <SideBar />
         </Col>
-       
+
         <Col lg="10">
           <div className="chatdivmain">
             <div className="textbox">
@@ -159,23 +175,20 @@ const MessageScreen = () => {
                   <div className="scr">
                     {item.sender == "user" ? (
                       <div className="chbox">
-                        <p className="msgtext">
+                        <p className="msgtext fw-bold">
+                          {userName} -{" "}
                           {moment(new Date(item.created_at)).format(
                             "MM/DD/YYYY hh:MMA"
                           )}
                         </p>
-                     
-                        <p className="msgtext">
-                          {userName} {middleName}{" "}
-                          {lastName}
-                        </p>
-                        <p className="msgtext">
-                           {item.message}</p>
+
+                        {/* <p className="msgtext">
+                      
+                        </p> */}
+                        <p className="msgtext">{item.message}</p>
                       </div>
                     ) : (
                       <div>
-                        {/* Yaha image add krni ha */}
-                        {/* <img src={}/> */}
                         <p>Support Team</p>
                         <p>
                           &nbsp; &nbsp; &nbsp;
@@ -190,20 +203,25 @@ const MessageScreen = () => {
               })}
             </div>
             <div className="inputdivmessage">
-              <input
-                className="messinput"
-                type={"text"}
-                placeholder="Enter your message"
-                onChange={(event) => setMessage(event.target.value)}
-                value={message}
-              />
-              <button className="sendbuttondiv" onClick={handleMsg}>
-                <p className="sendbutton">Send</p>
-              </button>
+              <div className="messinput">
+                <input
+                  className="messinput1"
+                  type={"text"}
+                  placeholder="Enter your message"
+                  onChange={(event) => setMessage(event.target.value)}
+                  value={message}
+                />
+                <button className="sendbuttondiv" onClick={handleMsg}>
+                  <p className="sendbutton">
+                    <IoMdSend size={20} />
+                  </p>
+                </button>
+              </div>
             </div>
           </div>
         </Col>
       </Row>
+      {loader && <Loader />}
     </div>
   );
 };

@@ -288,7 +288,7 @@ const Appointmentdate = () => {
             <div className="calender">
               <p>
                 Selected date:{" "}
-                {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "none"}.
+                {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
               {dateSlot?.length ? (
                 dateSlot.map((item,index)=>{
