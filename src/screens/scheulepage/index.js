@@ -22,28 +22,28 @@ const SessionBook = () => {
   return (
     <div className="of">
       <BasicExample />
-      <Row class="d-flex justify-content-center flex-column align-items-center  pt-10">
+      <Row class="d-flex justify-content-center flex-column align-items-center  pt-10 marigtop">
         <Col
           lg="12"
-          className="d-flex justify-content-center flex-column align-items-center mt-5"
+          className="d-flex justify-content-center flex-column align-items-center mt-5 "
         >
+          <div className="divvbut">
           <Button
             onClick={goto}
             className="d-flex justify-content-center align-items-center ww2 ww3"
           >
-            <div>
-              <h5 style={{ color: "#fff" }}>Choose Consultant</h5>
-            </div>
+              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Consultant</h5>
           </Button>
+            </div>
+          <div className="divvbut">
 
           <Button
             onClick={gotodate}
             className="d-flex justify-content-center align-items-center ww2 ww3"
           >
-            <div>
-              <h5 style={{ color: "#fff" }}>Choose Time</h5>
-            </div>
+              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Time</h5>
           </Button>
+            </div>
         </Col>
       </Row>
     </div>

@@ -3,13 +3,15 @@
 }
 .ww2{
   width: 30% !important;
+  justify-content: center;
+  align-items: center;
   /* margin: 3%; */
   border: none !important;
 
   /* padding: 2%; */ 
-  box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+  /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
--moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45); 
+-moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);  */
 }
 .ww2:hover{
   width: 30% !important;
@@ -23,7 +25,7 @@
 }
 .ww3{
   width: 20% !important;
-  margin: 0.2%;
+  /* margin: 0.2%; */
   border: none !important;
   /* padding: 2%; */
   background-color: brown;
@@ -33,7 +35,7 @@
 }
 .ww3:hover{
   width: 20% !important;
-  margin: 0.2%;
+  /* margin: 0.2%; */
   border: none !important;
 
   /* padding: 2%; */
@@ -60,4 +62,11 @@
   border-radius: 2px;
   max-width: 480px;
   transition: none;
+}
+.divvbut {
+  width: 17%;
+  margin: 0.2%;
+}
+.marigtop{
+  margin-top: 10% !important;
 }

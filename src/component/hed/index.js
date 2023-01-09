@@ -107,13 +107,19 @@ function BasicExample() {
               </Nav.Link>
             </Nav>
            
+<div className="logbutt">
 
-            <Button className="logbutt" onClick={handlesignIn}>
+            <Button  onClick={handlesignIn}>
+  
               Signin
             </Button>
-            <Button className="logbutt" onClick={handlesignup}>
+</div>
+<div className="logbutt">
+
+            <Button  onClick={handlesignup}>
               Signup
             </Button>
+</div>
             
           </Navbar.Collapse>
         </Container>

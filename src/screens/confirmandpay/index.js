@@ -51,7 +51,7 @@ const ConfirmAndPay = () => {
         params?.state?.coupon?.cardnumber != null
       ) {
         setbtext("Card Added");
-        setpaycolor("green");
+        setpaycolor("#9d2a2a ");
         console.log("log", paystatus);
         // setpaystatus("true");
         setbcolor("#bd3434");
@@ -101,7 +101,7 @@ const ConfirmAndPay = () => {
       "date is here",
       moment("23/12/2022", "DD/MM/YYYY").format("MM/DD/YYYY")
     );
-    setLoader(true);
+    // setLoader(true);
 
     console.log(btext);
     if (btext == "Card Added") {
@@ -133,7 +133,8 @@ const ConfirmAndPay = () => {
               if (
                 params.state?.data?.params?.params?.trainer?.tr_id ||
                 params?.state?.coupon?.data?.params?.params?.trainer?.tr_id
-              ) {
+                ) {
+                console.log("worlssss------>>>");
                 console.log("visit ka kam");
                 var formdata = new FormData();
                 formdata.append("user_token", token);
@@ -243,7 +244,7 @@ const ConfirmAndPay = () => {
                 )
                   .then((response) => response.json())
                   .then((result) => {
-                    console.log(result);
+                    console.log('--->>>>create',result);
                     if (
                       result.status == 200 ||
                       result.message == "Visit created successfully"
@@ -428,7 +429,10 @@ const ConfirmAndPay = () => {
                       setLoader(false);
                     }
                   })
-                  .catch((error) => console.log("error", error));
+                  .catch((error) => {
+                    console.log("error", error);
+                    setLoader(false);
+                  });
                 // }else{
 
                 // }
@@ -571,7 +575,11 @@ const ConfirmAndPay = () => {
                       setLoader(false);
                     }
                   })
-                  .catch((error) => console.log("error", error));
+
+                  .catch((error) => {
+                    console.log("error", error);
+                    setLoader(false);
+                  });
                 // }else{
 
                 // }

@@ -125,7 +125,7 @@ const Visitpage = () => {
        </Col>
         
         <Col lg="9">
-          {!Object.keys(Visit).length ? (
+          {Object.keys(Visit).length ? (
             <div> 
 
                 <div className="text-center mt-4 mr-4">
