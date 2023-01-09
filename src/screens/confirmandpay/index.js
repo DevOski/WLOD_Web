@@ -535,7 +535,6 @@ const Pay = () =>{
           onClick={Close}
           tittle={errorMessage}
           congrats={congrats}
-
         />
       )}
       {apt && (
