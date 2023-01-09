@@ -65,7 +65,7 @@ const ConfirmAndPay = () => {
       }
       if (params?.state?.ApplyCupon != null) {
         setcuopontext("Cuopon Applied");
-        setcost("$2.5");
+        setcost("$25");
         setbstatus(true);
       }
     };
