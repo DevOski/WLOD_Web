@@ -11,48 +11,40 @@ import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 const SessionBook = () => {
-  let navigate = useNavigate(); 
-  const goto =()=>{
-    navigate('/tl');
-  }
-  const gotodate =()=>{
-    navigate('/apointmentdate');
-  }
-  
+  let navigate = useNavigate();
+  const goto = () => {
+    navigate("/tl");
+  };
+  const gotodate = () => {
+    navigate("/apointmentdate");
+  };
+
   return (
     <div className="of">
-      
-      <BasicExample/>
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col lg="12"className="d-flex justify-content-center flex-column align-items-center">
-              <button  onClick={goto} className="d-flex justify-content-center align-items-center ww2 ww3">
-          {/* <div className="d-flex justify-content-center align-items-center ww2 ww3"> */}
-            <div>
+      <BasicExample />
+      <Row class="d-flex justify-content-center flex-column align-items-center  pt-10 marigtop">
+        <Col
+          lg="12"
+          className="d-flex justify-content-center flex-column align-items-center mt-5 "
+        >
+          <div className="divvbut">
+          <Button
+            onClick={goto}
+            className="d-flex justify-content-center align-items-center ww2 ww3"
+          >
+              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Consultant</h5>
+          </Button>
+            </div>
+          <div className="divvbut">
 
-              <h3 style={{color:'#000'}}>Choose Consultant</h3>
-              
+          <Button
+            onClick={gotodate}
+            className="d-flex justify-content-center align-items-center ww2 ww3"
+          >
+              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Time</h5>
+          </Button>
             </div>
-              </button>
-           
-              <button  onClick={gotodate} className="d-flex justify-content-center align-items-center ww2 ww3">
-          {/* <div className="d-flex justify-content-center align-items-center ww2 ww3"> */}
-            <div>
-
-              <h3 style={{color:'#000'}}>Choose  Time</h3>
-              
-            </div>
-              </button>
-          {/* </div> */}
-          {/* <div onClick={gotodate}  className="d-flex justify-content-center align-items-center ww2 ww3">
-            <div>
-              <h3 style={{color:'#000'}} >Appointment By Time</h3>
-              
-            </div>
-           
-           
-          </div> */}
         </Col>
-      
       </Row>
     </div>
   );

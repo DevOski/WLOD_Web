@@ -31,6 +31,7 @@ import Membership from "./memebershipterms";
 import ConfirmAndPay from "./confirmandpay";
 import RatingScreen from "./ratingscreen";
 import ThankYou from "./thankyouscreen";
+import UpdateBasic from "./updatebasic";
 
 
 export {
@@ -65,7 +66,8 @@ export {
   MessageScreen,
   Membership,
   ConfirmAndPay,
-  RatingScreen
+  RatingScreen,
+  UpdateBasic
   
 
 };

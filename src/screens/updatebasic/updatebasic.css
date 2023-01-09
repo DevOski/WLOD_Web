@@ -26,14 +26,14 @@
 .btn-primary {
   width: 40%;
   --bs-btn-color: #fff !important;
-  --bs-btn-bg: #d13a25 !important;
+  --bs-btn-bg: #992a35 !important;
   border: #992a35 !important;
 }
-.btn:hover {
+/* .btn:hover {
   color: var(--bs-btn-hover-color) !important;
   background-color: #992a35 !important;
   border-color: #ed4f11 !important;
-}
+} */
 input.input {
   padding-top: 2% !important;
   padding-bottom: 2% !important;
@@ -67,9 +67,14 @@ input.input {
 .pleft {
   padding-left: 10%;
 }
-.bdivsignup {
+.bdupdate {
   display: flex;
   justify-content: center;
+}
+.bdupdatediv{
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 input#date {
     width: 100%;
@@ -100,3 +105,10 @@ input#date {
 .leftin{
 
 }
+
+
+@media screen and (max-width: 480px) {
+  .bdupdate {
+      width: 100%;
+  }
+  }

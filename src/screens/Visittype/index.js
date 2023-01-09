@@ -16,6 +16,7 @@ import { getUser } from "../../services/utilities/api";
 import moment from "moment";
 const VType = () => {
   const [userName, setUserName] = useState("");
+  const [last, setlast] = useState('')
   const [loader, setLoader] = useState("");
   const [error, seterror] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -73,7 +74,9 @@ const VType = () => {
     setTimeout(async () => {
       try {
         let response = await getUser(token);
+        console.log(response);
         setUserName(response.data.data.first_name);
+        setlast(response.data.data.last_name)
         setLoader(false);
       } catch (error) {
         console.log(error);
@@ -95,7 +98,7 @@ const VType = () => {
             className="d-flex justify-content-between  align-items-center ww"
           >
             <div>
-              <h3>{userName} </h3>
+              <h3>{userName} {last} </h3>
             </div>
 
             <div>

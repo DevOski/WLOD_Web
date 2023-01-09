@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./vt.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,20 +13,19 @@ import Form from "react-bootstrap/Form";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import { storePayment } from "../../store/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 const Confirmpay = () => {
-  
   const params = useLocation();
-console.log("@",params?.state?.data);
+  console.log("@", params?.state?.data);
   const [cardnumber, setcardnumber] = useState("");
   const [Expiration, setExpiration] = useState("");
   const [Cvv, setCvv] = useState("");
   const [ExpirationYY, setExpirationYY] = useState("");
   const [isChecked, setisisChecked] = useState(false);
- const ApplyCupon =params?.state?.bparams?.ApplyCupon;
- const data =params?.state?.data;
- 
+  const ApplyCupon = params?.state?.bparams?.ApplyCupon;
+  const data = params?.state?.data;
+
   const dispatch = useDispatch();
   const handleOnChange = () => {
     setisisChecked(!isChecked);
@@ -34,48 +33,56 @@ console.log("@",params?.state?.data);
 
   let navigate = useNavigate();
   const goto = () => {
-    navigate("/Confrimandpay",{
-      state :{
-        card:params.state.bparams
-      }
+    navigate("/Confrimandpay", {
+      state: {
+        card: params.state.bparams,
+      },
     });
   };
+  const payment = useSelector((state) => state.payment);
 
   const saveCreditCard = () => {
     if (cardnumber && Expiration && ExpirationYY && Cvv) {
-      console.log(cardnumber , Expiration , ExpirationYY , Cvv);
-    //   setcardnumber(cardnumber)
-    navigate("/Confrimandpay",{
-      state :{
-        cardnumber,
-        Expiration,
-        ExpirationYY,
-        Cvv,
-        ApplyCupon,
-        data
-      }
-    });
+      console.log(cardnumber, Expiration, ExpirationYY, Cvv);
+      //   setcardnumber(cardnumber)
+      let paymentData = { cardnumber, Expiration, ExpirationYY, Cvv };
+      dispatch(storePayment(paymentData));
+      navigate("/Confrimandpay", {
+        state: {
+          cardnumber,
+          Expiration,
+          ExpirationYY,
+          Cvv,
+          ApplyCupon,
+          data,
+        },
+      });
 
       // let paymentData = { cardNum, expirationMonth, expirationYear, cvv };
       // dispatch(storePayment(paymentData));
     }
   };
   useEffect(() => {
-    if(params?.state?.bparams?.cardnumber != null){
-            console.log('works00000000000000');
-            setcardnumber(params?.state?.bparams?.cardnumber);
-            setExpiration(params?.state?.bparams?.Expiration);
-            setCvv(params?.state?.bparams?.Cvv);
-            setExpirationYY(params?.state?.bparams?.ExpirationYY);
-    }else if(params?.state?.bparams?.coupon?.cardnumber != null){
-      console.log('work');
+    if (params?.state?.bparams?.cardnumber != null) {
+      console.log("works00000000000000");
+      setcardnumber(params?.state?.bparams?.cardnumber);
+      setExpiration(params?.state?.bparams?.Expiration);
+      setCvv(params?.state?.bparams?.Cvv);
+      setExpirationYY(params?.state?.bparams?.ExpirationYY);
+    } else if (params?.state?.bparams?.coupon?.cardnumber != null) {
+      console.log("work");
       setcardnumber(params?.state?.bparams?.coupon?.cardnumber);
       setExpiration(params?.state?.bparams?.coupon?.Expiration);
       setCvv(params?.state?.bparams?.coupon?.Cvv);
       setExpirationYY(params?.state?.bparams?.coupon?.ExpirationYY);
+    } else if (payment) {
+      setcardnumber(payment.cardnumber);
+      setExpiration(payment.Expiration);
+      setCvv(payment.ExpirationYY);
+      setExpirationYY(payment.Cvv);
     }
-  },[])
-  
+  }, []);
+
   // useEffect(() => {
   //   // return () => {
   //     if(params?.state?.bparams?.cardnumber != null){
@@ -101,7 +108,7 @@ console.log("@",params?.state?.data);
             <img className="header-logo" src={logo} />
           </Navbar.Brand>
         </Navbar> */}
-        <BasicExample/>
+        <BasicExample />
         <Row class="d-flex justify-content-center  align-items-center gap-5 pt-5">
           <Col
             lg="12"
@@ -132,16 +139,7 @@ console.log("@",params?.state?.data);
                   maxLength={2}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Cvv</Form.Label>
-                <Form.Control
-                  defaultValue={Cvv}
-                  type="text"
-                  placeholder="Cvv"
-                  onChange={(event) => setCvv(event.target.value)}
-                  maxLength={4}
-                />
-              </Form.Group>
+         
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Expiration(YY)</Form.Label>
                 <Form.Control
@@ -150,6 +148,16 @@ console.log("@",params?.state?.data);
                   placeholder="Expiration(YY)"
                   onChange={(event) => setExpirationYY(event.target.value)}
                   maxLength={2}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Cvv</Form.Label>
+                <Form.Control
+                  defaultValue={Cvv}
+                  type="text"
+                  placeholder="Cvv"
+                  onChange={(event) => setCvv(event.target.value)}
+                  maxLength={4}
                 />
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -169,8 +177,6 @@ console.log("@",params?.state?.data);
               </Button>
             </Form>
           </Col>
-
-         
         </Row>
       </div>
     </Container>

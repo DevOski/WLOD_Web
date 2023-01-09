@@ -3,13 +3,14 @@ import "./verify.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Navbarmenu, TopBar, Error, Error2, Loader } from "../../component";
+import { Navbarmenu, TopBar, Error, Error2, Loader, BasicExample } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import VerificationInput from "react-verification-input";
 import { useLocation } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const VerificationCode = () => {
   let navigate = useNavigate(); 
@@ -74,17 +75,11 @@ const VerificationCode = () => {
   }
   return (
     <>
-      <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#"><img className="header-logo" src={logo}/></Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container>
+     <BasicExample/>
       <Row>
         <Col lg='12'>
            <div className="box1">
-           <h6>Enter your Verificationcode</h6>
+           <h6>Enter your verification code</h6>
            </div>
 
            <div className="box2"> 
@@ -96,7 +91,9 @@ const VerificationCode = () => {
            />
           </div>
          
-            <button  className="recoverbutt" onClick={submit}>submit</button>
+        
+          <Button className="recoverbutt"   onClick={submit}>Submit</Button>
+        
            </div>
         </Col>
       </Row>

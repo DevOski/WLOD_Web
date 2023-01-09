@@ -112,28 +112,7 @@ console.log("navigate to 3",params.state.response1);
                 onChange={event => setdietedinthepast(event.target.value)}
               />
             </div>
-            {/* <div className="mb-3 inwi">
-              <label>
-              What makes it hard for you to lose weight and keep it off?
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => sethardforyoutoloseweight(event.target.value)}
-              />
-            </div> */}
-            {/* <div className="mb-3 inwi">
-              <label>
-              What has helped you lose weight?
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => sethelpedyouloseweight(event.target.value)}
-              />
-            </div> */}
+     
             <div className="mb-3 inwi">
               <label>
               How much weight would you like to lose?

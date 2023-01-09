@@ -13,15 +13,19 @@ import { Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 const Rewiewpage = () => {
   const params = useLocation();
-  console.log("^^^", params.state);
+  console.log("^^^", params?.state);
   let navigate = useNavigate();
   const goto = () => {
     navigate("/Confrimandpay", {
       state: {
-        data: params.state,
+        data: params?.state,
       },
     });
   };
+  const gotoEdit=()=>{
+    navigate('/updateinfo')
+  }
+  console.log(params?.state?.params, "----------------------->>>>>");
   return (
     <div className="of">
       <BasicExample />
@@ -34,88 +38,89 @@ const Rewiewpage = () => {
             <div>
               <h3>Review your Health Profile </h3>
             </div>
+           <div className="basicbuttdiv">
+           <Button onClick={gotoEdit}>Edit info</Button>
+           </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
               <h6> 1) List any health problems and physical limitations </h6>
-              <p>{params.state.params.params.response1}</p>
+              <p>Ans: {params?.state?.response1}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
               <h6> 2) List All Medications and their dosage</h6>
-              <p>{params.state.params.params.response3}</p>
+              <p>Ans: {params?.state?.response2}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
               <h6>3) Current Weight</h6>
-              <p>{params.state.params.params.response3}</p>
+              <p>Ans: {params?.state?.response3}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6>4) Height</h6>
-              <p>{params.state.params.params.response4}</p>
+              <h6>4) Current Height</h6>
+              <p>Ans: {params?.state?.response4}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww ">
             <div>
-              <h6>5) What was your lowest adult weight?</h6>
-              <p>{params.state.params.params.response5}</p>
+              <h6>
+                5) What was your lowest and highest adult weight? __________lb
+                __________lb
+              </h6>
+              <p>Ans: {params?.state?.response5}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
-            <div>
-              <h6>6) What was your highest adult weight?</h6>
-              <p>{params.state.params.params.response6}</p>
-            </div>
-          </div>
+         
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
               <h6>
                 {" "}
-                7) Describe any weight changes (gain or loss) in the past 2
+                6) Describe any weight changes (gain or loss) in the past 2
               </h6>
-              <p>{params.state.params.params.response7}</p>
+              <p>Ans: {params?.state?.response6}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
               <h6>
-                8) Have you dieted in the past for weight loss? (No/Yes) If yes,
+                7) Have you dieted in the past for weight loss? (No/Yes) If yes,
               </h6>
-              <p>{params.state.params.params.response8}</p>
+              <p>Ans: {params?.state?.response7}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6> 9) How much weight would you like to lose?</h6>
-              <p>{params.state.params.params.response9}</p>
+              <h6> 8) How much weight would you like to lose?</h6>
+              <p>Ans: {params?.state?.response8}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6> 10) How will you benefit from this weight loss?</h6>
-              <p>{params.state.params.regularexercises}</p>
+              <h6> 9) How will you benefit from this weight loss?</h6>
+              <p>Ans: {params?.state?.response9}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6>11) What, if any, regular exercises do you do?</h6>
-              <p>{params.state.plansthemeals}</p>
+              <h6>10) What, if any, regular exercises do you do?</h6>
+              <p>Ans: {params?.state?.regularexercises}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6> 12) Who plans the meals at home?</h6>
-              <p>{params.state.preparesthemeal}</p>
+              <h6> 11) Who plans the meals at home?</h6>
+              <p>Ans: {params?.state?.plansthemeals}</p>
             </div>
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h6> 13) Who prepares the meals at home?</h6>
-              <p>{params.state.preparesthemeal}</p>
+              <h6> 12) Who prepares the meals at home?</h6>
+              <p>Ans: {params?.state?.preparesthemeal}</p>
             </div>
           </div>
           <div className="d-flex justify-content-center  align-items-center  ">

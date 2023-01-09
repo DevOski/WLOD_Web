@@ -7,6 +7,7 @@ import {
 } from "../../services/utilities/api";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Videocalling = () => {
   const params = useLocation();
@@ -96,7 +97,10 @@ const Videocalling = () => {
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
   ) : (
-    <h3 onClick={getChannel}>Start Call</h3>
+    <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh",}}>
+
+    <Button onClick={getChannel}>Start Call</Button>
+    </div>
   );
 };
 

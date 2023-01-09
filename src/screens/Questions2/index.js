@@ -13,202 +13,278 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 import { useLocation } from "react-router-dom";
+import { Question3 } from "../../store/action";
 const Questionpagetwo = () => {
   const params = useLocation();
-  console.log("^^^",params.state);
-const trainer =params.state;
+  console.log("^^^", params.state);
+  const trainer = params.state;
   let navigate = useNavigate();
-  const [allergiesintolerances, setallergiesintolerances] = useState('')
-  const [list1, setlist1] = useState('')
-  const [dose1, setdose1] = useState('')
-  const [list2, setlist2] = useState('')
-  const [dose2, setdose2] = useState('')
-  const [list3, setlist3] = useState('')
-  const [dose3, setdose3] = useState('')
-  const [list4, setlist4] = useState('')
-  const [dose4, setdose4] = useState('')
-  const [list5, setlist5] = useState('')
-  const [dose5, setdose5] = useState('')
-  const [stressinyourlife, setstressinyourlife] = useState('')
-  const [copewithstress, setcopewithstress] = useState('')
-  const [culturalorreligious, setculturalorreligious] = useState('')
-  const [readinesstomakelifestyle, setreadinesstomakelifestyle] = useState('')
-  const [confidencetomakelifestyle, setconfidencetomakelifestyle] = useState('')
-  const [physicallimitations,setphysicallimitations] = useState('')
-  function handleNext() {
-    console.log("hello");
-    const response2={"medication1":list1,"dosage1":dose1,"medication2":list2,"dosage2":dose2,"medication3":list3,"dosage3":dose3,"medication4":list4,"dosage4":dose4,"medication5":list5,"dosage5":dose5};
-    const response1=physicallimitations;
-    console.log("array", response1);
-    navigate("/question3",{
-      state :{
-        trainer,
-        response1,
-        response2
-      }
-    });
-  };
-  
+  const [allergiesintolerances, setallergiesintolerances] = useState("");
+  const [list1, setlist1] = useState("");
+  const [dose1, setdose1] = useState("");
+  const [list2, setlist2] = useState("");
+  const [dose2, setdose2] = useState("");
+  const [list3, setlist3] = useState("");
+  const [dose3, setdose3] = useState("");
+  const [list4, setlist4] = useState("");
+  const [dose4, setdose4] = useState("");
+  const [list5, setlist5] = useState("");
+  const [dose5, setdose5] = useState("");
+  const [stressinyourlife, setstressinyourlife] = useState("");
+  const [copewithstress, setcopewithstress] = useState("");
+  const [culturalorreligious, setculturalorreligious] = useState("");
+  const [readinesstomakelifestyle, setreadinesstomakelifestyle] = useState("");
+  const [confidencetomakelifestyle, setconfidencetomakelifestyle] =
+    useState("");
+  const [physicallimitations, setphysicallimitations] = useState("");
+  const [healthlimitation, setHealthlimitation] = useState("");
+
+  const [CurrentHeight, setCurrentHeight] = useState("");
+  const [CurrentWeight, setCurrentWeight] = useState("");
+  const [lowestandhighestadultweight, setlowestandhighestadultweight] =
+    useState("");
+  const [weightchangesgainorloss, setweightchangesgainorloss] = useState("");
+  const [dietedinthepast, setdietedinthepast] = useState("");
+  const [hardforyoutoloseweight, sethardforyoutoloseweight] = useState("");
+  const [helpedyouloseweight, sethelpedyouloseweight] = useState("");
+  const [weightwouldyouliketolose, setweightwouldyouliketolose] = useState("");
+  const [benefitfromthisweightloss, setbenefitfromthisweightloss] =
+    useState("");
   const [isrestfulsleepNo, setisrestfulsleepNo] = useState(false);
   const [isrestfulsleepyes, setisrestfulsleepyes] = useState(false);
+  const [regularexercises, setregularexercises] = useState("");
+  const [plansthemeals, setplansthemeals] = useState("");
+  const [preparesthemeal, setpreparesthemeal] = useState("");
+
+  function handleNext() {
+    console.log("hello");
+    const response2 = {
+      medication1: list1,
+      dosage1: dose1,
+      medication2: list2,
+      dosage2: dose2,
+      medication3: list3,
+      dosage3: dose3,
+      medication4: list4,
+      dosage4: dose4,
+      medication5: list5,
+      dosage5: dose5,
+    };
+    const response1 = physicallimitations;
+    console.log("array", response1);
+    navigate("/Reviewpage", {
+      state: {
+        trainer,
+        response1,
+        response2: healthlimitation,
+        response3: CurrentWeight,
+        response4: CurrentHeight,
+        response5: lowestandhighestadultweight,
+        response6: weightchangesgainorloss,
+        response7: dietedinthepast,
+        response8: weightwouldyouliketolose,
+        response9: benefitfromthisweightloss,
+        regularexercises,
+        plansthemeals,
+        preparesthemeal,
+      },
+    });
+  }
+
   const handleOnChange = () => {
     setisrestfulsleepyes(!isrestfulsleepyes);
-    setisrestfulsleepNo(!isrestfulsleepNo)
+    setisrestfulsleepNo(!isrestfulsleepNo);
+  };
+
+  const goto = () => {
+    console.log("navigate to 3", params.state.response1);
+    navigate("/question4", {
+      state: {
+        trainer: params.state.trainer,
+        response1: params.state.response1,
+        response2: params.state.response2,
+        response3: CurrentHeight,
+        response4: CurrentWeight,
+        response5: lowestandhighestadultweight,
+        response6: weightchangesgainorloss,
+        response7: dietedinthepast,
+        response8: weightwouldyouliketolose,
+        response9: benefitfromthisweightloss,
+      },
+    });
   };
   return (
     <>
-      {/* <Container fluid>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#">
-              <img className="header-logo" src={logo} />
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
-      </Container> */}
-      <BasicExample/>
+      <BasicExample />
       <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center"
         >
-          <div className="d-flex justify-content-between   align-items-center ww">
-            <h4>General Health Information</h4>
-          </div>
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
-            {/* <div className="mb-3 inwi">
-              <label>List any allergies/intolerances: </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter allergies/intolerances"
-                onChange={event => setallergiesintolerances(event.target.value)}
-              />
-            </div> */}
+            <div>
+              <h4>General Health Information</h4>
+            </div>
             <div className="mb-3 inwi">
-              <label>List any health problems and physical limitations: </label>
-              <input
+              <label className="pb-2">
+                1) List any health problems and physical limitations:{" "}
+              </label>
+              <textarea
                 type="text"
                 className="form-control"
                 placeholder="Enter health problems/physical limitations"
-                onChange={event => setphysicallimitations(event.target.value)} 
+                onChange={(event) => setphysicallimitations(event.target.value)}
               />
             </div>
-            
 
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th colSpan={3}>
-                    List All Medications, Vitamins, and Herbals:{" "}
-                  </th>
-                  <th>Dosage:</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist1(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter Dosage"  onChange={event => setdose1(event.target.value)} /></td>
-                </tr>
-                <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist2(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose2(event.target.value)} /></td>
-                </tr>
-                <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist3(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose3(event.target.value)} /></td>
-                </tr>
-                <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist4(event.target.value)} /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose4(event.target.value)} /></td>
-                </tr>
-                <tr>
-                  <td colSpan={3}><input type="text" className="form-control" placeholder="Enter Medications, Vitamins, and Herbals" onChange={event => setlist5(event.target.value)}  /></td>
-                  <td><input type="text" className="form-control" placeholder="Enter Dosage" onChange={event => setdose5(event.target.value)}  /></td>
-                </tr>
-              </tbody>
-            </Table>
-            {/* <div className="mb-3 w-100">
-          <label>How many hours of sleep do you average per night? _____ Is your sleep restful?</label>
-          <div className="d">
-          <div className="topping">
-        <input
-          type="checkbox"
-          id="topping"
-          name="topping"
-          value="Yes"
-          className="topping"
-          checked={isrestfulsleepyes}
-          onChange={handleOnChange}
-        />
-        <p className="pleft">Yes</p>
-      </div>
-      <div className="topping">
-        <input
-          type="checkbox"
-          id="topping"
-          name="topping"
-          value="No"
-          checked={isrestfulsleepNo}
-          className="topping"
-          onChange={handleOnChange}
-        />
-        <p className="pleft">No</p>
-      </div>
-          </div>
-      
-        </div> */}
-        {/* <div className="mb-3 inwi">
-              <label>How do you rate the stress in your life, 10 being the highest? 1 2 3 4 5 6 7 8 9 10</label>
-              <input
+            <div className="mb-3 inwi">
+              <label className="pb-2">
+                2) List All Medications, Vitamins, and Herbals: Dosage{" "}
+              </label>
+              <textarea
                 type="text"
                 className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => setstressinyourlife(event.target.value)} 
+                placeholder="Enter health problems/physical limitations"
+                onChange={(event) => setHealthlimitation(event.target.value)}
               />
-            </div> */}
-            {/* <div className="mb-3 inwi">
-              <label>How do you cope with stress?</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => setcopewithstress(event.target.value)} 
-              />
-            </div> */}
-            {/* <div className="mb-3 inwi">
-              <label>List any cultural or religious practices related to your health or diet:</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => setculturalorreligious(event.target.value)} 
-              />
-            </div> */}
-            {/* <div className="mb-3 inwi">
-              <label>How do you rate your readiness to make lifestyle changes, 5 being most ready? 1 2 3 4 5</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => setreadinesstomakelifestyle(event.target.value)} 
-              />
-            </div> */}
-            {/* <div className="mb-3 inwi">
-              <label>How do you rate your confidence to make lifestyle changes, 5 being most confident? 1 2 3 4 5</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add your stress rate"
-                onChange={event => setconfidencetomakelifestyle(event.target.value)} 
-              />
-            </div> */}
-           
+            </div>
 
-           
+            <div>
+              <h4>Weight Information:</h4>
+            </div>
+            <div className="mb-3 inwi">
+              <label className="pb-2">3) Current Weight:</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Current weight"
+                onChange={(event) => setCurrentWeight(event.target.value)}
+              />
+            </div>
+            <div className="mb-3 inwi">
+              <label className="pb-2">4) Current Height:</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Current height"
+                onChange={(event) => setCurrentHeight(event.target.value)}
+              />
+              <div className="mb-3 inwi">
+                <label className="pb-2">
+                  5) What was your lowest and highest adult weight? __________lb
+                  __________lb
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Lowest and highest adult weight"
+                  onChange={(event) =>
+                    setlowestandhighestadultweight(event.target.value)
+                  }
+                />
+              </div>
+              <div className="mb-3 inwi">
+                <label className="pb-2">
+                  6) Describe any weight changes (gain or loss) in the past 2
+                  years:{" "}
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Weight change"
+                  onChange={(event) =>
+                    setweightchangesgainorloss(event.target.value)
+                  }
+                />
+              </div>
+              <div className="mb-3 inwi">
+                <label className="pb-2">
+                  7) Have you dieted in the past for weight loss? No Yes If yes,
+                  please indicate what you have done:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Past diet details"
+                  onChange={(event) => setdietedinthepast(event.target.value)}
+                />
+              </div>
+
+              <div className="mb-3 inwi">
+                <label className="pb-2">8) How much weight would you like to lose?</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter amount of weight"
+                  onChange={(event) =>
+                    setweightwouldyouliketolose(event.target.value)
+                  }
+                />
+              </div>
+              <div className="mb-3 inwi">
+                <label className="pb-2">9) How will you benefit from this weight loss?</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter benefits"
+                  onChange={(event) =>
+                    setbenefitfromthisweightloss(event.target.value)
+                  }
+                />
+              </div>
+
+              <div className=" align-items-center">
+                <h4 style={{ textAlign: "center" }}>
+                  Physical Activity Information:
+                </h4>
+                <div>
+                  <div>
+                    <label className="pb-2">
+                      10) What, if any, regular exercises do you do?{" "}
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Health problems and physical limitations"
+                      onChange={(event) =>
+                        setregularexercises(event.target.value)
+                      }
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <h4 style={{ textAlign: "center" }}>
+                    Nutrition Information:
+                  </h4>
+                </div>
+                <div>
+                  <div className="mb-3 inwi">
+                    <label className="pb-2">11) Who plans the meals at home?</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Who plans the meals at home?"
+                      onChange={(event) => setplansthemeals(event.target.value)}
+                    />
+                  </div>
+                  <div className="mb-3 inwi">
+                    <label className="pb-2">12) Who prepares the meals at home? </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Who prepares the meals at home?"
+                      onChange={(event) =>
+                        setpreparesthemeal(event.target.value)
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="q-next-btn-div">
               <Button className="bdiv" onClick={handleNext}>
-              Next
+                Submit
               </Button>
             </div>
           </div>

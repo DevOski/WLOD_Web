@@ -100,11 +100,11 @@ const [email, setemail] = useState('')
 
            <div className="boxadd"> 
            <label>New Password</label>
-            <input type='text' placeholder="enter your email" className="forgetinput"
+            <input type='text' placeholder="Enter your password" className="forgetinput"
              onChange={(event) => setpassword(event.target.value)}
             />
             <label>Confirm Password</label>
-            <input type='text' placeholder="enter your email" className="forgetinput"
+            <input type='text' placeholder="Renter your password" className="forgetinput"
              onChange={(event) => setcpassword(event.target.value)}
             
             />
