@@ -7,21 +7,12 @@
 .bg2{
     background-color: beige;
     }
-    .maindeowercontainer {
-        width: 20% !important;
-        height: 100vh;
+    .maindeowercontainerreal {
+        width: 268px !important;
+        height: 541px;
         background-color: brown;
-        position: absolute;
-        transition: left 1s;
     }
-    .maindeowercontainer2 {
-        width: 21% !important;
-        /* height: 100vh; */
-        background-color: brown;
-        position: absolute;
-        left: -232px;
-        transition: left 2s ;
-    }
+   
     .ham {
         margin: 15px 15px 0 auto !important;
         display: flex;

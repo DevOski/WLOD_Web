@@ -239,8 +239,8 @@ const Visitpage = () => {
           
         </Col>
        
-      </Row>
       {loader && <Loader />}
+      </Row>
     </div>
   );
 };

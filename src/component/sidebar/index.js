@@ -15,9 +15,9 @@ const SideBar = () => {
       };
   return (
     <div
-    className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
+    className="maindeowercontainerreal "
   >
-    <GiHamburgerMenu  className="ham" />
+    {/* <GiHamburgerMenu  className="ham" /> */}
 
     <div className="cent">
       <div className="back">

@@ -53,21 +53,14 @@ input.input {
 .pad{
     padding-bottom: 3%;
 }
-.maindeowercontainer {
+/* .maindeowercontainer {
     width: 19%;
     height: 100vh;
     background-color: brown;
     position: absolute;
     transition: left 1s;
-}
-.maindeowercontainer2 {
-    width: 19%;
-    height: 100vh;
-    background-color: brown;
-    position: absolute;
-    left: -232px;
-    transition: left 2s ;
-}
+} */
+
 .cent {
     display: flex;
     justify-content: center;
@@ -167,6 +160,7 @@ input.input {
     transition: 0.5s ;
 }
 .topcrd.card {
+    height: 70%;
     margin-top: 7%;
 }
 

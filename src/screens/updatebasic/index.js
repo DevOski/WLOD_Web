@@ -18,7 +18,7 @@ const UpdateBasic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
   const params = useLocation();
-
+ 
   // console.log(location?.state?.email, "====>");
   const [isCheckedWidow, setisCheckedWidow] = useState(false);
   const [isCheckedDivorced, setisCheckedDivorced] = useState(false);
@@ -70,7 +70,7 @@ const UpdateBasic = () => {
       navigate("/Reviewpage"
        )
     }, 500);
-    console.log(params?.state?.data.data,'=====>okclose2');
+   
   };
   const update = () => {
     setloder(true);

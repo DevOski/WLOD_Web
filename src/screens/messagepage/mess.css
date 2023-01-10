@@ -51,7 +51,7 @@ input.input {
 .pad{
     padding-bottom: 3%;
 }
-.maindeowercontainer {
+/* .maindeowercontainer {
     width: 19%;
     height: 100vh;
     background-color: brown;
@@ -65,7 +65,7 @@ input.input {
     position: absolute;
     left: -232px;
     transition: left 2s ;
-}
+} */
 .cent {
     display: flex;
     justify-content: center;
@@ -259,7 +259,7 @@ margin-top: 17.5rem  !IMPORTANT;
     /* background-color: antiquewhite; */
     margin-left: 0px;
     width: 78rem;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .inputdivmessage {
     display: flex;
@@ -270,7 +270,7 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 .messinput {
        /* margin-top: 20.7rem !important; */
-       width: 87% !important;
+       width: 88% !important;
        border: none !important;
        position: relative;
        /* border: 1px solid black; */
@@ -335,7 +335,7 @@ margin-top: 17.5rem  !IMPORTANT;
     border-radius: 47px;
 }
 .textbox {
-    height: 34.2rem;
+    height: 29.2rem;
     /* padding-left: 4%; */
     padding: 2%;
     /* border: 1px solid; */
@@ -348,7 +348,7 @@ margin-top: 17.5rem  !IMPORTANT;
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
 }
 .textbox2 {
-    height: 34.2rem;
+    height: 29.2rem;
     display: flex;
     justify-content: center;
     align-items: center;

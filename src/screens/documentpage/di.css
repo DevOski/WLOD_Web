@@ -50,7 +50,7 @@ input.input {
 .pad{
     padding-bottom: 3%;
 }
-.maindeowercontainer {
+/* .maindeowercontainer {
     width: 19%;
     height: 100vh;
     background-color: brown;
@@ -64,7 +64,7 @@ input.input {
     position: absolute;
     left: -232px;
     transition: left 2s ;
-}
+} */
 .cent {
     display: flex;
     justify-content: center;
