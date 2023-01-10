@@ -17,7 +17,7 @@ const SideBar = () => {
     <div
     className={!drawer ? "maindeowercontainer2" : "maindeowercontainer"}
   >
-    <GiHamburgerMenu onClick={opendarwer} className="ham" />
+    <GiHamburgerMenu  className="ham" />
 
     <div className="cent">
       <div className="back">
