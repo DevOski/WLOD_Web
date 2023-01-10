@@ -347,6 +347,22 @@ margin-top: 17.5rem  !IMPORTANT;
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
 }
+.textbox2 {
+    height: 34.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 4%; */
+    padding: 2%;
+    /* border: 1px solid; */
+    /* width: 53.4rem; */
+    position: relative;
+    left: 3.4%;
+    overflow-y: scroll;
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+}
 .chbox {
     width: 50%;
     background-color: white;

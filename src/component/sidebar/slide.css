@@ -16,7 +16,7 @@
     }
     .maindeowercontainer2 {
         width: 21% !important;
-        height: 100vh;
+        /* height: 100vh; */
         background-color: brown;
         position: absolute;
         left: -232px;

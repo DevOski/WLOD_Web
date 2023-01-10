@@ -113,6 +113,11 @@ const Questionpagetwo = () => {
       },
     });
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      handleNext();
+      }
+    }
   return (
     <>
       <BasicExample />
@@ -123,10 +128,10 @@ const Questionpagetwo = () => {
         >
           <div className="d-flex justify-content-between  flex-column  align-items-center ww">
             <div>
-              <h4>General Health Information</h4>
+              <h4 className="qdesig">General Health Information</h4>
             </div>
             <div className="mb-3 inwi">
-              <label className="pb-2">
+              <label className="pb-2 ">
                 1) List any health problems and physical limitations:{" "}
               </label>
               <textarea
@@ -134,6 +139,7 @@ const Questionpagetwo = () => {
                 className="form-control"
                 placeholder="Enter health problems/physical limitations"
                 onChange={(event) => setphysicallimitations(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
 
@@ -146,11 +152,12 @@ const Questionpagetwo = () => {
                 className="form-control"
                 placeholder="Enter health problems/physical limitations"
                 onChange={(event) => setHealthlimitation(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
 
             <div>
-              <h4>Weight Information:</h4>
+              <h4 className="qdesig">Weight Information:</h4>
             </div>
             <div className="mb-3 inwi">
               <label className="pb-2">3) Current Weight:</label>
@@ -159,6 +166,7 @@ const Questionpagetwo = () => {
                 className="form-control"
                 placeholder="Current weight"
                 onChange={(event) => setCurrentWeight(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
             <div className="mb-3 inwi">
@@ -168,6 +176,7 @@ const Questionpagetwo = () => {
                 className="form-control"
                 placeholder="Current height"
                 onChange={(event) => setCurrentHeight(event.target.value)}
+                onKeyPress={enterKye}
               />
               <div className="mb-3 inwi">
                 <label className="pb-2">
@@ -181,6 +190,7 @@ const Questionpagetwo = () => {
                   onChange={(event) =>
                     setlowestandhighestadultweight(event.target.value)
                   }
+                  onKeyPress={enterKye}
                 />
               </div>
               <div className="mb-3 inwi">
@@ -195,6 +205,7 @@ const Questionpagetwo = () => {
                   onChange={(event) =>
                     setweightchangesgainorloss(event.target.value)
                   }
+                  onKeyPress={enterKye}
                 />
               </div>
               <div className="mb-3 inwi">
@@ -207,6 +218,7 @@ const Questionpagetwo = () => {
                   className="form-control"
                   placeholder="Past diet details"
                   onChange={(event) => setdietedinthepast(event.target.value)}
+                  onKeyPress={enterKye}
                 />
               </div>
 
@@ -219,6 +231,7 @@ const Questionpagetwo = () => {
                   onChange={(event) =>
                     setweightwouldyouliketolose(event.target.value)
                   }
+                  onKeyPress={enterKye}
                 />
               </div>
               <div className="mb-3 inwi">
@@ -230,11 +243,12 @@ const Questionpagetwo = () => {
                   onChange={(event) =>
                     setbenefitfromthisweightloss(event.target.value)
                   }
+                  onKeyPress={enterKye}
                 />
               </div>
 
               <div className=" align-items-center">
-                <h4 style={{ textAlign: "center" }}>
+                <h4 className="qdesig" style={{ textAlign: "center" }}>
                   Physical Activity Information:
                 </h4>
                 <div>
@@ -249,6 +263,7 @@ const Questionpagetwo = () => {
                       onChange={(event) =>
                         setregularexercises(event.target.value)
                       }
+                      onKeyPress={enterKye}
                     />
                   </div>
                 </div>
@@ -266,6 +281,7 @@ const Questionpagetwo = () => {
                       className="form-control"
                       placeholder="Who plans the meals at home?"
                       onChange={(event) => setplansthemeals(event.target.value)}
+                      onKeyPress={enterKye}
                     />
                   </div>
                   <div className="mb-3 inwi">
@@ -277,6 +293,7 @@ const Questionpagetwo = () => {
                       onChange={(event) =>
                         setpreparesthemeal(event.target.value)
                       }
+                      onKeyPress={enterKye}
                     />
                   </div>
                 </div>

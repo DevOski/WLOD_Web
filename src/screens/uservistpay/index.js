@@ -3,7 +3,7 @@ import "./vt.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BasicExample, Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Loader, Navbarmenu, TopBar } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -18,6 +18,7 @@ import { useLocation } from "react-router-dom";
 const Confirmpay = () => {
   const params = useLocation();
   console.log("@", params?.state?.data);
+  const [loader, setLoader] = useState(true);
   const [cardnumber, setcardnumber] = useState("");
   const [Expiration, setExpiration] = useState("");
   const [Cvv, setCvv] = useState("");
@@ -26,6 +27,9 @@ const Confirmpay = () => {
   const ApplyCupon = params?.state?.bparams?.ApplyCupon;
   const data = params?.state?.data;
 
+   setTimeout(() => {
+    setLoader(false)
+   },3000);
   const dispatch = useDispatch();
   const handleOnChange = () => {
     setisisChecked(!isChecked);
@@ -100,7 +104,13 @@ const Confirmpay = () => {
   //       // }
   //   }
   // },)
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      saveCreditCard();
+      }
+    }
   return (
+    <>
     <Container fluid>
       <div className="of">
         {/* <Navbar expand="lg" variant="light" bg="light">
@@ -122,6 +132,7 @@ const Confirmpay = () => {
                   defaultValue={cardnumber}
                   placeholder="Add your credit card number"
                   onChange={(event) => setcardnumber(event.target.value)}
+                  onKeyPress={enterKye}
                   maxLength={16}
                 />
                 <Form.Text className="text-muted">
@@ -136,6 +147,7 @@ const Confirmpay = () => {
                   type="text"
                   placeholder="Expiration(MM)"
                   onChange={(event) => setExpiration(event.target.value)}
+                  onKeyPress={enterKye}
                   maxLength={2}
                 />
               </Form.Group>
@@ -147,6 +159,7 @@ const Confirmpay = () => {
                   type="text"
                   placeholder="Expiration(YY)"
                   onChange={(event) => setExpirationYY(event.target.value)}
+                  onKeyPress={enterKye}
                   maxLength={2}
                 />
               </Form.Group>
@@ -157,7 +170,8 @@ const Confirmpay = () => {
                   type="text"
                   placeholder="Cvv"
                   onChange={(event) => setCvv(event.target.value)}
-                  maxLength={4}
+                  onKeyPress={enterKye}
+                  maxLength={3}
                 />
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -180,6 +194,8 @@ const Confirmpay = () => {
         </Row>
       </div>
     </Container>
+      {loader && <Loader />}
+      </>
   );
 };
 

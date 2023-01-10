@@ -18,7 +18,7 @@
 .recoverbutt{
     border: none;
     margin-top: 2%;
-    border-radius: 50px !important;
+    /* border-radius: 50px !important; */
     background: #bd3434 !important;
     padding: 12px 40px !important;
     color: white;
@@ -27,6 +27,9 @@
 .forgetinput1 {
     width: 10% !important;
     padding: 1% !important;
+}
+.recoverdiv{ width: 20% !important;
+margin-top: 1%;
 }
 
 @media screen and (max-width: 767px) {

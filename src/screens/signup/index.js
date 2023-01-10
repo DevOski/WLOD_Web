@@ -116,7 +116,11 @@ const SignUp = () => {
   //   }
   //   navigate('/basic')
   // };
-
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      handleSubmit();
+      }
+    }
   return (
     <>
       <div className="over">
@@ -142,6 +146,7 @@ const SignUp = () => {
                         id="email"
                         className="in"
                         onChange={(event) => setEmail(event.target.value)}
+                        onKeyPress={enterKye}
                         placeholder="Email"
                       />
                     </div>
@@ -166,6 +171,7 @@ const SignUp = () => {
                         id="pass"
                         className="in"
                         onChange={(event) => setPassword(event.target.value)}
+                        onKeyPress={enterKye}
                         placeholder="Create password"
                       />
                     </div>
@@ -193,12 +199,16 @@ const SignUp = () => {
               </div>
 
               <div className="lastchild">
+                <div className="signbb">
                 <Button
                   className="signup-create-btn"
                   onClick={() => handleSubmit()}
                 >
                   Create account
                 </Button>
+
+                </div>
+               
                 <p className="signup-already-member-text">
                   Already a member?{" "}
                   <a href="/sigin" className="signuponsingin">

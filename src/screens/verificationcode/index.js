@@ -73,6 +73,11 @@ const VerificationCode = () => {
       seterror(true);
     }
   }
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      submit();
+      }
+    }
   return (
     <>
      <BasicExample/>
@@ -88,11 +93,14 @@ const VerificationCode = () => {
            <VerificationInput
            length={4}
            onChange={(text)=>{setcode(text)}}
+           onKeyPress={enterKye}
            />
           </div>
          
-        
-          <Button className="recoverbutt"   onClick={submit}>Submit</Button>
+        <div className="recoverdiv">
+        <Button className="recoverbutt"   onClick={submit}>Submit</Button>
+        </div>
+          
         
            </div>
         </Col>

@@ -23,9 +23,13 @@ const Rewiewpage = () => {
     });
   };
   const gotoEdit=()=>{
-    navigate('/updateinfo')
+    navigate('/updateinfo', {
+      state: {
+        data:params?.state?.data,
+      },
+    })
   }
-  console.log(params?.state?.params, "----------------------->>>>>");
+  console.log(params?.state?.data, "----------------------->>>>>daaaaata");
   return (
     <div className="of">
       <BasicExample />

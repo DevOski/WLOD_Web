@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { useLocation } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Addnew = () => {
   let navigate = useNavigate(); 
@@ -95,21 +96,29 @@ const [email, setemail] = useState('')
     <>
       <BasicExample  />
       <Row>
-        <Col lg='10'>
+        <Col lg='12'>
          
 
-           <div className="boxadd"> 
+           <div className="boxaddneww"> 
            <label>New Password</label>
-            <input type='text' placeholder="Enter your password" className="forgetinput"
+           <div className="inputwidth">
+
+          
+            <input type='text' placeholder="Enter your password" className="form-control"
              onChange={(event) => setpassword(event.target.value)}
             />
+             </div>
             <label>Confirm Password</label>
-            <input type='text' placeholder="Renter your password" className="forgetinput"
+            <div className="inputwidth">
+            <input type='text' placeholder="Renter your password" className="form-control"
              onChange={(event) => setcpassword(event.target.value)}
             
             />
+            </div>
             
-            <button onClick={UpdatePass} className="newpassbutt">Submit</button>
+           <div className="bwidth">
+           <Button onClick={UpdatePass} className="newpassbuttsub">Submit</Button>
+           </div>
            </div>
         </Col>
       </Row>

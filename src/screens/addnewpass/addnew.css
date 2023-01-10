@@ -4,38 +4,44 @@
     margin-left: 10%;
     margin-top: 2%;
 }
-.boxadd{
-    width: 50%;
-    width: 50%;
+.boxaddneww{
+    /* width: 50%; */
+    width: 100%;
     margin-left: 10%;
     margin-top: 2%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+}
+.bwidth{
+    width: 30%;
 }
 .recoverbutt{
     border: none;
     margin-top: 2%;
     padding: 2%;
-    border-radius: 14px;
+    /* border-radius: 14px; */
     background-color: #be1d2c;
     color: white;
     font-weight: bold;
 }
-.forgetinput {
+.inputwidth {
     width: 55%;
-    padding: 2%;
+    /* padding: 2%; */
 }
-.newpassbutt {
-    width: 22%;
+.newpassbuttsub {
+ margin-top: 1%; 
     background-color: #bf1e2d;
     border: none;
     color: white;
     text-transform: capitalize;
 }
-.newpassbutt:hover {
-    width: 22%;
-    background-color: #e0858e;
+.newpassbuttsub:hover {
+    margin-top: 1%; 
+    background-color: #bf1e2d;
+    /* background-color: #e0858e; */
     border: none;
     color: white;
     text-transform: capitalize;

@@ -98,8 +98,10 @@ const Videocalling = () => {
     </div>
   ) : (
     <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh",}}>
+<div style={{width:"10%",}}>
 
-    <Button onClick={getChannel}>Start Call</Button>
+    <Button onClick={getChannel}>Join session</Button>
+</div>
     </div>
   );
 };

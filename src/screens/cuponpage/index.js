@@ -97,6 +97,11 @@ const Cupon = () => {
     //   setCongratsStatus(false);
     // }
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      handleCoupon();
+      }
+    }
   return (
     <Container fluid>
       <div className="of">
@@ -118,6 +123,7 @@ const Cupon = () => {
                   type="numberic"
                   placeholder="Add Coupon"
                   onChange={(event) => setApplyCupon(event.target.value)}
+                  onKeyPress={enterKye}
                 />
                 <Form.Text className="text-muted">
                 </Form.Text>

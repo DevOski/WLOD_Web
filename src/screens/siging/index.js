@@ -68,6 +68,12 @@ const Siging = () => {
       }
     }
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      Sigin();
+      }
+    }
+  
   return (
     <>
       <BasicExample />
@@ -76,8 +82,8 @@ const Siging = () => {
         <p className="well">Welcome</p>
       </div>
 
-      <div className="Auth-form-container">
-        <form className="Auth-form">
+      <div className="Auth-form-container" >
+        <form className="Auth-form" >
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign in to Your Account</h3>
             <div className="form-group mt-3">
@@ -87,6 +93,7 @@ const Siging = () => {
                 className="form-control mt-1"
                 placeholder="Enter email"
                 onChange={(event) => setemail(event.target.value)}
+                onKeyPress={enterKye}
                
               />
             </div>
@@ -97,6 +104,7 @@ const Siging = () => {
                 className="form-control mt-1"
                 placeholder="Enter password"
                 onChange={(event) => setpassword(event.target.value)}
+                onKeyPress={enterKye}
              
               />
             </div>

@@ -17,9 +17,9 @@ import moment from "moment";
 const UpdateBasic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
-  const location = useLocation();
+  const params = useLocation();
 
-  console.log(location?.state?.email, "====>");
+  // console.log(location?.state?.email, "====>");
   const [isCheckedWidow, setisCheckedWidow] = useState(false);
   const [isCheckedDivorced, setisCheckedDivorced] = useState(false);
   const [isCheckedsingle, setisCheckedsingle] = useState(false);
@@ -67,8 +67,10 @@ const UpdateBasic = () => {
     setloder(false);
     setError2(false);
     setTimeout(() => {
-      navigate("/Reviewpage")
+      navigate("/Reviewpage"
+       )
     }, 500);
+    console.log(params?.state?.data.data,'=====>okclose2');
   };
   const update = () => {
     setloder(true);
@@ -126,32 +128,37 @@ const UpdateBasic = () => {
       });
   };
   const handleOnChangeWidowd = () => {
-    setisCheckedWidow(!isCheckedWidow);
+    setisCheckedWidow(true);
     setMaritalStatus("Widowed");
     setisCheckedmarried(false);
     setisCheckedsingle(false);
     setisCheckedDivorced(false);
   };
   const handleOnChangeDivoced = () => {
-    setisCheckedDivorced(!isCheckedDivorced);
+    setisCheckedDivorced(true);
     setMaritalStatus("Divorced");
     setisCheckedmarried(false);
     setisCheckedsingle(false);
     setisCheckedWidow(false);
+   
   };
 
   const handleOnChangesingle = () => {
-    setisCheckedsingle(!isCheckedsingle);
+    setisCheckedsingle(true);
     setMaritalStatus("single");
     setisCheckedmarried(false);
+    setisCheckedDivorced(false);
+    setisCheckedWidow(false);
   };
   const handleOnChangemarried = () => {
-    setisCheckedmarried(!isCheckedmarried);
+    setisCheckedmarried(true);
     setMaritalStatus("married");
     setisCheckedsingle(false);
+      setisCheckedDivorced(false);
+    setisCheckedWidow(false);
   };
   const handleOnChangemale = () => {
-    setCheckedMale(!CheckedMale);
+    setCheckedMale(true);
     setgender("Male");
     setCheckedFemale(false);
   };
@@ -161,37 +168,37 @@ const UpdateBasic = () => {
     setCheckedMale(false);
   };
   const handleOnChangeLangeng = () => {
-    setisCheckedmarriedenglish(!isCheckedenglish);
+    setisCheckedmarriedenglish(true);
     setLanguage("english");
     setisCheckedSpanish(false);
     setisCheckedOthers(false);
   };
   const handleOnChangeLangspan = () => {
-    setisCheckedSpanish(!isCheckedSpanish);
+    setisCheckedSpanish(true);
     setLanguage("Spanish");
     setisCheckedmarriedenglish(false);
     setisCheckedOthers(false);
   };
   const handleOnChangeLangother = () => {
-    setisCheckedOthers(!isCheckedOthers);
+    setisCheckedOthers(true);
     setLanguage("other");
     setisCheckedmarriedenglish(false);
     setisCheckedSpanish(false);
   };
   const handleOnChangesmokinstatusnever = () => {
-    setisSmokingstatusNever(!isSmokingstatusNever);
+    setisSmokingstatusNever(true);
     setSmokeStatus("never");
     setisSmokingstatusFormer(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatusformer = () => {
-    setisSmokingstatusFormer(!isSmokingstatusFormer);
+    setisSmokingstatusFormer(true);
     setSmokeStatus("former");
     setisSmokingstatusNever(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatuscurrent = () => {
-    setisSmokingstatusCurrent(!isSmokingstatusCurrent);
+    setisSmokingstatusCurrent(true);
     setSmokeStatus("current");
 
     setisSmokingstatusNever(false);
@@ -304,6 +311,11 @@ const UpdateBasic = () => {
       }
     }, 100);
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      update();
+      }
+    }
   console.log(date);
   return (
     <div className="fulllod">
@@ -321,6 +333,7 @@ const UpdateBasic = () => {
                 placeholder="First name"
                 value={firstname}
                 onChange={(event) => setfirstname(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
             <div className="mb-3 w-50">
@@ -331,6 +344,7 @@ const UpdateBasic = () => {
                 placeholder="Last name"
                 value={Lastname}
                 onChange={(event) => setLastname(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
           </div>
@@ -344,6 +358,7 @@ const UpdateBasic = () => {
                   className="in"
                   defaultValue={date}
                   onChange={(event) => setdate(event.target.value)}
+                  onKeyPress={enterKye}
                   placeholder="Date of Birth"
                 />
               </div>
@@ -357,6 +372,7 @@ const UpdateBasic = () => {
                 placeholder="Preferred Phone Number"
                 value={PhoneNumber}
                 onChange={(event) => setPhoneNumber(event.target.value)}
+                onKeyPress={enterKye}
               />
             </div>
           </div>
@@ -373,6 +389,7 @@ const UpdateBasic = () => {
                   className="topping"
                   checked={CheckedMale}
                   onChange={handleOnChangemale}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Male</p>
               </div>
@@ -385,6 +402,7 @@ const UpdateBasic = () => {
                   checked={CheckedFemale}
                   className="topping"
                   onChange={handleOnChangeFemale}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Female</p>
               </div>
@@ -402,6 +420,7 @@ const UpdateBasic = () => {
                   className="topping"
                   checked={isCheckedsingle}
                   onChange={handleOnChangesingle}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Single</p>
               </div>
@@ -414,6 +433,7 @@ const UpdateBasic = () => {
                   checked={isCheckedmarried}
                   className="topping"
                   onChange={handleOnChangemarried}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Married</p>
               </div>
@@ -426,6 +446,7 @@ const UpdateBasic = () => {
                   checked={isCheckedDivorced}
                   className="topping"
                   onChange={handleOnChangeDivoced}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Divorced</p>
               </div>
@@ -438,6 +459,7 @@ const UpdateBasic = () => {
                   checked={isCheckedWidow}
                   className="topping"
                   onChange={handleOnChangeWidowd}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Widowed</p>
               </div>
@@ -456,6 +478,7 @@ const UpdateBasic = () => {
                   className="topping"
                   checked={isCheckedenglish}
                   onChange={handleOnChangeLangeng}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">English</p>
               </div>
@@ -468,6 +491,7 @@ const UpdateBasic = () => {
                   checked={isCheckedSpanish}
                   className="topping"
                   onChange={handleOnChangeLangspan}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Spanish</p>
               </div>
@@ -484,6 +508,7 @@ const UpdateBasic = () => {
                   value="Never"
                   className="topping"
                   checked={isSmokingstatusNever}
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusnever}
                 />
                 <p className="pleft">Never</p>
@@ -496,6 +521,7 @@ const UpdateBasic = () => {
                   value="Former"
                   checked={isSmokingstatusFormer}
                   className="topping"
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusformer}
                 />
                 <p className="pleft">Former</p>
@@ -508,6 +534,7 @@ const UpdateBasic = () => {
                   value="Current"
                   checked={isSmokingstatusCurrent}
                   className="topping"
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatuscurrent}
                 />
                 <p className="pleft">Current</p>

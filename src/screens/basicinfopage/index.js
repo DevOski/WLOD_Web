@@ -158,30 +158,35 @@ const Basic = () => {
     setisCheckedOthers(false);
   };
   const handleOnChangeLangother = () => {
-    setisCheckedOthers(!isCheckedOthers);
+    setisCheckedOthers(true);
     setLanguage("other");
     setisCheckedmarriedenglish(false);
     setisCheckedSpanish(false);
   };
   const handleOnChangesmokinstatusnever = () => {
-    setisSmokingstatusNever(!isSmokingstatusNever);
+    setisSmokingstatusNever(true);
     setSmokeStatus("never");
     setisSmokingstatusFormer(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatusformer = () => {
-    setisSmokingstatusFormer(!isSmokingstatusFormer);
+    setisSmokingstatusFormer(true);
     setSmokeStatus("former");
     setisSmokingstatusNever(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatuscurrent = () => {
-    setisSmokingstatusCurrent(!isSmokingstatusCurrent);
+    setisSmokingstatusCurrent(true);
     setSmokeStatus("current");
 
     setisSmokingstatusNever(false);
     setisSmokingstatusFormer(false);
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      goHome();
+      }
+    }
   return (
     <div className="fulllod" >
       <BasicExample />
@@ -197,6 +202,7 @@ const Basic = () => {
               className="form-control"
               placeholder="First name"
               onChange={(event) => setfirstname(event.target.value)}
+              onKeyPress={enterKye}
             />
           </div>
           <div className="mb-3 w-50">
@@ -206,6 +212,7 @@ const Basic = () => {
               className="form-control"
               placeholder="Last name"
               onChange={(event) => setLastname(event.target.value)}
+              onKeyPress={enterKye}
             />
           </div>
          </div>
@@ -222,6 +229,7 @@ const Basic = () => {
               className="in"
               onChange={(event) => setdate(event.target.value)}
               placeholder="Date of Birth"
+              onKeyPress={enterKye}
               />
               </div>
          
@@ -234,6 +242,7 @@ const Basic = () => {
               className="form-control"
               placeholder="Preferred Phone Number"
               onChange={(event) => setPhoneNumber(event.target.value)}
+              onKeyPress={enterKye}
             />
           </div>
 
@@ -252,6 +261,7 @@ const Basic = () => {
                   className="topping"
                   checked={CheckedMale}
                   onChange={handleOnChangemale}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Male</p>
               </div>
@@ -264,6 +274,7 @@ const Basic = () => {
                   checked={CheckedFemale}
                   className="topping"
                   onChange={handleOnChangeFemale}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Female</p>
               </div>
@@ -280,6 +291,7 @@ const Basic = () => {
                   value="Paneer"
                   className="topping"
                   checked={isCheckedsingle}
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesingle}
                 />
                 <p className="pleft">Single</p>
@@ -293,6 +305,7 @@ const Basic = () => {
                   checked={isCheckedmarried}
                   className="topping"
                   onChange={handleOnChangemarried}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Married</p>
               </div>
@@ -305,6 +318,7 @@ const Basic = () => {
                   checked={isCheckedDivorced}
                   className="topping"
                   onChange={handleOnChangeDivoced}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Divorced</p>
               </div>
@@ -318,6 +332,7 @@ const Basic = () => {
                   className="topping"
                   
                   onChange={handleOnChangeWidowd}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Widowed</p>
               </div>
@@ -336,6 +351,7 @@ const Basic = () => {
                   className="topping"
                   checked={isCheckedenglish}
                   onChange={handleOnChangeLangeng}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">English</p>
               </div>
@@ -348,6 +364,7 @@ const Basic = () => {
                   checked={isCheckedSpanish}
                   className="topping"
                   onChange={handleOnChangeLangspan}
+                  onKeyPress={enterKye}
                 />
                 <p className="pleft">Spanish</p>
               </div>
@@ -365,6 +382,7 @@ const Basic = () => {
                   value="Never"
                   className="topping"
                   checked={isSmokingstatusNever}
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusnever}
                 />
                 <p className="pleft">Never</p>
@@ -377,6 +395,7 @@ const Basic = () => {
                   value="Former"
                   checked={isSmokingstatusFormer}
                   className="topping"
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusformer}
                 />
                 <p className="pleft">Former</p>
@@ -389,6 +408,7 @@ const Basic = () => {
                   value="Current"
                   checked={isSmokingstatusCurrent}
                   className="topping"
+                  onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatuscurrent}
                 />
                 <p className="pleft">Current</p>

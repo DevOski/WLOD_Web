@@ -89,6 +89,9 @@ input#email {
 .over{
     overflow-x: hidden;
 }
+.signbb{
+width:30%
+}
 .signup-create-btn {
     border-radius: 50px !important;
     background: #bd3434 !important;

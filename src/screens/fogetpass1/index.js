@@ -140,6 +140,11 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/forgot_pass", reques
 //       })
 //       .catch(error => console.log('error', error));
 //   };
+const enterKye=(e)=>{
+  if(e.key==="Enter"){
+    recoverPassword();
+    }
+  }
   return (
     <>
    <BasicExample signup="signUp" logout='logout'/>
@@ -159,6 +164,7 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/forgot_pass", reques
            <div className="box2"> 
             <input type='text' placeholder="Enter your email" className="forgetinput"
              onChange={(event) => setEmail(event.target.value)}
+             onKeyPress={enterKye}
             />
             <button onClick={recoverPassword} className="recoverbutt">Recover my password </button>
            </div>

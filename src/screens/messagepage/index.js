@@ -169,7 +169,7 @@ const MessageScreen = () => {
 
         <Col lg="10">
           <div className="chatdivmain">
-            <div className="textbox">
+            {msgList? <div className="textbox">
               {msgList?.map((item, index) => {
                 return (
                   <div className="scr">
@@ -201,7 +201,10 @@ const MessageScreen = () => {
                   </div>
                 );
               })}
-            </div>
+            </div>:<div className="textbox2">
+             <p>There no message</p>
+            </div>}
+           
             <div className="inputdivmessage">
               <div className="messinput">
                 <input
