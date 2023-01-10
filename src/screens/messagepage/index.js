@@ -158,6 +158,11 @@ const MessageScreen = () => {
       })
       .catch((error) => console.log("error", error));
   };
+  const enterKye=(e)=>{
+    if(e.key==="Enter"){
+      handleMsg();
+      }
+    }
   return (
     <div className="wi55">
       <BasicExample />
@@ -213,6 +218,7 @@ const MessageScreen = () => {
                   placeholder="Enter your message"
                   onChange={(event) => setMessage(event.target.value)}
                   value={message}
+                  onKeyPress={enterKye}
                 />
                 <button className="sendbuttondiv" onClick={handleMsg}>
                   <p className="sendbutton">

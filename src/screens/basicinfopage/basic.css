@@ -68,6 +68,7 @@ input.input {
   padding-left: 10%;
 }
 .bdivsignup {
+  width: 20%;
   display: flex;
   justify-content: center;
 }

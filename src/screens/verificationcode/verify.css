@@ -16,19 +16,39 @@
     flex-direction: column;
 }
 .recoverbutt{
+    width:20px;
     border: none;
     margin-top: 2%;
     /* border-radius: 50px !important; */
-    background: #bd3434 !important;
+    background: #992a35 !important;
     padding: 12px 40px !important;
     color: white;
     font-weight: bold;
+    height: 35px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.recoverbutt:hover{
+    width:20px;
+    border: none;
+    margin-top: 2%;
+    /* border-radius: 50px !important; */
+    background: #992a35 !important;
+    padding: 12px 40px !important;
+    color: white;
+    height: 35px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    /* font-weight: bold; */
 }
 .forgetinput1 {
     width: 10% !important;
     padding: 1% !important;
 }
 .recoverdiv{ width: 20% !important;
+    /* height: 10% !important; */
 margin-top: 1%;
 }
 

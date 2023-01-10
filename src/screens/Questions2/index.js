@@ -157,7 +157,7 @@ const Questionpagetwo = () => {
             </div>
 
             <div>
-              <h4 className="qdesig">Weight Information:</h4>
+              <h4 className="qdesig">Weight Information</h4>
             </div>
             <div className="mb-3 inwi">
               <label className="pb-2">3) Current Weight:</label>
@@ -170,7 +170,7 @@ const Questionpagetwo = () => {
               />
             </div>
             <div className="mb-3 inwi">
-              <label className="pb-2">4) Current Height:</label>
+              <label className="pb-2">4) Current Height</label>
               <input
                 type="text"
                 className="form-control"
@@ -249,7 +249,7 @@ const Questionpagetwo = () => {
 
               <div className=" align-items-center">
                 <h4 className="qdesig" style={{ textAlign: "center" }}>
-                  Physical Activity Information:
+                  Physical Activity Information
                 </h4>
                 <div>
                   <div>
@@ -269,8 +269,8 @@ const Questionpagetwo = () => {
                 </div>
 
                 <div className="mt-3">
-                  <h4 style={{ textAlign: "center" }}>
-                    Nutrition Information:
+                  <h4 className="qdesig" style={{ textAlign: "center" }}>
+                    Nutrition Information
                   </h4>
                 </div>
                 <div>

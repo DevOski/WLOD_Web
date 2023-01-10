@@ -64,7 +64,7 @@ input.input {
 
 
 .back {
-    background-color: #c5adada3;
+    /* background-color: #c5adada3; */
     width: 81%;
     height: 45%;
     border-radius: 0% !important;
@@ -97,7 +97,7 @@ input.input {
     transition: 0.5s;
 }
 .back2:hover {
-    background-color: #c5adada3;
+    /* background-color: #c5adada3; */
     width: 81%;
     height: 45%;
     border-radius: 0 !important;

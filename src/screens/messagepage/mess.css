@@ -78,7 +78,7 @@ input.input {
     font-weight: 800;
 }
 .back {
-    background-color: #c5adada3;
+    /* background-color: #c5adada3; */
     width: 81%;
     height: 45%;
     border-radius: 7%;
