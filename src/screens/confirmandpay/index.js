@@ -517,7 +517,7 @@ const Pay = () =>{
           <button className="paybutt11"  onClick={goto}style={{backgroundColor:paycolor}} disabled={paystatus}>
            {btext}
           </button>
-          <button className="paybutt11"  onClick={gotoConfirmpay}  style={{backgroundColor:paycolor}} >
+          <button className="paybutt11"  onClick={gotoConfirmpay}  style={{backgroundColor:paycolor}} disabled={bstatus}>
             {cuopontext}
           </button>
           <button className="paybutt12" >

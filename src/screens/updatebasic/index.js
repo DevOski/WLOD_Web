@@ -14,11 +14,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 import { getUser } from "../../services/utilities/api";
 import moment from "moment";
+import { setDate } from "date-fns";
 const UpdateBasic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
   const params = useLocation();
- 
+ console.log("update info params",params.state.data);
   // console.log(location?.state?.email, "====>");
   const [isCheckedWidow, setisCheckedWidow] = useState(false);
   const [isCheckedDivorced, setisCheckedDivorced] = useState(false);
@@ -67,65 +68,113 @@ const UpdateBasic = () => {
     setloder(false);
     setError2(false);
     setTimeout(() => {
-      navigate("/Reviewpage"
+      navigate("/Reviewpage",
+      {
+        state :{
+          data:params.state.data,
+          edit:"true"
+        }
+      }
        )
     }, 500);
    
   };
   const update = () => {
     setloder(true);
+    console.log("firstname",firstname,"Lastname",Lastname,"gender",gender,"PhoneNumber",PhoneNumber,"maritalStatus",maritalStatus,"language",language,"smokeStatus",smokeStatus,date);
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
+    
     var formdata = new FormData();
-    formdata.append("first_name", firstname);
-    formdata.append("middle_name", middle);
-    formdata.append("last_name", Lastname);
     formdata.append("gender", gender);
-    formdata.append("age", Age);
-    formdata.append("prefix", prefix);
-    formdata.append("suffix", Suffix);
-    formdata.append("phone", PhoneNumber);
-    formdata.append("phone_type", "Mobile");
     formdata.append("marital_status", maritalStatus);
-    formdata.append("occupation", Occupation);
-    formdata.append("work_hours", WorkHours);
-    formdata.append("last_education", Education);
     formdata.append("language", language);
     formdata.append("smoking_status", smokeStatus);
-    formdata.append("marital_status", maritalStatus);
-
+    formdata.append("first_name", firstname);
+    formdata.append("last_name", Lastname);
+    formdata.append("phone", PhoneNumber);
+    formdata.append("dob", date);
+    
     var requestOptions = {
-      method: "POST",
+      method: 'POST',
       headers: myHeaders,
       body: formdata,
-      redirect: "follow",
+      redirect: 'follow'
     };
-
-    fetch(
-      "https://dashboard.weightlossondemand.com/backend/api/user_update",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result, "====>res");
-       
+    
+    fetch("https://dashboard.weightlossondemand.com/backend/api/update_info", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
         if (result.message == "User Updated Successfully") {
-          console.log("works----------->>>>", result.message);
-          // dispatch(storeData(result.token));
-          setloder(false);
-          setError2(true);
-          setErrorMessage(result.message);
-          // setLoader(false);
-          setTimeout(() => {
-            // setIsModalVisible(true);
-          }, 500);
-        }
+                console.log("works----------->>>>", result.message);
+
+
+                // dispatch(storeData(result.token));
+                setloder(false);
+                setError2(true);
+                setErrorMessage(result.message);
+                // setLoader(false);
+                setTimeout(() => {
+                  // setIsModalVisible(true);
+                }, 500);
+              }
       })
-      .catch((error) => {
-        console.log("error", error);
-        setloder(false);
-        setError2(false);
-      });
+      .catch(error => console.log('error', error));
+    
+    // setloder(true);
+    // var myHeaders = new Headers();
+    // myHeaders.append("Authorization", token);
+    // var formdata = new FormData();
+    // formdata.append("first_name", firstname);
+    // formdata.append("middle_name", middle);
+    // formdata.append("last_name", Lastname);
+    // formdata.append("gender", gender);
+    // formdata.append("age", Age);
+    // formdata.append("prefix", prefix);
+    // formdata.append("suffix", Suffix);
+    // formdata.append("phone", PhoneNumber);
+    // formdata.append("phone_type", "Mobile");
+    // formdata.append("marital_status", maritalStatus);
+    // formdata.append("occupation", Occupation);
+    // formdata.append("work_hours", WorkHours);
+    // formdata.append("last_education", Education);
+    // formdata.append("language", language);
+    // formdata.append("smoking_status", smokeStatus);
+    // formdata.append("marital_status", maritalStatus);
+
+    // var requestOptions = {
+    //   method: "POST",
+    //   headers: myHeaders,
+    //   body: formdata,
+    //   redirect: "follow",
+    // };
+
+    // fetch(
+    //   "https://dashboard.weightlossondemand.com/backend/api/user_update",
+    //   requestOptions
+    // )
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log(result, "====>res");
+       
+    //     if (result.message == "User Updated Successfully") {
+    //       console.log("works----------->>>>", result.message);
+    //       // dispatch(storeData(result.token));
+    //       setloder(false);
+    //       setError2(true);
+    //       setErrorMessage(result.message);
+    //       // setLoader(false);
+    //       setTimeout(() => {
+    //         // setIsModalVisible(true);
+    //       }, 500);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("error", error);
+    //     setloder(false);
+    //     setError2(false);
+    //   });
   };
   const handleOnChangeWidowd = () => {
     setisCheckedWidow(true);
@@ -145,14 +194,14 @@ const UpdateBasic = () => {
 
   const handleOnChangesingle = () => {
     setisCheckedsingle(true);
-    setMaritalStatus("single");
+    setMaritalStatus("Single");
     setisCheckedmarried(false);
     setisCheckedDivorced(false);
     setisCheckedWidow(false);
   };
   const handleOnChangemarried = () => {
     setisCheckedmarried(true);
-    setMaritalStatus("married");
+    setMaritalStatus("Married");
     setisCheckedsingle(false);
       setisCheckedDivorced(false);
     setisCheckedWidow(false);
@@ -169,7 +218,7 @@ const UpdateBasic = () => {
   };
   const handleOnChangeLangeng = () => {
     setisCheckedmarriedenglish(true);
-    setLanguage("english");
+    setLanguage("English");
     setisCheckedSpanish(false);
     setisCheckedOthers(false);
   };
@@ -181,25 +230,25 @@ const UpdateBasic = () => {
   };
   const handleOnChangeLangother = () => {
     setisCheckedOthers(true);
-    setLanguage("other");
+    setLanguage("Other");
     setisCheckedmarriedenglish(false);
     setisCheckedSpanish(false);
   };
   const handleOnChangesmokinstatusnever = () => {
     setisSmokingstatusNever(true);
-    setSmokeStatus("never");
+    setSmokeStatus("Never");
     setisSmokingstatusFormer(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatusformer = () => {
     setisSmokingstatusFormer(true);
-    setSmokeStatus("former");
+    setSmokeStatus("Former");
     setisSmokingstatusNever(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatuscurrent = () => {
     setisSmokingstatusCurrent(true);
-    setSmokeStatus("current");
+    setSmokeStatus("Current");
 
     setisSmokingstatusNever(false);
     setisSmokingstatusFormer(false);
@@ -214,6 +263,7 @@ const UpdateBasic = () => {
     setTimeout(async () => {
       try {
         let response = await getUser(token);
+        console.log("userdetails",response.data.data);
         setfirstname(response.data.data.first_name);
         setLastname(response.data.data.last_name);
         setPhoneNumber(response.data.data.phone);
@@ -225,9 +275,11 @@ const UpdateBasic = () => {
         // console.log("date1------------------------------->>>>>>>>>>>", date1);
         let year = dob[6] + dob[7] + dob[8] + dob[9];
         // console.log("year------------------------------->>>>>>>>>>>", year);
-        let finalDate = `${year}-${date1}-${month}`;
+        let finalDate = `${date1}/${month}/${year}`;
 
-        setdate(finalDate);
+        setdate(response.data.data.date_of_birth);
+        console.log("moment^^^",moment(date,"DD/MM/YYYY").format("YYYY-MM-DD")); 
+        setLanguage(response.data.data.language)
         // setslectnumber(response.data.data.phone_type);
         // setOccupation(response.data.data.occupation);
         // setWorkingHour(response.data.data.work_hour);
@@ -356,8 +408,8 @@ const UpdateBasic = () => {
                   type="date"
                   id="date"
                   className="in"
-                  defaultValue={date}
-                  onChange={(event) => setdate(event.target.value)}
+                  value={moment(date,"DD/MM/YYYY").format("YYYY-MM-DD")}
+                  onChange={(event) => setdate(moment(event.target.value,"YYYY-MM-DD").format("DD/MM/YYYY"))}
                   onKeyPress={enterKye}
                   placeholder="Date of Birth"
                 />

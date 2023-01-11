@@ -25,6 +25,15 @@
 .vt-logo {
   width: 50% !important;
 }
-.basicbuttdiv:{
-  width: 50% !important;
+.basicbuttdiv {
+  /* width: 50%*/
+}
+.editinfo {
+  width: 100% !important;
+  margin-top: 15%  !important;
+  /* border-radius: 50px !important; */
+  /* background: #bd3434 !important; */
+  background: "maroon" !important;
+  padding: 7px 9px !important;
+  border-radius: 7%!important;
 }
