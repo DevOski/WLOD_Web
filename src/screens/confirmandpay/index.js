@@ -514,10 +514,11 @@ const Pay = () =>{
           className="d-flex justify-content-center flex-column align-items-center pt-5"
         >
      
-          <button className="paybutt11"  onClick={goto}style={{backgroundColor:paycolor}} disabled={paystatus}>
+          <button className="paybutt1"  onClick={goto} disabled={paystatus}>
            {btext}
           </button>
           <button className="paybutt11"  onClick={gotoConfirmpay}  style={{backgroundColor:paycolor}} disabled={bstatus}>
+
             {cuopontext}
           </button>
           <button className="paybutt12" >
@@ -529,7 +530,10 @@ const Pay = () =>{
             Confirm and Pay 
           </Button>
        
-          {loader && <Loader />}
+         
+        </Col>
+      </Row>
+      {loader && <Loader />}
       {error && (
         <Error
           onClick={Close}
@@ -544,8 +548,6 @@ const Pay = () =>{
           congrats={true}
         />
       )}
-        </Col>
-      </Row>
     </div>
   );
 };

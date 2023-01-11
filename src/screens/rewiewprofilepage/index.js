@@ -59,7 +59,8 @@ const Rewiewpage = () => {
         >
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
-              <h3>Review your Health Profile </h3>
+              <h3>Review your health profile </h3>
+              <p>Please review your basic info as it will be share with your consultant</p>
             </div>
            <div className="basicbuttdiv">
            <button onClick={gotoEdit} disabled={editstatus} style={textStyles.button}>{ebutton}</button>

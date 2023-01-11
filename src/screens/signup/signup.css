@@ -65,12 +65,12 @@ input#email {
     margin-top: 6%;
 }
 .bg{
-    background-color: rgb(189, 52, 52);
+    background-color: rgb(153 42 53);
    
     padding: 3% 0 24px 0%;
 }
 .bg2{
-    background-color: rgb(189, 52, 52) !important;
+    background-color: rgb(153 42 53);
     padding: 3%;
 }
 .rate{
@@ -94,7 +94,7 @@ width:30%
 }
 .signup-create-btn {
     /* border-radius: 50px !important; */
-    background: #bd3434 !important;
+    background: #992a35  !important;
     padding: 12px 12px !important;
  }
  .signup-already-member-text {

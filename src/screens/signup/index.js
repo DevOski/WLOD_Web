@@ -123,7 +123,7 @@ const SignUp = () => {
     }
   return (
     <>
-      {loder ? <Loader />:
+      {loder ? <Loader /> : error ? <Error onClick={Close} tittle={errorMessage} /> :
       <div className="over">
       <BasicExample />
      
@@ -273,7 +273,7 @@ const SignUp = () => {
     </div>
       }
       
-      {error && <Error onClick={Close} tittle={errorMessage} />}
+    
       
     </>
   );
