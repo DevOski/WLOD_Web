@@ -21,9 +21,9 @@ const SideBar = () => {
 
     <div className="cent">
       <div className="back">
-        <Link className="tit" to="/">
+        {/* <Link className="tit" to="/">
           Home
-        </Link>
+        </Link> */}
       </div>
     </div>
     {/* <div className="cent">
@@ -37,7 +37,11 @@ const SideBar = () => {
     {/* {!show ? ( */}
       <div className="cent2">
         <div className="backkk"></div>
-        <div className="back3">
+       
+        <div className="back33">
+        <Link className="tit" to="/">
+          Home
+        </Link>
           <Link className="tit" to="/visit">
             Recent Session
           </Link>

@@ -68,6 +68,19 @@
         position: absolute;
     
     }
-    .back3 .tit {
+    .ba.tit {
         margin-top: 15px;
+     }
+     .ba{
+        width: 72%;
+        flex-direction: column;
+        margin-top: -27
+     }
+     .back33{
+        margin-top: -66px !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: -87px;
      }

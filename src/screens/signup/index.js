@@ -22,7 +22,7 @@ import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
 import { useDispatch } from "react-redux";
 const SignUp = () => {
   let navigate = useNavigate();
-  const [checked, setchecked] = useState(false)
+  const [checked, setchecked] = useState(false);
   const [email, setEmail] = useState(null);
   const [date, setdate] = useState(null);
   const [Password, setPassword] = useState(null);
@@ -35,19 +35,16 @@ const SignUp = () => {
   const Close = () => {
     seterror(false);
   };
- const handleagrement=()=>{
-    setchecked(!checked)
-   
-  }
+  const handleagrement = () => {
+    setchecked(!checked);
+  };
   const handleSubmit = () => {
-   
-    console.log(checked,'=====>signup');
+    console.log(checked, "=====>signup");
 
     if (email && Password && checked) {
       setloder(true);
-   
 
-    // if (email && Password ) {
+      // if (email && Password ) {
 
       var formdata = new FormData();
       formdata.append("email", email.toLowerCase());
@@ -58,7 +55,10 @@ const SignUp = () => {
         redirect: "follow",
       };
 
-      fetch("https://dashboard.weightlossondemand.com/backend/api/check_email", requestOptions)
+      fetch(
+        "https://dashboard.weightlossondemand.com/backend/api/check_email",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
@@ -78,7 +78,10 @@ const SignUp = () => {
             });
           }
         })
-        .catch((error) => {console.log("error", error); setloder(false);});
+        .catch((error) => {
+          console.log("error", error);
+          setloder(false);
+        });
 
       // navigation.navigate('basicInfoscreens', {
       //   email,
@@ -87,20 +90,20 @@ const SignUp = () => {
       //   isEnabled,
       //   date,
       // });
-    // }else{
-    //   setloder(false)
-    //   alert("email should be provided")
-    // }
+      // }else{
+      //   setloder(false)
+      //   alert("email should be provided")
+      // }
 
-    // navigate('/')
-    // navigate('/basic', {state:{
-    //   email,
-    //   Password,
-    //   // checked,
-    //   // isEnabled,
-    //   date,
-    // }})
-  }
+      // navigate('/')
+      // navigate('/basic', {state:{
+      //   email,
+      //   Password,
+      //   // checked,
+      //   // isEnabled,
+      //   date,
+      // }})
+    }
   };
   // const handleInputChange = (e) => {
   //   const { id, value } = e.target;
@@ -116,43 +119,47 @@ const SignUp = () => {
   //   }
   //   navigate('/basic')
   // };
-  const enterKye=(e)=>{
-    if(e.key==="Enter"){
+  const enterKye = (e) => {
+    if (e.key === "Enter") {
       handleSubmit();
-      }
     }
+  };
   return (
     <>
-      {loder ? <Loader /> : error ? <Error onClick={Close} tittle={errorMessage} /> :
-      <div className="over">
-      <BasicExample />
-     
-      <Row>
-        <Col lg="6">
-          <div className="imm">
-            <img style={{ width: "100%", heigh: "100%" }} src={mother} />
-          </div>
-        </Col>
-        <Col lg="6" className="bg">
-          <div className="grandgrandparent">
-            <h4>Weight Loss On Demand</h4>
-            <p>Sign up and get professional consultancy</p>
-            <div className="grandparentdiv">
-              <div className="parentdiv">
-                <div className="inputdiv">
-                  <div className="emaildiv">Email</div>
-                  <div className="inputmain">
-                    <input
-                      type="email"
-                      id="email"
-                      className="in"
-                      onChange={(event) => setEmail(event.target.value)}
-                      onKeyPress={enterKye}
-                      placeholder="Email"
-                    />
-                  </div>
-                </div>
-                {/* <div className="inputdiv">
+      {loder ? (
+        <Loader />
+      ) : error ? (
+        <Error onClick={Close} tittle={errorMessage} />
+      ) : (
+        <div className="over">
+          <BasicExample />
+
+          <Row>
+            <Col lg="6">
+              <div className="imm">
+                <img style={{ width: "100%", heigh: "100%" }} src={mother} />
+              </div>
+            </Col>
+            <Col lg="6" className="bg">
+              <div className="grandgrandparent">
+                <h4>Weight Loss On Demand</h4>
+                <p>Sign up and get professional consultancy</p>
+                <div className="grandparentdiv">
+                  <div className="parentdiv">
+                    <div className="inputdiv">
+                      <div className="emaildiv">Email</div>
+                      <div className="inputmain">
+                        <input
+                          type="email"
+                          id="email"
+                          className="in"
+                          onChange={(event) => setEmail(event.target.value)}
+                          onKeyPress={enterKye}
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    {/* <div className="inputdiv">
                   <div className="emaildiv">Date </div>
                   <div className="inputmain">
                     <input
@@ -164,117 +171,109 @@ const SignUp = () => {
                     />
                   </div>
                 </div> */}
-                <div className="inputdiv">
-                  <div className="emaildiv">Password</div>
-                  <div className="inputmain">
-                    <input
-                      type="email"
-                      id="pass"
-                      className="in"
-                      onChange={(event) => setPassword(event.target.value)}
-                      onKeyPress={enterKye}
-                      placeholder="Create password"
-                    />
+                    <div className="inputdiv">
+                      <div className="emaildiv">Password</div>
+                      <div className="inputmain">
+                        <input
+                          type="email"
+                          id="pass"
+                          className="in"
+                          onChange={(event) => setPassword(event.target.value)}
+                          onKeyPress={enterKye}
+                          placeholder="Create password"
+                        />
+                      </div>
+                    </div>
+                    <div className="inputdiv">
+                      <div className="emaildiv">
+                        <input
+                          type="checkbox"
+                          id="topping"
+                          name="topping"
+                          value="Current"
+                          checked={checked}
+                          className="topping"
+                          onChange={handleagrement}
+                        />
+                      </div>
+                      <div className="inputmain2">
+                        I agree to Weight Loss On Demand's
+                        <span className="member" onClick={gotomembershippage}>
+                          Membership Terms
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="inputdiv">
-                  <div className="emaildiv">
-                  <input
-                type="checkbox"
-                id="topping"
-                name="topping"
-                value="Current"
-                checked={checked}
-                className="topping"
-                onChange={handleagrement}
-              />
+
+                <div className="lastchild">
+                  <div className="signbb">
+                    <Button
+                      className="signup-create-btn"
+                      onClick={() => handleSubmit()}
+                    >
+                      Create account
+                    </Button>
                   </div>
-                  <div className="inputmain2">
-                    I agree to Weight Loss On Demand's
-                    <span className="member" onClick={gotomembershippage}>
-                      Membership Terms
-                    </span>
-                  </div>
+
+                  <p className="signup-already-member-text">
+                    Already a member?{" "}
+                    <a href="/sigin" className="signuponsingin">
+                      Sign in
+                    </a>
+                  </p>
                 </div>
               </div>
-            </div>
+            </Col>
+          </Row>
 
-            <div className="lastchild">
-              <div className="signbb">
-              <Button
-                className="signup-create-btn"
-                onClick={() => handleSubmit()}
-              >
-                Create account
-              </Button>
-
-              </div>
-             
-              <p className="signup-already-member-text">
-                Already a member?{" "}
-                <a href="/sigin" className="signuponsingin">
-                  Sign in
-                </a>
-              </p>
-            </div>
-          </div>
-        </Col>
-      </Row>
-
-      <Container fluid className="bg2">
-        <Row>
-          <Col lg="4">
-            <h3 className="foterhead">Lauren, Illinois</h3>
-            <div>
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-            </div>
-            <p className="foterhead">
-           ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Curabitur a ultrices lacus. Fusce nec pharetra lacus, in
-              condimentum mi. '
-            </p>
-          </Col>
-          <Col lg="4">
-            <h3 className="foterhead">Lois, New Mexico</h3>
-            <div>
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-            </div>
-            <p className="foterhead">
-           " Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Curabitur a ultrices lacus. Fusce nec pharetra lacus, in
-              condimentum mi. "
-            </p>
-          </Col>
-          <Col lg="4">
-            <h3 className="foterhead">Troy, California</h3>
-            <div>
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-              <AiFillStar className="rate" />
-            </div>
-            <p className="foterhead">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Curabitur a ultrices lacus. Fusce nec pharetra lacus, in
-              condimentum mi. "
-            </p>
-          </Col>
-        </Row>
-      </Container>
-
-   
-    
-    </div>
-      }
-      
-    
-      
+          <Container fluid className="bg2">
+            <Row>
+              <Col lg="4">
+                <h3 className="foterhead">Lauren, Illinois</h3>
+                <div>
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                </div>
+                <p className="foterhead">
+                  "I love the convenience! When I need to see a doctor there is
+                  always one available. Seeing my psychologist and psychiatrist
+                  is a breeze too."
+                </p>
+              </Col>
+              <Col lg="4">
+                <h3 className="foterhead">Lois, New Mexico</h3>
+                <div>
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                </div>
+                <p className="foterhead">
+                  "I was able to get a prescription at my local pharmacy and a
+                  dr's note stating my return to work date for my employer. Best
+                  part, my insurance covered it!"
+                </p>
+              </Col>
+              <Col lg="4">
+                <h3 className="foterhead">Troy, California</h3>
+                <div>
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                  <AiFillStar className="rate" />
+                </div>
+                <p className="foterhead">
+                  "The doctors are always so helpful and caring. They are very
+                  thorough and truly care about your wellbeing."
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
     </>
   );
 };

@@ -166,8 +166,11 @@ const enterKye=(e)=>{
              onChange={(event) => setEmail(event.target.value)}
              onKeyPress={enterKye}
             />
-            <button onClick={recoverPassword} className="recoverbutt">Recover my password </button>
            </div>
+            <div  className="recoverbutt2">
+
+            <button onClick={recoverPassword} className="recoverbuttfor recover2">Recover my password </button>
+            </div>
         </Col>
       </Row>
 

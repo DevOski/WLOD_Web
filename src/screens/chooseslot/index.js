@@ -308,7 +308,7 @@ const ChooseSlot = () => {
           </div>
         </Col>
       </Row>
-      <Row>
+       <Row>
         <Col lg="12" className="d-flex justify-content-center">
           {
           !calendshowlistValidation.current && (

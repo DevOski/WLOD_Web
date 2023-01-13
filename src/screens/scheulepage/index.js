@@ -25,25 +25,37 @@ const SessionBook = () => {
       <Row class="d-flex justify-content-center flex-column align-items-center  pt-10 marigtop">
         <Col
           lg="12"
-          className="d-flex justify-content-center flex-column align-items-center mt-5 "
-        >
-          <div className="divvbut">
+          className="d-flex justify-content-center flex-column align-items-center mt-5 ">
+<div className="bookseebuttdiv">
+
+<Button onClick={goto}> 
+Choose Consultant
+</Button>
+</div>
+<div className="bookseebuttdiv">
+
+<Button onClick={gotodate}> 
+Choose Time
+</Button>
+</div>
+
+          {/* <div className="divvbut">
           <Button
             onClick={goto}
-            className="d-flex justify-content-center align-items-center ww2 ww3"
+            className="d-flex justify-content-center align-items-center "
           >
-              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Consultant</h5>
+              <p style={{ color: "#fff",alignSelf:"center" }}>Choose Consultant</p>
           </Button>
             </div>
           <div className="divvbut">
 
           <Button
             onClick={gotodate}
-            className="d-flex justify-content-center align-items-center ww2 ww3"
+            className="d-flex justify-content-center align-items-center"
           >
-              <h5 style={{ color: "#fff",paddingTop:"2px" }}>Choose Time</h5>
+              <p style={{ color: "#fff", }}>Choose Time</p>
           </Button>
-            </div>
+            </div> */}
         </Col>
       </Row>
     </div>

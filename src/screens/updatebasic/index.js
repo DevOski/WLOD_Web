@@ -71,7 +71,7 @@ const UpdateBasic = () => {
       navigate("/Reviewpage",
       {
         state :{
-          data:params.state.data,
+          data: params.state.data,
           edit:"true"
         }
       }
@@ -105,7 +105,7 @@ const UpdateBasic = () => {
     fetch("https://dashboard.weightlossondemand.com/backend/api/update_info", requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result)
+        console.log(result,'====>mess')
         if (result.message == "User Updated Successfully") {
                 console.log("works----------->>>>", result.message);
 
@@ -263,7 +263,7 @@ const UpdateBasic = () => {
     setTimeout(async () => {
       try {
         let response = await getUser(token);
-        console.log("userdetails",response.data.data);
+        console.log("userdetails=====>",response.data.data);
         setfirstname(response.data.data.first_name);
         setLastname(response.data.data.last_name);
         setPhoneNumber(response.data.data.phone);

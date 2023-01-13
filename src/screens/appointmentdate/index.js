@@ -22,27 +22,25 @@ import {
 import { useEffect } from "react";
 import moment from "moment";
 
-const pageStyles ={
-  div1 :{
-    display:'inline',
-    padding:'13px 17px 13px 17px',
-    margin:5,
-    border:'1px solid',
-   
+const pageStyles = {
+  div1: {
+    display: "inline",
+    padding: "13px 17px 13px 17px",
+    margin: 5,
+    border: "1px solid",
   },
-  div2 :{
-    padding:'13px 17px 13px 17px',
-    margin:10,
-    border:'1px solid',
-   
+  div2: {
+    padding: "13px 17px 13px 17px",
+    margin: 10,
+    border: "1px solid",
   },
-  mainDiv :{
-    border:'none',
-    backgroundColor:'white',
+  mainDiv: {
+    border: "none",
+    backgroundColor: "white",
+    color: "black",
     // text-align:'center'
-  }
-  
-}
+  },
+};
 const Appointmentdate = () => {
   const [date, setDate] = useState();
   const [calendshow, setcalendshow] = useState(true);
@@ -58,7 +56,7 @@ const Appointmentdate = () => {
 
   const [currentDate, setCurrentDate] = useState("");
   const [markedDates, setMarkedDates] = useState("");
-  const [tr_slot,settrslot] = useState("");
+  const [tr_slot, settrslot] = useState("");
 
   let time = moment().format("h:mma");
 
@@ -67,29 +65,43 @@ const Appointmentdate = () => {
     setcalendshowlist(false);
     calendshowValidation.current = true;
     calendshowlistValidation.current = false;
-    console.log("data",calendshowlistValidation.current,calendshowValidation.current);
+    console.log(
+      "data",
+      calendshowlistValidation.current,
+      calendshowValidation.current
+    );
   };
   const Showlist = () => {
     try {
       var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
+        method: "GET",
+        redirect: "follow",
       };
-      fetch(`https://dashboard.weightlossondemand.com/backend/api/Slots/${time}`, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          console.log("data",result)
-      calendshowlistValidation.current= true;
-      calendshowValidation.current= false;
-      setcalendshowlist(true)
-          setSlot(result.data)
-          console.log("setdata-----------------------------",slot);
-          console.log("=====>",calendshowlist+" "+calendshow+"---"+calendshowlistValidation.current);
-      })
-        .catch(error => console.log('error', error));
-      } catch (error) {
-        console.log(error);
-      }
+      fetch(
+        `https://dashboard.weightlossondemand.com/backend/api/Slots/${time}`,
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          console.log("data", result);
+          calendshowlistValidation.current = true;
+          calendshowValidation.current = false;
+          setcalendshowlist(true);
+          setSlot(result.data);
+          console.log("setdata-----------------------------", slot);
+          console.log(
+            "=====>",
+            calendshowlist +
+              " " +
+              calendshow +
+              "---" +
+              calendshowlistValidation.current
+          );
+        })
+        .catch((error) => console.log("error", error));
+    } catch (error) {
+      console.log(error);
+    }
   };
   const onSelectDate = () => {
     if (date) {
@@ -101,7 +113,7 @@ const Appointmentdate = () => {
   // console.log(location.state.trainer, "slotwaliscreen====>trainer");
   useEffect(() => {
     // getTrainer();
-  },[]);
+  }, []);
 
   const getSelectedDayEvents = (date) => {
     console.log(date, "====>date");
@@ -126,35 +138,37 @@ const Appointmentdate = () => {
     let time = moment().format("h:mma");
 
     // getAllDateSlots(selectedDate);
-    console.log("works---------------------->>>",selectedDate);
+    console.log("works---------------------->>>", selectedDate);
     // console.log("trainer details",location.state.tr_name);
-    console.log("time",time);
+    console.log("time", time);
 
     // =========================================================================
-            var formdata = new FormData();
-            // formdata.append("id", location.state.trainer);
-            formdata.append("date",selectedDate);
-            formdata.append("time",time);
+    var formdata = new FormData();
+    // formdata.append("id", location.state.trainer);
+    formdata.append("date", selectedDate);
+    formdata.append("time", time);
 
-            var requestOptions = {
-              method: 'POST',
-              body: formdata,
-              redirect: 'follow'
-            };
+    var requestOptions = {
+      method: "POST",
+      body: formdata,
+      redirect: "follow",
+    };
 
-            fetch("https://dashboard.weightlossondemand.com/backend/api/all_trCalenderSlots", requestOptions)
-              .then(response => response.json())
-              .then(result => {
-                console.log("trainer slots",result)
-                if(result.message != "No records found"){
-                  settrslot(result.data)
-                }
+    fetch(
+      "https://dashboard.weightlossondemand.com/backend/api/all_trCalenderSlots",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("trainer slots", result);
+        if (result.message != "No records found") {
+          settrslot(result.data);
+        }
 
-                console.log("tr_slot",tr_slot);
-            // alert(result.message)
-            })
-              .catch(error => console.log('error', error));
-
+        console.log("tr_slot", tr_slot);
+        // alert(result.message)
+      })
+      .catch((error) => console.log("error", error));
   };
   const getTimeSlots = async () => {
     // try {
@@ -164,7 +178,6 @@ const Appointmentdate = () => {
     //     body: formdata,
     //     redirect: 'follow'
     //   };
-
     //   fetch(`https://dashboard.weightlossondemand.com/backend/api/trTimeSlots/${1}/${time}`, requestOptions)
     //     .then(response => response.json())
     //     .then(result => {
@@ -173,24 +186,22 @@ const Appointmentdate = () => {
     //     })
     //     .catch(error => console.log('error', error));
     //   // setSlot("response.data.data");
-
     // } catch (error) {
     //   console.log(error);
     // }
   };
 
-  const SelectSlot = (atr_id, asl_time, atr_date, atr_day) =>{
-    console.log("->",atr_id,asl_time);
-    navigate('/question2',{
-      state:{
+  const SelectSlot = (atr_id, asl_time, atr_date, atr_day) => {
+    console.log("->", atr_id, asl_time);
+    navigate("/question2", {
+      state: {
         atr_id,
         asl_time,
         atr_date,
         atr_day,
-      }
-  
-    })
-  }
+      },
+    });
+  };
 
   // const getAllDateSlots = async (updatedDate) => {
   //   console.log("works---------------------->>>");
@@ -235,26 +246,28 @@ const Appointmentdate = () => {
     }
   };
 
- 
   // getAllSlotList();
   // if (route?.params?.from === 'All Trainer') {
-    //
-    // }
-    // // console.log('-----------?>',location.state.trainer.tr_id, currentDTime);
-    // let response = await getSlotTime(
-    //   location.state.trainer.tr_id,
-    //   currentDTime
-    // );
-    // // console.log(response.data.data, "====>slooottime");
-    // // console.log(response.data.data, "====>slooottime");
-    // setTimeSlot(response.data.data);
+  //
+  // }
+  // // console.log('-----------?>',location.state.trainer.tr_id, currentDTime);
+  // let response = await getSlotTime(
+  //   location.state.trainer.tr_id,
+  //   currentDTime
+  // );
+  // // console.log(response.data.data, "====>slooottime");
+  // // console.log(response.data.data, "====>slooottime");
+  // setTimeSlot(response.data.data);
   const getAllSlotList = async () => {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    fetch(`https://dashboard.weightlossondemand.com/backend/api/Slots/${currentDTime}`, requestOptions)
+    fetch(
+      `https://dashboard.weightlossondemand.com/backend/api/Slots/${currentDTime}`,
+      requestOptions
+    )
       .then((response) => response.json())
 
       .then((result) => {
@@ -266,7 +279,6 @@ const Appointmentdate = () => {
   let navigate = useNavigate();
   return (
     <div className="of">
-     
       <BasicExample />
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
@@ -283,41 +295,80 @@ const Appointmentdate = () => {
       </Row>
       <Row>
         <Col lg="12" className="d-flex justify-content-center">
-          {
-          !calendshowlistValidation.current && (
+          {!calendshowlistValidation.current && (
             <div className="calender">
               <p>
                 Selected date:{" "}
                 {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
               {dateSlot?.length ? (
-                dateSlot.map((item,index)=>{
-                  return(
-                  <div key={index} className="classextbuttonsl">
-                    <p className="timeslot">Time:{item.sl_time}</p> 
-                  </div>
-                  )
+                dateSlot.map((item, index) => {
+                  return (
+                    <div key={index} className="classextbuttonsl">
+                      <p className="timeslot">Time:{item.sl_time}</p>
+                    </div>
+                  );
                 })
               ) : (
                 <div className="classextbutton">
-                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1} key={obj.sl_id}>{obj.sl_time}</div></button>)
-                   : <p>No record found</p>
-                   }                   
-              </div>
+                  {tr_slot ? (
+                    tr_slot.map((obj) => (
+                      <button
+                        onClick={() =>
+                          SelectSlot(
+                            obj.tr_id,
+                            obj.sl_time,
+                            obj.tr_date,
+                            obj.tr_day
+                          )
+                        }
+                        style={pageStyles.mainDiv}
+                      >
+                        <div style={pageStyles.div1} key={obj.sl_id}>
+                          {obj.sl_time}
+                        </div>
+                      </button>
+                    ))
+                  ) : (
+                    <p>No record found</p>
+                  )}
+                </div>
               )}
               <DatePickerCalendar
                 date={date}
                 onDateChange={getSelectedDayEvents}
                 locale={enGB}
-                
               />
-              
             </div>
           )}
-          {
-          calendshowlistValidation.current && (
+          {calendshowlistValidation.current && (
             <div className="slotdiv1">
-             {slot ? slot.map(obj => <div className="slotdiv1"> <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div2} key={obj.sl_id}>{obj.sl_time}</div></button></div>) : <div className="slotdiv"><p className="timeslot">There is no slot</p></div>}
+              {slot?.length ? (
+                slot.map((obj) => (
+                  <div className="slotdiv1">
+                    {" "}
+                    <button
+                      onClick={() =>
+                        SelectSlot(
+                          obj.tr_id,
+                          obj.sl_time,
+                          obj.tr_date,
+                          obj.tr_day
+                        )
+                      }
+                      style={pageStyles.mainDiv}
+                    >
+                      <div style={pageStyles.div2} key={obj.sl_id}>
+                        {obj.sl_time}
+                      </div>
+                    </button>
+                  </div>
+                ))
+              ) : (
+                <div className="slotdiv">
+                  <p className="timeslot">There is no slot</p>
+                </div>
+              )}
             </div>
           )}
         </Col>
@@ -327,10 +378,3 @@ const Appointmentdate = () => {
 };
 
 export default Appointmentdate;
-
-
-
-
-
-
-

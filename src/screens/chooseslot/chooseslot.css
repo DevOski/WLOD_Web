@@ -11,36 +11,43 @@
 }
 .calbox {
   width: 15%;
-  border: 1px solid;
+  /* border: 1px solid; */
   justify-content: center;
   align-items: center;
   display: flex;
-  margin:1%
+  margin:1%;
+  color: rgb(0, 0, 0);
 }
 .calbox:hover {
   width: 15%;
-  border: 1px solid;
+  /* border: 1px solid; */
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: brown;
-  color: white;
+  /* background-color: brown; */
+  color: brown;
+  cursor: pointer;
 }
 .slotbox {
   width: 15%;
-  border: 1px solid;
+  /* border: 1px solid; */
   justify-content: center;
   align-items: center;
   display: flex;
+  /* background-color: brown; */
+  color: rgb(0, 0, 0);
 }
+  
+
 .slotbox:hover {
   width: 15%;
-  border: 1px solid;
+  /* border: 1px solid; */
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: brown;
-  color: white;
+  /* background-color: brown; */
+  color: brown;
+  cursor: pointer;
 }
 .iconcolor{
  color: brown;
@@ -54,16 +61,16 @@
   margin-top: 5%;
 }
 .slotdiv {
-  width: 70%;
-  border: 1px solid;
+  width: 100%;
+  /* border: 1px solid; */
   display: flex;
   align-items: center;
-  padding-left: 1%;
+  /* padding-left: 1%; */
   padding-top: 4%;
 }
 
 .slotdiv1 {
-  width: 30%;
+  width: 10%;
   /* border: 1px solid; */
   /* margin-top: 5%; */
   display: flex;
