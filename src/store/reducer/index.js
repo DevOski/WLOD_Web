@@ -56,6 +56,18 @@ const initialState = {
     question5: '',
     reason: '',
     trainerType: '',
+    r1: '',
+    r2: '',
+    r3: '',
+    r4: '',
+    r5: '',
+    r6: '',
+    r7: '',
+    r8: '',
+    r9: '',
+    r10: '',
+    r11: '',
+    r12: ''
   };
   const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -212,7 +224,23 @@ const initialState = {
           trainerType: null,
         };
       }
-  
+      case 'AddResponses': {
+        return {
+          ...state,
+          r1: action.r1,
+          r2: action.r2,
+          r3: action.r3,
+          r4: action.r4,
+          r5: action.r5,
+          r6: action.r6,
+          r7: action.r7,
+          r8: action.r8,
+          r9: action.r9,
+          r10: action.r10,
+          r11: action.r11,
+          r12: action.r12
+        }
+      }
       default: {
         return state;
       }

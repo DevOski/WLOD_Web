@@ -141,7 +141,24 @@ function storeData(token) {
       trainerType: trainerType,
     };
   }
-  
+  function storeResponse(r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12){
+    return{
+      type: "AddResponses",
+      r1:r1,
+      r2:r2,
+      r3:r3,
+      r4:r4,
+      r5:r5,
+      r6:r6,
+      r7:r7,
+      r8:r8,
+      r9:r9,
+      r10:r10,
+      r11:r11,
+      r12:r12
+
+    }
+  }
   export {
     storeData,
     storeUserData,
@@ -155,5 +172,6 @@ function storeData(token) {
     Question5,
     reasonVisit,
     trainerStack,
+    storeResponse
   };
   
