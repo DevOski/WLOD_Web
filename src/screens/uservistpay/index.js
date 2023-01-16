@@ -82,8 +82,8 @@ const Confirmpay = () => {
     } else if (payment) {
       setcardnumber(payment.cardnumber);
       setExpiration(payment.Expiration);
-      setCvv(payment.ExpirationYY);
-      setExpirationYY(payment.Cvv);
+      setCvv(payment.Cvv);
+      setExpirationYY(payment.ExpirationYY);
     }
   }, []);
 
@@ -171,7 +171,7 @@ const Confirmpay = () => {
                   placeholder="Cvv"
                   onChange={(event) => setCvv(event.target.value)}
                   onKeyPress={enterKye}
-                  maxLength={3}
+                  maxLength={4}
                 />
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">

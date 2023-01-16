@@ -61,7 +61,7 @@ justify-content: space-between;
 .checkAvailblity {
   background-color: #bf1f2e;
   border: none;
-  padding: 1%;
+  /* padding: 1%; */
   border-radius: 8px;
   text-transform: capitalize;
 
@@ -69,7 +69,7 @@ justify-content: space-between;
 .checkAvailblity:hover {
   background-color: #e96d79;
   border: none;
-  padding: 1%;
+  /* padding: 1%; */
   border-radius: 8px;
   text-transform: capitalize;
 }

@@ -178,7 +178,7 @@ const Visitpage = () => {
 
             </Row>
                 </div> ) : (
-                <div className="text-center "><h4 className="visittno">No recent Visit</h4> </div>
+                <div className="text-center "><h5 className="visittno">No recent sessions</h5> </div>
               )}
 
             {/*   {

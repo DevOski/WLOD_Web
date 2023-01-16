@@ -37,9 +37,9 @@ text-transform: capitalize;
 }
 .coupon-submit {
   width: 80% !important;
-  border-radius: 50px !important;
-  background: #bd3434 !important;
-  padding: 12px 12px !important;
+  border-radius: 5px !important;
+  background: #992a35 !important;
+  /* padding: 12px 12px !important; */
   /* align-self: center;
   text-align: center;
   margin: 0 auto; */

@@ -13,7 +13,8 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 import { useLocation } from "react-router-dom";
-import { Question3 } from "../../store/action";
+import { Question1, Question3 } from "../../store/action";
+import { useDispatch } from "react-redux";
 const Questionpagetwo = () => {
   const params = useLocation();
   console.log("^^^", params.state);
@@ -56,6 +57,7 @@ const Questionpagetwo = () => {
   const [plansthemeals, setplansthemeals] = useState("");
   const [preparesthemeal, setpreparesthemeal] = useState("");
 
+  const dipatch = useDispatch();
   function handleNext() {
     console.log("hello");
     const response2 = {
@@ -72,6 +74,22 @@ const Questionpagetwo = () => {
     };
     const response1 = physicallimitations;
     console.log("array", response1);
+    dipatch(
+      Question1(
+        response1,
+        healthlimitation,
+        CurrentWeight,
+        CurrentHeight,
+        lowestandhighestadultweight,
+        weightchangesgainorloss,
+        dietedinthepast,
+        weightwouldyouliketolose,
+        benefitfromthisweightloss,
+        regularexercises,
+        plansthemeals,
+        preparesthemeal
+      )
+    );
     navigate("/Reviewpage", {
       state: {
         trainer,
@@ -88,6 +106,7 @@ const Questionpagetwo = () => {
         plansthemeals,
         preparesthemeal,
       },
+      // Question1
     });
   }
 
@@ -113,11 +132,11 @@ const Questionpagetwo = () => {
       },
     });
   };
-  const enterKye=(e)=>{
-    if(e.key==="Enter"){
+  const enterKye = (e) => {
+    if (e.key === "Enter") {
       handleNext();
-      }
     }
+  };
   return (
     <>
       <BasicExample />
@@ -223,7 +242,9 @@ const Questionpagetwo = () => {
               </div>
 
               <div className="mb-3 inwi">
-                <label className="pb-2">8) How much weight would you like to lose?</label>
+                <label className="pb-2">
+                  8) How much weight would you like to lose?
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -235,7 +256,9 @@ const Questionpagetwo = () => {
                 />
               </div>
               <div className="mb-3 inwi">
-                <label className="pb-2">9) How will you benefit from this weight loss?</label>
+                <label className="pb-2">
+                  9) How will you benefit from this weight loss?
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -275,7 +298,9 @@ const Questionpagetwo = () => {
                 </div>
                 <div>
                   <div className="mb-3 inwi">
-                    <label className="pb-2">11) Who plans the meals at home?</label>
+                    <label className="pb-2">
+                      11) Who plans the meals at home?
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -285,7 +310,9 @@ const Questionpagetwo = () => {
                     />
                   </div>
                   <div className="mb-3 inwi">
-                    <label className="pb-2">12) Who prepares the meals at home? </label>
+                    <label className="pb-2">
+                      12) Who prepares the meals at home?{" "}
+                    </label>
                     <input
                       type="text"
                       className="form-control"

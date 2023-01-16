@@ -127,12 +127,12 @@ const Basic = () => {
 
   const handleOnChangesingle = () => {
     setisCheckedsingle(!isCheckedsingle);
-    setMaritalStatus("single");
+    setMaritalStatus("Single");
     setisCheckedmarried(false);
   };
   const handleOnChangemarried = () => {
     setisCheckedmarried(!isCheckedmarried);
-    setMaritalStatus("married");
+    setMaritalStatus("Married");
     setisCheckedsingle(false);
   };
   const handleOnChangemale = () => {
@@ -147,7 +147,7 @@ const Basic = () => {
   };
   const handleOnChangeLangeng = () => {
     setisCheckedmarriedenglish(!isCheckedenglish);
-    setLanguage("english");
+    setLanguage("English");
     setisCheckedSpanish(false);
     setisCheckedOthers(false);
   };
@@ -159,25 +159,25 @@ const Basic = () => {
   };
   const handleOnChangeLangother = () => {
     setisCheckedOthers(true);
-    setLanguage("other");
+    setLanguage("Other");
     setisCheckedmarriedenglish(false);
     setisCheckedSpanish(false);
   };
   const handleOnChangesmokinstatusnever = () => {
     setisSmokingstatusNever(true);
-    setSmokeStatus("never");
+    setSmokeStatus("Never");
     setisSmokingstatusFormer(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatusformer = () => {
     setisSmokingstatusFormer(true);
-    setSmokeStatus("former");
+    setSmokeStatus("Former");
     setisSmokingstatusNever(false);
     setisSmokingstatusCurrent(false);
   };
   const handleOnChangesmokinstatuscurrent = () => {
     setisSmokingstatusCurrent(true);
-    setSmokeStatus("current");
+    setSmokeStatus("Current");
 
     setisSmokingstatusNever(false);
     setisSmokingstatusFormer(false);

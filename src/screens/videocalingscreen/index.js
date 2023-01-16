@@ -8,8 +8,10 @@ import {
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { Loader } from "../../component";
 
 const Videocalling = () => {
+  const [loder, setloder] = useState(false)
   const params = useLocation();
   const userID = useSelector((state) => state.user.user_id);
   const tr_id = params.state.tr_id;
@@ -62,7 +64,7 @@ const Videocalling = () => {
           .then((response) => response.json())
           .then((result) => {
             console.log(result);
-            
+            setloder(false)
           })
           .catch((error) => console.log("error", error));
       }
@@ -75,9 +77,10 @@ const Videocalling = () => {
     channel: channelName, // your agora channel
     token: tokenAPI, // use null or skip if using app in testing mode
   };
+  
   console.log(rtcProps, "====>rctprops");
   const callbacks = {
-    EndCall: () => {setVideoCall(false);navigate('/rating',{
+    EndCall: () => {navigate('/rating',{
       state : {
         tr_id:tr_id,
        
@@ -88,20 +91,22 @@ const Videocalling = () => {
   };
   const getChannel = () => {
     // getUserDetails();
+    setloder(true)
 
     setVideoCall(true);
-    // alert("fo")
+    // setloder(false)
   };
-  return videoCall ? (
+  return videoCall  ? (
     <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
+      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks}    />
     </div>
   ) : (
     <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh",}}>
 <div style={{width:"10%",}}>
 
-    <Button onClick={getChannel}>Join session</Button>
+    <Button onClick={getChannel}>Join Session</Button>
 </div>
+{loder && <Loader />}
     </div>
   );
 };
