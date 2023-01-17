@@ -134,7 +134,7 @@ const Appointmentdate = () => {
     console.log(serviceDate, "=====serviceDate");
     setMarkedDates(markedDates);
 
-    let selectedDate = moment(date).format("DD/MM/YYYY");
+    let selectedDate = moment().format("DD/MM/YYYY");
     let time = moment().format("h:mma");
 
     // getAllDateSlots(selectedDate);

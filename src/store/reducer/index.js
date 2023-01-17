@@ -56,6 +56,10 @@ const initialState = {
   question5: "",
   reason: "",
   trainerType: "",
+  tr_time:"",
+  tr_date: "",
+  tr_day: "",
+  tr_name:""
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -86,6 +90,13 @@ const reducer = (state = initialState, action) => {
         response10: action.response10,
         response11: action.response11,
         response12: action.response12,
+        tr_id: action.tr_id,
+        tr_name: action.tr_name,
+        tr_date: action.tr_date,
+        tr_day: action.tr_day,
+        tr_time: action.tr_time,        
+        atr_id: action.atr_id,
+        vtr_id: action.vtr_id,
       };
     }
     case "ADD_second_question": {

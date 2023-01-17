@@ -28,6 +28,8 @@ const textStyles = {
 const Rewiewpage = () => {
   const params = useLocation();
   console.log("data before edit", params?.state);
+  console.log("+++++",useSelector((state) => state));
+
   console.log(params?.state.data, "data after edit");
   const [ebutton, setebutton] = useState("Edit Info");
   const [editstatus, seteditstatus] = useState(false);
@@ -44,7 +46,7 @@ const Rewiewpage = () => {
   const response10 = useSelector((state) => state.response10);
   const response11 = useSelector((state) => state.response11);
   const response12 = useSelector((state) => state.response12);
-console.log(params.state?.data,'------------------------------->>>>>>>>>>>>');
+console.log(useSelector((state) => state.tr_name),'------------------------------->>>>>>>>>>>>');
   useEffect(() => {
     // if(params?.state?.edit == "true"){
     //   setebutton("Data Updated")

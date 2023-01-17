@@ -17,8 +17,16 @@ import { Question1, Question3 } from "../../store/action";
 import { useDispatch } from "react-redux";
 const Questionpagetwo = () => {
   const params = useLocation();
-  console.log("^^^", params.state);
+  console.log("@@", params.state.vsl_time);
   const trainer = params.state;
+  const tr_id =params.state?.tr_id;
+  const atr_id =params.state?.atr_id;
+  const vtr_id= params.state?.vtr_id;
+  const tr_name = params.state?.tr_name ? params.state?.tr_name : params.state?.vtr_name;
+  const tr_day = params.state?.atr_day ? params.state?.atr_day : params.state?.vtr_day;
+  const tr_date = params.state?.atr_date ? params.state?.atr_date : params.state?.vtr_date;
+  const sl_time = params.state?.asl_time ? params.state?.asl_time : params.state?.vsl_time;
+  console.log("-+",tr_day,tr_date,sl_time);
   let navigate = useNavigate();
   const [allergiesintolerances, setallergiesintolerances] = useState("");
   const [list1, setlist1] = useState("");
@@ -87,7 +95,14 @@ const Questionpagetwo = () => {
         benefitfromthisweightloss,
         regularexercises,
         plansthemeals,
-        preparesthemeal
+        preparesthemeal,
+        tr_id,
+        tr_name,
+        tr_day,
+        tr_date,
+        sl_time,
+        atr_id,
+        vtr_id,
       )
     );
     navigate("/Reviewpage", {
