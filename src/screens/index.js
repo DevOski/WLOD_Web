@@ -32,9 +32,16 @@ import ConfirmAndPay from "./confirmandpay";
 import RatingScreen from "./ratingscreen";
 import ThankYou from "./thankyouscreen";
 import UpdateBasic from "./updatebasic";
+import TrainerHome from "./trainerHomepage";
+import TrainerCurrentSession from "./trainerCurrentSeesion";
+import TrainerPastSession from "./trainerPastSession";
+
 
 
 export {
+  TrainerPastSession,
+  TrainerCurrentSession,
+  TrainerHome,
   Siging,
   SignUp,
   Basic,

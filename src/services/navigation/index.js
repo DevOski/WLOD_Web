@@ -38,9 +38,13 @@ import {
   ConfirmAndPay,
   RatingScreen,
   UpdateBasic,
+  TrainerHome,
+  TrainerCurrentSession,
+  TrainerPastSession,
 } from "../../screens";
 import Control from '../../screens/videocalingscreen/Controls'
 import ThankYou from "../../screens/thankyouscreen";
+
 
 
 import Privateroute from "./privateroute";
@@ -176,6 +180,12 @@ const Navigation = () => {
 
         <Route path="/rating" element={<Privateroute Component={RatingScreen} />} />
         <Route path="/thankyou" element={<Privateroute Component={ThankYou} />} />
+        <Route path="/trainermode" element={<Privateroute Component={TrainerHome} />} />
+        <Route path="/Currentsession" element={<Privateroute Component={TrainerCurrentSession} />} />
+        <Route path="/TrainerPastSession" element={<Privateroute Component={TrainerPastSession} />} />
+
+        
+
 
       </Routes>
     </BrowserRouter>

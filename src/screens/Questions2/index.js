@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./q.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,19 +14,27 @@ import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 import { useLocation } from "react-router-dom";
 import { Question1, Question3 } from "../../store/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const Questionpagetwo = () => {
   const params = useLocation();
   console.log("@@", params.state.vsl_time);
   const trainer = params.state;
-  const tr_id =params.state?.tr_id;
-  const atr_id =params.state?.atr_id;
-  const vtr_id= params.state?.vtr_id;
-  const tr_name = params.state?.tr_name ? params.state?.tr_name : params.state?.vtr_name;
-  const tr_day = params.state?.atr_day ? params.state?.atr_day : params.state?.vtr_day;
-  const tr_date = params.state?.atr_date ? params.state?.atr_date : params.state?.vtr_date;
-  const sl_time = params.state?.asl_time ? params.state?.asl_time : params.state?.vsl_time;
-  console.log("-+",tr_day,tr_date,sl_time);
+  const tr_id = params.state?.tr_id;
+  const atr_id = params.state?.atr_id;
+  const vtr_id = params.state?.vtr_id;
+  const tr_name = params.state?.tr_name
+    ? params.state?.tr_name
+    : params.state?.vtr_name;
+  const tr_day = params.state?.atr_day
+    ? params.state?.atr_day
+    : params.state?.vtr_day;
+  const tr_date = params.state?.atr_date
+    ? params.state?.atr_date
+    : params.state?.vtr_date;
+  const sl_time = params.state?.asl_time
+    ? params.state?.asl_time
+    : params.state?.vsl_time;
+  console.log("-+", tr_day, tr_date, sl_time);
   let navigate = useNavigate();
   const [allergiesintolerances, setallergiesintolerances] = useState("");
   const [list1, setlist1] = useState("");
@@ -65,6 +73,34 @@ const Questionpagetwo = () => {
   const [plansthemeals, setplansthemeals] = useState("");
   const [preparesthemeal, setpreparesthemeal] = useState("");
 
+
+  const response1 = useSelector((state) => state.response1);
+  const response2 = useSelector((state) => state.response2);
+  const response3 = useSelector((state) => state.response3);
+  const response4 = useSelector((state) => state.response4);
+  const response5 = useSelector((state) => state.response5);
+  const response6 = useSelector((state) => state.response6);
+  const response7 = useSelector((state) => state.response7);
+  const response8 = useSelector((state) => state.response8);
+  const response9 = useSelector((state) => state.response9);
+  const response10 = useSelector((state) => state.response10);
+  const response11 = useSelector((state) => state.response11);
+  const response12 = useSelector((state) => state.response12);
+  useEffect(() => {
+    setphysicallimitations(response1)
+    setHealthlimitation(response2)
+    setCurrentWeight(response3)
+    setCurrentHeight(response4)
+    setlowestandhighestadultweight(response5)
+    setweightchangesgainorloss(response6)
+    setdietedinthepast(response7)
+    setweightwouldyouliketolose(response8)
+    setbenefitfromthisweightloss(response9)
+    setregularexercises(response10)
+    setplansthemeals(response11)
+    setpreparesthemeal(response12)
+  }, []);
+
   const dipatch = useDispatch();
   function handleNext() {
     console.log("hello");
@@ -80,11 +116,11 @@ const Questionpagetwo = () => {
       medication5: list5,
       dosage5: dose5,
     };
-    const response1 = physicallimitations;
+    // const response1 = physicallimitations;
     console.log("array", response1);
     dipatch(
       Question1(
-        response1,
+        physicallimitations,
         healthlimitation,
         CurrentWeight,
         CurrentHeight,
@@ -102,13 +138,13 @@ const Questionpagetwo = () => {
         tr_date,
         sl_time,
         atr_id,
-        vtr_id,
+        vtr_id
       )
     );
     navigate("/Reviewpage", {
       state: {
         trainer,
-        response1,
+        response1: physicallimitations,
         response2: healthlimitation,
         response3: CurrentWeight,
         response4: CurrentHeight,
@@ -172,6 +208,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Enter health problems/physical limitations"
+                value={physicallimitations}
                 onChange={(event) => setphysicallimitations(event.target.value)}
                 onKeyPress={enterKye}
               />
@@ -185,6 +222,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Enter health problems/physical limitations"
+                value={healthlimitation}
                 onChange={(event) => setHealthlimitation(event.target.value)}
                 onKeyPress={enterKye}
               />
@@ -199,6 +237,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Current weight"
+                value={CurrentWeight}
                 onChange={(event) => setCurrentWeight(event.target.value)}
                 onKeyPress={enterKye}
               />
@@ -209,6 +248,7 @@ const Questionpagetwo = () => {
                 type="text"
                 className="form-control"
                 placeholder="Current height"
+                value={CurrentHeight}
                 onChange={(event) => setCurrentHeight(event.target.value)}
                 onKeyPress={enterKye}
               />
@@ -221,6 +261,7 @@ const Questionpagetwo = () => {
                   type="text"
                   className="form-control"
                   placeholder="Lowest and highest adult weight"
+                  value={lowestandhighestadultweight}
                   onChange={(event) =>
                     setlowestandhighestadultweight(event.target.value)
                   }
@@ -236,6 +277,7 @@ const Questionpagetwo = () => {
                   type="text"
                   className="form-control"
                   placeholder="Weight change"
+                  value={weightchangesgainorloss}
                   onChange={(event) =>
                     setweightchangesgainorloss(event.target.value)
                   }
@@ -251,6 +293,7 @@ const Questionpagetwo = () => {
                   type="text"
                   className="form-control"
                   placeholder="Past diet details"
+                  value={dietedinthepast}
                   onChange={(event) => setdietedinthepast(event.target.value)}
                   onKeyPress={enterKye}
                 />
@@ -264,6 +307,7 @@ const Questionpagetwo = () => {
                   type="text"
                   className="form-control"
                   placeholder="Enter amount of weight"
+                  value={weightwouldyouliketolose}
                   onChange={(event) =>
                     setweightwouldyouliketolose(event.target.value)
                   }
@@ -278,6 +322,7 @@ const Questionpagetwo = () => {
                   type="text"
                   className="form-control"
                   placeholder="Enter benefits"
+                  value={benefitfromthisweightloss}
                   onChange={(event) =>
                     setbenefitfromthisweightloss(event.target.value)
                   }
@@ -298,6 +343,7 @@ const Questionpagetwo = () => {
                       type="text"
                       className="form-control"
                       placeholder="Health problems and physical limitations"
+                      value={regularexercises}
                       onChange={(event) =>
                         setregularexercises(event.target.value)
                       }
@@ -320,6 +366,7 @@ const Questionpagetwo = () => {
                       type="text"
                       className="form-control"
                       placeholder="Who plans the meals at home?"
+                      value={plansthemeals}
                       onChange={(event) => setplansthemeals(event.target.value)}
                       onKeyPress={enterKye}
                     />
@@ -332,6 +379,7 @@ const Questionpagetwo = () => {
                       type="text"
                       className="form-control"
                       placeholder="Who prepares the meals at home?"
+                      value={preparesthemeal}
                       onChange={(event) =>
                         setpreparesthemeal(event.target.value)
                       }
