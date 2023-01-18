@@ -35,10 +35,11 @@ import UpdateBasic from "./updatebasic";
 import TrainerHome from "./trainerHomepage";
 import TrainerCurrentSession from "./trainerCurrentSeesion";
 import TrainerPastSession from "./trainerPastSession";
-
+import SessionDetails from "./sessiondetails";
 
 
 export {
+  SessionDetails,
   TrainerPastSession,
   TrainerCurrentSession,
   TrainerHome,

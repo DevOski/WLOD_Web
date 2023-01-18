@@ -19,7 +19,7 @@ import {
 } from "../../component";
 import TrainerSideBar from "../../component/trainersidebar";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,12 +64,15 @@ const TrainerHome = () => {
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
+    const finaldate = moment().format("YYYY-MM-DD")+" "+moment().format("hh:mm:00A")
+    console.log(finaldate);
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "$2a$12$2ziNRq1wLaqXfdM8Xu5Ggetg7O02GX.FW1HVglexzCSmuyXJIQOwS");
 
@@ -79,7 +82,7 @@ const TrainerHome = () => {
       redirect: 'follow'
     };
 
-    fetch("https://dashboard.weightlossondemand.com/backend/api/tr_appt/2023-01-18 05:18:00PM", requestOptions)
+    fetch(`https://dashboard.weightlossondemand.com/backend/api/tr_appt/${finaldate}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         console.log(result.data)
@@ -102,6 +105,26 @@ const TrainerHome = () => {
     //   }
     // }, 100);
   };
+  const HandleApt = (token,res1,res2,res3,res4,res5,res6,res7,res8,res9,res10,res11,res12) =>{
+    console.log(">>",token,res1,res2,res3,res4,res5,res6,res7,res8,res9,res10,res11,res12);
+    navigate("/sessiondetails",{
+      state :{
+        token,
+        res1,
+        res2,
+        res3,
+        res4,
+        res5,
+        res6,
+        res7,
+        res8,
+        res9,
+        res10,
+        res11,
+        res12
+      }
+    })
+  }
   console.log("==>>",token);
 
   const open = () => {
@@ -131,7 +154,9 @@ const TrainerHome = () => {
             </div>
             {apt ? (
                     apt.map((obj) => (
-                      <Link to="" style={{textDecoration:"none"}}>
+                      <div onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
+                        
+                      <Link style={{textDecoration:"none"}}>
                       <Card sx={{ width:700, marginTop:"2%" }}>
                       <CardContent>
                         <Typography sx={{ fontSize: 14, fontWeight: 'bold'}} color="text.secondary" gutterBottom>
@@ -151,6 +176,7 @@ const TrainerHome = () => {
                       </CardActions> */}
                     </Card>
                       </Link>
+                      </div>
                     ))
                   ) : (
                     <p>No record found</p>

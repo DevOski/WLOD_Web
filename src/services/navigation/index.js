@@ -41,8 +41,10 @@ import {
   TrainerHome,
   TrainerCurrentSession,
   TrainerPastSession,
+  SessionDetails,
 } from "../../screens";
 import Control from '../../screens/videocalingscreen/Controls'
+
 import ThankYou from "../../screens/thankyouscreen";
 
 
@@ -183,7 +185,7 @@ const Navigation = () => {
         <Route path="/trainermode" element={<Privateroute Component={TrainerHome} />} />
         <Route path="/Currentsession" element={<Privateroute Component={TrainerCurrentSession} />} />
         <Route path="/TrainerPastSession" element={<Privateroute Component={TrainerPastSession} />} />
-
+        <Route path="/sessiondetails" element={<Privateroute Component={SessionDetails}/>} />
         
 
 

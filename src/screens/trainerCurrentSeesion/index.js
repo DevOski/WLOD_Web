@@ -28,6 +28,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { height } from "@mui/system";
 // function getWindowDimensions() {
 //   const { innerWidth: width, innerHeight: height } = window;
 //   return {
@@ -104,12 +105,12 @@ const TrainerHome = () => {
           <TrainerSideBar/>
         </Col>
         {/* <CardHome /> */}
-        <Col xs="9" style={{display: 'flex',justifyContent:"center"}}>
+        <Col xs="9" style={{display: 'flex',justifyContent:"center" }}>
             {/* <Container> */}
           <Row >
             <Col >
-            <Card sx={{ width:700 }}>
-      <CardContent>
+            <div style={{ width:"100%" }}>
+      {/* <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
         </Typography>
@@ -124,11 +125,17 @@ const TrainerHome = () => {
           <br />
           {'"a benevolent smile"'}
         </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+      </CardContent> */}
+      <div style={{display: 'flex',flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+       <div className="trainbdiv">
+       <Button size="small">View Client details</Button>
+       </div>
+       <div className="trainbdiv">
+        <Button size="small">Start Sessions</Button>
+        </div>
+        {/* <Button size="small">Learn More</Button> */}
+      </div>
+    </div>
             </Col>
           </Row>
             {/* </Container> */}
