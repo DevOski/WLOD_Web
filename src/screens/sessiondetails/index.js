@@ -10,9 +10,9 @@ import Typography from '@mui/material/Typography';
 
 export default function SessionDetails() {
   const params = useLocation();
-    console.log(params.state);
+    console.log('params',params.state.token);
     const [username,setusername]= useState();
-    
+
     useEffect(() => {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", params.state?.token);
@@ -23,10 +23,10 @@ export default function SessionDetails() {
           redirect: 'follow'
         };
         
-        fetch("https://dashboard.weightlossondemand.com/backend/api/user_details", requestOptions)
+        fetch("https://dashboard.weightlossondemand.com/backend/api/user_details",requestOptions)
           .then(response => response.json())
           .then(result => {
-            console.log(result.data)
+            console.log(result)
         })
           .catch(error => console.log('error', error));
     }, [])
