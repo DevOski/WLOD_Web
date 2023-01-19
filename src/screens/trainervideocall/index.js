@@ -3,6 +3,7 @@ import AgoraUIKit from "agora-react-uikit";
 import {
   createChannel,
   getTokenFromAPI,
+  getTrainer,
   getUser,
 } from "../../services/utilities/api";
 import { useSelector } from "react-redux";
@@ -12,20 +13,46 @@ import { Loader } from "../../component";
 
 const TrainerVideo = () => {
   const [videoCall, setVideoCall] = useState(false);
-  const rtcProps = {
-    appId: '440edd9ffde44494a537d58b9d73bb1a',
-    channel: 'Testing', // your agora channel
-    token: '007eJxTYEhan8y16F/nrknVjnIbv39OOu51suO43rpdr08Yb/2xPfGmAoOJiUFqSoplWlpKqomJiaVJoqmxeYqpRZJlirlxUpJh4j7zLckNgYwMSi8OMTBCIYjPzhCSWlySmZfOwAAA4tYk3w==' // use null or skip if using app in testing mode
-  };
+  const [channelName, setChannelName] = useState("");
+  const [tokenAPI, setTokenAPI] = useState("");
+
   const callbacks = {
     EndCall: () => setVideoCall(false),
   };
+  const usertoken = useSelector((state) => state.token);
+  useEffect(() => {
+    // join();
+    getUserDetails();
+  }, []);
+  const getUserDetails = async () => {
+    try {
+      let response = await getTrainer(usertoken);
+      // console.log('--->>>>>>>>'response.data.data.channel);
+      setChannelName(response.data.data.channel);
+      let resToken = await getTokenFromAPI(response.data.data.channel);
+      let token = resToken.data.rtcToken;
+      setTokenAPI(token);
+
+      // console.log(response.data.data.channel);
+      // setUserName(response.data.data.first_name);
+      // dispatch(storeUserData(response.data.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const rtcProps = {
+    appId: "270b512970864b0a93b14650e52e8f9c",
+    channel: channelName, // your agora channel
+    token: tokenAPI,
+  };
+  console.log(rtcProps,'------------------------------------->>>>>>>>>>');
   return videoCall ? (
-    <div style={{display: 'flex', width: '100vw', height: '100vh'}}>
+    <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
   ) : (
-    <h3 onClick={() => setVideoCall(true)}>Start Call</h3>)
+    <h3 onClick={() => setVideoCall(true)}>Start Call</h3>
+  );
 };
 
 export default TrainerVideo;
