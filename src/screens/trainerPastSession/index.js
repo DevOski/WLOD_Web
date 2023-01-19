@@ -13,7 +13,7 @@ import moment from "moment/moment";
 import {
   BasicExample,
   CardHome,
-  OffcanvasExample,
+  Loader,
   // TrainerSideBar,
   Visitcom,
 } from "../../component";
@@ -65,12 +65,15 @@ const TrainerPastSession = () => {
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loader, setloader] = useState(false)
+
 
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
+    setloader(true)
     const finaldate =
       moment().format("YYYY-MM-DD") + " " + moment().format("hh:mm:00A");
     console.log(finaldate);
@@ -90,7 +93,9 @@ const TrainerPastSession = () => {
       .then((response) => response.json())
       .then((result) => {
         console.log(result.data);
+        setUserName(result.data.user)
         setapt(result.data);
+        setloader(false)
       })
       .catch((error) => console.log("error", error));
     // setLoader(true);
@@ -192,18 +197,18 @@ const TrainerPastSession = () => {
         <Col xs="9" style={{ display: "flex", justifyContent: "center" }}>
           {/* <Container> */}
           <Row>
-            <Col>
+            <Col class="column">
               <div className="text-center mb-2 mt-4">
                 <h3>PAST SESSIONS</h3>
               </div>
-
+            <div style={{width:'900px',height:'430px', position:'relative'}}>
               <div
                 className="scoll"
-                style={{ overflow: "scroll", height: "3.6%" }}
+                style={{ overflow: "overlay", width:'100%',height:'100%',position:'absolute',display: 'flex',alignItems: 'center',flexDirection: 'column'}}
               >
                 {apt ? (
                   apt.map((obj, index) => (
-                    <div
+                    <div 
                       key={index}
                       onClick={() =>
                         HandleApt(
@@ -229,19 +234,19 @@ const TrainerPastSession = () => {
                       <Link style={{ textDecoration: "none" }}>
                         <Card sx={{ width: 700, marginTop: "2%" }}>
                           <CardContent>
-                            <Typography
+                            {/* <Typography
                               sx={{ fontSize: 14, fontWeight: "bold" }}
                               color="text.secondary"
                               gutterBottom
                             >
                               Details
-                            </Typography>
+                            </Typography> */}
 
-                            <Typography variant="body2">
-                              Date: {moment(obj.apt_time).format("DD/MM/YYYY")}
+                            <Typography variant="body2" sx={{ fontSize: 14, fontWeight: "bold" }}>
+                          {obj.user}
                             </Typography>
-                            <Typography variant="body2">
-                              Time: {moment(obj.apt_time).format("hh:mma")}
+                            <Typography variant="body2" sx={{ fontSize: 14, fontWeight: "bold" }}>
+                              {moment(obj.apt_time).format("DD/MM/YYYY")}
                             </Typography>
                           </CardContent>
                           {/* <CardActions>
@@ -252,13 +257,15 @@ const TrainerPastSession = () => {
                     </div>
                   ))
                 ) : (
-                  <p>No record found</p>
+                  <p className="text-center">No record found</p>
                 )}
+                </div>
               </div>
             </Col>
           </Row>
           {/* </Container> */}
         </Col>
+        {loader && <Loader />}
       </Row>
     </div>
   );

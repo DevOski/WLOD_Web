@@ -11,7 +11,7 @@ import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import {
   BasicExample,
-  CardHome,
+  Loader,
   OffcanvasExample,
   // TrainerSideBar,
   Visitcom,
@@ -60,18 +60,35 @@ const TrainerHome = () => {
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
   const [Visit, setVisit] = useState("");
-  const [trainer, settrainer] = useState("");
-  const [Document, setDocument] = useState();
+  const [button, setbutton] = useState("");
+  const [status, setstatus] = useState(false);
   const [Message, setMessage] = useState();
   const [home, sethome] = useState("");
+  const [response1, setresponse1] = useState("");
+  const [response2, setresponse2] = useState("");
+  const [response3, setresponse3] = useState("");
+  const [response4, setresponse4] = useState("");
+  const [response5, setresponse5] = useState("");
+  const [response6, setresponse6] = useState("");
+  const [response7, setresponse7] = useState("");
+  const [response8, setresponse8] = useState("");
+  const [response9, setresponse9] = useState("");
+  const [response10, setresponse10] = useState("");
+  const [response11, setresponse11] = useState("");
+  const [response12, setresponse12] = useState("");
+  const [user, setuser] = useState("");
+  const [loader, setloader] = useState(false);
+
+
   const dispatch = useDispatch();
+
 
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
-   
+   setloader(true)
     var myHeaders = new Headers();
 myHeaders.append("Authorization",token);
 
@@ -86,12 +103,51 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", re
   .then(result => {
     console.log("data res",result)
   if(result.message === "No recent visit"){
-    
+    setloader(false)
+    setbutton(result.message)
+  }else{
+    setstatus(true)
+    console.log("dataaaa",result.data.user_token);
+    setloader(false)
+
+    setresponse1(result.data.response_1)
+    setresponse2(result.data.response_2)
+    setresponse3(result.data.response_3)
+    setresponse4(result.data.response_4)
+    setresponse5(result.data.response_5)
+    setresponse6(result.data.response_6)
+    setresponse7(result.data.response_7)
+    setresponse8(result.data.response_8)
+    setresponse9(result.data.response_9)
+    setresponse10(result.data.response_10)
+    setresponse11(result.data.response_11)
+    setresponse12(result.data.response_12)
+    setuser(result.data.user_token)
   }
   })
   .catch(error => console.log('error', error));
   };
 
+  const HandleSession = () =>{
+    console.log(response1,response2,response3,response4,response5,response6,response7,response8,response9,response10,response11,response12,user);
+    navigate("/sessiondetails",{
+      state :{
+        token:user,
+        res1:response1,
+        res2:response2,
+        res3:response3,
+        res4:response4,
+        res5:response5,
+        res6:response6,
+        res7:response7,
+        res8:response8,
+        res9:response9,
+        res10:response10,
+        res11:response11,
+        res12:response12,
+      }
+    })
+  }
   const open = () => {
     setshow(!show);
   };
@@ -131,22 +187,27 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", re
           {'"a benevolent smile"'}
         </Typography>
       </CardContent> */}
-      <div style={{display: 'flex',flexDirection:"column",justifyContent:"center"}}>
-       <div className="trainbdiv">
-       <Button size="small">View Client details</Button>
-       </div>
-       <div className="trainbdiv">
-        <Button size="small" onClick={()=>navigate('/Tsession')}>Start Sessions</Button>
+      {status ? (<div style={{display: 'flex',flexDirection:"column",justifyContent:"center"}}>
+        <div className="trainbdiv">
+        <Button size="small" onClick={HandleSession}>View Client details</Button>
         </div>
-        {/* <Button size="small">Learn More</Button> */}
-      </div>
+        <div className="trainbdiv">
+         <Button size="small" onClick={()=>navigate('/Tsession')}>Start Session</Button>
+         </div>
+         {/* <Button size="small">Learn More</Button> */}
+       </div>): button
+      }
+      
     </div>
             </Col>
           </Row>
             {/* </Container> */}
         </Col>
       </Row>
+      {loader && <Loader />}
+
     </div>
+
   );
 };
 
