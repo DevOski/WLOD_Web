@@ -172,7 +172,7 @@ const MessageScreen = () => {
           <SideBar />
         </Col>
 
-        <Col lg="10">
+        <Col lg="10" >
           <div className="chatdivmain">
             {msgList? <div className="textbox">
               {msgList?.map((item, index) => {

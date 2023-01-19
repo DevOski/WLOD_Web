@@ -42,7 +42,8 @@ const textStyles ={
   },
   link :{
     textDecoration: 'none',
-    color:'black'
+    color:'black',
+    paddingBottom:'3%'
   }
 }
 
@@ -120,17 +121,20 @@ const Visitpage = () => {
     <div className="wi55">
        <BasicExample/>
       <Row>
-       <Col>
+       <Col lg="2" md="3" xs="3">
         <SideBar/>
        </Col>
         
-        <Col lg="9">
-          {Object.keys(Visit).length ? (
-            <div> 
-
-                <div className="text-center mt-4 mr-4">
+        <Col lg="10" md="9" xs="9">
+          <div className="text-center mt-4 mr-4">
               <h3>Visit Details</h3>
               </div>
+          <Row>
+            <Col xs="2"></Col>
+          <Col xs="10" >
+          {Object.keys(Visit).length ? (
+            <div> 
+               
               <Row className="mt-4 pt-4">
                 <Col sm={6} className="mt-4">
                 <h5>Visit Date</h5>
@@ -178,56 +182,56 @@ const Visitpage = () => {
 
             </Row>
                 </div> ) : (
-                <div className="text-center "><h5 className="visittno">No recent sessions</h5> </div>
-              )}
+                  <div className="text-center "><h5 className="visittno">No recent sessions</h5> </div>
+                  )}
 
             {/*   {
-          //  visitValidation.current["visit_id"]
-          // Object.entries(visitValidation.current).map((item)=>
-          //      { return (
+              //  visitValidation.current["visit_id"]
+              // Object.entries(visitValidation.current).map((item)=>
+              //      { return (
                 // <div>
                 <tr>
                 <td>{item[1].visit_id}</td> 
                 {/* <span>{item[1].first_name}</span> <span>{item[1].last_name}</span> 
-              {/* </tr> 
-           {/* <td>{trainer.map(item => {return (<p>{item.tr_name}</p>)})}</td>  
-          //  </div>
-              //   )
-              //   })
-              // }
-              
-               
-
-             
-       
-        
-             {/* <h5>hello</h5>
-                // Visit.map( item =>{
-                //   return(
-                //     <div className="text-center">
-                //   <h1>Your Recent Visit</h1>
-                //   <div className="classextbuttonsl">
-                //     <p className="timeslot">Time:{item.visit_id}</p> 
-                //   </div>
-                //   </div> 
+                {/* </tr> 
+                {/* <td>{trainer.map(item => {return (<p>{item.tr_name}</p>)})}</td>  
+                //  </div>
                 //   )
-                // })
-          
-           <div className="vishpage">
-            <div className="visitt">
-              <p className="tit">SESSIONS REQUESTS</p>
-            </div>
-            <div className="visitt2">
-              <p >No follow up requests</p>
-            </div>
-            <div className="visitt">
+                //   })
+                // }
+                
+                
+                
+                
+                
+                
+                {/* <h5>hello</h5>
+                // Visit.map( item =>{
+                  //   return(
+                    //     <div className="text-center">
+                    //   <h1>Your Recent Visit</h1>
+                    //   <div className="classextbuttonsl">
+                    //     <p className="timeslot">Time:{item.visit_id}</p> 
+                    //   </div>
+                    //   </div> 
+                    //   )
+                    // })
+                    
+                    <div className="vishpage">
+                    <div className="visitt">
+                    <p className="tit">SESSIONS REQUESTS</p>
+                    </div>
+                    <div className="visitt2">
+                    <p >No follow up requests</p>
+                    </div>
+                    <div className="visitt">
               <p className="tit">UPCOMING SESSIONS</p>
             </div>
             <div className="visitt2">
               <p >No upcoming sessions</p>
             </div>
             <div className="visitt">
-              <p className="tit">Jeff PAST SESSIONS</p>
+            <p className="tit">Jeff PAST SESSIONS</p>
             </div>
             <div className="visitt2">
               <p>No past sessions</p>
@@ -236,7 +240,8 @@ const Visitpage = () => {
               <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div> */}
-          
+          </Col>
+          </Row>
         </Col>
        
       {loader && <Loader />}

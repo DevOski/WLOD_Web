@@ -55,7 +55,7 @@ const initialState = {
   q50: "",
   question5: "",
   reason: "",
-  trainerType: "",
+  t_type: "",
   tr_time:"",
   tr_date: "",
   tr_day: "",
@@ -160,6 +160,9 @@ const reducer = (state = initialState, action) => {
     }
     case "ADD_REASON": {
       return { ...state, reason: action.reason };
+    }
+    case "T_type": {
+      return { ...state, t_type: action.t_type };
     }
     case "ADD_TRAINER_TYPE": {
       return { ...state, trainerType: action.trainerType };

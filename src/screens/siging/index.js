@@ -17,7 +17,7 @@ import logo from "../../assets/logo.png";
 import { signIn } from "../../services/utilities/api";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { storeData } from "../../store/action";
+import { storeData, trainerStack, TrainerType } from "../../store/action";
 
 const Siging = () => {
   let navigate = useNavigate();
@@ -33,15 +33,15 @@ const Siging = () => {
     seterror(false);
   };
   const token = useSelector((state) => state.token);
-  console.log("-------->>", token);
   const Sigin = async () => {
     if (email && password) {
       console.log(email, password);
       try {
         setloder(true);
         console.log("works2");
-
+        
         let response = await signIn(email, password);
+        console.log("-------->>?", response.data);
 
         if (response.data.message == "user found") {
           console.log(response.data.token);
@@ -50,13 +50,14 @@ const Siging = () => {
           dispatch(storeData(response.data.token));
           navigate("/");
          
-        } else if (response.data.message == "Trainer found") {
-          console.log(response.data.type);
+        }if (response.data.message == "Trainer found") {
+          console.log(response.data.type,"======>tbhai");
           setloder(false);
-
-          navigate("/");
-        
-        } else {
+          dispatch(storeData(response.data.token));
+          dispatch(trainerStack(response.data.type));
+          navigate("/trainermode");
+          
+        } else  {
           console.log(response.data.message);
           setloder(false);
           setErrorMessage(response.data.message);

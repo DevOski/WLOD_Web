@@ -12,7 +12,12 @@
         height: 541px;
         background-color: brown;
     }
-   
+    @media screen and (max-width: 767px) {
+     .maindeowercontainerreal{
+        height: 100% !important;
+    
+        }
+      }
     .ham {
         margin: 15px 15px 0 auto !important;
         display: flex;

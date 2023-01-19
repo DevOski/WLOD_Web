@@ -7,7 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { getUser } from "../../services/utilities/api";
+import { getUser, getTrainer } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
 import "./nav.css";
 function BasicExample() {
@@ -26,6 +26,8 @@ function BasicExample() {
   const handlesignIn = () => {
     navigate("/sigin");
   };
+  const t_type = useSelector((state) => state.trainerType);
+console.log(t_type,'t_type=====>');
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
@@ -34,13 +36,25 @@ function BasicExample() {
     // setLoader(true);
     setTimeout(async () => {
       try {
-        let response = await getUser(token);
-        setUserName(response.data.data.first_name);
-        // console.log(response.data.data.first_name,'====>name');
-
-        dispatch(storeUserData(response.data.data));
-        // console.log(response.data.data,'====>dispatchlog');
-        // setLoader(false);
+        if(t_type === "trainer"){
+          let response = await getTrainer(token);
+          console.log("trainer dataaa",response.data.data.tr_name);
+          setUserName(response.data.data.tr_name);
+          // console.log(response.data.data.first_name,'====>name');
+  
+          dispatch(storeUserData(response.data.data));
+          // console.log(response.data.data,'====>dispatchlog');
+          // setLoader(false);
+        }else{
+          
+          let response = await getUser(token);
+          setUserName(response.data.data.first_name);
+          // console.log(response.data.data.first_name,'====>name');
+  
+          dispatch(storeUserData(response.data.data));
+          // console.log(response.data.data,'====>dispatchlog');
+          // setLoader(false);
+        }
       } catch (error) {
         console.log(error);
         // setLoader(false);
@@ -48,11 +62,11 @@ function BasicExample() {
     }, 100);
   };
 
-  console.log(token, "====>token");
   const [tok, settok] = useState(token);
+  console.log(tok, "====>token");
   return (
     <Navbar bg="light" expand="lg">
-      {tok ? (
+      {tok  ? (
         <Container>
           <Navbar.Brand href="https://weightlossondemand.com/">
             <img style={{ width: "50%" }} src={logo} />

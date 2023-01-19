@@ -36,7 +36,7 @@ const SideBar = () => {
     </div> */}
     {/* {!show ? ( */}
       <div className="cent2">
-        <div className="backkk"></div>
+        <div className="backkk "></div>
        
         <div className="back33">
         <Link className="tit" to="/">

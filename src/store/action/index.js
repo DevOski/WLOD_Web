@@ -4,6 +4,12 @@ function storeData(token) {
       token: token,
     };
   }
+  function TrainerType(t_type) {
+        return {
+          type: 'T_type',
+          t_type: t_type,
+        };
+      }
   function storeUserData(user) {
     return {
       type: "ADD_USER_DATA",
@@ -202,7 +208,8 @@ function trainerStack(trainerType) {
     Question5,
     reasonVisit,
     trainerStack,
-    storeResponse
+    storeResponse,
+    TrainerType
   };
 
     //   function storeUserData(user) {
@@ -336,9 +343,4 @@ function trainerStack(trainerType) {
     //       reason: reason,
     //     };
     //   }
-    //   function trainerStack(trainerType) {
-    //     return {
-    //       type: 'ADD_TRAINER_TYPE',
-    //       trainerType: trainerType,
-    //     };
-    //   }
+    // 

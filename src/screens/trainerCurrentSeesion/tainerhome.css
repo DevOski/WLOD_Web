@@ -181,7 +181,7 @@ input.input {
     margin-right: 39px !important;
     margin-top: 27px;
 }
-.trainbdiv:{
-    width: 35%;
-    margin-bottom: 10px;
+.trainbdiv{
+    width: 100% !important;
+    margin-bottom: 10px !important;
 }

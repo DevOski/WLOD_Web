@@ -36,9 +36,11 @@ import TrainerHome from "./trainerHomepage";
 import TrainerCurrentSession from "./trainerCurrentSeesion";
 import TrainerPastSession from "./trainerPastSession";
 import SessionDetails from "./sessiondetails";
+import TrainerVideo from "./trainervideocall";
 
 
 export {
+  TrainerVideo,
   SessionDetails,
   TrainerPastSession,
   TrainerCurrentSession,

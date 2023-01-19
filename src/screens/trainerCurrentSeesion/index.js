@@ -18,7 +18,7 @@ import {
 } from "../../component";
 import TrainerSideBar from "../../component/trainersidebar";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -55,6 +55,7 @@ import { height } from "@mui/system";
 // }
 
 const TrainerHome = () => {
+  let navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [show, setshow] = useState(false);
   const [drawer, setdrawer] = useState(true);
@@ -105,10 +106,10 @@ const TrainerHome = () => {
           <TrainerSideBar/>
         </Col>
         {/* <CardHome /> */}
-        <Col xs="9" style={{display: 'flex',justifyContent:"center" }}>
+        <Col xs="9" style={{display: 'flex',justifyContent:"center",alignItems:"center"}}>
             {/* <Container> */}
           <Row >
-            <Col >
+            <Col lg="12" >
             <div style={{ width:"100%" }}>
       {/* <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -126,12 +127,12 @@ const TrainerHome = () => {
           {'"a benevolent smile"'}
         </Typography>
       </CardContent> */}
-      <div style={{display: 'flex',flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+      <div style={{display: 'flex',flexDirection:"column",justifyContent:"center"}}>
        <div className="trainbdiv">
        <Button size="small">View Client details</Button>
        </div>
        <div className="trainbdiv">
-        <Button size="small">Start Sessions</Button>
+        <Button size="small" onClick={()=>navigate('/Tsession')}>Start Sessions</Button>
         </div>
         {/* <Button size="small">Learn More</Button> */}
       </div>

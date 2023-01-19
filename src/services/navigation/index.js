@@ -42,6 +42,7 @@ import {
   TrainerCurrentSession,
   TrainerPastSession,
   SessionDetails,
+  TrainerVideo,
 } from "../../screens";
 import Control from '../../screens/videocalingscreen/Controls'
 
@@ -53,6 +54,8 @@ import Privateroute from "./privateroute";
 
 const Navigation = () => {
   const token = useSelector((state) => state.token);
+  const t_type = useSelector((state) => state.trainerType);
+  console.log(t_type,'====>type');
   console.log(token, "====>tokennnnnavi");
   const [tok, settok] = useState(token);
   const [pressed, setPressed] = useState(false);
@@ -182,10 +185,14 @@ const Navigation = () => {
 
         <Route path="/rating" element={<Privateroute Component={RatingScreen} />} />
         <Route path="/thankyou" element={<Privateroute Component={ThankYou} />} />
+        
         <Route path="/trainermode" element={<Privateroute Component={TrainerHome} />} />
         <Route path="/Currentsession" element={<Privateroute Component={TrainerCurrentSession} />} />
         <Route path="/TrainerPastSession" element={<Privateroute Component={TrainerPastSession} />} />
         <Route path="/sessiondetails" element={<Privateroute Component={SessionDetails}/>} />
+        <Route path="/Tsession" element={<Privateroute Component={TrainerVideo}/>} />
+
+        
         
 
 

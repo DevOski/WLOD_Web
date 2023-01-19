@@ -74,7 +74,7 @@ const TrainerHome = () => {
     const finaldate = moment().format("YYYY-MM-DD")+" "+moment().format("hh:mm:00A")
     console.log(finaldate);
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "$2a$12$2ziNRq1wLaqXfdM8Xu5Ggetg7O02GX.FW1HVglexzCSmuyXJIQOwS");
+    myHeaders.append("Authorization",token);
 
     var requestOptions = {
       method: 'GET',
@@ -125,7 +125,7 @@ const TrainerHome = () => {
       }
     })
   }
-  console.log("==>>",token);
+  console.log("==>>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",token);
 
   const open = () => {
     setshow(!show);
@@ -153,8 +153,8 @@ const TrainerHome = () => {
                <h3>UPCOMING SESSIONS</h3>
             </div>
             {apt ? (
-                    apt.map((obj) => (
-                      <div onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
+                    apt.map((obj,index) => (
+                      <div key={index} onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
                         
                       <Link style={{textDecoration:"none"}}>
                       <Card sx={{ width:700, marginTop:"2%" }}>
