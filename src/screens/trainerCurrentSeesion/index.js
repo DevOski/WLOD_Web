@@ -71,21 +71,25 @@ const TrainerHome = () => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
-    // setLoader(true);
-    setTimeout(async () => {
-      try {
-        let response = await getUser(token);
-        setUserName(response.data.data.first_name);
-        // console.log(response.data.data.first_name,'====>name');
+   
+    var myHeaders = new Headers();
+myHeaders.append("Authorization",token);
 
-        dispatch(storeUserData(response.data.data));
-        // console.log(response.data.data,'====>dispatchlog');
-        // setLoader(false);
-      } catch (error) {
-        console.log(error);
-        // setLoader(false);
-      }
-    }, 100);
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    console.log("data res",result)
+  if(result.message === "No recent visit"){
+    
+  }
+  })
+  .catch(error => console.log('error', error));
   };
 
   const open = () => {

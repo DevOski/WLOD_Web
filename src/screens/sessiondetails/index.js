@@ -12,6 +12,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { TextField } from '@material-ui/core';
+import './sessiondetails.css'
 const textStyles = {
     cancel: {
         color: 'white',
@@ -20,7 +22,7 @@ const textStyles = {
 }
 export default function SessionDetails() {
   const params = useLocation();
-    console.log('params',params.state.token);
+    console.log('params',params.state);
     const [username,setusername]= useState("");
     const [email,setemail]= useState("");
     const [marital,setmarital]= useState("");
@@ -30,6 +32,8 @@ export default function SessionDetails() {
     const [city,setcity]= useState("");
   const [loader, setloader] = useState(false)
   const [open, setOpen] = useState(false);
+  const [past, setpast] = useState(false);
+  const [note, setnote] = useState(false);
 
   function handleClose(value) {
     // e.preventDefault();
@@ -37,7 +41,12 @@ export default function SessionDetails() {
 }
     
     useEffect(() => {
+    
     setloader(true)
+    if(params.state?.past){
+        setpast(true)
+        setnote(params.state?.desc)
+    }
 
         var myHeaders = new Headers();
         myHeaders.append("Authorization", params.state?.token);
@@ -102,8 +111,13 @@ export default function SessionDetails() {
                         <Typography className='mt-2'>
                         <span  style={{ fontSize: 16, fontWeight: 'bold'}}> City: </span> {city}
                         </Typography>
+                        {past ?
+                        <Typography className='mt-2'>
+                        <span  style={{ fontSize: 16, fontWeight: 'bold'}}> Note: </span> {note}
+                        </Typography> : ""
+                        }
                       </CardContent>
-                      <Button onClick={() => HandleQuestion()}>View Questioniers</Button>
+                      <Button onClick={() => HandleQuestion()}>View Questionnaire</Button>
                       {/* <CardActions>
                         <Button size="small">Learn More</Button>
                       </CardActions> */}
@@ -113,10 +127,60 @@ export default function SessionDetails() {
 
         </Row>
         </Col>
-        <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
-                <DialogTitle id="alert-dialog-title"></DialogTitle>
+        <Dialog  open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+                <DialogTitle className="text-center" id="alert-dialog-title">Questionnaire</DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">Are you sure you want to delete record </DialogContentText>
+                    <DialogContentText id="alert-dialog-description" >
+                        <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>1) List any health problems and physical limitations</b></label><br></br>
+                     &nbsp;&nbsp;&nbsp;{params.state.res1 ? params.state.res1 : "none"}
+                     </Card> 
+                     <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>2) List All Medications and their dosage</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res2 ? params.state.res2 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>3) Current Weight</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res3 ? params.state.res3 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>4) Current Height</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res4 ? params.state.res4 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>5) What was your lowest and highest adult weight? __________lb
+                __________lb</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res5 ? params.state.res5 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>6) Describe any weight changes (gain or loss) in the past 2</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res6 ? params.state.res6 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>7) Have you dieted in the past for weight loss? (No/Yes) If yes,</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res7 ? params.state.res7 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>8) How much weight would you like to lose?</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res8 ? params.state.res8 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>9) How will you benefit from this weight loss?</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res9 ? params.state.res9 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>10) What, if any, regular exercises do you do?</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res10 ? params.state.res10 : "none"}
+                     </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>11) Who plans the meals at home?</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res11 ? params.state.res11 : "none"}
+                    </Card>
+                    <Card className="p-2 m-2">
+                    <label style={textStyles.text} ><b>12) Who prepares the meals at home?</b></label><br></br>
+                    &nbsp;&nbsp;&nbsp;{params.state.res12 ? params.state.res12 : "none"}
+                    </Card>
+                  </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} style={textStyles.cancel}>
