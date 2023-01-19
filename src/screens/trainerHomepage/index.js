@@ -13,7 +13,7 @@ import moment from "moment/moment";
 import {
   BasicExample,
   CardHome,
-  OffcanvasExample,
+  Loader,
   // TrainerSideBar,
   Visitcom,
 } from "../../component";
@@ -65,12 +65,15 @@ const TrainerHome = () => {
   const [home, sethome] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loader, setloader] = useState(false)
+
 
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
+    setloader(true)
     const finaldate = moment().format("YYYY-MM-DD")+" "+moment().format("hh:mm:00A")
     console.log(finaldate);
     var myHeaders = new Headers();
@@ -86,6 +89,7 @@ const TrainerHome = () => {
       .then(response => response.json())
       .then(result => {
         console.log(result.data)
+        setloader(false)
         setapt(result.data)
       })
       .catch(error => console.log('error', error));
@@ -152,6 +156,11 @@ const TrainerHome = () => {
             <div className="text-center mb-2 mt-4">
                <h3>UPCOMING SESSIONS</h3>
             </div>
+            <div style={{width:'900px',height:'430px', position:'relative'}}>
+              <div
+                className="scoll"
+                style={{ overflow: "overlay", width:'100%',height:'100%',position:'absolute',display: 'flex',alignItems: 'center',flexDirection: 'column'}}
+              >
             {apt ? (
                     apt.map((obj,index) => (
                       <div key={index} onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
@@ -159,14 +168,14 @@ const TrainerHome = () => {
                       <Link style={{textDecoration:"none"}}>
                       <Card sx={{ width:700, marginTop:"2%" }}>
                       <CardContent>
-                        <Typography sx={{ fontSize: 14, fontWeight: 'bold'}} color="text.secondary" gutterBottom>
+                        {/* <Typography sx={{ fontSize: 14, fontWeight: 'bold'}} color="text.secondary" gutterBottom>
                           Details
-                        </Typography>
+                        </Typography> */}
                        
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
                           Date: {moment(obj.apt_time).format("DD/MM/YYYY")}
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
                           Time: {moment(obj.apt_time).format("hh:mma")}
 
                         </Typography>
@@ -181,12 +190,16 @@ const TrainerHome = () => {
                   ) : (
                     <p>No record found</p>
                   )}
-           
+           </div>
+           </div>
             </Col>
           </Row>
+       
+
             {/* </Container> */}
         </Col>
       </Row>
+      {loader && <Loader />}
     </div>
   );
 };
