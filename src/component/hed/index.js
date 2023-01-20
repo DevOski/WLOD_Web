@@ -15,9 +15,34 @@ function BasicExample() {
   const [userName, setUserName] = useState("");
   let navigate = useNavigate();
   const dispatch = useDispatch();
+  const t_type = useSelector((state) => state.trainerType);
+  const token = useSelector((state) => state.token);
   const handleLogout = () => {
-    dispatch(removeData());
-    navigate("/sigin");
+    if(t_type === "trainer"){
+      var myHeaders = new Headers();
+      myHeaders.append("Authorization", token);
+
+      var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+
+      fetch("https://dashboard.weightlossondemand.com/backend/api/logout", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log("^^^^",result.staus)
+          if(result.staus == 200){
+            dispatch(removeData());
+            navigate("/sigin");
+          }
+        })
+        .catch(error => console.log('error', error));
+    }else{
+      dispatch(removeData());
+      navigate("/sigin");
+    }
+   
   };
 
   const handlesignup = () => {
@@ -26,9 +51,7 @@ function BasicExample() {
   const handlesignIn = () => {
     navigate("/sigin");
   };
-  const t_type = useSelector((state) => state.trainerType);
 console.log(t_type,'t_type=====>');
-  const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);

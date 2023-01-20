@@ -168,11 +168,11 @@ const MessageScreen = () => {
       <BasicExample />
 
       <Row>
-        <Col lg="2">
+        <Col lg="2" md='3' xs="3">
           <SideBar />
         </Col>
 
-        <Col lg="10" >
+        <Col lg="10" md="9" xs="9">
           <div className="chatdivmain">
             {msgList? <div className="textbox">
               {msgList?.map((item, index) => {

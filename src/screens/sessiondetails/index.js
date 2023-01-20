@@ -133,52 +133,52 @@ export default function SessionDetails() {
                     <DialogContentText id="alert-dialog-description" >
                         <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>1) List any health problems and physical limitations</b></label><br></br>
-                     &nbsp;&nbsp;&nbsp;{params.state.res1 ? params.state.res1 : "none"}
+                     &nbsp;&nbsp;&nbsp;{params.state.res1 && params.state.res1 != "undefined" ? params.state.res1 : "none"}
                      </Card> 
                      <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>2) List All Medications and their dosage</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res2 ? params.state.res2 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res2 && params.state.res2 != "undefined" ? params.state.res2 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>3) Current Weight</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res3 ? params.state.res3 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res3 && params.state.res3 != "undefined" ? params.state.res3 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>4) Current Height</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res4 ? params.state.res4 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res4 && params.state.res4 != "undefined" ? params.state.res4 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>5) What was your lowest and highest adult weight? __________lb
                 __________lb</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res5 ? params.state.res5 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res5 && params.state.res5 != "undefined" ? params.state.res5 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>6) Describe any weight changes (gain or loss) in the past 2</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res6 ? params.state.res6 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res6 && params.state.res6 != "undefined" ? params.state.res6 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>7) Have you dieted in the past for weight loss? (No/Yes) If yes,</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res7 ? params.state.res7 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res7 && params.state.res7 != "undefined" ? params.state.res7 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>8) How much weight would you like to lose?</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res8 ? params.state.res8 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res8 && params.state.res8 != "undefined" ? params.state.res8 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>9) How will you benefit from this weight loss?</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res9 ? params.state.res9 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res9 && params.state.res9 != "undefined" ? params.state.res9 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>10) What, if any, regular exercises do you do?</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res10 ? params.state.res10 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res10 && params.state.res10 != "undefined" ? params.state.res10 : "none"}
                      </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>11) Who plans the meals at home?</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res11 ? params.state.res11 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res11 && params.state.res11 != "undefined" ? params.state.res11 : "none"}
                     </Card>
                     <Card className="p-2 m-2">
                     <label style={textStyles.text} ><b>12) Who prepares the meals at home?</b></label><br></br>
-                    &nbsp;&nbsp;&nbsp;{params.state.res12 ? params.state.res12 : "none"}
+                    &nbsp;&nbsp;&nbsp;{params.state.res12 && params.state.res12 != "undefined" ? params.state.res12 : "none"}
                     </Card>
                   </DialogContentText>
                 </DialogContent>

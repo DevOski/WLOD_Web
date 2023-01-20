@@ -92,6 +92,11 @@ const [email, setemail] = useState('')
     }
     
   }
+  const enterKye = (e) => {
+    if (e.key === "Enter") {
+      UpdatePass();
+    }
+  };
   return (
     <>
       <BasicExample  />
@@ -103,15 +108,19 @@ const [email, setemail] = useState('')
            <label>New Password</label>
            <div className="inputwidth">
 
-          
+           <div className="c_lass">
             <input type='text' placeholder="Enter your password" className="form-control"
              onChange={(event) => setpassword(event.target.value)}
+             onKeyPress={enterKye}
             />
+            </div>
              </div>
             <label>Confirm Password</label>
+            
             <div className="inputwidth">
             <input type='text' placeholder="Renter your password" className="form-control"
              onChange={(event) => setcpassword(event.target.value)}
+             onKeyPress={enterKye}
             
             />
             </div>
@@ -120,6 +129,7 @@ const [email, setemail] = useState('')
            <Button onClick={UpdatePass} className="newpassbuttsub">Submit</Button>
            </div>
            </div>
+        
         </Col>
       </Row>
       {loder && <Loader />}

@@ -227,7 +227,7 @@ const SignUp = () => {
             </Col>
           </Row>
 
-          <Container fluid className="bg2">
+          <Container fluid className="bg2mm">
             <Row>
               <Col lg="4">
                 <h3 className="foterhead">Lauren, Illinois</h3>

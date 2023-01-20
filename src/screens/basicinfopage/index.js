@@ -97,7 +97,7 @@ const Basic = () => {
           console.log("works");
           setloder(false);
           dispatch(storeData(result.token));
-          navigate("/home");
+          navigate("/");
           seterror(false);
         } else {
           setloder(false);

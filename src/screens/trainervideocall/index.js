@@ -10,14 +10,24 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Loader } from "../../component";
-
 const TrainerVideo = () => {
+  const navigate = useNavigate();
+  const params = useLocation();
+
+  console.log("--->>",params.state?.identity);
   const [videoCall, setVideoCall] = useState(false);
   const [channelName, setChannelName] = useState("");
   const [tokenAPI, setTokenAPI] = useState("");
 
   const callbacks = {
-    EndCall: () => setVideoCall(false),
+    EndCall: () => {setVideoCall(false);
+    navigate('/trainerdescription',{
+      state :{
+        identity:params.state?.identity
+      }
+    })
+    }
+
   };
   const usertoken = useSelector((state) => state.token);
   useEffect(() => {
@@ -51,7 +61,11 @@ const TrainerVideo = () => {
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
     </div>
   ) : (
-    <h3 onClick={() => setVideoCall(true)}>Start Call</h3>
+  <div className="text-center" style={{width:'100%',height:'100vh',display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <div style={{width:'200px'}}>
+    <Button  onClick={() => setVideoCall(true)}>Start Call</Button>
+    </div>
+    </div>
   );
 };
 

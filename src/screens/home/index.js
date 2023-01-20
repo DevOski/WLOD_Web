@@ -96,7 +96,7 @@ const Home = () => {
         <Col lg="2" md="3" xs="3">
           <SideBar />
         </Col>
-        <Col lg="10" md="9" xs="9">
+        <Col lg="7" md="9" xs="9">
         <CardHome />
         </Col>
       </Row>

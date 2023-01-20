@@ -22,12 +22,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 // import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import { height } from "@mui/system";
 // function getWindowDimensions() {
 //   const { innerWidth: width, innerHeight: height } = window;
@@ -62,7 +62,7 @@ const TrainerHome = () => {
   const [Visit, setVisit] = useState("");
   const [button, setbutton] = useState("");
   const [status, setstatus] = useState(false);
-  const [Message, setMessage] = useState();
+  const [identity, setidentity] = useState("");
   const [home, sethome] = useState("");
   const [response1, setresponse1] = useState("");
   const [response2, setresponse2] = useState("");
@@ -78,76 +78,105 @@ const TrainerHome = () => {
   const [response12, setresponse12] = useState("");
   const [user, setuser] = useState("");
   const [loader, setloader] = useState(false);
-
+  const [visitId, setvisitId] = useState("");
+  const [AppId, setAppId] = useState("");
 
   const dispatch = useDispatch();
-
 
   const token = useSelector((state) => state.token);
   useEffect(() => {
     getUserDetails();
   }, []);
   const getUserDetails = async () => {
-   setloader(true)
+    setloader(true);
     var myHeaders = new Headers();
-myHeaders.append("Authorization",token);
+    myHeaders.append("Authorization", token);
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  redirect: 'follow'
-};
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      redirect: "follow",
+    };
 
-fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", requestOptions)
-  .then(response => response.json())
-  .then(result => {
-    console.log("data res",result)
-  if(result.message === "No recent visit"){
-    setloader(false)
-    setbutton(result.message)
-  }else{
-    setstatus(true)
-    console.log("dataaaa",result.data.user_token);
-    setloader(false)
+    fetch(
+      "https://dashboard.weightlossondemand.com/backend/api/question_review",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("data----------------------------------------------------        k;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-res", result.data);
+        if (result.data.visit_id) {
+          setvisitId(result.data.visit_id);
+          setloader(false);
+          setbutton(result.message);
+        }
+        if (result.data.ap_id) {
+          setAppId(result.data?.ap_id);
+          setloader(false);
+          setbutton(result.message);
+        } else {
+          setAppId("");
+          // setstatus(false)
+          setloader(false);
+          console.log("dataaaa", result.data.user_token);
 
-    setresponse1(result.data.response_1)
-    setresponse2(result.data.response_2)
-    setresponse3(result.data.response_3)
-    setresponse4(result.data.response_4)
-    setresponse5(result.data.response_5)
-    setresponse6(result.data.response_6)
-    setresponse7(result.data.response_7)
-    setresponse8(result.data.response_8)
-    setresponse9(result.data.response_9)
-    setresponse10(result.data.response_10)
-    setresponse11(result.data.response_11)
-    setresponse12(result.data.response_12)
-    setuser(result.data.user_token)
-  }
-  })
-  .catch(error => console.log('error', error));
+          setresponse1(result.data.response_1);
+          setresponse2(result.data.response_2);
+          setresponse3(result.data.response_3);
+          setresponse4(result.data.response_4);
+          setresponse5(result.data.response_5);
+          setresponse6(result.data.response_6);
+          setresponse7(result.data.response_7);
+          setresponse8(result.data.response_8);
+          setresponse9(result.data.response_9);
+          setresponse10(result.data.response_10);
+          setresponse11(result.data.response_11);
+          setresponse12(result.data.response_12);
+          setuser(result.data.user_token);
+          setidentity(result.data.identity)
+        }
+      })
+
+      .catch((error) => {
+        console.log("error", error);
+        setloader(false);
+      });
   };
 
-  const HandleSession = () =>{
-    console.log(response1,response2,response3,response4,response5,response6,response7,response8,response9,response10,response11,response12,user);
-    navigate("/sessiondetails",{
-      state :{
-        token:user,
-        res1:response1,
-        res2:response2,
-        res3:response3,
-        res4:response4,
-        res5:response5,
-        res6:response6,
-        res7:response7,
-        res8:response8,
-        res9:response9,
-        res10:response10,
-        res11:response11,
-        res12:response12,
-      }
-    })
-  }
+  const HandleSession = () => {
+    console.log(
+      response1,
+      response2,
+      response3,
+      response4,
+      response5,
+      response6,
+      response7,
+      response8,
+      response9,
+      response10,
+      response11,
+      response12,
+      user
+    );
+    navigate("/sessiondetails", {
+      state: {
+        token: user,
+        res1: response1,
+        res2: response2,
+        res3: response3,
+        res4: response4,
+        res5: response5,
+        res6: response6,
+        res7: response7,
+        res8: response8,
+        res9: response9,
+        res10: response10,
+        res11: response11,
+        res12: response12,
+      },
+    });
+  };
   const open = () => {
     setshow(!show);
   };
@@ -159,19 +188,26 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", re
   };
   return (
     <div className="wi55">
-      <BasicExample  />
+      <BasicExample />
 
       <Row>
         <Col xs="3">
-          <TrainerSideBar/>
+          <TrainerSideBar />
         </Col>
         {/* <CardHome /> */}
-        <Col xs="9" style={{display: 'flex',justifyContent:"center",alignItems:"center"}}>
-            {/* <Container> */}
-          <Row >
-            <Col lg="12" >
-            <div style={{ width:"100%" }}>
-      {/* <CardContent>
+        <Col
+          xs="9"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {/* <Container> */}
+          <Row>
+            <Col lg="12">
+              <div style={{ width: "100%" }}>
+                {/* <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
         </Typography>
@@ -187,27 +223,42 @@ fetch("https://dashboard.weightlossondemand.com/backend/api/question_review", re
           {'"a benevolent smile"'}
         </Typography>
       </CardContent> */}
-      {status ? (<div style={{display: 'flex',flexDirection:"column",justifyContent:"center"}}>
-        <div className="trainbdiv">
-        <Button size="small" onClick={HandleSession}>View Client details</Button>
-        </div>
-        <div className="trainbdiv">
-         <Button size="small" onClick={()=>navigate('/Tsession')}>Start Session</Button>
-         </div>
-         {/* <Button size="small">Learn More</Button> */}
-       </div>): button
-      }
-      
-    </div>
+                {visitId !== "" && (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div className="trainbdiv">
+                      <Button size="small" onClick={HandleSession}>
+                        View Client details
+                      </Button>
+                    </div>
+                    <div className="trainbdiv">
+                      <Button
+                        size="small"
+                        onClick={() => navigate("/Tsession",{
+                      state : {
+                        identity
+                      }})}
+                      >
+                        Start Session
+                      </Button>
+                    </div>
+                    {/* <Button size="small">Learn More</Button> */}
+                  </div>
+                )}
+                {!visitId && <p>No recent session</p>}
+              </div>
             </Col>
           </Row>
-            {/* </Container> */}
+          {/* </Container> */}
         </Col>
       </Row>
       {loader && <Loader />}
-
     </div>
-
   );
 };
 

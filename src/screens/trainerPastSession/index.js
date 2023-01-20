@@ -196,7 +196,7 @@ const TrainerPastSession = () => {
         {/* <CardHome /> */}
         <Col xs="9" style={{ display: "flex", justifyContent: "center" }}>
           {/* <Container> */}
-          <Row>
+          <Row sx={{width:'inherit'}}>
             <Col class="column">
               <div className="text-center mb-2 mt-4">
                 <h3>PAST SESSIONS</h3>
