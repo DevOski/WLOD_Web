@@ -12,6 +12,13 @@
         height: 541px;
         background-color: brown;
     }
+    @media only screen and (max-width: 1920px) {
+
+        .maindeowercontainerreal { 
+            height: 100vh !important; 
+        }
+     
+     }
     @media screen and (max-width: 767px) {
      .maindeowercontainerreal{
         height: 100% !important;
