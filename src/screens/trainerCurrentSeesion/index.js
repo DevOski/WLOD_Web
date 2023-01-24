@@ -12,7 +12,7 @@ import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import {
   BasicExample,
   Loader,
-  OffcanvasExample,
+  SideMainBar,
   // TrainerSideBar,
   Visitcom,
 } from "../../component";
@@ -188,21 +188,18 @@ const TrainerHome = () => {
   };
   return (
     <div className="wi55">
-      <BasicExample />
-
+     
+     <BasicExample/>
+       <SideMainBar/>
       <Row>
-        <Col xs="3">
-          <TrainerSideBar />
-        </Col>
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       <Col lg="2" md="3" sm="3" xs="3" >
+        <TrainerSideBar/>
+       </Col>
+        <Col  lg="1" md="0" sm="0" xs="1" ></Col>
         {/* <CardHome /> */}
-        <Col
-          xs="9"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <Col lg="9" md="9" sm="9" xs="9" style={{display: 'flex',justifyContent:"center",alignItems: "center",}}>
+
           {/* <Container> */}
           <Row>
             <Col lg="12">

@@ -11,7 +11,7 @@ const Error = ({ onClick, tittle, congrats,rating }) => {
       </h2>
       <h4 style={{ color: "#fff" }}>{tittle}</h4>
       <div className="butwidth">
-        <Button onClick={onClick}>Ok</Button>
+        <Button onClick={onClick}>OK</Button>
       </div>
     </div>
   );

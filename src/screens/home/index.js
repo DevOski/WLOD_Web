@@ -14,7 +14,7 @@ import {
   CardHome,
   OffcanvasExample,
   SideBar,
-  Visitcom,
+  SideMainBar,
 } from "../../component";
 import { Link } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
@@ -90,13 +90,16 @@ const Home = () => {
   };
   return (
     <div className="wi55">
-      <BasicExample  />
-
+     <BasicExample/>
+       <SideMainBar/>
       <Row>
-        <Col lg="2" md="3" xs="3">
-          <SideBar />
-        </Col>
-        <Col lg="7" md="9" xs="9">
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       <Col lg="2" md="3" sm="3" xs="3" >
+        <SideBar/>
+       </Col>
+        <Col  lg="1" md="1" sm="1" xs="1" ></Col>
+
+        <Col lg="7" md="8" sm="8" xs="8">
         <CardHome />
         </Col>
       </Row>

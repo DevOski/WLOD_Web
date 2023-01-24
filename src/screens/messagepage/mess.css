@@ -1,3 +1,9 @@
+.main{
+    position: fixed;
+    bottom: 0;
+    border: solid;
+    width: 100%;
+}
 .wi{
     width:65% !important;
 }
@@ -258,12 +264,20 @@ margin-top: 17.5rem  !IMPORTANT;
 .chatdivmain {
     /* background-color: antiquewhite; */
     margin-left: 0px;
-    width: 78rem;
+    width: 83rem;
     margin-top: 8px;
     /* height: 100vh; */
 }
-
-@media only screen and (max-width: 1566px) {
+@media only screen and (max-width: 1851px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        
+        width: 78rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 1742px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         
@@ -272,7 +286,7 @@ margin-top: 17.5rem  !IMPORTANT;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 1406px) {
+@media only screen and (max-width: 1556px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         
@@ -281,53 +295,54 @@ margin-top: 17.5rem  !IMPORTANT;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 1301px) {
+@media only screen and (max-width: 1429px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         
-        width: 55rem;
+        width: 57rem;
         margin-top: 8px;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 1119px) {
+@media only screen and (max-width:1273px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         
-        width: 48rem;
+        width: 51rem;
         margin-top: 8px;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 987px) {
+@media only screen and (max-width: 1138px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
-        width: 37rem;
+        width: 44rem;
         margin-top: 8px;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 851px) {
+@media only screen and (max-width: 993px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
-        width: 32rem;
+        width: 38rem;
         margin-top: 8px;
         /* height: 100vh; */
     }
 }
-@media only screen and (max-width: 744px) {
+@media only screen and (max-width: 981px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         width: 29rem;
         margin-top: 8px;
-        /* height: 100vh; */
     }
+    
 }
-@media only screen and (max-width: 664px) {
+@media only screen and (max-width: 739px) {
     .chatdivmain {
         /* background-color: antiquewhite; */
         width: 25rem;
         margin-top: 8px;
+        margin-left: -50px;
         /* height: 100vh; */
     }
 }
@@ -336,6 +351,7 @@ margin-top: 17.5rem  !IMPORTANT;
         /* background-color: antiquewhite; */
         width: 22rem;
         margin-top: 8px;
+      
         /* height: 100vh; */
     }
 }
@@ -395,13 +411,15 @@ margin-top: 17.5rem  !IMPORTANT;
        /* margin-top: 20.7rem !important; */
        width: 100% !important;
        border: none !important;
-       position: relative;
+       position: absolute;
+       bottom: 0;
        /* border: 1px solid black; */
-       padding-left: 1%;
-       left: 3.5%;
-       height: 220px !important;
+       /* padding-left: 1%; */
+    margin-left: 3.3%;
+       /* left: 3.5%; */
+       height: 87px !important;
        /* border-radius: 53px; */
-       top: 5px;
+       /* top: 5px; */
        box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
@@ -435,6 +453,12 @@ margin-top: 17.5rem  !IMPORTANT;
         width: 82% !important;
             }
 }
+@media only screen and (max-width: 979px) {
+    .messinput1 {
+        /* margin-top: 20.7rem !important; */
+        width: 82% !important;
+            }
+}
 
 .messinput1:focus-visible {
     width: 100%;
@@ -459,11 +483,11 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 .sendbuttondiv {
     background-color: #bd3434;
-    position: relative;
-    top: 44%;
+    position: absolute;
+    /* top: 44%; */
     width: 59px;
     height: 55px;
-    left: 44px;
+    /* left: 44px; */
     /* display: flex; */
     border: none;
     justify-content: center;
@@ -471,7 +495,7 @@ margin-top: 17.5rem  !IMPORTANT;
     color: white;
     border-radius: 47px;
 }
-@media only screen and (max-width: 1566px) {
+/* @media only screen and (max-width: 1566px) {
     .sendbuttondiv{
     left: 32px;
 
@@ -502,20 +526,31 @@ margin-top: 17.5rem  !IMPORTANT;
         width: 49px;
         height: 45px;
         }
-}
+} */
 .textbox {
-    height: 29.2rem;
+    height: 49.2rem;
+    margin-left: 0.7%;
     /* padding-left: 4%; */
     padding: 2%;
     /* border: 1px solid; */
     /* width: 53.4rem; */
     position: relative;
+    /* bottom: 0; */
     left: 3.4%;
     overflow-y: scroll;
-    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
-    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !; */
 }
+.msgi{
+    /* width: 70%; */
+    height: 100%;
+    border: unset;
+    margin-left: 0.4%;
+}
+/* .msgi:focus{
+    border: white !important;
+} */
 
 .textbox2 {
     height: 29.2rem;
@@ -609,8 +644,8 @@ margin-top: 17.5rem  !IMPORTANT;
             margin-top: 8px;
             /* height: 100vh; */
         }
-        .sendbuttondiv{
+        /* .sendbuttondiv{
             width: 40px;
             height: 39px;
-            }
+            } */
  }

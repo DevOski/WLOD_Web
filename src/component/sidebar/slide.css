@@ -1,3 +1,13 @@
+.maindiv{
+    margin-top: 20%;
+   margin-left: 10%;
+   margin-right: 10%;
+   /* width: auto; */
+}
+.content{
+   padding: 5px 0px 5px 0px;
+
+}
 .cent {
     display: flex;
     justify-content: center;
@@ -53,6 +63,7 @@
         color: white;
         text-transform: capitalize;
         font-weight: 800;
+
     }
     .back {
         /* background-color: #c5adada3; */
@@ -95,14 +106,14 @@
         margin-top: -27
      }
      .back33{
-        margin-top: -66px !important;
+        margin-top: 66px !important;
         width: 100% !important;
         display: flex;
         justify-content: center;
         flex-direction: column;
         margin-right: -87px;
      }
-     @media screen and (max-width: 870px) {
+     /* @media screen and (max-width: 870px) {
         .tit {
             font-size: 1.3em !important;
         }
@@ -116,7 +127,7 @@
         .tit {
             font-size: 1em !important;
         }
-    }
+    } */
     /* @media screen and (max-width: 420px) {
         .tit {
             font-size: 1em !important;

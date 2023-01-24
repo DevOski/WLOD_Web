@@ -1,3 +1,13 @@
+.maindiv{
+    margin-top: 20%;
+   margin-left: 10%;
+   margin-right: 10%;
+   /* width: auto; */
+}
+.content{
+   padding: 5px 0px 5px 0px;
+
+}
 .cent {
     display: flex;
     justify-content: center;

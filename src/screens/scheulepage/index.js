@@ -28,7 +28,7 @@ const SessionBook = () => {
           className="d-flex justify-content-center flex-column align-items-center mt-5 ">
 <div className="bookseebuttdiv">
 
-<Button onClick={goto}> 
+<Button style={{width: 'auto'}} onClick={goto}> 
 Choose Consultant
 </Button>
 </div>

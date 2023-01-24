@@ -101,8 +101,8 @@ const Videocalling = () => {
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks}    />
     </div>
   ) : (
-    <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh",}}>
-<div style={{width:"10%",}}>
+    <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh"}}>
+<div style={{width:"auto"}}>
 
     <Button onClick={getChannel}>Join Session</Button>
 </div>

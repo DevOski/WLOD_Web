@@ -1,6 +1,6 @@
 import {React,useEffect, useState} from 'react'
 import { useLocation} from 'react-router-dom';
-import {BasicExample, Loader} from "../../component";
+import {BasicExample, Loader,SideMainBar} from "../../component";
 import TrainerSideBar from "../../component/trainersidebar";
 import { Row,Col, Button } from 'react-bootstrap';
 import Card from '@mui/material/Card';
@@ -77,12 +77,16 @@ export default function SessionDetails() {
     }
   return (
       <div>
-    <BasicExample  />
-    <Row>
-        <Col xs="3">
-          <TrainerSideBar />
-        </Col>
-        <Col xs="9" style={{display: 'flex',justifyContent:"center"}}>
+   <BasicExample/>
+       <SideMainBar/>
+      <Row>
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       <Col lg="2" md="3" sm="3" xs="3" >
+        <TrainerSideBar/>
+       </Col>
+        <Col  lg="1" md="0" sm="0" xs="1" ></Col>
+        {/* <CardHome /> */}
+        <Col lg="9" md="9" sm="9" xs="9" style={{display: 'flex',justifyContent:"center"}}>
         <Row >
             <Col>
             <div className="text-center mb-2 mt-4">

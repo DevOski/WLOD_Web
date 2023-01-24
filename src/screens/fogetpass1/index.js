@@ -162,7 +162,7 @@ const enterKye=(e)=>{
            </div>
 
            <div className="box2"> 
-            <input type='text' placeholder="Enter your email" className="forgetinput"
+            <input type='text' placeholder="Enter your email" className=" form-control forgetinput"
              onChange={(event) => setEmail(event.target.value)}
              onKeyPress={enterKye}
             />

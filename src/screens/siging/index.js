@@ -34,10 +34,11 @@ const Siging = () => {
   };
   const token = useSelector((state) => state.token);
   const Sigin = async () => {
+    setloder(true);
     if (email && password) {
       console.log(email, password);
       try {
-        setloder(true);
+       
         console.log("works2");
         
         let response = await signIn(email, password);
@@ -67,6 +68,10 @@ const Siging = () => {
         console.log("err", error);
       
       }
+    }else{
+      setloder(false);
+      setErrorMessage("Email or password field is empty");
+      seterror(true);
     }
   };
   const enterKye=(e)=>{

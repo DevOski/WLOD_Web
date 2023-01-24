@@ -135,10 +135,10 @@ const SignUp = () => {
           <BasicExample />
 
           <Row>
-            <Col lg="6">
-              <div className="imm">
-                <img style={{ width: "100%", heigh: "100%" }} src={mother} />
-              </div>
+            <Col lg="6" >
+              {/* <div className="imm" style={{border:'solid yellow'}}> */}
+                <img style={{ width: "102%", height: "100%" }} src={mother} />
+              {/* </div> */}
             </Col>
             <Col lg="6" className="bg">
               <div className="grandgrandparent">

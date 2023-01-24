@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
-import { BasicExample, CardHome, Loader, SideBar, Visitcom } from "../../component";
+import { BasicExample, CardHome, Loader, SideBar, Visitcom, SideMainBar} from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
@@ -119,13 +119,16 @@ const Visitpage = () => {
    const abc =Object.keys(Visit);
   return (
     <div className="wi55">
+     
        <BasicExample/>
+       <SideMainBar/>
       <Row>
-       <Col lg="2" md="3" xs="3">
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       <Col lg="2" md="3" sm="3" xs="3" >
         <SideBar/>
        </Col>
-        
-        <Col lg="10" md="9" xs="9">
+       {/* style={{border:'solid lightblue'}} */}
+        <Col lg="10" md="9" sm="9" xs="9" >
           <div className="text-center mt-4 mr-4">
               <h3>Visit Details</h3>
               </div>
@@ -244,8 +247,9 @@ const Visitpage = () => {
           </Row>
         </Col>
        
-      {loader && <Loader />}
       </Row>
+      {loader && <Loader />}
+
     </div>
   );
 };

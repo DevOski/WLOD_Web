@@ -3,7 +3,7 @@ import "./vt.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BasicExample, Loader, Navbarmenu, TopBar } from "../../component";
+import { BasicExample, Loader, Navbarmenu, Error } from "../../component";
 import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
@@ -24,6 +24,8 @@ const Confirmpay = () => {
   const [Cvv, setCvv] = useState("");
   const [ExpirationYY, setExpirationYY] = useState("");
   const [isChecked, setisisChecked] = useState(false);
+  const [error, seterror] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const ApplyCupon = params?.state?.bparams?.ApplyCupon;
   const data = params?.state?.data;
 
@@ -34,7 +36,9 @@ const Confirmpay = () => {
   const handleOnChange = () => {
     setisisChecked(!isChecked);
   };
-
+  const Close = () => {
+    seterror(false);
+  };
   let navigate = useNavigate();
   const goto = () => {
     navigate("/Confrimandpay", {
@@ -64,6 +68,9 @@ const Confirmpay = () => {
 
       // let paymentData = { cardNum, expirationMonth, expirationYear, cvv };
       // dispatch(storePayment(paymentData));
+    }else{
+      seterror(true);
+      setErrorMessage("All fields are required");
     }
   };
   useEffect(() => {
@@ -136,7 +143,7 @@ const Confirmpay = () => {
                   maxLength={16}
                 />
                 <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
+                  We'll never share your information with anyone else.
                 </Form.Text>
               </Form.Group>
 
@@ -195,6 +202,9 @@ const Confirmpay = () => {
       </div>
     </Container>
       {loader && <Loader />}
+      {error && (
+        <Error onClick={Close} tittle={errorMessage} congrats="" />
+      )}
       </>
   );
 };

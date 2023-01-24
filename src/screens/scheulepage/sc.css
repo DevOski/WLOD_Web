@@ -73,4 +73,12 @@
 .bookseebuttdiv{
   margin-bottom: 1%;
   width: 20%;
+  
+}
+@media only screen and (max-width: 858px){
+  .bookseebuttdiv{
+    margin-bottom: 1%;
+    width: 50%;
+    
+  }
 }

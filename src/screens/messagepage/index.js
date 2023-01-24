@@ -15,6 +15,7 @@ import {
   Loader,
   SideBar,
   Visitcom,
+  SideMainBar
 } from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -165,15 +166,17 @@ const MessageScreen = () => {
     }
   return (
     <div className="wi55">
-      <BasicExample />
-
+      <BasicExample/>
+       <SideMainBar/>
       <Row>
-        <Col lg="2" md='3' xs="3">
-          <SideBar />
-        </Col>
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       <Col lg="2" md="3" sm="3" xs="3" >
+        <SideBar/>
+       </Col>
+        {/* <Col  lg="1" md="0" sm="0" xs="1" ></Col> */}
 
         <Col lg="10" md="9" xs="9">
-          <div className="chatdivmain">
+          <div >
             {msgList? <div className="textbox">
               {msgList?.map((item, index) => {
                 return (
@@ -210,22 +213,30 @@ const MessageScreen = () => {
              <p>There no message</p>
             </div>}
            
-            <div className="inputdivmessage">
-              <div className="messinput">
+            <div className="">
+              <Row>
+                <Col lg="10" md="10" sm="10" xs="10" >
+                <div className="messinput">
                 <input
-                  className="messinput1"
+                  className="msgi form-control"
                   type={"text"}
                   placeholder="Enter your message"
                   onChange={(event) => setMessage(event.target.value)}
                   value={message}
                   onKeyPress={enterKye}
                 />
+                </div>
+                </Col>
+                <Col lg="2" md="2" sm="2" xs="2">
+                <div>
                 <button className="sendbuttondiv" onClick={handleMsg}>
                   <p className="sendbutton">
                     <IoMdSend size={20} />
                   </p>
                 </button>
               </div>
+                </Col>
+              </Row>
             </div>
           </div>
         </Col>

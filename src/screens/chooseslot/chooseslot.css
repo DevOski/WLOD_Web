@@ -70,7 +70,7 @@
 }
 
 .slotdiv1 {
-  width: 10%;
+  width: auto;
   /* border: 1px solid; */
   /* margin-top: 5%; */
   display: flex;
