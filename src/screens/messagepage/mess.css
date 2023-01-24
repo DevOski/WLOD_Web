@@ -259,8 +259,131 @@ margin-top: 17.5rem  !IMPORTANT;
     /* background-color: antiquewhite; */
     margin-left: 0px;
     width: 78rem;
+    margin-top: 8px;
     /* height: 100vh; */
 }
+
+@media only screen and (max-width: 1566px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        
+        width: 70rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 1406px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        
+        width: 64rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 1301px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        
+        width: 55rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 1119px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        
+        width: 48rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 987px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 37rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 851px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 32rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 744px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 29rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 664px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 25rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 579px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 22rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 502px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 21rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 486px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 20rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+}
+@media only screen and (max-width: 438px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 19rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+   
+}
+@media only screen and (max-width: 403px) {
+    .chatdivmain {
+        /* background-color: antiquewhite; */
+        width: 17.5rem;
+        margin-top: 8px;
+        /* height: 100vh; */
+    }
+    
+}
+/* .chbox { */
+    /* width: 50%;
+ /* width: 435px; */
+ /* .sendbuttondiv {
+    background-color: #bd3434;
+    position: relative;
+    top: 0.5rem;
+    width: 36px;
+    height: 39px;
+    left: 44px;
+ } */
 .inputdivmessage {
     display: flex;
     position: relative;
@@ -270,13 +393,13 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 .messinput {
        /* margin-top: 20.7rem !important; */
-       width: 88% !important;
+       width: 100% !important;
        border: none !important;
        position: relative;
        /* border: 1px solid black; */
        padding-left: 1%;
        left: 3.5%;
-       height: 66px !important;
+       height: 220px !important;
        /* border-radius: 53px; */
        top: 5px;
        box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
@@ -299,6 +422,20 @@ margin-top: 17.5rem  !IMPORTANT;
     /* -webkit-box-shadow: -1px 1px 7px 0px rgb(0 0 0 / 45%); */
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
 }
+@media only screen and (max-width: 987px) {
+    
+.messinput1 {
+    /* margin-top: 20.7rem !important; */
+    width: 88% !important;
+        }
+}
+@media only screen and (max-width: 744px) {
+    .messinput1 {
+        /* margin-top: 20.7rem !important; */
+        width: 82% !important;
+            }
+}
+
 .messinput1:focus-visible {
     width: 100%;
     border: none !important;
@@ -323,7 +460,7 @@ margin-top: 17.5rem  !IMPORTANT;
 .sendbuttondiv {
     background-color: #bd3434;
     position: relative;
-    top: 0.5rem;
+    top: 44%;
     width: 59px;
     height: 55px;
     left: 44px;
@@ -333,6 +470,38 @@ margin-top: 17.5rem  !IMPORTANT;
     align-items: center;
     color: white;
     border-radius: 47px;
+}
+@media only screen and (max-width: 1566px) {
+    .sendbuttondiv{
+    left: 32px;
+
+    }
+}
+@media only screen and (max-width: 1406px) {
+    .sendbuttondiv{
+    left: 28px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .messinput {
+        height: 140px !important;
+      }
+}
+@media only screen and (max-width: 1301px) {
+    .sendbuttondiv{
+    left: 19px;
+    }
+}
+@media only screen and (max-width: 1119px) {
+    .sendbuttondiv{
+        left: 5px;
+        }
+}
+@media only screen and (max-width: 744px) {
+    .sendbuttondiv{
+        width: 49px;
+        height: 45px;
+        }
 }
 .textbox {
     height: 29.2rem;
@@ -347,6 +516,7 @@ margin-top: 17.5rem  !IMPORTANT;
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
 }
+
 .textbox2 {
     height: 29.2rem;
     display: flex;
@@ -378,3 +548,69 @@ margin-top: 17.5rem  !IMPORTANT;
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
 }
+@media only screen and (max-width: 987px) {
+    .chbox {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 502px) {
+    .messinput1 {
+        /* margin-top: 20.7rem !important; */
+        width: 79% !important;
+            }
+    .chbox {
+    width: 89%;
+            }
+}
+@media only screen and (max-width: 440px) {
+    .messinput {
+        /* margin-top: 20.7rem !important; */
+        width: 96% !important;
+            }
+    .chbox {
+        width: 80%;
+                }
+}
+@media only screen and (max-width: 403px) {
+    .messinput {
+        /* margin-top: 20.7rem !important; */
+        width: 90% !important;
+            }
+    .chbox {
+        width: 75%;
+                }
+            }
+@media only screen and (max-width: 438px) {
+            .chbox {
+               width: 70%;
+             }
+                
+            }
+@media only screen and (max-width: 403px) {
+    .messinput {
+        /* margin-top: 20.7rem !important; */
+        width: 93% !important;
+            }
+    .chbox {
+        width: 80%;
+      }
+    }
+@media only screen and (max-width: 368px) {
+        .messinput {
+            /* margin-top: 20.7rem !important; */
+            width: 98% !important;
+                }
+        .chbox {
+            width: 76%;
+          }
+        .chatdivmain {
+            /* background-color: antiquewhite; */
+            width: 15rem;
+            margin-top: 8px;
+            /* height: 100vh; */
+        }
+        .sendbuttondiv{
+            width: 40px;
+            height: 39px;
+            }
+ }
