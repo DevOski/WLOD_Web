@@ -9,7 +9,7 @@ const Error = ({ onClick, tittle, congrats,rating }) => {
         {congrats ? "Congratulations!" : "Oops!"}
         {/* {rating &&  "Your rating is submitted!"} */}
       </h2>
-      <h4 style={{ color: "#fff" }}>{tittle}</h4>
+      <h4 style={{ color: "#fff",textAlign:'center'}}>{tittle}</h4>
       <div className="butwidth">
         <Button onClick={onClick}>OK</Button>
       </div>

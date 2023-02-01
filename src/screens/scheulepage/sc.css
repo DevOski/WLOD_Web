@@ -1,3 +1,11 @@
+.booksession{
+  /* border: solid !important; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+}
 .App {
     background-color: white;
 }
@@ -28,7 +36,7 @@
   /* margin: 0.2%; */
   border: none !important;
   /* padding: 2%; */
-  background-color: brown;
+  background-color: #be1f2d;
   /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45); */
 /* -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45); */
@@ -39,7 +47,7 @@
   border: none !important;
 
   /* padding: 2%; */
-  background-color: brown;
+  background-color: #be1f2d;
   /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45); */
@@ -48,17 +56,17 @@
   background-color: rgb(228, 57, 57);
 } */
 .iconcolor{
- color: brown;
+ color: #be1f2d;
 } 
 .of{
   overflow-x: clip !important;
 }
 .nice-dates-navigation, .nice-dates-day {
-  color: rgb(248, 6, 6);
+  color: #be1f2d;
 }
 .nice-dates-popover {
   box-shadow: none;
-  border: 1px solid rgb(224, 4, 4);
+  border: 1px solid #be1f2d;
   border-radius: 2px;
   max-width: 480px;
   transition: none;
@@ -71,14 +79,34 @@
   margin-top: 10% !important;
 }
 .bookseebuttdiv{
-  margin-bottom: 1%;
-  width: 20%;
+  margin-bottom: 5%;
+  width: 100%;
+}
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
+  .mobilediv{
+      padding-top:80px
+  }
   
 }
+/* }
 @media only screen and (max-width: 858px){
   .bookseebuttdiv{
     margin-bottom: 1%;
     width: 50%;
     
   }
-}
+} */

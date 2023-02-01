@@ -11,7 +11,7 @@ import logo from "../../assets/logo.png";
 import theropist from "../../assets/theropist.png";
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 import { IoIosArrowUp, } from "@react-icons/all-files/io/IoIosArrowUp";
-
+import NavSidebar from "../../component/navsidebar";
 import { Button } from "react-bootstrap";
 import { selectedTrainer } from "../../services/utilities/api";
 import moment from "moment";
@@ -51,29 +51,42 @@ const  Trainer = () => {
   return (
     <div className="of">
      
-      <BasicExample/>
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5 pb-5">
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv"> 
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-2">
+      <Col lg="2" md="2" sm="0" xs="0" ></Col>
         <Col
-          lg="12"
+          lg="10" md="10" sm="12" xs="12" 
           className="d-flex justify-content-center flex-column align-items-center"
         >
-          <div  className="d-flex flex-column   wwtrai">
-            <div className="d-flex justify-content-space-between align-items-center gap-2 trwi">
+          <div  className="d-flex flex-column wwtrai">
+            <div className="d-flex align-items-center">
+              <Row >
+              <Col lg="6" md="6" sm="6" xs="6">
               <div className="img22">
                 <img
                   style={{ width: "100%", height: "100%" }}
                   src={trainer?.images}
-                />
+                  />
               </div>
+              </Col>
+              <Col lg="6" md="6" sm="6" xs="6">
               <div className="padingtrainer">
                 <h5>{trainer?.tr_name}</h5>
                 <p>{trainer?.type}</p>
               </div>
+              </Col>
+             </Row>
             </div>
             {/* <div className="top"> */}
               {/* <h6>Status:{trainer?.login_status}</h6> */}
             {/* </div> */}
-            {slot.map((item, index)=>{
+            {!slot ? slot.map((item, index)=>{
               console.log(item,'itemslot');
                return  <div className="top  fle">
 
@@ -82,11 +95,7 @@ const  Trainer = () => {
                </div>
              
              </div>
-            })}
-           
-            <div className="top">
-             
-            </div>
+            }) : ''}
             <div className="top">
             <p>
             <h6>Consultant Description</h6>
@@ -113,7 +122,9 @@ const  Trainer = () => {
           </div>
           
         </Col>
+        <Col lg="2" md="2" sm="0" xs="0" ></Col>
       </Row>
+      </div>
     </div>
   );
 };

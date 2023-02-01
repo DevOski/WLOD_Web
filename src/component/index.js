@@ -8,7 +8,7 @@ import Visitcom from "./visitComponet";
 import Error2 from "./errorscreen/index2"
 import Error3 from "./errorscreen/index3"
 import SideBar from './sidebar/index'
-import SideMainBar from './sidemainbar/index'
+import SideMainBar from './sidemainbar(extra)/index'
 
 import TrainerSideBar from "./trainersidebar";
 

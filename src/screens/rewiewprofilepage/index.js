@@ -12,6 +12,7 @@ import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import NavSidebar from "../../component/navsidebar";
 
 const textStyles = {
   button: {
@@ -71,29 +72,43 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
   console.log(params?.state);
   return (
     <div className="of">
-      <BasicExample />
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+       <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
+
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center pb-5"
-        >
-          <div className="d-flex justify-content-between  align-items-center ww">
+          >
+          <div className="d-flex justify-content-between align-items-center ww">
             <div>
               <h3>Review your health profile </h3>
+              <div className="d-flex flex-row">
+
               <p>
                 Please review your basic info as it will be share with your
-                consultant
+                consultant.&nbsp;&nbsp;
               </p>
+              <p onClick={gotoEdit}><svg xmlns="http://www.w3.org/2000/svg" style={{marginTop:'-16px'}} width="26" height="26" fill="#be1f2d" class="bi bi-pencil-square " viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg></p>
+              </div>
             </div>
-            <div className="basicbuttdiv">
+            {/* <div className="basicbuttdiv">
               <button
-                onClick={gotoEdit}
-                disabled={editstatus}
-                style={textStyles.button}
+              onClick={gotoEdit}
+              disabled={editstatus}
+              style={textStyles.button}
               >
-                {ebutton}
+              {ebutton}
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="d-flex justify-content-between  align-items-center ww">
             <div>
@@ -183,6 +198,7 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
           </div>
         </Col>
       </Row>
+    </div>
     </div>
   );
 };

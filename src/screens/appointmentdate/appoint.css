@@ -4,6 +4,11 @@
     margin-left: 10%;
     margin-top: 2%;
 }
+.button-w{
+    width: 100%;
+    margin: 3%;
+    padding: 3%;
+}
 .boxadd{
     /* width: 50%; */
     width: 100%;
@@ -20,7 +25,7 @@
     margin-top: 2%;
     padding: 2%;
     border-radius: 14px;
-    background-color: #be1d2c;
+    background-color: #be1f2d;
     color: white;
     font-weight: bold;
 }
@@ -30,7 +35,7 @@
 }
 .newpassbutt {
     width: 22%;
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     border: none;
     color: white;
     text-transform: capitalize;
@@ -49,6 +54,28 @@
     justify-content: center;
 }
 .calender{
-    width: 51%;
+    width: 100%;
     align-items: center;
 }
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+  }
+  @media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+    .mobilediv{
+        padding-top:80px
+    }
+    
+  }
+
+

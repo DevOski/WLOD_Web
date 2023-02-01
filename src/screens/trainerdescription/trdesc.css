@@ -1,0 +1,26 @@
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+  }
+  @media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+    .mobilediv{
+        padding-top:80px
+    }
+    .center-screen {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      }
+  }

@@ -16,6 +16,7 @@ import {
   SideBar,
   SideMainBar,
 } from "../../component";
+import NavSidebar from '../../component/navsidebar/index'
 import { Link } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
@@ -90,16 +91,26 @@ const Home = () => {
   };
   return (
     <div className="wi55">
-     <BasicExample/>
-       <SideMainBar/>
+{/* NavSidebar */}
+        <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+     
+
+       {/* <SideMainBar/> */}
       <Row>
-        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
-       <Col lg="2" md="3" sm="3" xs="3" >
+        {/* <Col className="sidenavshow" lg="12" md="12" sm="12" xs="12" >
+        <NavSidebar />
+        </Col> */}
+       {/* <Col lg="2" md="3" sm="3" xs="3" >
         <SideBar/>
        </Col>
-        <Col  lg="1" md="1" sm="1" xs="1" ></Col>
+        <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
 
-        <Col lg="7" md="8" sm="8" xs="8">
+        <Col lg="11" md="12" sm="12" xs="12">
         <CardHome />
         </Col>
       </Row>

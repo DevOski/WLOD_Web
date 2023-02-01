@@ -97,8 +97,8 @@ const Videocalling = () => {
     // setloder(false)
   };
   return videoCall  ? (
-    <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks}    />
+    <div  style={{ display: "flex", width: "100%", height: "100vh"}}>
+      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={{ UIKitContainer: {height: '100%', width: '200px'}}} />
     </div>
   ) : (
     <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh"}}>

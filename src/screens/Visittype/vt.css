@@ -11,7 +11,7 @@
 cursor: pointer;
 }
 .iconcolor{
- color: brown;
+ color: #be1f2d;
 } 
 .of{
   overflow-x: clip !important;
@@ -25,4 +25,24 @@ cursor: pointer;
     width: 96% !important;
     margin-top: 20px;
  }
+}
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
+  .mobilediv{
+      padding-top:80px
+  }
+  
 }

@@ -20,7 +20,7 @@
     margin-top: 2%;
     padding: 2%;
     border-radius: 14px;
-    background-color: #be1d2c;
+    background-color: #be1f2d;
     color: white;
     font-weight: bold;
 }
@@ -30,7 +30,7 @@
 }
 .nextbut {
     width: 22%;
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     border: none;
     color: white;
     text-transform: capitalize;
@@ -55,7 +55,7 @@
 }
 .inner {
     display: flex;
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     color: white;
     justify-content: center;
     align-items: center;

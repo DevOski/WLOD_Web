@@ -21,11 +21,11 @@
     font-weight: 600;
  }
  .nav-links a:hover {
-    color: #be1d2d;
+    color: #be1f2d;
  }
  .signs-btns a {
     display: inline;
-    background: #be1d2d;
+    background: #be1f2d;
     border-radius: 50px;
     text-decoration: none;
     color: #fff;
@@ -35,7 +35,7 @@
     margin-left: 12px;
  }
  .signs-btns a:hover {
-    background: #EB273A;
+    background: #be1f2d;
     color: #fff;
  }
 
@@ -68,13 +68,13 @@ background-color: beige;
 .btn-primary {
     width: 40%;
     --bs-btn-color: #fff !important;
-    --bs-btn-bg: #d13a25 !important;
-    border: #992a35 !important;
+    --bs-btn-bg: #be1f2d !important;
+    border: #be1f2d !important;
 }
 .btn:hover {
     color: var(--bs-btn-hover-color) !important;
-    background-color: #992a35 !important;
-    border-color: #ed4f11 !important;
+    background-color: #be1f2d !important;
+    border-color: #be1f2d !important;
 }
 input.input {
     padding-top: 2% !important;
@@ -166,7 +166,7 @@ input.input {
     font-size: 25px;
 }
 .backkk{
-    background-color: #bb4122;
+    background-color: #be1f2d;
     transition: all .3s ease-in-out;
     height: 200px;
     min-height: 200px;
@@ -175,7 +175,7 @@ input.input {
 }
 .backkk111{
 
-    background-color: #e22020;
+    background-color: #be1f2d;
     width: 200px;
     height: 165px;
     position: absolute;

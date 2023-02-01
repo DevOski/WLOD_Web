@@ -50,23 +50,23 @@
   .well{
     font-size: clamp(40px, calc(2.5rem + ((1vw - 3.2px) * 0.25)), 44px);
     font-weight: 600;
-    color: #BE1D2D;
+    color: #be1f2d;
     margin-top: 30px;
     margin-bottom: 0;
   }
   .signin-submit-btn {
     border-radius: 50px !important;
-    background: #bd3434 !important;
+    background: #be1f2d !important;
     padding: 12px 12px !important;
 }
 .signuponsingin{
 text-decoration: none;
-color: #BE1D2D;
+color: #be1f2d;
 margin-left: 6px;
 }
 .signuponsingin:hover{
   text-decoration: none;
-  color: #BE1D2D;
+  color: #be1f2d;
   margin-left: 6px;
   }
 @media screen and (max-width: 991px) {
@@ -74,4 +74,20 @@ margin-left: 6px;
     padding-left: 5%;
     padding-right: 5%;
 }
+} 
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
 }

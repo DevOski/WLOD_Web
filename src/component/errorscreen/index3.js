@@ -9,7 +9,7 @@ const Error3 = ({onClick,tittle,congrats,bttext}) => {
       <h2 style={{ color: "#fff" }}>
         {congrats ? "Congratulations!" : "Oops!"}
       </h2>
-      <h2 style={{color:'#fff'}}>{tittle}</h2>
+      <h2 style={{color:'#fff',textAlign:'center'}}>{tittle}</h2>
       <div className="butwidth">
       <Button onClick={onClick}>{bttext}</Button>
       </div>

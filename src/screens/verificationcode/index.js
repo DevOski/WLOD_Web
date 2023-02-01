@@ -10,7 +10,8 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import VerificationInput from "react-verification-input";
 import { useLocation } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button,Card } from "react-bootstrap";
+import NavSidebar from "../../component/navsidebar";
 
 const VerificationCode = () => {
   let navigate = useNavigate(); 
@@ -34,7 +35,6 @@ const VerificationCode = () => {
       email:params.state.email
       },
   });
-
   };
   const submit=()=>{
     setloder(true)
@@ -80,9 +80,17 @@ const VerificationCode = () => {
     }
   return (
     <>
-     <BasicExample/>
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+     
       <Row>
-        <Col lg='12'>
+        <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="6" sm="10" className="center-screen" >
+          <Card className="verifycard">
            <div className="box1">
            <h6>Enter your verification code</h6>
            </div>
@@ -98,12 +106,12 @@ const VerificationCode = () => {
           </div>
          
         <div className="recoverdiv">
-        <Button className="recoverbutt"   onClick={submit}>Submit</Button>
+        <Button className="recoverbutt" onClick={submit}>Submit</Button>
         </div>
-          
-        
            </div>
+        </Card>
         </Col>
+        <Col lg='4' md="3" sm="1"></Col>
       </Row>
 
       {loder && <Loader />}

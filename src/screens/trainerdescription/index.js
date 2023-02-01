@@ -6,10 +6,12 @@ import {
     // TrainerSideBar,
     Error2,
   } from "../../component";
+import './trdesc.css'
 import { Button, Col, Container, Row } from "react-bootstrap";
 import TrainerSideBar from "../../component/trainersidebar";
 import { TextField } from '../../../node_modules/@mui/material/index';
 import { useLocation, useNavigate } from 'react-router-dom';
+import NavSidebar from '../../component/navsidebar';
 
 export default function Trainerdescription() {
     const params = useLocation();
@@ -56,18 +58,24 @@ export default function Trainerdescription() {
   };
   return (
     <div className="wi55">
-      <BasicExample />
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+      <div className='mobilediv center-screen'>
 
       <Row>
         <Col xs="2">
         </Col>
         {/* <CardHome /> */}
         <Col xs="8"  style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingTop:'30px'
-          }}>
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop:'30px'
+        }}>
         <div class="text-center">
         <h3> Consultant Description </h3>
         <div style={{width:'450px'}}>
@@ -89,6 +97,7 @@ export default function Trainerdescription() {
         <Col xs="2">
         </Col>
         </Row>
+      </div>
         {loader && <Loader />}
         {error2 && <Error2 onClick={Close2} tittle={errorMessage} />}
         </div>

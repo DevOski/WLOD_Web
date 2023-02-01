@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row,Card } from "react-bootstrap";
 import "./basic.css";
 import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
@@ -12,6 +12,7 @@ import { Error, Loader, BasicExample } from "../../component";
 // >>>>>>> 640590151c96e6af5a3541c97535cd7622aada5a
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
+import NavSidebar from "../../component/navsidebar";
 const Basic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
@@ -189,9 +190,15 @@ const Basic = () => {
     }
   return (
     <div className="fulllod" >
-      <BasicExample />
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
 
-      <Container className="pad">
+      <Container >
+        <Card className="basicinfocard">
         <form className="mb-3 w-100 pt-3">
           <h3>Basic Info</h3>
          <div className="d-flex gap-2">
@@ -218,23 +225,18 @@ const Basic = () => {
          </div>
          <div className="d-flex gap-2">
          
-          <div className="mb-3  w-50">
-            <div className="d-flex flex-column">
-
-          <label>Date of birth</label>
-          
+        <div className="mb-3 w-50">
+        <label>Date of birth</label>
             <input
               type="date"
-              id="date"
-              className="in"
-              onChange={(event) => setdate(event.target.value)}
-              placeholder="Date of Birth"
-              onKeyPress={enterKye}
+              id="dob"
+              name="dob"
+              className="form-control"
+              // onChange={(event) => setdate(event.target.value)}
+              // placeholder="Date of Birth"
+              // onKeyPress={enterKye}
               />
-              </div>
-         
-        </div>
-         
+          </div>
           <div className="mb-3 w-50">
             <label>Phone number</label>
             <input
@@ -280,16 +282,21 @@ const Basic = () => {
               </div>
             </div>
           </div>
-          <div className="mb-3 ff">
-            <div className="db">
+          <div className="mb-3 ">
+            <div className="dbform">
+              <Row>
+                <Col lg="1" md="1" sm="2" xs="2">
             <label>Marital:</label>
-              <div className="topping">
+
+                </Col>
+                <Col lg="11" md="11" sm="10" xs="10" style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
+                <div className="topping1">
                 <input
                   type="checkbox"
                   id="topping"
                   name="topping"
                   value="Paneer"
-                  className="topping"
+                  className="topping custom-controls-stacked"
                   checked={isCheckedsingle}
                   onKeyPress={enterKye}
                   onChange={handleOnChangesingle}
@@ -303,7 +310,7 @@ const Basic = () => {
                   name="topping"
                   value="Paneer"
                   checked={isCheckedmarried}
-                  className="topping"
+                  className="topping custom-controls-stacked"
                   onChange={handleOnChangemarried}
                   onKeyPress={enterKye}
                 />
@@ -336,6 +343,10 @@ const Basic = () => {
                 />
                 <p className="pleft">Widowed</p>
               </div>
+                </Col>
+                {/* <Col lg="4" md="6" sm="6" xs="6"></Col> */}
+              </Row>
+            
             </div>
           </div>
          
@@ -425,10 +436,11 @@ const Basic = () => {
             Already registered <a href="/sigin">Sign in?</a>
           </p>
         </form>
+        </Card>
+        </Container>
       {loder && 
       <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
-      </Container>
     </div>
   );
 };

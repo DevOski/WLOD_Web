@@ -1,3 +1,7 @@
+.forgetcard{
+     margin-top: 9%;
+    padding: 8% 4% 8% 4%;
+}
 .box1{
     border-bottom: none !important;
     width: 100% !important;
@@ -30,20 +34,50 @@
 .recoverbuttfor{
     width: auto !important;
     border: none;
-    margin-top: 1%;
+    margin-top: 2%;
     border-radius: 5px !important;
-    background: #bd3434 !important;
+    background: #be1f2d !important;
     padding: 12px 40px !important;
     color: white;
     font-weight: bold;
 }
 .forgetinput {
-    width: 25% !important;
+    width: 70% !important;
     /* padding: 1% !important; */
 }
-
+@media screen and (max-width: 600px) {
+    .center-screen {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      }
+      .recoverdiv{ 
+        margin-top: 12%;
+    }
+    .recoverbuttfor{
+        margin-top: 6%;
+        }
+}
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+  }
+  @media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+  }
 @media screen and (max-width: 767px) {
-    .forgetinput {
+    /* .forgetinput {
         width: 78% !important;
     }
     .box1 {
@@ -53,5 +87,6 @@
     .box1{
         padding-left: 1% !important;
         padding-right: 1% !important;
-    }
+    } */
+    
 }

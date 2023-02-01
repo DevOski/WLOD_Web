@@ -91,29 +91,30 @@ console.log(t_type,'t_type=====>');
     <Navbar bg="light" expand="lg">
       {tok  ? (
         <Container>
-          <Navbar.Brand href="https://weightlossondemand.com/">
+          <Navbar.Brand href="/">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
+            <Nav className="me-auto" >
+              <Nav.Link href="/" style={{paddingRight:'30px'}}>Home</Nav.Link>
               <Nav.Link
-                href="https://weightlossondemand.com/services"
+                href="/visit"
                 className="center-link"
+                style={{paddingRight:'30px'}}
               >
-                Services
+                Recent Session
               </Nav.Link>
-              <Nav.Link href="https://weightlossondemand.com/contact-us">
-                Contact Us
+              <Nav.Link href="/chat" style={{paddingRight:'30px'}}>
+               Message
               </Nav.Link>
-              <Nav.Link href="https://weightlossondemand.com/shop/">
+              {/* <Nav.Link href="https://weightlossondemand.com/shop/">
                 Shop
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
             <p className="proname">{userName}</p>
-            <div className="logbutt">
-            <Button  onClick={handleLogout}>
+            <div >
+            <Button  className="logbutt" onClick={handleLogout}>
               Logout
             </Button>
             </div>
@@ -129,7 +130,8 @@ console.log(t_type,'t_type=====>');
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
+
+              {/* <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
               <Nav.Link
                 href="https://weightlossondemand.com/services"
                 className="center-link"
@@ -141,22 +143,22 @@ console.log(t_type,'t_type=====>');
               </Nav.Link>
               <Nav.Link href="https://weightlossondemand.com/shop/">
                 Shop
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
            
-<div className="logbutt">
+        <div className="bnav" >
 
-            <Button  onClick={handlesignIn}>
+            <Button className="logbutt" onClick={handlesignIn}>
   
               Signin
             </Button>
-</div>
-<div className="logbutt">
+        </div>
+        <div className="bnav">
 
-            <Button  onClick={handlesignup}>
+            <Button className="logbutt" onClick={handlesignup}>
               Signup
             </Button>
-</div>
+        </div>
             
           </Navbar.Collapse>
         </Container>

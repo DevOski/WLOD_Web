@@ -22,7 +22,8 @@ import { getUser } from "../../services/utilities/api";
 import moment from "moment";
 import Card from "react-bootstrap/Card";
 import StarRatings from 'react-star-ratings'
-const ThankYou = () => {
+import NavSidebar from "../../component/navsidebar";
+const ThankYou = () => { 
   const [rating, setrating] = useState(0);
   const [loader, setLoader] = useState("");
   const [error, seterror] = useState(false);
@@ -40,20 +41,27 @@ const changrating=(newRating,name)=>{
 
   return (
     <div className="of">
-      <BasicExample />
+       <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
 
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col
-          lg="12"
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5">
+      <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="6" sm="10"
           className="d-flex justify-content-center flex-column align-items-center"
-        >
+          >
           <Card
             style={{
-              width: "38rem",
+              // width: "38rem",
+              padding:'14%',
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-          
+              
             }}
           >
             <div style={{ width: "30%" }}>
@@ -78,7 +86,10 @@ const changrating=(newRating,name)=>{
             </Card.Body>
           </Card>
         </Col>
+      <Col lg='4' md="3" sm="1"></Col>
+
       </Row>
+   </div>
       {loader && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
     </div>

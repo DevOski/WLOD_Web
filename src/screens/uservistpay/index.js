@@ -15,6 +15,7 @@ import { Button } from "react-bootstrap";
 import { storePayment } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import NavSidebar from "../../component/navsidebar";
 const Confirmpay = () => {
   const params = useLocation();
   console.log("@", params?.state?.data);
@@ -118,20 +119,30 @@ const Confirmpay = () => {
     }
   return (
     <>
-    <Container fluid>
       <div className="of">
         {/* <Navbar expand="lg" variant="light" bg="light">
           <Navbar.Brand href="#">
-            <img className="header-logo" src={logo} />
+          <img className="header-logo" src={logo} />
           </Navbar.Brand>
         </Navbar> */}
-        <BasicExample />
-        <Row class="d-flex justify-content-center  align-items-center gap-5 pt-5">
-          <Col
-            lg="12"
-            className="d-flex justify-content-center  align-items-center con-col"
-          >
-            <Form>
+         <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv ">
+      <Container fluid>
+      <Row>
+      <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="6" sm="10" 
+            className="con-col "
+            >
+            <Row>
+              <Col lg='2' md="1" sm="1" xs="1">
+              </Col>
+              <Col lg='8' md="10" sm="10" xs="10">
+              <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Credit card number</Form.Label>
                 <Form.Control
@@ -141,10 +152,10 @@ const Confirmpay = () => {
                   onChange={(event) => setcardnumber(event.target.value)}
                   onKeyPress={enterKye}
                   maxLength={16}
-                />
-                <Form.Text className="text-muted">
+                  />
+                {/* <Form.Text className="text-muted">
                   We'll never share your information with anyone else.
-                </Form.Text>
+                </Form.Text> */}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -156,7 +167,7 @@ const Confirmpay = () => {
                   onChange={(event) => setExpiration(event.target.value)}
                   onKeyPress={enterKye}
                   maxLength={2}
-                />
+                  />
               </Form.Group>
          
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -168,7 +179,7 @@ const Confirmpay = () => {
                   onChange={(event) => setExpirationYY(event.target.value)}
                   onKeyPress={enterKye}
                   maxLength={2}
-                />
+                  />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Cvv</Form.Label>
@@ -179,32 +190,41 @@ const Confirmpay = () => {
                   onChange={(event) => setCvv(event.target.value)}
                   onKeyPress={enterKye}
                   maxLength={4}
-                />
+                  />
               </Form.Group>
               {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
-                  type="checkbox"
+                type="checkbox"
                   label="Check me out"
                   checked={isChecked}
                   onChange={handleOnChange}
-                />
-              </Form.Group> */}
+                  />
+                </Form.Group> */}
               <Button
                 variant="primary"
                 className="comfirm-pay-submit"
                 onClick={saveCreditCard}
-              >
+                >
                 Submit
               </Button>
             </Form>
+              </Col>
+              <Col lg='2' md="1" sm="10" xs="10">
+              </Col>
+
+            </Row>
+           
           </Col>
+      <Col lg='4' md="3" sm="1"></Col>
+
         </Row>
-      </div>
     </Container>
+      </div>
+      </div>
       {loader && <Loader />}
       {error && (
         <Error onClick={Close} tittle={errorMessage} congrats="" />
-      )}
+        )}
       </>
   );
 };

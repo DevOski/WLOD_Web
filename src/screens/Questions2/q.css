@@ -1,17 +1,22 @@
 .App {
     background-color: white;
 }
-.ww{
-  width: 54% !important;
+.q2{
+  width: 100% !important;
   background-color: white;
   padding: 2%;
   box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
-margin-top: 1%;
+margin:4% 0%;
+padding: 5% 2%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 .iconcolor{
- color: brown;
+ color: #be1f2d;
 } 
 .bdiv {
   width: 100% !important;
@@ -32,4 +37,29 @@ margin-top: 1%;
   justify-content: space-between;
   align-items: baseline;
   padding-left: 11%;
+}
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
+  .mobilediv{
+      padding-top:80px
+  }
+  .q2{
+    padding-left: 4%;
+    padding-right: 4%;
+    /* margin: 4% 4%; */
+  }
+  
 }

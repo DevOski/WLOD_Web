@@ -12,7 +12,8 @@
    
 }
 .regbutton{
-    background-color: rgb(190, 29, 45);
+    /* background-color: rgb(190, 29, 45); */
+    background-color: #be1f2d;
     color: white;
 }
 .textcolor{

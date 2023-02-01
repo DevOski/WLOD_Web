@@ -7,7 +7,7 @@
     top: 0;
 }
 .butwidth {
-    width: 30% !important;
+    width: 250px !important;
     align-self: center;
     display: flex;
     justify-content: center;

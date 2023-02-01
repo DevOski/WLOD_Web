@@ -21,13 +21,13 @@
   padding-right: 11%;
 }
 .bg2 {
-  background-color: #942933;
+  background-color: #be1f2d;
 }
 .btn-primary {
   width: 40%;
   --bs-btn-color: #fff !important;
-  --bs-btn-bg: #992a35 !important;
-  border: #992a35 !important;
+  --bs-btn-bg: #be1f2d !important;
+  border: #be1f2d !important;
 }
 /* .btn:hover {
   color: var(--bs-btn-hover-color) !important;

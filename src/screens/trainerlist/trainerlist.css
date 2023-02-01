@@ -3,8 +3,9 @@
 }
 
 .wwtrailist{
-  width: 54% !important;
-  background-color: "#fff";
+  width: 100%!important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
   padding: 2%;
   /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
@@ -26,7 +27,7 @@ margin-top: 2% !important;
   background-color: rgb(228, 57, 57);
 } */
 .iconcolor{
- color: brown;
+ color: #be1f2d;
 } 
 .of{
   overflow-x: clip !important;
@@ -34,10 +35,7 @@ margin-top: 2% !important;
 .imgtrainerlist{
   width: 100rem !important;
   height: 90%;
-  
-}
-.trwi{
-
+  border: solid;
 }
 .top{
   margin-top: 5%;
@@ -56,10 +54,10 @@ justify-content: space-between;
     width: 90%;
 }
 .padingtrainer {
-  padding-left: 3%;
+  /* padding-left: 3%; */
 }
 .checkAvailblity {
-  background-color: #bf1f2e;
+  background-color: #be1f2d;
   border: none;
   /* padding: 1%; */
   border-radius: 8px;
@@ -73,4 +71,23 @@ justify-content: space-between;
   border-radius: 8px;
   text-transform: capitalize;
 }
-
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
+  .mobilediv{
+      padding-top:80px
+  }
+  
+}

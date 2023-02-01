@@ -15,6 +15,7 @@ import Table from "react-bootstrap/Table";
 import { useLocation } from "react-router-dom";
 import { Question1, Question3 } from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
+import NavSidebar from "../../component/navsidebar";
 const Questionpagetwo = () => {
   const params = useLocation();
   console.log("@@", params.state.vsl_time);
@@ -190,13 +191,19 @@ const Questionpagetwo = () => {
   };
   return (
     <>
-      <BasicExample />
-      <Row className="d-flex justify-content-center flex-column align-items-center  pt-5 pb-5">
+       <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv"> 
+      <Row className="">
+      <Col lg="3" md="2" sm="1" xs="1"></Col>
         <Col
-          lg="12"
-          className="d-flex justify-content-center flex-column align-items-center"
-        >
-          <div className="d-flex justify-content-between  flex-column  align-items-center ww">
+          lg="6" md="8" sm="10" xs="10"
+          >
+          <div className="q2">
             <div>
               <h4 className="qdesig">General Health Information</h4>
             </div>
@@ -211,7 +218,7 @@ const Questionpagetwo = () => {
                 value={physicallimitations}
                 onChange={(event) => setphysicallimitations(event.target.value)}
                 onKeyPress={enterKye}
-              />
+                />
             </div>
 
             <div className="mb-3 inwi">
@@ -225,7 +232,7 @@ const Questionpagetwo = () => {
                 value={healthlimitation}
                 onChange={(event) => setHealthlimitation(event.target.value)}
                 onKeyPress={enterKye}
-              />
+                />
             </div>
 
             <div>
@@ -240,7 +247,7 @@ const Questionpagetwo = () => {
                 value={CurrentWeight}
                 onChange={(event) => setCurrentWeight(event.target.value)}
                 onKeyPress={enterKye}
-              />
+                />
             </div>
             <div className="mb-3 inwi">
               <label className="pb-2">4) Current Height</label>
@@ -251,7 +258,7 @@ const Questionpagetwo = () => {
                 value={CurrentHeight}
                 onChange={(event) => setCurrentHeight(event.target.value)}
                 onKeyPress={enterKye}
-              />
+                />
               <div className="mb-3 inwi">
                 <label className="pb-2">
                   5) What was your lowest and highest adult weight? __________lb
@@ -266,7 +273,7 @@ const Questionpagetwo = () => {
                     setlowestandhighestadultweight(event.target.value)
                   }
                   onKeyPress={enterKye}
-                />
+                  />
               </div>
               <div className="mb-3 inwi">
                 <label className="pb-2">
@@ -282,7 +289,7 @@ const Questionpagetwo = () => {
                     setweightchangesgainorloss(event.target.value)
                   }
                   onKeyPress={enterKye}
-                />
+                  />
               </div>
               <div className="mb-3 inwi">
                 <label className="pb-2">
@@ -296,7 +303,7 @@ const Questionpagetwo = () => {
                   value={dietedinthepast}
                   onChange={(event) => setdietedinthepast(event.target.value)}
                   onKeyPress={enterKye}
-                />
+                  />
               </div>
 
               <div className="mb-3 inwi">
@@ -312,7 +319,7 @@ const Questionpagetwo = () => {
                     setweightwouldyouliketolose(event.target.value)
                   }
                   onKeyPress={enterKye}
-                />
+                  />
               </div>
               <div className="mb-3 inwi">
                 <label className="pb-2">
@@ -327,7 +334,7 @@ const Questionpagetwo = () => {
                     setbenefitfromthisweightloss(event.target.value)
                   }
                   onKeyPress={enterKye}
-                />
+                  />
               </div>
 
               <div className=" align-items-center">
@@ -348,7 +355,7 @@ const Questionpagetwo = () => {
                         setregularexercises(event.target.value)
                       }
                       onKeyPress={enterKye}
-                    />
+                      />
                   </div>
                 </div>
 
@@ -369,7 +376,7 @@ const Questionpagetwo = () => {
                       value={plansthemeals}
                       onChange={(event) => setplansthemeals(event.target.value)}
                       onKeyPress={enterKye}
-                    />
+                      />
                   </div>
                   <div className="mb-3 inwi">
                     <label className="pb-2">
@@ -384,7 +391,7 @@ const Questionpagetwo = () => {
                         setpreparesthemeal(event.target.value)
                       }
                       onKeyPress={enterKye}
-                    />
+                      />
                   </div>
                 </div>
               </div>
@@ -396,7 +403,10 @@ const Questionpagetwo = () => {
             </div>
           </div>
         </Col>
+      <Col lg="3" md="2" sm="1" xs="1"></Col>
+
       </Row>
+                      </div>
     </>
   );
 };

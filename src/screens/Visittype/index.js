@@ -14,6 +14,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getUser } from "../../services/utilities/api";
 import moment from "moment";
+import NavSidebar from "../../component/navsidebar";
 const VType = () => {
   const [userName, setUserName] = useState("");
   const [last, setlast] = useState('')
@@ -86,19 +87,26 @@ const VType = () => {
   };
   return (
     <div className="of">
-      <BasicExample/>
-      
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+      <div className="mobilediv">
+
       <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center"
-        >
+          >
           <div
             onClick={goto}
             className="d-flex justify-content-between  align-items-center ww"
-          >
+            >
             <div>
-              <h3>{userName} {last} </h3>
+              
+              <p className="fs-4">{userName} {last} </p>
             </div>
 
             <div>
@@ -107,6 +115,7 @@ const VType = () => {
           </div>
         </Col>
       </Row>
+    </div>
       {loader && <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}
     </div>

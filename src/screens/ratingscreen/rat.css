@@ -10,7 +10,7 @@
 -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
 }
 .iconcolor{
- color: brown;
+ color: #be1f2d;
 } 
 .of{
   overflow-x: clip !important;
@@ -26,8 +26,28 @@
  }
 }
 .colorrating{
-  color: brown;
+  color: #be1f2d;
 }
 .colorrating:hover{
   color: rgb(185, 162, 162);
+}
+@media only screen and (min-width: 991px){
+  .navshow{
+      display:block;
+  }
+  .sidenavshow{
+      display:none;
+  }
+}
+@media only screen and (max-width: 991px){
+  .navshow{
+      display:none;
+  }
+  .sidenavshow{
+      display:block;
+  }
+  .mobilediv{
+      padding-top:80px
+  }
+  
 }

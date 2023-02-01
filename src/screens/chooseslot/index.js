@@ -14,6 +14,7 @@ import { format } from "date-fns";
 import { enGB } from "date-fns/locale";
 import { DatePickerCalendar } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
+import NavSidebar from "../../component/navsidebar";
 import {
   getSlotDate,
   getSlotTime,
@@ -293,27 +294,40 @@ const ChooseSlot = () => {
   let navigate = useNavigate();
   return (
     <div className="of">
-     
-      <BasicExample />
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
+
+      <Row class="d-flex justify-content-center align-items-center">
+        <Col lg="4" md="3" sm="2" xs="2"></Col>
         <Col
-          lg="12"
-          className="d-flex justify-content-center align-items-center"
-        >
-          <div className="calbox" onClick={Show}>
-            <p className="caltext">Choose date</p>
+          lg="2" md="3" sm="4" xs="4"
+          >
+          <div className="button-w" onClick={Show}>
+            <Button>Calender</Button>
           </div>
-          <div className="slotbox" onClick={Showlist}>
-            <p className="caltext">Available slots</p>
+          </Col>
+          <Col
+          lg="2" md="3" sm="4" xs="4"
+          >
+          <div className="button-w" onClick={Showlist}>
+            <Button>List</Button>
           </div>
         </Col>
+        <Col lg="4" md="3" sm="2" xs="2"></Col>
+
       </Row>
-       <Row>
-        <Col lg="12" className="d-flex justify-content-center">
+      <Row>
+      <Col lg="3" md="2" sm="1" xs="1"></Col>
+        <Col lg="6" md="8" sm="10" xs="10" className="d-flex justify-content-center">
           {
           !calendshowlistValidation.current && (
             <div className="calender">
-              <p>
+              <p className="text-center">
                 Selected date:{" "}
                 {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
@@ -349,6 +363,7 @@ const ChooseSlot = () => {
           )}
         </Col>
       </Row>
+          </div>
     </div>
   );
 };

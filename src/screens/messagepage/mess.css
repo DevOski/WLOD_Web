@@ -1,3 +1,77 @@
+.chatdiv{
+    /* border:solid purple; */
+    position: fixed;
+    top: 90px;
+    bottom:0px;
+    right: 0px;
+    left: 0px;
+    /* z-index: -10000; */
+}
+.typebox{
+    position:absolute;
+    bottom:12px
+}
+@media only screen and (min-width: 500px){
+    .typebox{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .typebox{
+        width: 90%;
+    }
+}
+.chatcol{
+    /* border: solid yellowgreen; */
+    /* margin: auto;
+    width: 50%; */
+}
+.inbox{
+    padding: 1%;
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+    position:absolute;
+    top:0px;
+    bottom: 12px;
+    /* right:50px;
+    left:50px */
+}
+@media only screen and (min-width: 1450px){
+    .inbox{
+        right:300px;
+        left:300px
+    }
+}
+@media only screen and (max-width: 1450px){
+    .inbox{
+        right:50px;
+        left:50px
+    }
+}
+@media only screen and (max-width: 700px){
+    .inbox{
+        right:20px;
+        left:20px
+    }
+}
+
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+}
+@media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+}
 .main{
     position: fixed;
     bottom: 0;
@@ -8,7 +82,7 @@
     width:65% !important;
 }
 .input{
-    width:'35%'
+    width:35%
 
 }
 .input2{
@@ -43,9 +117,9 @@ background-color: beige;
     border-color: #ed4f11 !important;
 } */
 input.input {
-    padding-top: 2% !important;
+    /* padding-top: 2% !important;
     padding-bottom: 2% !important;
-    padding-left: 2% !important;
+    padding-left: 2% !important; */
 }
 .wiiii{
     width: 100% !important;
@@ -129,7 +203,7 @@ input.input {
     font-size: 25px;
 }
 .backkk{
-    background-color: #bb4122;
+    background-color: #be1f2d;
     transition: all .3s ease-in-out;
     height: 200px;
     min-height: 200px;
@@ -138,7 +212,7 @@ input.input {
 }
 .backkk111{
 
-    background-color: #e22020;
+    background-color: #be1f2d;
     width: 200px;
     height: 165px;
     position: absolute;
@@ -258,7 +332,7 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 .visit-book-btn {
     border-radius: 50px !important;
-    background: #bd3434 !important;
+    background: #be1f2d !important;
     padding: 12px 12px !important;
 }
 .chatdivmain {
@@ -482,17 +556,18 @@ margin-top: 17.5rem  !IMPORTANT;
     left: 3px !important;
 }
 .sendbuttondiv {
-    background-color: #bd3434;
+    background-color: #be1f2d;
     position: absolute;
-    /* top: 44%; */
-    width: 59px;
-    height: 55px;
-    /* left: 44px; */
+    top: 0;
+    border:solid;
+    /* width: 50%;
+    height: 145%; */
+    left: 0px;
     /* display: flex; */
-    border: none;
+    /* border: none; */
     justify-content: center;
-    align-items: center;
-    color: white;
+    /* align-items: center; */
+    color: black;
     border-radius: 47px;
 }
 /* @media only screen and (max-width: 1566px) {
@@ -529,14 +604,14 @@ margin-top: 17.5rem  !IMPORTANT;
 } */
 .textbox {
     height: 49.2rem;
-    margin-left: 0.7%;
+    margin-left: 0.2%;
     /* padding-left: 4%; */
     padding: 2%;
     /* border: 1px solid; */
     /* width: 53.4rem; */
     position: relative;
     /* bottom: 0; */
-    left: 3.4%;
+    /* left: 3.4%; */
     overflow-y: scroll;
     /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
@@ -553,7 +628,7 @@ margin-top: 17.5rem  !IMPORTANT;
 } */
 
 .textbox2 {
-    height: 29.2rem;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -562,17 +637,18 @@ margin-top: 17.5rem  !IMPORTANT;
     /* border: 1px solid; */
     /* width: 53.4rem; */
     position: relative;
-    left: 3.4%;
-    overflow-y: scroll;
-    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    /* left: 3.4%; */
+    /* overflow-y: scroll; */
+    /* box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
     -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
-    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !; */
 }
 .chbox {
-    width: 50%;
+    width: 60%;
     background-color: white;
     height: 13%;
     display: flex;
+    overflow-wrap:break-word;
     /* align-items: center; */
     /* border: 1px solid; */
     border-radius: 18px;
@@ -588,9 +664,9 @@ margin-top: 17.5rem  !IMPORTANT;
         width: 90%;
     }
 }
-@media only screen and (max-width: 502px) {
+/* @media only screen and (max-width: 502px) {
     .messinput1 {
-        /* margin-top: 20.7rem !important; */
+        /* margin-top: 20.7rem !important; 
         width: 79% !important;
             }
     .chbox {
@@ -599,7 +675,7 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 @media only screen and (max-width: 440px) {
     .messinput {
-        /* margin-top: 20.7rem !important; */
+        /* margin-top: 20.7rem !important; 
         width: 96% !important;
             }
     .chbox {
@@ -608,7 +684,7 @@ margin-top: 17.5rem  !IMPORTANT;
 }
 @media only screen and (max-width: 403px) {
     .messinput {
-        /* margin-top: 20.7rem !important; */
+        /* margin-top: 20.7rem !important; 
         width: 90% !important;
             }
     .chbox {
@@ -623,7 +699,7 @@ margin-top: 17.5rem  !IMPORTANT;
             }
 @media only screen and (max-width: 403px) {
     .messinput {
-        /* margin-top: 20.7rem !important; */
+        /* margin-top: 20.7rem !important; 
         width: 93% !important;
             }
     .chbox {
@@ -632,20 +708,20 @@ margin-top: 17.5rem  !IMPORTANT;
     }
 @media only screen and (max-width: 368px) {
         .messinput {
-            /* margin-top: 20.7rem !important; */
+            /* margin-top: 20.7rem !important;
             width: 98% !important;
                 }
         .chbox {
             width: 76%;
           }
         .chatdivmain {
-            /* background-color: antiquewhite; */
+            /* background-color: antiquewhite; 
             width: 15rem;
             margin-top: 8px;
-            /* height: 100vh; */
+            /* height: 100vh; 
         }
         /* .sendbuttondiv{
             width: 40px;
             height: 39px;
-            } */
- }
+            }
+ } */

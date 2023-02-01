@@ -8,6 +8,9 @@ import bg2 from "../../assets/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
+import { Button,Card } from "react-bootstrap";
+import NavSidebar from "../../component/navsidebar";
+
 const Forget = () => {
   let navigate = useNavigate(); 
   const [password, setpassword] = useState('');
@@ -147,8 +150,14 @@ const enterKye=(e)=>{
   }
   return (
     <>
-   <BasicExample signup="signUp" logout='logout'/>
-      {/* <Container fluid>
+   <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+     
+      {/* <Container fluid> 
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
             <Navbar.Brand href="#"><img className="header-logo" src={logo}/></Navbar.Brand>
@@ -156,7 +165,9 @@ const enterKye=(e)=>{
         </Navbar>
       </Container> */}
       <Row>
-        <Col lg='12'>
+      <Col lg='3' md="3" sm="1"></Col>
+        <Col lg='6' md="6" sm="10" className="center-screen" >
+          <Card className="forgetcard">
            <div className="box1">
            <h6>Enter your email address and we will send you a link to reset your password.</h6>
            </div>
@@ -171,7 +182,9 @@ const enterKye=(e)=>{
 
             <button onClick={recoverPassword} className="recoverbuttfor recover2">Recover my password </button>
             </div>
+            </Card>
         </Col>
+        <Col lg='3' md="3" sm="1"></Col>
       </Row>
 
       

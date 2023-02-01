@@ -24,11 +24,11 @@ code {
 }
 .btn {
   /* color: var(--bs-btn-hover-color) !important; */
-  background-color: #992a35 !important;
+  background-color: #be1f2d !important;
 }
 .btn:hover {
   /* color: var(--bs-btn-hover-color) !important; */
-  background-color: #992a35 !important;
+  background-color: #be1f2d !important;
 }
 form-control {
   display: block;

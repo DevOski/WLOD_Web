@@ -21,7 +21,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import { Tune } from "@material-ui/icons";
-
+import NavSidebar from "../../component/navsidebar";
 const ConfirmAndPay = () => {
   console.log("+++++",useSelector((state) => state));
   const params = useLocation();
@@ -33,11 +33,11 @@ const ConfirmAndPay = () => {
   const [btext, setbtext] = useState("");
   const [cost, setcost] = useState("$25");
   const [bstatus, setbstatus] = useState(true);
-  const [bcolor, setbcolor] = useState("#979797");
+  const [bcolor, setbcolor] = useState("#be1f2d");
   const [paystatus, setpaystatus] = useState(false);
   const [apt, setapt] = useState(false);
   const [congrats, setcongrats] = useState("");
-  const [paycolor, setpaycolor] = useState("#bd3434");
+  const [paycolor, setpaycolor] = useState("#be1f2d");
   const [cuopontext, setcuopontext] = useState(
     "Apply Coupon & get 10% discount"
   );
@@ -77,10 +77,10 @@ const ConfirmAndPay = () => {
         params?.state?.coupon?.cardnumber != null
       ) {
         setbtext("Card Added");
-        setpaycolor("#c02230");
+        setpaycolor("#be1f2d");
         console.log("log", paystatus);
         // setpaystatus("true");
-        setbcolor("#bd3434");
+        setbcolor("#be1f2d");
         setbstatus(false);
         setbparams(params.state);
       } else {
@@ -985,24 +985,31 @@ const ConfirmAndPay = () => {
   };
   return (
     <div className="of">
-      <BasicExample />
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
+
       <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
         <Col
           lg="12"
           className="d-flex justify-content-center flex-column align-items-center pt-5"
-        > <button className="paybutt1" onClick={goto} >
+        > <button className="paybutt1 mt-2 mb-2" onClick={goto} >
             {btext}
           </button>
           
           <button
-            className="paybutt1"
+            className="paybutt1 mt-2 mb-2"
             onClick={gotoConfirmpay}
             style={{ backgroundColor: paycolor }}
            
           >
             {cuopontext}
           </button>
-          <button className="paybutt12">
+          <button className="paybutt12 mt-4 pt-4">
             <p className="cost">Cost</p> <p className="cost">{cost}</p>
           </button>
           <Button className="paybutt1" onClick={Pay}>
@@ -1017,8 +1024,9 @@ const ConfirmAndPay = () => {
       )}
       {apt && (
         <Error onClick={dialog_Close} tittle={errorMessage} congrats={true} />
-      )}
+        )}
     </div>
+        </div>
   );
 };
 

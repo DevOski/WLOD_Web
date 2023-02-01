@@ -1,3 +1,7 @@
+.newpasscard{
+    margin-top: 9%;
+    padding: 4% 4% 8% 4%;
+}
 .box1{
     border-bottom: 1px solid black;
     width: 50%;
@@ -5,14 +9,15 @@
     margin-top: 2%;
 }
 .boxaddneww{
+    /* border: solid; */
     /* width: 50%; */
     width: 100%;
-    margin-left: 38%;
+    /* margin-left: 38%; */
     margin-top: 2%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+     display: flex;
+    /*justify-content: center;
+    align-items: flex-start;*/
+    flex-direction: column; 
     gap: 12px;
 }
 
@@ -20,10 +25,9 @@
 width:100%
 }
 .bwidth{
-    width: 15%;
+    width: 250px;
     justify-content: center;
-    align-self: auto;
-    margin-left: 5%;
+    align-self: center;
 }
 
 .recoverbutt{
@@ -31,30 +35,30 @@ width:100%
     margin-top: 2%;
     padding: 2%;
     /* border-radius: 14px; */
-    background-color: #be1d2c;
+    background-color: #be1f2d;
     color: white;
     font-weight: bold;
 }
 .inputwidth {
-    width: 55%;
+    width: 100%;
     /* padding: 2%; */
 }
 .newpassbuttsub {
  margin-top: 1%; 
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     border: none;
     color: white;
     text-transform: capitalize;
 }
 .newpassbuttsub:hover {
     margin-top: 1%; 
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     /* background-color: #e0858e; */
     border: none;
     color: white;
     text-transform: capitalize;
 }
-@media only screen and (max-width: 1920px) {
+/* @media only screen and (max-width: 1920px) {
 
     .boxaddneww { 
     margin-left: 35%;
@@ -66,8 +70,39 @@ width:100%
     }
     .inputwidth {
         width: 29%;
-        /* padding: 2%; */
+        /* padding: 2%; 
     }
  
- }
+ } */
+ @media screen and (max-width: 600px) {
+    .center-screen {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      }
+      .recoverdiv{ 
+        margin-top: 12%;
+    }
+    .recoverbuttfor{
+        margin-top: 6%;
+        }
+} 
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+  }
+  @media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+  }
  

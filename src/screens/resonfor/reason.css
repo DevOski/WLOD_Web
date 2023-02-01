@@ -20,7 +20,7 @@
     margin-top: 2%;
     padding: 2%;
     border-radius: 14px;
-    background-color: #be1d2c;
+    background-color: #be1f2d;
     color: white;
     font-weight: bold;
 }
@@ -30,7 +30,7 @@
 }
 .nextbut {
     width: 22%;
-    background-color: #bf1e2d;
+    background-color: #be1f2d;
     border: none;
     color: white;
     text-transform: capitalize;
@@ -63,7 +63,7 @@
 .texButrr {
     font-size: 25px;
     font-weight: bold;
-    background-color: rgb(191 32 47);
+    background-color: #be1f2d;
     padding: 2%;
     box-shadow: -1px 1px 7px 0px rgb(0 0 0 / 45%);
     -webkit-box-shadow: -1px 1px 7px 0px rgb(0 0 0 / 45%);

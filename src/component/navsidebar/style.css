@@ -1,0 +1,15 @@
+.sidenav{
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+}
+
+.navlink{
+    font-size: 18px;
+    color: black !important;
+    text-decoration: none;
+}
+.navlink:hover{
+    /* #c02130 */
+    color:#be1f2d !important;
+    text-decoration: none !important;
+}

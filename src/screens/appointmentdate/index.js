@@ -14,6 +14,7 @@ import { format } from "date-fns";
 import { enGB } from "date-fns/locale";
 import { DatePickerCalendar } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
+import NavSidebar from "../../component/navsidebar";
 import {
   getSlotDate,
   getSlotTime,
@@ -279,25 +280,39 @@ const Appointmentdate = () => {
   let navigate = useNavigate();
   return (
     <div className="of">
-      <BasicExample />
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
+
+      <Row class="d-flex justify-content-center align-items-center" >
+        <Col lg="4" md="3" sm="2" xs="2"></Col>
         <Col
-          lg="12"
-          className="d-flex justify-content-center align-items-center"
+          lg="2" md="3" sm="4" xs="4"
         >
-          <div className="calbox" onClick={Show}>
-            <p className="caltext">Calender</p>
+          <div className="button-w" onClick={Show}>
+            <Button>Calender</Button>
           </div>
-          <div className="slotbox" onClick={Showlist}>
-            <p className="caltext">List</p>
+          </Col>
+          <Col
+          lg="2" md="3" sm="4" xs="4"
+        >
+          <div className="button-w" onClick={Showlist}>
+            <Button>List</Button>
           </div>
         </Col>
+        <Col lg="4" md="3" sm="2" xs="2"></Col>
+
       </Row>
       <Row>
-        <Col lg="12" className="d-flex justify-content-center">
+      <Col lg="3" md="2" sm="1" xs="1"></Col>
+        <Col lg="6" md="8" sm="10" xs="10" className="d-flex justify-content-center">
           {!calendshowlistValidation.current && (
             <div className="calender">
-              <p>
+              <p className="text-center">
                 Selected date:{" "}
                 {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
@@ -309,8 +324,8 @@ const Appointmentdate = () => {
                     </div>
                   );
                 })
-              ) : (
-                <div className="classextbutton">
+                ) : (
+                  <div className="classextbutton">
                   {tr_slot ? (
                     tr_slot.map((obj) => (
                       <button
@@ -354,7 +369,7 @@ const Appointmentdate = () => {
                           obj.sl_time,
                           obj.tr_date,
                           obj.tr_day
-                        )
+                          )
                       }
                       style={pageStyles.mainDiv}
                     >
@@ -372,7 +387,10 @@ const Appointmentdate = () => {
             </div>
           )}
         </Col>
+        <Col lg="3" md="2" sm="1" xs="1"></Col>
+
       </Row>
+    </div>
     </div>
   );
 };

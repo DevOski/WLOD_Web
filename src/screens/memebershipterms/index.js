@@ -2,11 +2,17 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BasicExample } from "../../component";
 import "./member.css";
+import NavSidebar from "../../component/navsidebar";
 const Membership = () => {
   return (
     <>
-      <BasicExample />
-      <Container>
+       <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+      <Container className="mobilediv">
         <Row>
           <Col className="heading">
             <h2>Weight Loss On Demand Services Agreement</h2>

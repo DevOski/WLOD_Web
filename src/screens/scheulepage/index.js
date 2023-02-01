@@ -10,6 +10,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Button } from "react-bootstrap";
+import NavSidebar from "../../component/navsidebar";
 const SessionBook = () => {
   let navigate = useNavigate();
   const goto = () => {
@@ -21,41 +22,48 @@ const SessionBook = () => {
 
   return (
     <div className="of">
-      <BasicExample />
-      <Row class="d-flex justify-content-center flex-column align-items-center  pt-10 marigtop">
+       <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+      <Row >
         <Col
-          lg="12"
-          className="d-flex justify-content-center flex-column align-items-center mt-5 ">
-<div className="bookseebuttdiv">
+          lg="12" >
+            <div className="booksession">
 
-<Button style={{width: 'auto'}} onClick={goto}> 
-Choose Consultant
-</Button>
-</div>
-<div className="bookseebuttdiv">
+            <div className="bookseebuttdiv">
 
-<Button onClick={gotodate}> 
-Choose Time
-</Button>
-</div>
+            <Button style={{width: 'auto'}} onClick={goto}> 
+            Choose Consultant
+            </Button>
+            </div>
+            <div className="bookseebuttdiv">
+
+            <Button onClick={gotodate}> 
+            Choose Time
+            </Button>
+            </div>
 
           {/* <div className="divvbut">
           <Button
             onClick={goto}
             className="d-flex justify-content-center align-items-center "
-          >
-              <p style={{ color: "#fff",alignSelf:"center" }}>Choose Consultant</p>
-          </Button>
+            >
+            <p style={{ color: "#fff",alignSelf:"center" }}>Choose Consultant</p>
+            </Button>
             </div>
-          <div className="divvbut">
-
-          <Button
+            <div className="divvbut">
+            
+            <Button
             onClick={gotodate}
             className="d-flex justify-content-center align-items-center"
-          >
-              <p style={{ color: "#fff", }}>Choose Time</p>
-          </Button>
-            </div> */}
+            >
+            <p style={{ color: "#fff", }}>Choose Time</p>
+            </Button>
+          </div> */}
+          </div>
         </Col>
       </Row>
     </div>

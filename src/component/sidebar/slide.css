@@ -20,7 +20,7 @@
     .maindeowercontainerreal {
         width: 272px !important;
         height: 100vh !important;
-        background-color: brown;
+        background-color: #be1f2d;
     }
     @media only screen and (max-width: 1920px) {
 
@@ -90,7 +90,7 @@
        
     }
     .backkk{
-        background-color: #bb4122;
+        background-color: #be1f2d;
         transition: all .3s ease-in-out;
         height: 200px;
         min-height: 200px;

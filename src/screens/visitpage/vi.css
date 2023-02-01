@@ -28,14 +28,14 @@ background-color: beige;
     /* padding-top: 3px; */
     width: 100% !important;
     --bs-btn-color: #fff !important;
-    --bs-btn-bg: #992a35 !important;
-    border: #992a35 !important;
+    --bs-btn-bg: #be1f2d !important;
+    border: #be1f2d !important;
 }
 .btn:hover {
     width: 100% !important;
     /* padding-top: 3px; */
     color: var(--bs-btn-hover-color) !important;
-    background-color: #992a35 !important;
+    background-color: #be1f2d !important;
     /* border-color: #ed4f11 !important; */
 }
 input.input {
@@ -118,7 +118,7 @@ input.input {
     font-size: 25px;
 }
 .backkk{
-    background-color: #bb4122;
+    background-color: #be1f2d;
     transition: all .3s ease-in-out;
     height: 200px;
     min-height: 200px;
@@ -127,7 +127,7 @@ input.input {
 }
 .backkk111{
 
-    background-color: #e22020;
+    background-color: #be1f2d;
     width: 200px;
     height: 165px;
     position: absolute;
@@ -217,6 +217,27 @@ input.input {
 }
 .visit-book-btn {
     border-radius: 50px !important;
-    background: #bd3434 !important;
+    background: #be1f2d !important;
     padding: 12px 12px !important;
+}
+
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+}
+@media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+    .mobilediv{
+        padding-top:80px
+    }
+    
 }

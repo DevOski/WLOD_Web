@@ -31,12 +31,12 @@ background-color: beige;
 .btn-primary {
     width: 40%;
     --bs-btn-color: #fff !important;
-    --bs-btn-bg: #d13a25 !important;
-    border: #992a35 !important;
+    --bs-btn-bg: #be1f2d !important;
+    border: #be1f2d !important;
 }
 .btn:hover {
     color: var(--bs-btn-hover-color) !important;
-    background-color: #992a35 !important;
+    background-color: #be1f2d !important;
     border-color: #ed4f11 !important;
 }
 input.input {
@@ -116,7 +116,7 @@ input.input {
     font-size: 25px;
 }
 .backkk{
-    background-color: #bb4122;
+    background-color: #be1f2d;
     transition: all .3s ease-in-out;
     height: 200px;
     min-height: 200px;
@@ -125,7 +125,7 @@ input.input {
 }
 .backkk111{
 
-    background-color: #e22020;
+    background-color: #be1f2d;
     width: 200px;
     height: 165px;
     position: absolute;
@@ -180,4 +180,21 @@ input.input {
 .padingright {
     margin-right: 39px !important;
     margin-top: 27px;
+}
+
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+}
+@media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
 }

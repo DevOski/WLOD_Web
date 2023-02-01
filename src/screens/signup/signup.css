@@ -14,13 +14,17 @@
     width: 15%;
     margin-left: 3%;
 }
+
 input#pass {
-    width: 50%;
+    width: 100%;
     border: none;
+    padding: 2%;
+
 }
 input#email {
-    width: 62%;
+    width: 100%;
     border: none;
+    padding: 2%;
 }
 .inputmain {
     width: 100%;
@@ -39,7 +43,7 @@ input#email {
 .member{
     font-size: 14px;
     font-weight: 600;
-    color: rgb(189, 52, 52);
+    color: #be1f2d;
     padding-left: 1%;
     cursor: pointer;
 }
@@ -65,13 +69,14 @@ input#email {
     margin-top: 6%;
 }
 .bg{
-    background-color: rgb(153 42 53);
+    background-color: #be1f2d;
    
     padding: 3% 0 24px 0%;
 }
 .bg2mm{
-    background-color: rgb(153 42 53);
+    background-color: #be1f2d;
     padding: 3%;
+    /* bottom: 0!important; */
 }
 .rate{
     font-size: 40px;
@@ -91,11 +96,11 @@ input#email {
     
 }
 .signbb{
-width:30%
+width:auto
 }
 .signup-create-btn {
     /* border-radius: 50px !important; */
-    background: #992a35  !important;
+    background: #be1f2d  !important;
     /* padding: 12px 12px !important; */
  }
  .signup-already-member-text {
@@ -103,11 +108,11 @@ width:30%
  }
  .signuponsingin{
     text-decoration: none;
-    color: #BE1D2D;
+    color: #be1f2d;
     }
     .signuponsingin:hover{
       text-decoration: none;
-      color: #BE1D2D;
+      color: #be1f2d;
       }
 
 @media screen and (max-width: 991px) {

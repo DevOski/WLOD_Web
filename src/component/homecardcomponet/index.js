@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import book from "../../assets/book.png";
 import { useNavigate, useParams } from "react-router-dom";
+import bg2 from "../../assets/bg2.png";
+
+import './homecompo.css'
 
 export const CardHome = () => {
   
@@ -18,9 +21,9 @@ export const CardHome = () => {
   return (
     
     <Row>
-    <Col lg='1' md="0" sm="0" xs="0" style={{marginTop:'5%'}}></Col>
-    <Col lg='5' md="6" sm="12" xs="12" style={{marginTop:'5%'}}>
-        <Card style={{ width: '18rem'}}>
+    <Col lg='1' md="1" sm="1" xs="0" style={{marginTop:'5%'}}></Col>
+    <Col className='cardcol' lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
+        <Card className="homecard">
         <Card.Img variant="top" src={book} />
         <Card.Body>
         <Card.Title>See first available</Card.Title>
@@ -32,9 +35,10 @@ export const CardHome = () => {
       </Card.Body>
         </Card>
     </Col>
-    <Col lg='5' md="6" sm="12" xs="12" style={{marginTop:'5%'}}>
-        <Card style={{ width: '18rem', }}>
-          <Card.Img variant="top" src={book}  />
+    
+    <Col className='' lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
+        <Card className="homecard">
+          <Card.Img variant="top" src={bg2}  />
           <Card.Body>
         <Card.Title>Book a session</Card.Title>
         <Card.Text>
@@ -45,6 +49,8 @@ export const CardHome = () => {
       </Card.Body>
         </Card>
     </Col>
+    <Col lg='1' md="1" sm="1" xs="0" style={{marginTop:'5%'}}></Col>
+
     </Row>
   )
 }

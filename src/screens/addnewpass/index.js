@@ -9,7 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import { useLocation } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button,Card } from "react-bootstrap";
+import NavSidebar from "../../component/navsidebar";
 
 const Addnew = () => {
   let navigate = useNavigate(); 
@@ -99,11 +100,16 @@ const [email, setemail] = useState('')
   };
   return (
     <>
-      <BasicExample  />
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
       <Row>
-        <Col lg='12'>
-         
-
+      <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="6" sm="10" className="center-screen" >
+          <Card className="newpasscard">
            <div className="boxaddneww"> 
            <label>New Password</label>
            <div className="inputwidth">
@@ -129,8 +135,10 @@ const [email, setemail] = useState('')
            <Button onClick={UpdatePass} className="newpassbuttsub">Submit</Button>
            </div>
            </div>
-        
+           
+           </Card>
         </Col>
+        <Col lg='4' md="3" sm="1"></Col>
       </Row>
       {loder && <Loader />}
         {error2 && <Error2 onClick={Close2} tittle={errorMessage} />}

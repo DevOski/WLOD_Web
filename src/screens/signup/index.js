@@ -20,6 +20,7 @@ import "./signup.css";
 import Form from "react-bootstrap/Form";
 import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
 import { useDispatch } from "react-redux";
+import NavSidebar from "../../component/navsidebar";
 const SignUp = () => {
   let navigate = useNavigate();
   const [checked, setchecked] = useState(false);
@@ -132,7 +133,13 @@ const SignUp = () => {
         <Error onClick={Close} tittle={errorMessage} />
       ) : (
         <div className="over">
-          <BasicExample />
+          <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow" style={{height:'70px'}}>
+        <NavSidebar />
+        </div>
+     
 
           <Row>
             <Col lg="6" >
@@ -147,7 +154,7 @@ const SignUp = () => {
                 <div className="grandparentdiv">
                   <div className="parentdiv">
                     <div className="inputdiv">
-                      <div className="emaildiv">Email</div>
+                      <div className="emaildiv mt-2">Email</div>
                       <div className="inputmain">
                         <input
                           type="email"
@@ -172,7 +179,7 @@ const SignUp = () => {
                   </div>
                 </div> */}
                     <div className="inputdiv">
-                      <div className="emaildiv">Password</div>
+                      <div className="emaildiv mt-2">Password</div>
                       <div className="inputmain">
                         <input
                           type="email"

@@ -18,6 +18,7 @@ import { signIn } from "../../services/utilities/api";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { storeData, trainerStack, TrainerType } from "../../store/action";
+import NavSidebar from '../../component/navsidebar/index'
 
 const Siging = () => {
   let navigate = useNavigate();
@@ -82,8 +83,15 @@ const Siging = () => {
   
   return (
     <>
-      <BasicExample />
-   
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+     
+   <Container>
+
       <div className="cen">
         <p className="well">Welcome</p>
       </div>
@@ -100,8 +108,8 @@ const Siging = () => {
                 placeholder="Enter email"
                 onChange={(event) => setemail(event.target.value)}
                 onKeyPress={enterKye}
-               
-              />
+                
+                />
             </div>
             <div className="form-group mt-3">
               <label>Password</label>
@@ -111,43 +119,42 @@ const Siging = () => {
                 placeholder="Enter password"
                 onChange={(event) => setpassword(event.target.value)}
                 onKeyPress={enterKye}
-             
-              />
+                
+                />
             </div>
             <div className="d-grid gap-2 mt-3">
               <Button
                 onClick={Sigin}
-              
-              >
+                
+                >
                 Submit
               </Button>
             </div>
-            <div className="d-flex justify-content-between">
-              <p className="forgot-password text-right mt-2">
+            <div className="d-flex justify-content-end" >
+              <p className="forgot-password  mt-2">
                 <a href="/forget" className="signuponsingin">
                   Forgot password?
                 </a>
               </p>
-              <p className="forgot-password d-flex text-right mt-2">
-                <p>Don't have an account yet?</p>{" "}
-                <a href="/signup" className="signuponsingin">
-                  {" "}
-                  Sign Up{" "}
-                </a>
+              </div>
+              <div className="d-flex justify-content-center">
+              <p className="forgot-password mt-2">
+               Don't have an account yet?<span><a href="/signup" className="signuponsingin">Sign Up </a></span>
               </p>
             </div>
           </div>
         </form>
       </div>
+      </Container>
       {/* <div className="d-flex justify-content-center mt-2">
         <p>
           Sign InDon’t have an account yet?
           <a href="/signup" className="signuponsingin">
             {" "}
             Create an Account
-          </a>
-        </p>
-      </div> */}
+            </a>
+            </p>
+          </div> */}
         {loder && <Loader />}
         {error && <Error onClick={Close} tittle={errorMessage} />}
     </>

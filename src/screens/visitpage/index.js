@@ -11,6 +11,8 @@ import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import { BasicExample, CardHome, Loader, SideBar, Visitcom, SideMainBar} from "../../component";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import NavSidebar from '../../component/navsidebar/index'
+
 import moment from "moment";
 const textStyles ={
   circle:{
@@ -119,27 +121,32 @@ const Visitpage = () => {
    const abc =Object.keys(Visit);
   return (
     <div className="wi55">
-     
-       <BasicExample/>
-       <SideMainBar/>
+    <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
+        <div className="mobilediv">
+
       <Row>
-        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
-       <Col lg="2" md="3" sm="3" xs="3" >
-        <SideBar/>
-       </Col>
+        {/* <Col  lg="1" md="1" lg="1" sm={4} xs="1" ></Col> */}
+        {/* <Col className="sidenavshow" lg="12" md="12" sm="12" xs="12" >
+        <NavSidebar />
+      </Col> */}
        {/* style={{border:'solid lightblue'}} */}
-        <Col lg="10" md="9" sm="9" xs="9" >
+        <Col lg="12" md="12" sm="12" xs="12" >
           <div className="text-center mt-4 mr-4">
               <h3>Visit Details</h3>
               </div>
           <Row>
-            <Col xs="2"></Col>
-          <Col xs="10" >
+            <Col lg="2" md="2" sm="2" xs="2"></Col>
+          <Col lg="10" md="10" sm="10" xs="10" >
           {Object.keys(Visit).length ? (
             <div> 
                
               <Row className="mt-4 pt-4">
-                <Col sm={6} className="mt-4">
+                <Col lg={6} sm={4} className="mt-4">
                 <h5>Visit Date</h5>
                 {visitdate}
                 <div style={textStyles.list}>
@@ -155,30 +162,30 @@ const Visitpage = () => {
                 </div>
               
                 </Col>
-                <Col sm={6} >
+                <Col lg={6} sm={4} >
                   <img src={home} style={textStyles.circle} className="ml-4 pl-4"/>
                   <h5 className="mt-2 ml-4 pl-4" >Consultant Name</h5>
                   {trainer}
                 </Col>
               </Row>
               <Row className="mt-4 pt-4">
-              <Col sm={6}>
+              <Col lg={6} sm={4}>
                 <h5>User Name</h5>
                 {username}
                 </Col>
-                <Col sm={6} >
+                <Col lg={6} sm={4} >
               <h5>Session Reason</h5>
                 {reason}
               </Col>
                 
             </Row>
             <Row  className="mt-4 pt-4">
-            <Col sm={6} style={{ overflowWrap:"break-word"}}>
+            <Col lg={6} sm={4} style={{ overflowWrap:"break-word"}}>
               
               <h5>Session Description</h5>
               {desc != 'none' && desc ? desc : "Nothing to show"}
             </Col>
-              <Col sm={6}>
+              <Col lg={6} sm={4}>
               <h5>Total Cost</h5>
               {fee}
               </Col>
@@ -231,16 +238,16 @@ const Visitpage = () => {
               <p className="tit">UPCOMING SESSIONS</p>
             </div>
             <div className="visitt2">
-              <p >No upcoming sessions</p>
+            <p >No upcoming sessions</p>
             </div>
             <div className="visitt">
             <p className="tit">Jeff PAST SESSIONS</p>
             </div>
             <div className="visitt2">
-              <p>No past sessions</p>
+            <p>No past sessions</p>
             </div>
             <div className="visitt2but">
-              <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
+            <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div> */}
           </Col>
@@ -248,6 +255,7 @@ const Visitpage = () => {
         </Col>
        
       </Row>
+    </div>
       {loader && <Loader />}
 
     </div>

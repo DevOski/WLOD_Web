@@ -1,3 +1,46 @@
 .homebut:hover{
 background-color: aquamarine;
 }
+@media only screen and (max-width: 991px){
+    .cardcol{
+        margin-top: 100px!important;
+    }
+  }
+/* .cardcol{
+    border: solid;
+} */
+
+/* @media only screen and (min-width: 900px){
+    .homecard{
+        width: 50%
+     }
+}
+@media only screen and (max-width: 900px){
+    .homecard{
+        width: 65%
+     }
+} */
+@media (max-width:320px)  { 
+    .homecard{
+        width: 80%
+     }
+ }
+@media (max-width:575px)  { 
+    .homecard{
+        width: 80%
+     }
+ }
+ @media (min-width:1001px)  { 
+    .homecard{
+        width: 70%;
+     }
+ }
+ @media (min-width:1449px)  { 
+    .homecard{
+        width: 60%;
+     }
+ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

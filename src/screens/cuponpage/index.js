@@ -11,10 +11,11 @@ import logo from "../../assets/logo.png";
 // import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
-import { Button } from "react-bootstrap";
+import { Button,Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { storeCoupon } from "../../store/action";
 import { useLocation } from "react-router-dom";
+import NavSidebar from "../../component/navsidebar";
 const Cupon = () => {
   const params = useLocation();
   console.log(">>",params.state);
@@ -103,53 +104,67 @@ const Cupon = () => {
       }
     }
   return (
-    <Container fluid>
+    <>
       <div className="of">
-      <BasicExample/>
+      <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar />
+        </div>
         {/* <Navbar expand="lg" variant="light" bg="light">
           <Navbar.Brand href="#">
-            <img className="header-logo" src={logo} />
+          <img className="header-logo" src={logo} />
           </Navbar.Brand>
         </Navbar> */}
-        <Row class="d-flex justify-content-center  align-items-center gap-5 pt-5">
-          <Col
-            lg="12"
-            className="d-flex justify-content-center  align-items-center coupon-col"
-          >
+        <Container fluid>
+        <div className="mobilediv">
+
+        <Row class="d-flex justify-content-center align-items-center gap-5 pt-5">
+        <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="6" sm="10" className="center-screen" >
+              <Card className="cuoponcard">
             <Form className="w-60 d-flex justify-content-center  align-items-center flex-column">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3 cuoponinput" controlId="formBasicEmail">
                 <Form.Label>Apply Coupon</Form.Label>
                 <Form.Control
                   type="numberic"
+                  
                   placeholder="Add Coupon"
                   onChange={(event) => setApplyCupon(event.target.value)}
                   onKeyPress={enterKye}
-                />
+                  />
                 <Form.Text className="text-muted">
                 </Form.Text>
               </Form.Group>
-
+              <div className="coupon-submit">
               <Button
                 variant="primary"
-                className="coupon-submit"
                 onClick={handleCoupon}
-              >
+                >
                 Apply Coupon 
               </Button>
+                </div>
             </Form>
+            </Card>
           </Col>
+        <Col lg='4' md="3" sm="1"></Col>
+
         </Row>
       </div>
-      {loader && <Loader />}
+    </Container>
+      </div>
+      
+    {loader && <Loader />}
       {error && (
         <Error3
           onClick={Close}
           tittle={errorMessage}
           congrats={congratsStatus}
           bttext={bttext}
-        />
+          />
       )}
-    </Container>
+          </>
   );
 };
 
