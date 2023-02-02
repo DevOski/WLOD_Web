@@ -242,7 +242,7 @@ const Basic = () => {
             <input
               type="number"
               className="form-control"
-              placeholder="Preferred Phone Number"
+              placeholder="Phone Number"
               onChange={(event) => setPhoneNumber(event.target.value)}
               onKeyPress={enterKye}
             />

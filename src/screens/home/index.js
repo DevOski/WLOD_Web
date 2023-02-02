@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../assets/logo.png";
+import bg2 from "../../assets/bg2.png";
 import book from "../../assets/book.png";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Col, Container, Row } from "react-bootstrap";

@@ -79,13 +79,13 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
         <NavSidebar />
         </div>
         <div className="mobilediv">
-
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5">
-        <Col
-          lg="12"
-          className="d-flex justify-content-center flex-column align-items-center pb-5"
+ 
+        <Row >
+      <Col lg="3" md="2" sm="1" xs="1"></Col>
+        <Col className="d-flex flex-column justify-content-center align-items-center"
+          lg="6" md="8" sm="10" xs="10"
           >
-          <div className="d-flex justify-content-between align-items-center ww">
+          <div className="review">
             <div>
               <h3>Review your health profile </h3>
               <div className="d-flex flex-row">
@@ -110,31 +110,31 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
               </button>
             </div> */}
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 1) List any health problems and physical limitations </h6>
               <p>Ans: {response1}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 2) List All Medications and their dosage</h6>
               <p>Ans: {response2}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6>3) Current Weight</h6>
               <p>Ans: {response3}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6>4) Current Height</h6>
               <p>Ans: {response4}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww ">
+          <div className="reviewbox mt-2 ">
             <div>
               <h6>
                 5) What was your lowest and highest adult weight? __________lb
@@ -144,7 +144,7 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
             </div>
           </div>
 
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6>
                 {" "}
@@ -153,7 +153,7 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
               <p>Ans: {response6}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6>
                 7) Have you dieted in the past for weight loss? (No/Yes) If yes,
@@ -161,37 +161,37 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
               <p>Ans: {response7}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 8) How much weight would you like to lose?</h6>
               <p>Ans: {response8}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 9) How will you benefit from this weight loss?</h6>
               <p>Ans: {response9}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6>10) What, if any, regular exercises do you do?</h6>
               <p>Ans: {response10}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 11) Who plans the meals at home?</h6>
               <p>Ans: {response11}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-between  align-items-center ww">
+          <div className="reviewbox mt-2">
             <div>
               <h6> 12) Who prepares the meals at home?</h6>
               <p>Ans: {response12}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-center  align-items-center  ">
+          <div className="d-flex justify-content-center align-items-center btwidth">
             <Button className="reviewbutton" onClick={goto}>
               Confirm
             </Button>

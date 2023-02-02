@@ -42,6 +42,10 @@ export default function Trainerdescription() {
                 setloader(false)
                 seterror2(true)
                 setErrorMessage("Description has been added")
+            }else{
+              setloader(false)
+                seterror2(true)
+                setErrorMessage(result.message)
             }
         })
         .catch(error => console.log('error', error));

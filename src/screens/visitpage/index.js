@@ -32,8 +32,7 @@ const textStyles ={
   borderRadius:'80px',
   // position: 'relative',
   top: '-3px',
-  border:'solid'
-  },
+    },
   list :{
     marginTop:'7%',
     display:'flex',
@@ -139,15 +138,19 @@ const Visitpage = () => {
           <div className="text-center mt-4 mr-4">
               <h3>Visit Details</h3>
               </div>
-          <Row>
-            <Col lg="2" md="2" sm="2" xs="2"></Col>
-          <Col lg="10" md="10" sm="10" xs="10" >
+          <Row className="text-center">
+            <Col lg="2" md="1" sm="1" xs="1"></Col>
+          <Col lg="8" md="10" sm="10" xs="10" >
+            <Card className="p-5 mt-4">
           {Object.keys(Visit).length ? (
             <div> 
                
               <Row className="mt-4 pt-4">
-                <Col lg={6} sm={4} className="mt-4">
-                <h5>Visit Date</h5>
+                <Col lg={6} md={6} sm={6} xs={6} className="mt-5">
+                <Row >
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <h5>Visit Date</h5>
                 {visitdate}
                 <div style={textStyles.list}>
                 <Link style={textStyles.link} to='/chat'> 
@@ -155,39 +158,79 @@ const Visitpage = () => {
                 <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                 <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
               </svg>  &nbsp;Message Support</Link>
+                 </div>
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+
+                </Row>
                 {/* <Link style={textStyles.link}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check2-circle" viewBox="0 0 16 16">
                 <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                 <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
               </svg>  &nbsp;Get Reciept</Link> */}
-                </div>
+               
               
                 </Col>
-                <Col lg={6} sm={4} >
-                  <img src={home} style={textStyles.circle} className="ml-4 pl-4"/>
+                <Col lg={6} md={6} sm={6} xs={6}>
+                  <Row >
+                    <Col lg="3" md="3" sm="1" xs="01" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <img src={home} style={textStyles.circle} className="ml-4 pl-4"/>
                   <h5 className="mt-2 ml-4 pl-4" >Consultant Name</h5>
-                  {trainer}
+                 <p >{trainer}</p> 
+                 
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+
+                  
+                  </Row>
                 </Col>
               </Row>
               <Row className="mt-4 pt-4">
-              <Col lg={6} sm={4}>
-                <h5>User Name</h5>
-                {username}
+              <Col  lg={6} md={6} sm={6} xs={6}>
+              <Row >
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <h5 >User Name</h5>
+                    <p >{username}</p>
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                  </Row>
+                
                 </Col>
-                <Col lg={6} sm={4} >
-              <h5>Session Reason</h5>
-                {reason}
+                <Col  lg={6} md={6} sm={6} xs={6}>
+                <Row >
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <h5 >Session Reason</h5>
+                    <p > {reason}</p>
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                  </Row>
               </Col>
                 
             </Row>
             <Row  className="mt-4 pt-4">
-            <Col lg={6} sm={4} style={{ overflowWrap:"break-word"}}>
-              
-              <h5>Session Description</h5>
-              {desc != 'none' && desc ? desc : "Nothing to show"}
+            <Col  lg={6} md={6} sm={6} xs={6}>
+            <Row >
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <h5 >Session Description</h5>
+                    <p style={{overflowWrap:"break-word"}}> {desc != 'none' && desc ? desc : "Nothing to show"}</p>
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                  </Row>
+             
             </Col>
-              <Col lg={6} sm={4}>
-              <h5>Total Cost</h5>
-              {fee}
+              <Col  lg={6} md={6} sm={6} xs={6}>
+              <Row >
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                    <h5 >Total Cost</h5>
+                    <p > {fee}</p>
+                    </Col>
+                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                  </Row>
+             
               </Col>
 
             </Row>
@@ -250,7 +293,10 @@ const Visitpage = () => {
             <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div> */}
+          </Card>
           </Col>
+          <Col lg="2" md="1" sm="1" xs="1"></Col>
+
           </Row>
         </Col>
        
