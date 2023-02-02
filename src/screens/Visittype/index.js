@@ -95,18 +95,16 @@ const VType = () => {
         </div>
       <div className="mobilediv">
 
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-        <Col
-          lg="12"
-          className="d-flex justify-content-center flex-column align-items-center"
+      <Row className="pt-5 mt-5">
+      <Col lg="3" md="3" sm="1" xs="1"></Col>
+          <Col lg="6" md="6" sm="10" xs="10"
           >
           <div
             onClick={goto}
-            className="d-flex justify-content-between  align-items-center ww"
+            className="d-flex justify-content-between align-items-center visitbox"
             >
-            <div>
-              
-              <p className="fs-4">{userName} {last} </p>
+            <div className="fs-4 pb-2">
+              {userName} {last} 
             </div>
 
             <div>
@@ -114,6 +112,8 @@ const VType = () => {
             </div>
           </div>
         </Col>
+      <Col lg="3" md="3" sm="1" xs="1"></Col>
+
       </Row>
     </div>
       {loader && <Loader />}

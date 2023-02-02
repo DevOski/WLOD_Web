@@ -220,6 +220,20 @@ input.input {
     background: #be1f2d !important;
     padding: 12px 12px !important;
 }
+.recentvcard{
+ padding:  1% 5% 5% 5%;
+}
+.recectvcol{
+    padding-top: 60px;
+}
+@media only screen and (max-width: 600px){
+    .recentvcard{
+        padding: 1% 3% 5% 3%;
+       }
+    .recectvcol{
+        padding-top: 70px;
+    }
+}
 
 @media only screen and (min-width: 991px){
     .navshow{
@@ -240,4 +254,11 @@ input.input {
         padding-top:80px
     }
     
+}
+.center-screen{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }

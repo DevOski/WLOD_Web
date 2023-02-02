@@ -135,18 +135,18 @@ const Visitpage = () => {
       </Col> */}
        {/* style={{border:'solid lightblue'}} */}
         <Col lg="12" md="12" sm="12" xs="12" >
-          <div className="text-center mt-4 mr-4">
-              <h3>Visit Details</h3>
-              </div>
+          
           <Row className="text-center">
             <Col lg="2" md="1" sm="1" xs="1"></Col>
           <Col lg="8" md="10" sm="10" xs="10" >
-            <Card className="p-5 mt-4">
           {Object.keys(Visit).length ? (
             <div> 
-               
+              <div className="text-center mt-4 mr-4">
+              <h3>Visit Details</h3>
+              </div>
+              <Card className=" mt-4 recentvcard">
               <Row className="mt-4 pt-4">
-                <Col lg={6} md={6} sm={6} xs={6} className="mt-5">
+                <Col lg={6} md={6} sm={6} xs={6} className="recectvcol">
                 <Row >
                     <Col lg="3" md="3" sm="1" xs="0" ></Col>
                     <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
@@ -234,8 +234,9 @@ const Visitpage = () => {
               </Col>
 
             </Row>
+            </Card>
                 </div> ) : (
-                  <div className="text-center "><h5 className="visittno">No recent sessions</h5> </div>
+                  <div className="text-center center-screen"><h5 className="">No recent session</h5> </div>
                   )}
 
             {/*   {
@@ -293,7 +294,6 @@ const Visitpage = () => {
             <Button onClick={goto} className="bbbb visit-book-btn">Book a Sessions</Button>
             </div>
           </div> */}
-          </Card>
           </Col>
           <Col lg="2" md="1" sm="1" xs="1"></Col>
 

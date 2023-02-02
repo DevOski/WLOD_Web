@@ -105,7 +105,7 @@ const  Trainer = () => {
               </p>
               <h6>Consultant Type</h6>
               <p>
-                {trainer?.focus_area}
+                {trainer?.type}
                 
               </p>
               <h6>Language</h6>
