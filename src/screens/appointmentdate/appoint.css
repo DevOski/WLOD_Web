@@ -1,3 +1,6 @@
+#root {
+    background-color: white !important;
+  }
 .box1{
     border-bottom: 1px solid black;
     width: 50%;
@@ -8,6 +11,13 @@
     width: 100%;
     margin: 3%;
     padding: 3%;
+}
+.nice-dates-navigation, .nice-dates-day {
+    color: #be1f2d;
+    background-color: white !important;
+}
+.nice-dates-week-header{
+    background-color: white !important;
 }
 .boxadd{
     /* width: 50%; */
@@ -50,6 +60,7 @@
     padding: 1%;
 }
 .classextbutton{
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
 }

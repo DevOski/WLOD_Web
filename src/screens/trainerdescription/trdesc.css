@@ -6,6 +6,10 @@
         display:none;
     }
   }
+  .mobiledivtr{
+   
+    padding-top:80px
+  }
   @media only screen and (max-width: 991px){
     .navshow{
         display:none;
@@ -13,14 +17,21 @@
     .sidenavshow{
         display:block;
     }
-    .mobilediv{
-        padding-top:80px
+    .mobiledivtr{
+        padding-top:180px
     }
-    .center-screen {
-        position: absolute;
-        top: 40%;
-        left: 50%;
+    .center-small-screen{
+        /* position: absolute;*/
+        /* margin-top: 40px; */
+        /*left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
       }
+  }
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    background-color: white !important;
+  }
+  .MuiInputBase-root{
+    background-color: white !important;
+
   }

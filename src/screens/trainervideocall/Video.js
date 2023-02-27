@@ -7,26 +7,27 @@ export default function Video(props) {
   const [gridSpacing, setGridSpacing] = useState(12);
 
   useEffect(() => {
-    setGridSpacing(Math.max(Math.floor(12 / (users.length + 1)), 4));
+    setGridSpacing(7);
   }, [users, tracks]);
 
   return (
-    <Grid container style={{ height: "100%" }}>
-      <Grid item xs={gridSpacing}>
+    <Grid container style={{ height:"100vh" }}>
+      <Grid item lg={10} md={8} sm={8} xs={7}>
         <AgoraVideoPlayer
           videoTrack={tracks[1]}
-          style={{ height: "100%", width: "100%" }}
+          style={{ height: "100%", width: "100%",position:'absolute' }}
         />
       </Grid>
       {users.length > 0 &&
         users.map((user) => {
           if (user.videoTrack) {
             return (
-              <Grid item xs={gridSpacing}>
+              <Grid item lg={2} md={4} sm={4} xs={5} >
                 <AgoraVideoPlayer
+                // className="grid2"
                   videoTrack={user.videoTrack}
                   key={user.uid}
-                  style={{ height: "100%", width: "100%"}}
+                  style={{ height: "30%", width: "100%",position:'relative'}}
                 />
               </Grid>
             );

@@ -164,21 +164,21 @@ const enterKye=(e)=>{
           </Container>
         </Navbar>
       </Container> */}
-      <Row>
+      <Row className="maincontainer">
       <Col lg='3' md="3" sm="1"></Col>
-        <Col lg='6' md="6" sm="10" className="center-screen" >
-          <Card className="forgetcard">
-           <div className="box1">
+        <Col lg='6' md="6" sm="10" className="center-screen maincontainer" >
+          <Card className="forgetcard maincontainer">
+           <div className="box1 maincontainer">
            <h6>Enter your email address and we will send you a link to reset your password.</h6>
            </div>
 
-           <div className="box2"> 
+           <div className="box2 maincontainer"> 
             <input type='text' placeholder="Enter your email" className=" form-control forgetinput"
              onChange={(event) => setEmail(event.target.value)}
              onKeyPress={enterKye}
             />
            </div>
-            <div  className="recoverbutt2">
+            <div  className="recoverbutt2 maincontainer">
 
             <button onClick={recoverPassword} className="recoverbuttfor recover2">Recover my password </button>
             </div>

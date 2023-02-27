@@ -191,23 +191,23 @@ const Questionpagetwo = () => {
   };
   return (
     <>
-       <div className="navshow">
+       <div className="navshow"> 
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
         <div className="mobilediv"> 
-      <Row className="">
-      <Col lg="3" md="2" sm="1" xs="1"></Col>
-        <Col
+      <Row >
+      <Col className="maincontainer" lg="3" md="2" sm="1" xs="1"></Col>
+        <Col className="maincontainer"
           lg="6" md="8" sm="10" xs="10"
           >
-          <div className="q2">
-            <div>
+          <div className="q2 maincontainer">
+            <div className="maincontainer">
               <h4 className="qdesig">General Health Information</h4>
             </div>
-            <div className="mb-3 inwi">
+            <div className="mb-3 inwi maincontainer">
               <label className="pb-2 ">
                 1) List any health problems and physical limitations:{" "}
               </label>
@@ -221,7 +221,7 @@ const Questionpagetwo = () => {
                 />
             </div>
 
-            <div className="mb-3 inwi">
+            <div className="mb-3 inwi maincontainer">
               <label className="pb-2">
                 2) List All Medications, Vitamins, and Herbals: Dosage{" "}
               </label>
@@ -235,10 +235,10 @@ const Questionpagetwo = () => {
                 />
             </div>
 
-            <div>
+            <div className="maincontainer">
               <h4 className="qdesig">Weight Information</h4>
             </div>
-            <div className="mb-3 inwi">
+            <div className="mb-3 inwi maincontainer">
               <label className="pb-2">3) Current Weight:</label>
               <input
                 type="text"
@@ -249,7 +249,7 @@ const Questionpagetwo = () => {
                 onKeyPress={enterKye}
                 />
             </div>
-            <div className="mb-3 inwi">
+            <div className="mb-3 inwi maincontainer">
               <label className="pb-2">4) Current Height</label>
               <input
                 type="text"
@@ -259,7 +259,7 @@ const Questionpagetwo = () => {
                 onChange={(event) => setCurrentHeight(event.target.value)}
                 onKeyPress={enterKye}
                 />
-              <div className="mb-3 inwi">
+              <div className="mb-3 inwi maincontainer">
                 <label className="pb-2">
                   5) What was your lowest and highest adult weight? __________lb
                   __________lb
@@ -275,7 +275,7 @@ const Questionpagetwo = () => {
                   onKeyPress={enterKye}
                   />
               </div>
-              <div className="mb-3 inwi">
+              <div className="mb-3 inwi maincontainer">
                 <label className="pb-2">
                   6) Describe any weight changes (gain or loss) in the past 2
                   years:{" "}
@@ -291,7 +291,7 @@ const Questionpagetwo = () => {
                   onKeyPress={enterKye}
                   />
               </div>
-              <div className="mb-3 inwi">
+              <div className="mb-3 inwi maincontainer">
                 <label className="pb-2">
                   7) Have you dieted in the past for weight loss? No Yes If yes,
                   please indicate what you have done:
@@ -306,7 +306,7 @@ const Questionpagetwo = () => {
                   />
               </div>
 
-              <div className="mb-3 inwi">
+              <div className="mb-3 inwi maincontainer">
                 <label className="pb-2">
                   8) How much weight would you like to lose?
                 </label>
@@ -321,7 +321,7 @@ const Questionpagetwo = () => {
                   onKeyPress={enterKye}
                   />
               </div>
-              <div className="mb-3 inwi">
+              <div className="mb-3 inwi maincontainer">
                 <label className="pb-2">
                   9) How will you benefit from this weight loss?
                 </label>
@@ -337,12 +337,12 @@ const Questionpagetwo = () => {
                   />
               </div>
 
-              <div className=" align-items-center">
+              <div className=" align-items-center maincontainer">
                 <h4 className="qdesig" style={{ textAlign: "center" }}>
                   Physical Activity Information
                 </h4>
-                <div>
-                  <div>
+                <div className="maincontainer">
+                  <div className="maincontainer">
                     <label className="pb-2">
                       10) What, if any, regular exercises do you do?{" "}
                     </label>
@@ -359,13 +359,13 @@ const Questionpagetwo = () => {
                   </div>
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 maincontainer">
                   <h4 className="qdesig" style={{ textAlign: "center" }}>
                     Nutrition Information
                   </h4>
                 </div>
-                <div>
-                  <div className="mb-3 inwi">
+                <div className="maincontainer">
+                  <div className="mb-3 inwi maincontainer">
                     <label className="pb-2">
                       11) Who plans the meals at home?
                     </label>
@@ -378,7 +378,7 @@ const Questionpagetwo = () => {
                       onKeyPress={enterKye}
                       />
                   </div>
-                  <div className="mb-3 inwi">
+                  <div className="mb-3 inwi maincontainer">
                     <label className="pb-2">
                       12) Who prepares the meals at home?{" "}
                     </label>
@@ -396,14 +396,14 @@ const Questionpagetwo = () => {
                 </div>
               </div>
             </div>
-            <div className="q-next-btn-div">
+            <div className="q-next-btn-div maincontainer">
               <Button className="bdiv" onClick={handleNext}>
                 Submit
               </Button>
             </div>
           </div>
         </Col>
-      <Col lg="3" md="2" sm="1" xs="1"></Col>
+      <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
 
       </Row>
                       </div>

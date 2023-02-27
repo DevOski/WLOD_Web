@@ -17,6 +17,7 @@ function BasicExample() {
   const dispatch = useDispatch();
   const t_type = useSelector((state) => state.trainerType);
   const token = useSelector((state) => state.token);
+  console.log("userrrrrrrr",t_type);
   const handleLogout = () => {
     if(t_type === "trainer"){
       var myHeaders = new Headers();
@@ -88,48 +89,49 @@ console.log(t_type,'t_type=====>');
   const [tok, settok] = useState(token);
   console.log(tok, "====>token");
   return (
+
     <Navbar bg="light" expand="lg">
-      {tok  ? (
-        <Container>
+      
+      {tok ?
+        <Container className="nav-b " >
+        <Navbar.Brand href="/">
+          <img style={{ width: "50%" }} src={logo} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="nav-b">
+          <Nav className="me-auto nav-b" >
+            
+            <Nav.Link href="/" style={{paddingRight:'30px'}}>Home</Nav.Link>
+            <Nav.Link
+              href="/visit" 
+              className="center-link"
+              style={{paddingRight:'30px'}}
+            >
+              Recent Session
+            </Nav.Link>
+            <Nav.Link href="/chat" style={{paddingRight:'30px'}}>
+             Message
+            </Nav.Link>
+           
+          </Nav>
+          <p className="proname">{userName}</p>
+          <div className="nav-b">
+          <Button  className="logbutt" onClick={handleLogout}>
+            Logout
+          </Button>
+          </div>
+         
+
+        </Navbar.Collapse>
+      </Container>
+       : (
+            <Container className="nav-b">
           <Navbar.Brand href="/">
             <img style={{ width: "50%" }} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" >
-              <Nav.Link href="/" style={{paddingRight:'30px'}}>Home</Nav.Link>
-              <Nav.Link
-                href="/visit"
-                className="center-link"
-                style={{paddingRight:'30px'}}
-              >
-                Recent Session
-              </Nav.Link>
-              <Nav.Link href="/chat" style={{paddingRight:'30px'}}>
-               Message
-              </Nav.Link>
-              {/* <Nav.Link href="https://weightlossondemand.com/shop/">
-                Shop
-              </Nav.Link> */}
-            </Nav>
-            <p className="proname">{userName}</p>
-            <div >
-            <Button  className="logbutt" onClick={handleLogout}>
-              Logout
-            </Button>
-            </div>
-           
-
-          </Navbar.Collapse>
-        </Container>
-      ) : (
-        <Container>
-          <Navbar.Brand href="https://weightlossondemand.com/">
-            <img style={{ width: "50%" }} src={logo} />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse id="basic-navbar-nav " className="nav-b">
+            <Nav className="me-auto nav-b">
 
               {/* <Nav.Link href="https://weightlossondemand.com/">Home</Nav.Link>
               <Nav.Link

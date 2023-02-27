@@ -78,17 +78,17 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
  
-        <Row >
-      <Col lg="3" md="2" sm="1" xs="1"></Col>
-        <Col className="d-flex flex-column justify-content-center align-items-center"
+        <Row className="maincontainer">
+      <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+        <Col className="d-flex flex-column justify-content-center align-items-center maincontainer"
           lg="6" md="8" sm="10" xs="10"
           >
-          <div className="review">
-            <div>
+          <div className="review maincontainer">
+            <div className="maincontainer">
               <h3>Review your health profile </h3>
-              <div className="d-flex flex-row">
+              <div className="d-flex flex-row maincontainer">
 
               <p>
                 Please review your basic info as it will be share with your
@@ -110,32 +110,32 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
               </button>
             </div> */}
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 1) List any health problems and physical limitations </h6>
               <p>Ans: {response1}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 2) List All Medications and their dosage</h6>
               <p>Ans: {response2}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6>3) Current Weight</h6>
               <p>Ans: {response3}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6>4) Current Height</h6>
               <p>Ans: {response4}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2 ">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer"> 
               <h6>
                 5) What was your lowest and highest adult weight? __________lb
                 __________lb
@@ -144,8 +144,8 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
             </div>
           </div>
 
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6>
                 {" "}
                 6) Describe any weight changes (gain or loss) in the past 2
@@ -153,45 +153,45 @@ console.log(useSelector((state) => state.tr_name),'-----------------------------
               <p>Ans: {response6}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6>
                 7) Have you dieted in the past for weight loss? (No/Yes) If yes,
               </h6>
               <p>Ans: {response7}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 8) How much weight would you like to lose?</h6>
               <p>Ans: {response8}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 9) How will you benefit from this weight loss?</h6>
               <p>Ans: {response9}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6>10) What, if any, regular exercises do you do?</h6>
               <p>Ans: {response10}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 11) Who plans the meals at home?</h6>
               <p>Ans: {response11}</p>
             </div>
           </div>
-          <div className="reviewbox mt-2">
-            <div>
+          <div className="reviewbox mt-2 maincontainer">
+            <div className="maincontainer">
               <h6> 12) Who prepares the meals at home?</h6>
               <p>Ans: {response12}</p>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center btwidth">
+          <div className="d-flex justify-content-center align-items-center btwidth maincontainer">
             <Button className="reviewbutton" onClick={goto}>
               Confirm
             </Button>

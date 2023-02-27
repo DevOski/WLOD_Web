@@ -57,26 +57,26 @@ const  Trainer = () => {
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv"> 
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-2">
-      <Col lg="2" md="2" sm="0" xs="0" ></Col>
+        <div className="mobilediv maincontainer"> 
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-2 maincontainer">
+      <Col lg="2" md="2" sm="0" xs="0" className="maincontainer"></Col>
         <Col
           lg="10" md="10" sm="12" xs="12" 
-          className="d-flex justify-content-center flex-column align-items-center"
+          className="d-flex justify-content-center flex-column align-items-center maincontainer"
         >
-          <div  className="d-flex flex-column wwtrai">
-            <div className="d-flex align-items-center">
-              <Row >
-              <Col lg="6" md="6" sm="6" xs="6">
-              <div className="img22">
+          <div  className="d-flex flex-column wwtrai maincontainer">
+            <div className="d-flex align-items-center maincontainer">
+              <Row className="maincontainer">
+              <Col lg="6" md="6" sm="6" xs="6" className="maincontainer">
+              <div className="img22 maincontainer">
                 <img
                   style={{ width: "100%", height: "100%" }}
                   src={trainer?.images}
                   />
               </div>
               </Col>
-              <Col lg="6" md="6" sm="6" xs="6">
-              <div className="padingtrainer">
+              <Col lg="6" md="6" sm="6" xs="6" className="maincontainer">
+              <div className="padingtrainer maincontainer">
                 <h5>{trainer?.tr_name}</h5>
                 <p>{trainer?.type}</p>
               </div>
@@ -88,15 +88,15 @@ const  Trainer = () => {
             {/* </div> */}
             {!slot ? slot.map((item, index)=>{
               console.log(item,'itemslot');
-               return  <div className="top  fle">
+               return  <div className="top fle maincontainer">
 
-               <div className="brder">
+               <div className="brder maincontainer">
                  <p>{item?.tr_day},{item?.tr_date} {item?.sl_time}</p>
                </div>
              
              </div>
             }) : ''}
-            <div className="top">
+            <div className="top maincontainer">
             <p>
             <h6>Consultant Description</h6>
 
@@ -113,7 +113,7 @@ const  Trainer = () => {
               <h6>Qualifications</h6>
               <p>{trainer?.qualifications}</p>
             </div>
-            <div className="top">
+            <div className="top maincontainer">
             {/* <h6 onClick={Open}>
                 Show full profile {!show?<IoIosArrowUp/>:<IoIosArrowDown />}
               </h6> */}
@@ -122,7 +122,7 @@ const  Trainer = () => {
           </div>
           
         </Col>
-        <Col lg="2" md="2" sm="0" xs="0" ></Col>
+        <Col lg="2" md="2" sm="0" xs="0" className="maincontainer" ></Col>
       </Row>
       </div>
     </div>

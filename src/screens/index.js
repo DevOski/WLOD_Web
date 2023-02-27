@@ -24,7 +24,7 @@ import Visitpage from "./visitpage";
 import VType from "./Visittype";
 import TrainerList from "./trainerlist";
 import ChooseSlot from "./chooseslot";
-import Videocalling from "./videocalingscreen";
+// import Videocalling from "./videocalingscreen";
 import VerificationCode from "./verificationcode";
 import MessageScreen from "./messagepage";
 import Membership from "./memebershipterms";
@@ -74,7 +74,7 @@ export {
   Cupon,
   TrainerList,
   ChooseSlot,
-  Videocalling,
+  // Videocalling,
   VerificationCode,
   MessageScreen,
   Membership,

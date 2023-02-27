@@ -3,16 +3,20 @@ import logo from "../../assets/logo.png";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Col, Container, Row,Card } from "react-bootstrap";
 import "./basic.css";
-import Form from "react-bootstrap/Form";
+import moment from "moment";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-// <<<<<<< HEAD
 import { Error, Loader, BasicExample } from "../../component";
-
-// import { BasicExample, Error, Loader } from "../../component";
-// >>>>>>> 640590151c96e6af5a3541c97535cd7622aada5a
 import { useDispatch, useSelector } from "react-redux";
 import { storeData } from "../../store/action";
 import NavSidebar from "../../component/navsidebar";
+import TextField from '@mui/material/TextField';
+import AdapterJalali from '@date-io/date-fns-jalali';
+import AdapterDateFns from '@date-io/date-fns';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { style } from "@mui/system";
+
 const Basic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
@@ -51,8 +55,11 @@ const Basic = () => {
   const [Divorced, setDivorced] = useState("");
   const [widowed, setwidowed] = useState('')
   const [errorMessage, setErrorMessage] = useState("");
+  const [value, setValue] = useState("mm/dd/yyyy");
   const token = useSelector((state) => state.token);
   console.log(token, "===>token");
+  console.log(value,">>>>>>>>>>");
+  console.log(moment(value).format('DD/MM/YYYY'));
   const dispatch = useDispatch();
   const Close = () => {
     setloder(false)
@@ -189,20 +196,20 @@ const Basic = () => {
       }
     }
   return (
-    <div className="fulllod" >
+    <div className="fulllod maincontainer" >
       <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-
-      <Container >
-        <Card className="basicinfocard">
-        <form className="mb-3 w-100 pt-3">
+      <div className="maincontainer">
+      <Container className="maincontainer">
+        <Card className="basicinfocard maincontainer">
+        <form className="mb-3 w-100 pt-3 ">
           <h3>Basic Info</h3>
-         <div className="d-flex gap-2">
-         <div className="mb-3 w-50">
+         <div className="d-flex gap-2 maincontainer">
+         <div className="mb-3 w-50 maincontainer">
             <label>First name</label>
             <input
               type="text"
@@ -210,9 +217,9 @@ const Basic = () => {
               placeholder="First name"
               onChange={(event) => setfirstname(event.target.value)}
               onKeyPress={enterKye}
-            />
+              />
           </div>
-          <div className="mb-3 w-50">
+          <div className="mb-3 w-50 maincontainer">
             <label>Last name</label>
             <input
               type="text"
@@ -223,11 +230,11 @@ const Basic = () => {
             />
           </div>
          </div>
-         <div className="d-flex gap-2">
+         <div className="d-flex gap-2 maincontainer" >
          
-        <div className="mb-3 w-50">
+        <div className=" w-50 d-flex flex-column maincontainer" style={{marginTop:'2px'}}>
         <label>Date of birth</label>
-            <input
+            {/* <input
               type="date"
               id="dob"
               name="dob"
@@ -235,9 +242,27 @@ const Basic = () => {
               // onChange={(event) => setdate(event.target.value)}
               // placeholder="Date of Birth"
               // onKeyPress={enterKye}
-              />
+              /> */}
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+              
+                value={value}
+                onChange={(event) => setValue(event)}
+                renderInput={(props) => (
+                  <TextField {...props} helperText=""
+                  
+                  sx={{
+                    '.MuiInputBase-input': {padding: 1,border:'none'},
+                    "& .MuiInputBase-root": {
+                      border: "none !important", width:'100%',backgroundColor:'white !important'}
+                 }}
+                 />
+                  
+                )}
+                />
+            </LocalizationProvider>
           </div>
-          <div className="mb-3 w-50">
+          <div className="mb-3 w-50 maincontainer">
             <label>Phone number</label>
             <input
               type="number"
@@ -251,10 +276,10 @@ const Basic = () => {
          </div>
          
         
-           <div className="mb-3 ff">
-            <div className="db">
+           <div className="mb-3 ff maincontainer">
+            <div className="db maincontainer">
             <label>Gender:</label>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -267,7 +292,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Male</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -282,15 +307,15 @@ const Basic = () => {
               </div>
             </div>
           </div>
-          <div className="mb-3 ">
-            <div className="dbform">
+          <div className="mb-3 maincontainer">
+            <div className="dbform maincontainer">
               <Row>
-                <Col lg="1" md="1" sm="2" xs="2">
+                <Col lg="1" md="1" sm="2" xs="2" className="maincontainer">
             <label>Marital:</label>
 
                 </Col>
-                <Col lg="11" md="11" sm="10" xs="10" style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
-                <div className="topping1">
+                <Col lg="11" md="11" sm="10" xs="10" className="maincontainer" style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
+                <div className="topping1 maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -303,7 +328,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Single</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -316,7 +341,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Married</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -329,7 +354,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Divorced</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -350,10 +375,10 @@ const Basic = () => {
             </div>
           </div>
          
-          <div className="mb-3 ff">
-            <div className="db leftin">
+          <div className="mb-3 ff maincontainer">
+            <div className="db leftin maincontainer">
             <label>Language:</label>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -366,7 +391,7 @@ const Basic = () => {
                 />
                 <p className="pleft">English</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -382,10 +407,10 @@ const Basic = () => {
               
             </div>
           </div>
-          <div className="mb-3 ff">
+          <div className="mb-3 ff maincontainer">
             <label>Smoking:</label>
-            <div className="db">
-              <div className="topping">
+            <div className="db maincontainer">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -398,7 +423,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Never</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -411,7 +436,7 @@ const Basic = () => {
                 />
                 <p className="pleft">Former</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -427,7 +452,7 @@ const Basic = () => {
             </div>
           </div>
 
-          <div className="bdivsignup">
+          <div className="bdivsignup maincontainer">
             <Button onClick={goHome} className="btn btn-primary">
               Sign Up
             </Button>
@@ -438,6 +463,7 @@ const Basic = () => {
         </form>
         </Card>
         </Container>
+        </div>
       {loder && 
       <Loader />}
       {error && <Error onClick={Close} tittle={errorMessage} />}

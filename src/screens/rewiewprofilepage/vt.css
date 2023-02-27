@@ -17,13 +17,12 @@
 }
 .btwidth{
   width: 250px !important;
-  
+  margin-top: 6%  !important;
+  margin-bottom: 6%  !important;
   
 }
 .reviewbutton {
   width: 100% !important;
-  margin-top: 15%  !important;
-  margin-bottom: 15%  !important;
 
   align-self: center;
   /* border-radius: 50px !important; */

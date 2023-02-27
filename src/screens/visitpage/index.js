@@ -107,7 +107,7 @@ const Visitpage = () => {
         visitValidation.current = result;
         console.log("dataaa", visitValidation.current);
         console.log("logssssssssssssssssssssssssssssssssssssssssssssssssss",visitValidation.current.visit.visit_id);
-          setVisitdate(moment(visitValidation.current.visit.created_at).format("DD/MM/YYYY"))
+          setVisitdate(moment(visitValidation.current.visit.created_at).format("MM/DD/YYYY"))
           setusername(visitValidation.current.user.first_name+" "+visitValidation.current.user.last_name)
           setdesc(visitValidation.current.visit.session_desc)
         setreason(visitValidation.current.visit.reason)
@@ -119,40 +119,40 @@ const Visitpage = () => {
   }, [])
    const abc =Object.keys(Visit);
   return (
-    <div className="wi55">
+    <div className="wi55 maincontainer">
     <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
 
-      <Row>
+      <Row className="maincontainer"> 
         {/* <Col  lg="1" md="1" lg="1" sm={4} xs="1" ></Col> */}
         {/* <Col className="sidenavshow" lg="12" md="12" sm="12" xs="12" >
         <NavSidebar />
       </Col> */}
        {/* style={{border:'solid lightblue'}} */}
-        <Col lg="12" md="12" sm="12" xs="12" >
+        <Col lg="12" md="12" sm="12" xs="12" className="maincontainer">
           
-          <Row className="text-center">
-            <Col lg="2" md="1" sm="1" xs="1"></Col>
-          <Col lg="8" md="10" sm="10" xs="10" >
+          <Row className="text-center maincontainer">
+            <Col lg="2" md="1" sm="1" xs="1" className="maincontainer"></Col>
+          <Col lg="8" md="10" sm="10" xs="10" className="maincontainer">
           {Object.keys(Visit).length ? (
-            <div> 
-              <div className="text-center mt-4 mr-4">
+            <div className="maincontainer"> 
+              <div className="text-center mt-4 mr-4 maincontainer">
               <h3>Visit Details</h3>
               </div>
-              <Card className=" mt-4 recentvcard">
-              <Row className="mt-4 pt-4">
-                <Col lg={6} md={6} sm={6} xs={6} className="recectvcol">
-                <Row >
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+              <Card className=" mt-4 recentvcard maincontainer">
+              <Row className="mt-4 pt-4 maincontainer">
+                <Col lg={6} md={6} sm={6} xs={6} className="recectvcol maincontainer">
+                <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <h5>Visit Date</h5>
                 {visitdate}
-                <div style={textStyles.list}>
+                <div style={textStyles.list} className="maincontainer">
                 <Link style={textStyles.link} to='/chat'> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check2-circle" viewBox="0 0 16 16">
                 <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
@@ -160,7 +160,7 @@ const Visitpage = () => {
               </svg>  &nbsp;Message Support</Link>
                  </div>
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
 
                 </Row>
                 {/* <Link style={textStyles.link}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-check2-circle" viewBox="0 0 16 16">
@@ -170,65 +170,65 @@ const Visitpage = () => {
                
               
                 </Col>
-                <Col lg={6} md={6} sm={6} xs={6}>
-                  <Row >
-                    <Col lg="3" md="3" sm="1" xs="01" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                <Col lg={6} md={6} sm={6} xs={6} className="maincontainer">
+                  <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="01" className="maincontainer" ></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <img src={home} style={textStyles.circle} className="ml-4 pl-4"/>
                   <h5 className="mt-2 ml-4 pl-4" >Consultant Name</h5>
                  <p >{trainer}</p> 
                  
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
 
                   
                   </Row>
                 </Col>
               </Row>
-              <Row className="mt-4 pt-4">
-              <Col  lg={6} md={6} sm={6} xs={6}>
-              <Row >
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+              <Row className="mt-4 pt-4 maincontainer">
+              <Col  lg={6} md={6} sm={6} xs={6}className="maincontainer">
+              <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <h5 >User Name</h5>
                     <p >{username}</p>
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
                   </Row>
                 
                 </Col>
-                <Col  lg={6} md={6} sm={6} xs={6}>
-                <Row >
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+                <Col  lg={6} md={6} sm={6} xs={6} className="maincontainer">
+                <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <h5 >Session Reason</h5>
                     <p > {reason}</p>
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
                   </Row>
               </Col>
                 
             </Row>
-            <Row  className="mt-4 pt-4">
-            <Col  lg={6} md={6} sm={6} xs={6}>
-            <Row >
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+            <Row  className="mt-4 pt-4 maincontainer">
+            <Col  lg={6} md={6} sm={6} xs={6} className="maincontainer">
+            <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <h5 >Session Description</h5>
                     <p style={{overflowWrap:"break-word"}}> {desc != 'none' && desc ? desc : "Nothing to show"}</p>
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
                   </Row>
              
             </Col>
-              <Col  lg={6} md={6} sm={6} xs={6}>
-              <Row >
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
-                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} >
+              <Col  lg={6} md={6} sm={6} xs={6} className="maincontainer">
+              <Row className="maincontainer">
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
+                    <Col lg="6" md="6" sm="10" xs="12" style={{textAlign:'left'}} className="maincontainer">
                     <h5 >Total Cost</h5>
                     <p > {fee}</p>
                     </Col>
-                    <Col lg="3" md="3" sm="1" xs="0" ></Col>
+                    <Col lg="3" md="3" sm="1" xs="0" className="maincontainer"></Col>
                   </Row>
              
               </Col>
@@ -236,7 +236,7 @@ const Visitpage = () => {
             </Row>
             </Card>
                 </div> ) : (
-                  <div className="text-center center-screen"><h5 className="">No recent session</h5> </div>
+                  <div className="text-center center-screen maincontainer" ><h5 className="">No recent session</h5> </div>
                   )}
 
             {/*   {
@@ -295,7 +295,7 @@ const Visitpage = () => {
             </div>
           </div> */}
           </Col>
-          <Col lg="2" md="1" sm="1" xs="1"></Col>
+          <Col lg="2" md="1" sm="1" xs="1" className="maincontainer"></Col>
 
           </Row>
         </Col>

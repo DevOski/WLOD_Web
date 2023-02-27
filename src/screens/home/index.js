@@ -101,7 +101,7 @@ const Home = () => {
      
 
        {/* <SideMainBar/> */}
-      <Row>
+      <Row className="maincontainer">
         {/* <Col className="sidenavshow" lg="12" md="12" sm="12" xs="12" >
         <NavSidebar />
         </Col> */}
@@ -110,7 +110,7 @@ const Home = () => {
        </Col>
         <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
 
-        <Col lg="11" md="12" sm="12" xs="12">
+        <Col lg="11" md="12" sm="12" xs="12" className="maincontainer">
         <CardHome />
         </Col>
       </Row>

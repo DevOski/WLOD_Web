@@ -89,23 +89,27 @@ const VerificationCode = () => {
      
       <Row>
         <Col lg='4' md="3" sm="1"></Col>
-        <Col lg='4' md="6" sm="10" className="center-screen" >
-          <Card className="verifycard">
-           <div className="box1">
+        <Col lg='4' md="6" sm="10" className="center-screen maincontainer" >
+          <Card className="verifycard maincontainer">
+           <div className="box1 maincontainer">
            <h6>Enter your verification code</h6>
            </div>
 
-           <div className="box2"> 
-           <div className="d-flex justify-content-center">
+           <div className="box2 maincontainer"> 
+           <div className="d-flex justify-content-center maincontainer">
 
            <VerificationInput
            length={4}
            onChange={(text)=>{setcode(text)}}
            onKeyPress={enterKye}
+           classNames={{
+            container: "maincontainer",
+            character: "maincontainer",
+          }}
            />
           </div>
          
-        <div className="recoverdiv">
+        <div className="recoverdiv maincontainer">
         <Button className="recoverbutt" onClick={submit}>Submit</Button>
         </div>
            </div>

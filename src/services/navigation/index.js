@@ -31,7 +31,7 @@ import {
   VType,
   TrainerList,
   ChooseSlot,
-  Videocalling,
+  // Videocalling,
   VerificationCode,
   MessageScreen,
   Membership,
@@ -45,7 +45,8 @@ import {
   TrainerVideo,
   Trainerdescription
 } from "../../screens";
-import Control from '../../screens/videocalingscreen/Controls'
+// import Control from '../../screens/videocalingscreen/Controls'
+import VideoCall from '../../screens/uservideocalling/index'
 
 import ThankYou from "../../screens/thankyouscreen";
 
@@ -56,7 +57,7 @@ import Privateroute from "./privateroute";
 const Navigation = () => {
   const token = useSelector((state) => state.token);
   const t_type = useSelector((state) => state.trainerType);
-  console.log(t_type,'====>type');
+  console.log(t_type,'type is here');
   console.log(token, "====>tokennnnnavi");
   const [tok, settok] = useState(token);
   const [pressed, setPressed] = useState(false);
@@ -73,7 +74,7 @@ const Navigation = () => {
           path="/sigin"
           element={token ? <Navigate to="/" /> : <Siging />}
         />
-        <Route path="/" element={<Privateroute Component={Home} />} />
+        <Route path="/" element={t_type == "trainer" ? <Navigate to="/trainermode" /> :<Privateroute Component={Home} />} />
         {/* <Route path="/" element={<Siging />} /> */}
         <Route
           path="/forget"
@@ -111,12 +112,12 @@ const Navigation = () => {
         <Route path="/cuponpage" element={<Privateroute Component={Cupon} />} />
         <Route
           path="/Videocall"
-          element={<Privateroute Component={Videocalling} />}
+          element={<Privateroute Component={VideoCall} />}
         />
-        <Route
+        {/* <Route
           path="/sessioncall"
           element={<Privateroute Component={Control} />}
-        />
+        /> */}
         <Route
           path="/apointmentdate"
           element={<Privateroute Component={Appointmentdate} />}
@@ -130,7 +131,7 @@ const Navigation = () => {
           path="/provider"
           element={<Privateroute Component={Provider} />}
         />
-        <Route path="/visittype" element={<Privateroute Component={VType} />} />
+        <Route path="/visittype" element={t_type !== "trainer" ? <Privateroute Component={VType} />:<Navigate to="/" /> } />
         <Route
           path="/question"
           element={<Privateroute Component={Questionpage} />}
@@ -193,9 +194,6 @@ const Navigation = () => {
         <Route path="/sessiondetails" element={<Privateroute Component={SessionDetails}/>} />
         <Route path="/Tsession" element={<Privateroute Component={TrainerVideo}/>} />
         <Route path="/trainerdescription" element={<Privateroute Component={Trainerdescription}/>}/>
-        
-        
-
 
       </Routes>
     </BrowserRouter>

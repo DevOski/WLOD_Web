@@ -3,6 +3,21 @@
   padding: 0;
   /* height: 100%;   */
 }
+* div{
+  background-color: #be1f2d !important;
+  
+}
+.maincontainer{
+  background-color: white !important;
+}
+#root{
+  background-color: white !important;
+
+}
+._3Sxu7{
+  background-color: white !important;
+
+}
 .form-control:focus {
   color: #212529;
   background-color: #fff;

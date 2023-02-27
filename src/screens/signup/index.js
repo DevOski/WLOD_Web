@@ -141,21 +141,21 @@ const SignUp = () => {
         </div>
      
 
-          <Row>
-            <Col lg="6" >
+          <Row >
+            <Col lg="6" className="maincontainer" >
               {/* <div className="imm" style={{border:'solid yellow'}}> */}
                 <img style={{ width: "102%", height: "100%" }} src={mother} />
               {/* </div> */}
             </Col>
-            <Col lg="6" className="bg">
-              <div className="grandgrandparent">
+            <Col lg="6" className="bg " >
+              <div className="grandgrandparent maincontainer">
                 <h4>Weight Loss On Demand</h4>
                 <p>Sign up and get professional consultancy</p>
-                <div className="grandparentdiv">
-                  <div className="parentdiv">
-                    <div className="inputdiv">
-                      <div className="emaildiv mt-2">Email</div>
-                      <div className="inputmain">
+                <div className="grandparentdiv maincontainer">
+                  <div className="parentdiv ">
+                    <div className="inputdiv maincontainer">
+                      <div className="emaildiv mt-2 maincontainer">Email</div>
+                      <div className="inputmain maincontainer">
                         <input
                           type="email"
                           id="email"
@@ -178,9 +178,9 @@ const SignUp = () => {
                     />
                   </div>
                 </div> */}
-                    <div className="inputdiv">
-                      <div className="emaildiv mt-2">Password</div>
-                      <div className="inputmain">
+                    <div className="inputdiv maincontainer">
+                      <div className="emaildiv mt-2 maincontainer">Password</div>
+                      <div className="inputmain maincontainer">
                         <input
                           type="email"
                           id="pass"
@@ -191,8 +191,8 @@ const SignUp = () => {
                         />
                       </div>
                     </div>
-                    <div className="inputdiv">
-                      <div className="emaildiv">
+                    <div className="inputdiv maincontainer">
+                      <div className="emaildiv maincontainer">
                         <input
                           type="checkbox"
                           id="topping"
@@ -203,7 +203,7 @@ const SignUp = () => {
                           onChange={handleagrement}
                         />
                       </div>
-                      <div className="inputmain2">
+                      <div className="inputmain2 maincontainer">
                         I agree to Weight Loss On Demand's
                         <span className="member" onClick={gotomembershippage}>
                           Membership Terms
@@ -213,8 +213,8 @@ const SignUp = () => {
                   </div>
                 </div>
 
-                <div className="lastchild">
-                  <div className="signbb">
+                <div className="lastchild maincontainer">
+                  <div className="signbb maincontainer">
                     <Button
                       className="signup-create-btn"
                       onClick={() => handleSubmit()}

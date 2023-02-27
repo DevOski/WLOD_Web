@@ -12,6 +12,17 @@
 .iconcolor{
  color: #be1f2d;
 } 
+.widget-svg{
+  background-color: white !important;
+}
+.star-container{
+  background-color: white !important;
+
+}
+.star-ratings{
+  background-color: white !important;
+
+}
 .of{
   overflow-x: clip !important;
 }

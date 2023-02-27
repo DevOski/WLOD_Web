@@ -2,6 +2,29 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600 !important;
 }
+
+.scrolldiv{
+    /* border: solid; */
+    height: 47.4rem;
+    margin-left: 0.2%;
+    /* padding-left: 4%; */
+    padding: 2%;
+    /* border: 1px solid; */
+    /* width: 53.4rem; */
+    position: relative;
+    bottom: 0;
+    /* left: 3.4%; */
+    overflow-y: scroll;
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+}
+.aptlist{
+
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.45) !;
+}
 .wi{
     width:65% !important;
 }
@@ -181,3 +204,38 @@ input.input {
     margin-right: 39px !important;
     margin-top: 27px;
 }
+@media only screen and (min-width: 991px){
+    .navshow{
+        display:block;
+    }
+    .sidenavshow{
+        display:none;
+    }
+    .maiaptdiv{
+        margin-top: 4%;
+        
+    }
+  }
+  @media only screen and (max-width: 991px){
+    .navshow{
+        display:none;
+    }
+    .sidenavshow{
+        display:block;
+    }
+    /* .center-screen {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      } */
+  }
+  .center-screen{
+    position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      
+  }

@@ -47,12 +47,12 @@ const changrating=(newRating,name)=>{
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
 
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5">
-      <Col lg='4' md="3" sm="1"></Col>
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 maincontainer">
+      <Col lg='4' md="3" sm="1" className="maincontainer"></Col>
         <Col lg='4' md="6" sm="10"
-          className="d-flex justify-content-center flex-column align-items-center"
+          className="d-flex justify-content-center flex-column align-items-center maincontainer"
           >
           <Card
             style={{
@@ -63,15 +63,16 @@ const changrating=(newRating,name)=>{
               alignItems: "center",
               
             }}
+            className="maincontainer"
           >
-            <div style={{ width: "30%" }}>
+            {/* <div className="maincontainer" style={{ width: "30%" }}> */}
               {/* <Card.Img
                 style={{ width: "100%", height: "100%", borderRadius: "100px" }}
                 variant="top"
                 src={tr}
               /> */}
-            </div>
-            <Card.Title>Thank you for your visit</Card.Title>
+            {/* </div> */}
+            <Card.Title className="maincontainer">Thank you for your session</Card.Title>
            
             <Card.Body
               style={{
@@ -80,13 +81,14 @@ const changrating=(newRating,name)=>{
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              className="maincontainer"
             >
               <Button onClick={goto} variant="primary">Done</Button>
               
             </Card.Body>
           </Card>
         </Col>
-      <Col lg='4' md="3" sm="1"></Col>
+      <Col ></Col>
 
       </Row>
    </div>

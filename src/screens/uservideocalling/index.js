@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AgoraUIKit from "agora-react-uikit";
+// import AgoraUIKit from "agora-react-uikit";
 import {
   createChannel,
   getTokenFromAPI,
@@ -7,8 +7,11 @@ import {
 } from "../../services/utilities/api";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button } from "@material-ui/core";
+import VideoCall from "./VideoCall";
 import { Loader } from "../../component";
+import { createClient, createMicrophoneAndCameraTracks } from "agora-rtc-react";
+
 
 const Videocalling = () => {
   const [loder, setloder] = useState(false)
@@ -21,6 +24,13 @@ const Videocalling = () => {
   const [tokenAPI, setTokenAPI] = useState("");
   let navigate = useNavigate();
   const usertoken = useSelector((state) => state.token);
+
+  const appId = '270b512970864b0a93b14650e52e8f9c';
+  const [inCall, setInCall] = useState(false);
+  //  const channelName = "Testings";
+  
+
+
   useEffect(() => {
     // console.log("123------------------->>>");
     getUserDetails();
@@ -72,42 +82,27 @@ const Videocalling = () => {
       console.log(error);
     }
   };
-  const rtcProps = {
-    appId: "270b512970864b0a93b14650e52e8f9c",
-    channel: channelName, // your agora channel
-    token: tokenAPI, // use null or skip if using app in testing mode
-  };
-  
-  console.log(rtcProps, "====>rctprops");
-  const callbacks = {
-    EndCall: () => {navigate('/rating',{
-      state : {
-        tr_id:tr_id,
-       
-      }
-    }
-    
-    );}
-  };
-  const getChannel = () => {
-    // getUserDetails();
-    setloder(true)
-
-    setVideoCall(true);
-    // setloder(false)
-  };
-  return videoCall  ? (
-    <div  style={{ display: "flex", width: "100%", height: "100vh"}}>
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={{ UIKitContainer: {height: '100%', width: '200px'}}} />
-    </div>
+  const token=tokenAPI;
+ const config = { mode: "rtc", codec: "vp8", appId: appId, token: token };
+ const useClient = createClient(config);
+ const useMicrophoneAndCameraTracks = createMicrophoneAndCameraTracks();
+  return ( 
+  <div className="App" style={{ height: "100%" }}>
+  {inCall ? (
+    <VideoCall setInCall={setInCall} config={config} useClient={useClient} useMicrophoneAndCameraTracks={useMicrophoneAndCameraTracks} channelName={channelName} tr_id={tr_id}/>
   ) : (
-    <div className="d-flex justify-content-center align-items-center" style={{ display: "flex", width: "100vw", height: "100vh"}}>
-<div style={{width:"auto"}}>
-
-    <Button onClick={getChannel}>Join Session</Button>
-</div>
-{loder && <Loader />}
+    <div style={{ display: "flex",justifyContent:'center',alignItems:'center', width: "100vw", height: "100vh"}}>
+    <Button
+      style={{backgroundColor:"#be1f2d",color:"white",width:'250px',height:'40px'}}
+      onClick={() => {setInCall(true)}}
+    >
+      Join Call
+    </Button>
     </div>
+  )}
+{loder && <Loader />}
+</div>
+   
   );
 };
 

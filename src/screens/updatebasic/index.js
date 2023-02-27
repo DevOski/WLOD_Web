@@ -15,6 +15,7 @@ import { storeData } from "../../store/action";
 import { getUser } from "../../services/utilities/api";
 import moment from "moment";
 import { setDate } from "date-fns";
+import NavSidebar from "../../component/navsidebar";
 const UpdateBasic = () => {
   let navigate = useNavigate();
   let search = useSearchParams();
@@ -370,14 +371,23 @@ const UpdateBasic = () => {
     }
   console.log(date);
   return (
-    <div className="fulllod">
-      <BasicExample />
-
-      <Container className="pad">
-        <form className="mb-3 w-100 pt-3">
+    <div className="fulllod maincontainer">
+     <div className="navshow">
+            <BasicExample/>
+        </div>
+        <div className="sidenavshow">
+        <NavSidebar/>
+        </div>
+        <div className="mobilediv maincontainer">
+        <Row className="maincontainer"> 
+              <Col lg='2' md="1" sm="1" xs="1" className="maincontainer">
+              </Col>
+              <Col lg='8' md="10" sm="10" xs="10" className="maincontainer">
+      <div className="maincontainer">
+        <form className="mb-3 w-100 pt-3 maincontainer">
           <h3>Update your Info</h3>
-          <div className="d-flex gap-2">
-            <div className="mb-3 w-50">
+          <div className="d-flex gap-2 maincontainer">
+            <div className="mb-3 w-50 maincontainer">
               <label>First name</label>
               <input
                 type="text"
@@ -388,7 +398,7 @@ const UpdateBasic = () => {
                 onKeyPress={enterKye}
               />
             </div>
-            <div className="mb-3 w-50">
+            <div className="mb-3 w-50 maincontainer">
               <label>Last name</label>
               <input
                 type="text"
@@ -397,12 +407,12 @@ const UpdateBasic = () => {
                 value={Lastname}
                 onChange={(event) => setLastname(event.target.value)}
                 onKeyPress={enterKye}
-              />
+                />
             </div>
           </div>
-          <div className="d-flex gap-2">
-            <div className="mb-3  w-50">
-              <div className="d-flex flex-column">
+          <div className="d-flex gap-2 maincontainer">
+            <div className="mb-3  w-50 maincontainer">
+              <div className="d-flex flex-column maincontainer">
                 <label>Date of birth</label>
                 <input
                   type="date"
@@ -416,7 +426,7 @@ const UpdateBasic = () => {
               </div>
             </div>
 
-            <div className="mb-3 w-50">
+            <div className="mb-3 w-50 maincontainer">
               <label>Phone number</label>
               <input
                 type="number"
@@ -429,10 +439,10 @@ const UpdateBasic = () => {
             </div>
           </div>
 
-          <div className="mb-3 ff">
-            <div className="db">
+          <div className="mb-3 ff maincontainer">
+            <div className="db maincontainer" >
               <label>Gender:</label>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -442,10 +452,10 @@ const UpdateBasic = () => {
                   checked={CheckedMale}
                   onChange={handleOnChangemale}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Male</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -455,15 +465,15 @@ const UpdateBasic = () => {
                   className="topping"
                   onChange={handleOnChangeFemale}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Female</p>
               </div>
             </div>
           </div>
-          <div className="mb-3 ff">
-            <div className="db">
+          <div className="mb-3 ff maincontainer">
+            <div className="db maincontainer">
               <label>Marital:</label>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -473,10 +483,10 @@ const UpdateBasic = () => {
                   checked={isCheckedsingle}
                   onChange={handleOnChangesingle}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Single</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -486,10 +496,10 @@ const UpdateBasic = () => {
                   className="topping"
                   onChange={handleOnChangemarried}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Married</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -499,10 +509,10 @@ const UpdateBasic = () => {
                   className="topping"
                   onChange={handleOnChangeDivoced}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Divorced</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -512,16 +522,16 @@ const UpdateBasic = () => {
                   className="topping"
                   onChange={handleOnChangeWidowd}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Widowed</p>
               </div>
             </div>
           </div>
 
-          <div className="mb-3 ff">
-            <div className="db leftin">
+          <div className="mb-3 ff maincontainer">
+            <div className="db leftin maincontainer">
               <label>Language:</label>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -531,10 +541,10 @@ const UpdateBasic = () => {
                   checked={isCheckedenglish}
                   onChange={handleOnChangeLangeng}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">English</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -544,15 +554,15 @@ const UpdateBasic = () => {
                   className="topping"
                   onChange={handleOnChangeLangspan}
                   onKeyPress={enterKye}
-                />
+                  />
                 <p className="pleft">Spanish</p>
               </div>
             </div>
           </div>
-          <div className="mb-3 ff">
+          <div className="mb-3 ff maincontainer">
             <label>Smoking:</label>
-            <div className="db">
-              <div className="topping">
+            <div className="db maincontainer">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -562,10 +572,10 @@ const UpdateBasic = () => {
                   checked={isSmokingstatusNever}
                   onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusnever}
-                />
+                  />
                 <p className="pleft">Never</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -575,10 +585,10 @@ const UpdateBasic = () => {
                   className="topping"
                   onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatusformer}
-                />
+                  />
                 <p className="pleft">Former</p>
               </div>
-              <div className="topping">
+              <div className="topping maincontainer">
                 <input
                   type="checkbox"
                   id="topping"
@@ -588,25 +598,31 @@ const UpdateBasic = () => {
                   className="topping"
                   onKeyPress={enterKye}
                   onChange={handleOnChangesmokinstatuscurrent}
-                />
+                  />
                 <p className="pleft">Current</p>
               </div>
             </div>
           </div>
-          <div className="bdupdatediv">
-            <div className="bdupdate">
+          <div className="bdupdatediv maincontainer">
+            <div className="bdupdate maincontainer">
               <Button onClick={update} className="btn btn-primary">
                 Update information
               </Button>
             </div>
           </div>
         </form>
-        {loder && <Loader />}
+       
+      </div>
+      </Col>
+      <Col lg='2' md="1" sm="1" xs="1" className="maincontainer">
+              </Col>
+          </Row>
+      </div>
+      {loder && <Loader />}
         {error && <Error onClick={Close} tittle={errorMessage} />}
         {error2 && (
           <Error onClick={Close2} tittle={errorMessage} congrats={true} />
-        )}
-      </Container>
+          )}
     </div>
   );
 };

@@ -33,6 +33,8 @@ const pageStyles ={
    
   },
   div2 :{
+    display:'flex',
+    flexDirection:'row',
     // display:'inline',
     // flexDirection:'row',
     padding:'13px 17px 13px 17px',
@@ -257,7 +259,7 @@ const ChooseSlot = () => {
         date,
         currentDTime
       );
-      setDateSlot(response.data.data);
+      setDateSlot(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -293,55 +295,55 @@ const ChooseSlot = () => {
   };
   let navigate = useNavigate();
   return (
-    <div className="of">
+    <div className="of maincontainer">
      <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
 
-      <Row class="d-flex justify-content-center align-items-center">
-        <Col lg="4" md="3" sm="2" xs="2"></Col>
+      <Row class="d-flex justify-content-center align-items-center maincontainer">
+        <Col lg="4" md="3" sm="2" xs="2" className="maincontainer"></Col>
         <Col
-          lg="2" md="3" sm="4" xs="4"
+          lg="2" md="3" sm="4" xs="4" className="maincontainer"
           >
-          <div className="button-w" onClick={Show}>
+          <div className="button-w maincontainer" onClick={Show}>
             <Button>Calender</Button>
           </div>
           </Col>
           <Col
-          lg="2" md="3" sm="4" xs="4"
+          lg="2" md="3" sm="4" xs="4" className="maincontainer"
           >
-          <div className="button-w" onClick={Showlist}>
+          <div className="button-w maincontainer" onClick={Showlist}>
             <Button>List</Button>
           </div>
         </Col>
-        <Col lg="4" md="3" sm="2" xs="2"></Col>
+        <Col lg="4" md="3" sm="2" xs="2" className="maincontainer"></Col>
 
       </Row>
-      <Row>
-      <Col lg="3" md="2" sm="1" xs="1"></Col>
-        <Col lg="6" md="8" sm="10" xs="10" className="d-flex justify-content-center">
+      <Row className="maincontainer">
+      <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+        <Col lg="6" md="8" sm="10" xs="10" className="d-flex justify-content-center maincontainer">
           {
           !calendshowlistValidation.current && (
-            <div className="calender">
-              <p className="text-center">
+            <div className="calender maincontainer">
+              <p className="text-center maincontainer">
                 Selected date:{" "}
                 {date ? format(date, "dd MMM yyyy", { locale: enGB }) : "None"}
               </p>
               {dateSlot?.length ? (
                 dateSlot.map((item,index)=>{
                   return(
-                  <div key={index} className="classextbuttonsl">
+                  <div key={index} className="classextbuttonsl maincontainer">
                     <p className="timeslot">Time:{item.sl_time}</p> 
                   </div>
                   )
                 })
               ) : (
-                <div className="classextbutton">
-                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div1} key={obj.sl_id}>{obj.sl_time}</div></button>)
+                <div className="classextbutton maincontainer">
+                {tr_slot ? tr_slot.map(obj => <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div  className="maincontainer" style={pageStyles.div1} key={obj.sl_id}>{obj.sl_time}</div></button>)
                    : <p>No record found</p>
                    }                   
               </div>
@@ -357,8 +359,8 @@ const ChooseSlot = () => {
           )}
           {
           calendshowlistValidation.current && (
-            <div className="slotdiv1">
-             {slot ? slot.map(obj => <div className="slotdiv1"> <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div style={pageStyles.div2} key={obj.sl_id}>{obj.sl_time}</div></button></div>) : <div className="slotdiv"><p className="timeslot">There is no slot</p></div>}
+            <div className="slotdiv1 maincontainer">
+             {slot ? slot.map(obj => <div className="slotdiv1 maincontainer"> <button onClick={() => SelectSlot(obj.tr_id,obj.sl_time,obj.tr_date,obj.tr_day)} style={pageStyles.mainDiv}><div className="maincontainer" style={pageStyles.div2} key={obj.sl_id}><span>({moment(obj.tr_date,'DD/MM/YYYY').format('MM/DD/YYYY')}) </span>&nbsp;<span>{obj.sl_time}</span></div></button></div>) : <div className="slotdiv maincontainer"><p className="timeslot">There is no slot</p></div>}
             </div>
           )}
         </Col>

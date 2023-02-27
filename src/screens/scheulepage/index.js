@@ -28,18 +28,18 @@ const SessionBook = () => {
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-      <Row >
+      <Row className="maincontainer">
         <Col
-          lg="12" >
-            <div className="booksession">
+          lg="12" className="maincontainer">
+            <div className="booksession maincontainer">
 
-            <div className="bookseebuttdiv">
+            <div className="bookseebuttdiv maincontainer">
 
             <Button style={{width: 'auto'}} onClick={goto}> 
             Choose Consultant
             </Button>
             </div>
-            <div className="bookseebuttdiv">
+            <div className="bookseebuttdiv maincontainer">
 
             <Button onClick={gotodate}> 
             Choose Time

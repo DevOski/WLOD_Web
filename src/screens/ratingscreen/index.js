@@ -84,21 +84,21 @@ const RatingScreen = () => {
     setTrImg(response.data.data[0].images);
   };
   return (
-    <div className="of">
+    <div className="of maincontainer">
       <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-      <div className="mobilediv">
+      <div className="mobilediv maincontainer">
 
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
-      <Col lg='4' md="3" sm="1"></Col>
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pt-5 maincontainer">
+      <Col lg='4' md="3" sm="1" className="maincontainer"></Col>
         <Col lg='4' md="6" sm="10"
-          className="d-flex justify-content-center flex-column align-items-center"
+          className="d-flex justify-content-center flex-column align-items-center maincontainer"
           >
-          <Card
+          <Card className="maincontainer"
             style={{
               // width: "38rem",
               padding:'8%',
@@ -107,22 +107,23 @@ const RatingScreen = () => {
               alignItems: "center",
             }}
             >
-            <div style={{ width: "200px", height: "200px", padding: "4%" }}>
+            <div className="maincontainer" style={{ width: "200px", height: "200px", padding: "4%" }}>
               <Card.Img
                 style={{ width: "100%", height: "100%", borderRadius: "100px" }}
                 letiant="top"
                 src={trImg}
               />
             </div>
-            <Card.Title>{trainerName}</Card.Title>
+            <Card.Title className="maincontainer">{trainerName}</Card.Title>
             <StarRatings
+            // className="maincontainer"
               rating={rating}
               starRatedColor="#be1f2d"
               changeRating={changrating}
               numberOfStars={5}
               name="rating"
               />
-            <Card.Body
+            <Card.Body className="maincontainer"
               style={{
                 width: "18rem",
                 display: "flex",

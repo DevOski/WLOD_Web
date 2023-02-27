@@ -185,3 +185,10 @@ input.input {
     width: 100% !important;
     margin-bottom: 10px !important;
 }
+.center-screen {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }

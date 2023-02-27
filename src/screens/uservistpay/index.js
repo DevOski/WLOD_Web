@@ -119,7 +119,7 @@ const Confirmpay = () => {
     }
   return (
     <>
-      <div className="of">
+      <div className="of maincontainer">
         {/* <Navbar expand="lg" variant="light" bg="light">
           <Navbar.Brand href="#">
           <img className="header-logo" src={logo} />
@@ -131,20 +131,20 @@ const Confirmpay = () => {
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv ">
-      <Container fluid>
-      <Row>
-      <Col lg='4' md="3" sm="1"></Col>
+        <div className="mobilediv maincontainer">
+      <Container fluid className="maincontainer">
+      <Row className="maincontainer">
+      <Col lg='4' md="3" sm="1" className="maincontainer"></Col>
         <Col lg='4' md="6" sm="10" 
-            className="con-col "
-            >
-            <Row>
-              <Col lg='2' md="1" sm="1" xs="1">
+            className="con-col maincontainer"
+            > 
+            <Row className="maincontainer"> 
+              <Col lg='2' md="1" sm="1" xs="1" className="maincontainer">
               </Col>
-              <Col lg='8' md="10" sm="10" xs="10">
-              <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Credit card number</Form.Label>
+              <Col lg='8' md="10" sm="10" xs="10" className="maincontainer">
+              <Form className="maincontainer">
+              <Form.Group className="mb-3 maincontainer" controlId="formBasicEmail">
+                <Form.Label className="maincontainer">Credit card number</Form.Label>
                 <Form.Control
                   type="numberic"
                   defaultValue={cardnumber}
@@ -158,7 +158,7 @@ const Confirmpay = () => {
                 </Form.Text> */}
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3 maincontainer" controlId="formBasicPassword">
                 <Form.Label>Expiration(MM)</Form.Label>
                 <Form.Control
                   defaultValue={Expiration}
@@ -170,7 +170,7 @@ const Confirmpay = () => {
                   />
               </Form.Group>
          
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3 maincontainer" controlId="formBasicPassword">
                 <Form.Label>Expiration(YY)</Form.Label>
                 <Form.Control
                   defaultValue={ExpirationYY}
@@ -181,7 +181,7 @@ const Confirmpay = () => {
                   maxLength={2}
                   />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3 maincontainer" controlId="formBasicPassword">
                 <Form.Label>Cvv</Form.Label>
                 <Form.Control
                   defaultValue={Cvv}
@@ -209,13 +209,13 @@ const Confirmpay = () => {
               </Button>
             </Form>
               </Col>
-              <Col lg='2' md="1" sm="10" xs="10">
+              <Col lg='2' md="1" sm="10" xs="10" className="maincontainer">
               </Col>
 
             </Row>
            
           </Col>
-      <Col lg='4' md="3" sm="1"></Col>
+      <Col lg='4' md="3" sm="1" className="maincontainer"></Col>
 
         </Row>
     </Container>

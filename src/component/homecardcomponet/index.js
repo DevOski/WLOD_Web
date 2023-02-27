@@ -20,14 +20,14 @@ export const CardHome = () => {
   
   return (
     
-    <Row>
-    <Col lg='1' md="1" sm="1" xs="0" style={{marginTop:'5%'}}></Col>
-    <Col className='cardcol' lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
-        <Card className="homecard">
+    <Row className="maincontainer">
+    <Col lg='1' md="1" sm="1" xs="0" style={{marginTop:'5%'}} className="maincontainer"></Col>
+    <Col className='cardcol maincontainer' lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
+        <Card className="homecard maincontainer">
         <Card.Img variant="top" src={book} />
-        <Card.Body>
-        <Card.Title>See first available</Card.Title>
-        <Card.Text >
+        <Card.Body className="maincontainer">
+        <Card.Title className="maincontainer">See first available</Card.Title>
+        <Card.Text className="maincontainer">
         Certified consultant <br></br> 
         Estimated time less than 5min 
         </Card.Text>
@@ -36,11 +36,11 @@ export const CardHome = () => {
         </Card>
     </Col>
     
-    <Col className='' lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
-        <Card className="homecard">
+    <Col className="maincontainer" lg='5' md="5" sm="5" xs="12" style={{marginTop:'5%',display:'flex',justifyContent:'center'}}>
+        <Card className="homecard maincontainer">
           <Card.Img variant="top" src={bg2}  />
-          <Card.Body>
-        <Card.Title>Book a session</Card.Title>
+          <Card.Body className="maincontainer">
+        <Card.Title className="maincontainer">Book a session</Card.Title>
         <Card.Text>
         Certified consultant<br></br>
       Choose your consultant or time
@@ -49,7 +49,7 @@ export const CardHome = () => {
       </Card.Body>
         </Card>
     </Col>
-    <Col lg='1' md="1" sm="1" xs="0" style={{marginTop:'5%'}}></Col>
+    <Col lg='1' md="1" sm="1" xs="0" className="maincontainer" style={{marginTop:'5%'}}></Col>
 
     </Row>
   )

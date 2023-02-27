@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { useClient } from "./settings";
+// import { useClient } from "./settings";
 import { Grid, Button } from "@material-ui/core";
 import MicIcon from "@material-ui/icons/Mic";
 import MicOffIcon from "@material-ui/icons/MicOff";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import VideocamOffIcon from "@material-ui/icons/VideocamOff";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-export default function Controls(props) {
-  const params = useLocation();
-  console.log("trainer details",params.state);
+import {useNavigate } from "react-router-dom";
 
+export default function Controls(props) {
+  let navigate = useNavigate();
+  const {useClient,identity}=props;
   const client = useClient();
   const { tracks, setStart, setInCall } = props;
   const [trackState, setTrackState] = useState({ video: true, audio: true });
@@ -31,7 +30,6 @@ export default function Controls(props) {
   };
 
   const leaveChannel = async () => {
-    console.log("trainer",params.state);
     await client.leave();
     client.removeAllListeners();
     tracks[0].close();
@@ -45,7 +43,8 @@ export default function Controls(props) {
       <Grid item>
         <Button
           variant="contained"
-          color={trackState.audio ? "primary" : "secondary"}
+          
+          color={trackState.audio ? "secondary" : "secondary"}
           onClick={() => mute("audio")}
         >
           {trackState.audio ? <MicIcon /> : <MicOffIcon />}
@@ -54,7 +53,7 @@ export default function Controls(props) {
       <Grid item>
         <Button
           variant="contained"
-          color={trackState.video ? "primary" : "secondary"}
+          color={trackState.video ? "secondary" : "secondary"}
           onClick={() => mute("video")}
         >
           {trackState.video ? <VideocamIcon /> : <VideocamOffIcon />}
@@ -63,10 +62,13 @@ export default function Controls(props) {
       <Grid item>
         <Button
           variant="contained"
-          color="default"
-          onClick={() => leaveChannel()}
+          color="secondary"
+          onClick={() => {leaveChannel(); navigate('/trainerdescription',{
+            state :{
+              identity:identity
+            }})}}
         >
-          Leave
+          End 
           <ExitToAppIcon />
         </Button>
       </Grid>

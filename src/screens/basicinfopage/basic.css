@@ -6,6 +6,14 @@
 ::-webkit-datetime-edit-year-field { color: purple; }
 ::-webkit-inner-spin-button { display: none; }
 ::-webkit-calendar-picker-indicator { background: orange; } */
+/* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+
+  background-color: white !important;
+} */
+.MuiButtonBase-root {
+  background-color: white !important;
+
+}
 .basicinfocard{
   margin: 3%;
   padding: 2%;

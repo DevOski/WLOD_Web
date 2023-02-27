@@ -11,7 +11,7 @@ import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import moment from "moment/moment";
 import {
-  BasicExample,
+  TrainerHed,
   SideMainBar,
   Loader,
   // TrainerSideBar,
@@ -74,9 +74,9 @@ const TrainerPastSession = () => {
   }, []);
   const getUserDetails = async () => {
     setloader(true)
-    const finaldate =
-      moment().format("YYYY-MM-DD") + " " + moment().format("hh:mm:00A");
-    console.log(finaldate);
+
+    const finaldate =moment().format("YYYY-MM-DD") + " " + moment().format("hh:mm:00A");
+    console.log("))))))))))))))))))",finaldate);
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
 
@@ -92,10 +92,13 @@ const TrainerPastSession = () => {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.data);
-        setUserName(result.data.user)
-        setapt(result.data);
+        console.log("%%%%%%%%%%%",result.data);
         setloader(false)
+        if(result.status === 200){
+          setUserName(result.data.user)
+          setapt(result.data);
+
+        }
       })
       .catch((error) => console.log("error", error));
     // setLoader(true);
@@ -187,30 +190,35 @@ const TrainerPastSession = () => {
   };
   return (
     <div className="wi55">
-      <BasicExample/>
-       <SideMainBar/>
-      <Row>
-        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
-       <Col lg="2" md="3" sm="3" xs="3" >
+    <div className="navshow">
+            <TrainerHed/>
+        </div>
+        <div className="sidenavshow">
         <TrainerSideBar/>
-       </Col>
-        <Col  lg="1" md="0" sm="0" xs="1" ></Col>
+        </div>
+        <div className="mobilediv maincontainer">
+      <Row className="maincontainer">
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       {/* <Col lg="2" md="3" sm="3" xs="3" >
+        <TrainerSideBar/>
+       </Col> */}
+        {/* <Col  lg="1" md="0" sm="0" xs="1" ></Col> */}
         {/* <CardHome /> */}
-        <Col lg="9" md="9" sm="9" xs="9" style={{display: 'flex',justifyContent:"center"}}>
-          {/* <Container> */}
-          <Row sx={{width:'inherit'}}>
-            <Col class="column">
-              <div className="text-center mb-2 mt-4">
-                <h3>PAST SESSIONS</h3>
-              </div>
-            <div style={{width:'900px',height:'430px', position:'relative'}}>
-              <div
-                className="scoll"
-                style={{ overflow: "overlay", width:'100%',height:'100%',position:'absolute',display: 'flex',alignItems: 'center',flexDirection: 'column'}}
-              >
-                {apt ? (
-                  apt.map((obj, index) => (
-                    <div 
+        <Col lg="12" md="12" sm="12" xs="12" className="maincontainer">
+            {/* <Container> */}
+          <Row className="maincontainer" >
+          <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+          <Col lg="6" md="8" sm="10" xs="10" className="maincontainer">
+              <div className="maiaptdiv maincontainer">
+            {apt ? (
+              <>
+              <div className="text-center mb-4 mt-4 maincontainer">
+              <h3>PAST SESSIONS</h3>
+            </div>
+            <div className="scrolldiv maincontainer">
+                  {apt && apt.map((obj,index) => (
+                      <div className="maincontainer">
+                    <div className="maincontainer"
                       key={index}
                       onClick={() =>
                         HandleApt(
@@ -232,43 +240,48 @@ const TrainerPastSession = () => {
                           obj.visit.session_desc
                         )
                       }
-                    >
-                      <Link style={{ textDecoration: "none" }}>
-                        <Card sx={{ width: 700, marginTop: "2%" }}>
-                          <CardContent>
-                            {/* <Typography
-                              sx={{ fontSize: 14, fontWeight: "bold" }}
-                              color="text.secondary"
-                              gutterBottom
-                            >
-                              Details
-                            </Typography> */}
-
-                            <Typography variant="body2" sx={{ fontSize: 14, fontWeight: "bold" }}>
-                          {obj.user}
-                            </Typography>
-                            <Typography variant="body2" sx={{ fontSize: 14, fontWeight: "bold" }}>
-                              {moment(obj.apt_time).format("DD/MM/YYYY")}
-                            </Typography>
-                          </CardContent>
-                          {/* <CardActions>
+                    > 
+                      <Link className="maincontainer" style={{textDecoration:"none"}}>
+                      <Card className="aptlist maincontainer" sx={{marginTop:"2%" }}>
+                      <CardContent className="maincontainer">
+                        {/* <Typography sx={{ fontSize: 14, fontWeight: 'bold'}} color="text.secondary" gutterBottom>
+                          Details
+                        </Typography> */}
+                       
+                        <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
+                       {obj.user}
+                        </Typography>
+                        <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
+                        Date: {moment(obj.visit.created_at).format("MM/DD/YYYY")}
+                        </Typography>
+                      </CardContent>
+                      {/* <CardActions>
                         <Button size="small">Learn More</Button>
                       </CardActions> */}
-                        </Card>
+                    </Card>
                       </Link>
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-center">No record found</p>
-                )}
-                </div>
-              </div>
+                      </div>
+                      </div>
+                    ))
+                 }
+           </div>
+            </>
+            ) : (
+              <p className="center-screen">No record found</p>
+            )}
+           
+             
+           </div>
             </Col>
+            
+          <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+
           </Row>
           {/* </Container> */}
         </Col>
         
       </Row>
+      </div>
       {loader && <Loader />}
     </div>
   );

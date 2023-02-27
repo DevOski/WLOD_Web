@@ -1,0 +1,33 @@
+.logbutt {
+    width: auto !important;
+    /* margin: 6px; */
+}
+.proname{
+    padding-top: 2%;
+    padding-right: 2%;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.me-auto.navbar-nav {
+    margin-left: 87px !important;
+}
+.bnav{
+    width: 150px;
+    /* border: solid; */
+    margin: 6px 20px 6px 20px !important;
+}
+.nav-b{
+    /* opacity: 0; */
+    background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+}
+/* @media only screen and (min-width: 990px){
+    .bnav {
+        margin-left: 1x !important;
+        margin-right: 5px !important;
+    }
+}
+@media only screen and (max-width: 991px){
+    .bnav{
+        margin: 6px 140px 6px 140px !important;
+    }
+} */

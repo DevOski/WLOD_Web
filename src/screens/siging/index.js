@@ -50,10 +50,12 @@ const Siging = () => {
           console.log(response.data);
           setloder(false);
           dispatch(storeData(response.data.token));
+          dispatch(trainerStack(response.data.type));
+
           navigate("/");
          
         }if (response.data.message == "Trainer found") {
-          console.log(response.data.type,"======>tbhai");
+          console.log(response.data.type,"======>");
           setloder(false);
           dispatch(storeData(response.data.token));
           dispatch(trainerStack(response.data.type));
@@ -89,18 +91,19 @@ const Siging = () => {
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-     
-   <Container>
 
-      <div className="cen">
+     <div className="maincontainer">
+   <Container className="maincontainer">
+
+      <div className="cen maincontainer">
         <p className="well">Welcome</p>
       </div>
 
-      <div className="Auth-form-container" >
-        <form className="Auth-form" >
-          <div className="Auth-form-content">
+      <div className="Auth-form-container maincontainer" >
+        <form className="Auth-form maincontainer" >
+          <div className="Auth-form-content maincontainer">
             <h3 className="Auth-form-title">Sign in to Your Account</h3>
-            <div className="form-group mt-3">
+            <div className="form-group mt-3 maincontainer">
               <label>Email address</label>
               <input
                 type="text"
@@ -111,18 +114,18 @@ const Siging = () => {
                 
                 />
             </div>
-            <div className="form-group mt-3">
+            <div className="form-group mt-3 maincontainer">
               <label>Password</label>
               <input
                 type="password"
-                className="form-control mt-1"
+                className="form-control mt-1 "
                 placeholder="Enter password"
                 onChange={(event) => setpassword(event.target.value)}
                 onKeyPress={enterKye}
                 
                 />
             </div>
-            <div className="d-grid gap-2 mt-3">
+            <div className="d-grid gap-2 mt-3 maincontainer">
               <Button
                 onClick={Sigin}
                 
@@ -130,14 +133,14 @@ const Siging = () => {
                 Submit
               </Button>
             </div>
-            <div className="d-flex justify-content-end" >
+            <div className="d-flex justify-content-end maincontainer" >
               <p className="forgot-password  mt-2">
                 <a href="/forget" className="signuponsingin">
                   Forgot password?
                 </a>
               </p>
               </div>
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center maincontainer">
               <p className="forgot-password mt-2">
                Don't have an account yet?<span><a href="/signup" className="signuponsingin">Sign Up </a></span>
               </p>
@@ -146,11 +149,12 @@ const Siging = () => {
         </form>
       </div>
       </Container>
+      </div>
       {/* <div className="d-flex justify-content-center mt-2">
         <p>
-          Sign InDon’t have an account yet?
-          <a href="/signup" className="signuponsingin">
-            {" "}
+        Sign InDon’t have an account yet?
+        <a href="/signup" className="signuponsingin">
+        {" "}
             Create an Account
             </a>
             </p>

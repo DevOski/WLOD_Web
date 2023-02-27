@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
-import {
-  config,
-  useClient,
-  useMicrophoneAndCameraTracks,
-  channelName,
-} from "./settings.js";
+
+// import {
+//   config,
+//   useClient, 
+//   useMicrophoneAndCameraTracks,
+//   channelName,
+// } from "./settings.js";
 import { Grid } from "@material-ui/core";
 import Video from "./Video";
 import Controls from "./Controls";
 
 export default function VideoCall(props) {
-  const { setInCall } = props;
+  const { setInCall,config,useClient, useMicrophoneAndCameraTracks,channelName,identity} = props;
   const [users, setUsers] = useState([]);
   const [start, setStart] = useState(false);
   const client = useClient();
   const { ready, tracks } = useMicrophoneAndCameraTracks();
 
+  
   useEffect(() => {
     let init = async (name) => {
       client.on("user-published", async (user, mediaType) => {
@@ -68,14 +70,17 @@ export default function VideoCall(props) {
 
   return (
     <Grid container direction="column" style={{ height: "100%" }}>
-      <Grid item style={{ height: "5%" }}>
-        {ready && tracks && (
-          <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} />
-        )}
-      </Grid>
-      <Grid item style={{ height: "95%" }}>
+      <Grid item style={{ height: "100%"}}>
         {start && tracks && <Video tracks={tracks} users={users} />}
-      </Grid>
+          </Grid>
+        <div style={{position:"absolute",bottom:0,width: 'inherit'}}>
+        <Grid  >
+        {ready && tracks && (
+          <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} useClient={useClient} identity={identity}/>
+          )}
+        </Grid>
+          </div>
+      
     </Grid>
   );
 }

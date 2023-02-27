@@ -25,10 +25,10 @@ const Privateroute = (props) => {
         navigate("/sigin");
         
        }
-       if(t_type =="trainer"){
-        navigate("/trainermode");
+      //  if(t_type =="trainer"){
+      //   navigate("/trainermode");
         
-       }
+      //  }
       
      
       

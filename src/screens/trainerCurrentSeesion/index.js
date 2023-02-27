@@ -7,10 +7,10 @@ import "./tainerhome.css";
 import Form from "react-bootstrap/Form";
 // import Button from 'react-bootstrap/Button';
 // import Card from "react-bootstrap/Card";
-import { MdExpandLess } from "@react-icons/all-files/md/MdExpandLess";
+import NavSidebar from "../../component/navsidebar";
 import { GiHamburgerMenu } from "@react-icons/all-files/gi/GiHamburgerMenu";
 import {
-  BasicExample,
+  TrainerHed,
   Loader,
   SideMainBar,
   // TrainerSideBar,
@@ -189,21 +189,24 @@ const TrainerHome = () => {
   return (
     <div className="wi55">
      
-     <BasicExample/>
-       <SideMainBar/>
-      <Row>
+     <div className="navshow">
+            <TrainerHed/>
+        </div>
+        <div className="sidenavshow">
+        <TrainerSideBar/>
+        </div>
+        <div className="mobilediv maincontainer">
+      <Row className="maincontainer">
         {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
-       <Col lg="2" md="3" sm="3" xs="3" >
+       {/* <Col lg="2" md="3" sm="3" xs="3" >
         <TrainerSideBar/>
        </Col>
-        <Col  lg="1" md="0" sm="0" xs="1" ></Col>
+        <Col  lg="1" md="0" sm="0" xs="1" ></Col> */}
         {/* <CardHome /> */}
-        <Col lg="9" md="9" sm="9" xs="9" style={{display: 'flex',justifyContent:"center",alignItems: "center",}}>
+        <Col className="maincontainer" lg="12" md="12" sm="12" xs="12" style={{display: 'flex',justifyContent:"center",alignItems: "center",}}>
 
           {/* <Container> */}
-          <Row>
-            <Col lg="12">
-              <div style={{ width: "100%" }}>
+              <div className="center-screen maincontainer">
                 {/* <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
@@ -221,19 +224,21 @@ const TrainerHome = () => {
         </Typography>
       </CardContent> */}
                 {visitId !== "" && (
-                  <div
+                  <div className="maincontainer"
                     style={{
+                      width:'250px',
+                      // border:'solid',
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
                     }}
                   >
-                    <div className="trainbdiv">
+                    <div className="trainbdiv maincontainer">
                       <Button size="small" onClick={HandleSession}>
                         View Client details
                       </Button>
                     </div>
-                    <div className="trainbdiv">
+                    <div className="trainbdiv maincontainer">
                       <Button
                         size="small"
                         onClick={() => navigate("/Tsession",{
@@ -249,11 +254,10 @@ const TrainerHome = () => {
                 )}
                 {!visitId && <p>No recent session</p>}
               </div>
-            </Col>
-          </Row>
           {/* </Container> */}
         </Col>
       </Row>
+      </div>
       {loader && <Loader />}
     </div>
   );

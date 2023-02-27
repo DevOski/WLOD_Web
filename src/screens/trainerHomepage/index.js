@@ -16,9 +16,9 @@ import {
   Loader,
   // TrainerSideBar,
   SideMainBar,
+  TrainerHed,
 } from "../../component";
 import TrainerSideBar from "../../component/trainersidebar";
-
 import { Link, useNavigate } from "react-router-dom";
 import { getUser } from "../../services/utilities/api";
 import { removeData, storeUserData } from "../../store/action";
@@ -75,7 +75,7 @@ const TrainerHome = () => {
   const getUserDetails = async () => {
     setloader(true)
     const finaldate = moment().format("YYYY-MM-DD")+" "+moment().format("hh:mm:00A")
-    console.log(finaldate);
+    console.log(")",finaldate);
     var myHeaders = new Headers();
     myHeaders.append("Authorization",token);
 
@@ -88,7 +88,7 @@ const TrainerHome = () => {
     fetch(`https://dashboard.weightlossondemand.com/backend/api/tr_appt/${finaldate}`, requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result.data)
+        console.log("++++++++++++++",result.data)
         setloader(false)
         setapt(result.data)
       })
@@ -143,40 +143,46 @@ const TrainerHome = () => {
   return (
     <div className="wi55">
 
-      <BasicExample/>
-       <SideMainBar/>
-      <Row>
-        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
-       <Col lg="2" md="3" sm="3" xs="3" >
+<div className="navshow">
+            <TrainerHed/>
+        </div>
+        <div className="sidenavshow">
         <TrainerSideBar/>
-       </Col>
-        <Col  lg="1" md="0" sm="0" xs="1" ></Col>
+        </div>
+        <div className="mobilediv maincontainer">
+      <Row className="maincontainer">
+        {/* <Col  lg="1" md="1" sm="1" xs="1" ></Col> */}
+       {/* <Col lg="2" md="3" sm="3" xs="3" >
+        <TrainerSideBar/>
+       </Col> */}
+        {/* <Col  lg="1" md="0" sm="0" xs="1" ></Col> */}
         {/* <CardHome /> */}
-        <Col lg="9" md="9" sm="9" xs="9" style={{display: 'flex',justifyContent:"center"}}>
+        <Col lg="12" md="12" sm="12" xs="12" className="maincontainer">
             {/* <Container> */}
-          <Row >
-            <Col>
-            <div className="text-center mb-2 mt-4">
-               <h3>UPCOMING SESSIONS</h3>
-            </div>
-            <div style={{width:'900px',height:'430px', position:'relative'}}>
-              <div
-                className="scoll"
-                style={{ overflow: "overlay", width:'100%',height:'100%',position:'absolute',display: 'flex',alignItems: 'center',flexDirection: 'column'}}
-              >
+          <Row className="">
+          <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+            <Col lg="6" md="8" sm="10" xs="10" className="maincontainer" >
+              <div className="maiaptdiv maincontainer">
             {apt ? (
-                    apt.map((obj,index) => (
-                      <div key={index} onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
+              <>
+              <div className="text-center mb-4 mt-4 maincontainer">
+              <h3>UPCOMING SESSIONS</h3>
+            </div>
+            <div className="scrolldiv maincontainer">
+                  {apt && apt.map((obj,index) => (
+                      <div className="maincontainer">
+                      
+                      <div className="maincontainer" key={index} onClick={() =>HandleApt(obj.user_token,obj.response_1,obj.response_2,obj.response_3,obj.response_4,obj.response_5,obj.response_6,obj.response_7,obj.response_8,obj.response_9,obj.response_10,obj.response_11,obj.response_12)}>
                         
-                      <Link style={{textDecoration:"none"}}>
-                      <Card sx={{ width:700, marginTop:"2%" }}>
-                      <CardContent>
+                      <Link className="maincontainer" style={{textDecoration:"none"}}>
+                      <Card className="aptlist maincontainer" sx={{marginTop:"2%" }}>
+                      <CardContent className="maincontainer">
                         {/* <Typography sx={{ fontSize: 14, fontWeight: 'bold'}} color="text.secondary" gutterBottom>
                           Details
                         </Typography> */}
                        
                         <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
-                          Date: {moment(obj.apt_time).format("DD/MM/YYYY")}
+                          Date: {moment(obj.apt_time).format("MM/DD/YYYY")}
                         </Typography>
                         <Typography variant="body2" sx={{ fontSize: 14, fontWeight: 'bold'}}>
                           Time: {moment(obj.apt_time).format("hh:mma")}
@@ -189,19 +195,27 @@ const TrainerHome = () => {
                     </Card>
                       </Link>
                       </div>
+                      </div>
                     ))
-                  ) : (
-                    <p>No record found</p>
-                  )}
+                 }
            </div>
+            </>
+            ) : (
+              <p className="center-screen">No record found</p>
+            )}
+           
+             
            </div>
             </Col>
+          <Col lg="3" md="2" sm="1" xs="1" className="maincontainer"></Col>
+
           </Row>
        
 
             {/* </Container> */}
         </Col>
       </Row>
+      </div>
       {loader && <Loader />}
     </div>
   );

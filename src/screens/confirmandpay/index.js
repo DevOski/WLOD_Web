@@ -984,19 +984,19 @@ const ConfirmAndPay = () => {
     }
   };
   return (
-    <div className="of">
+    <div className="of maincontainer">
      <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
 
-      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5">
+      <Row class="d-flex justify-content-center flex-column align-items-center gap-5 pt-5 maincontainer">
         <Col
           lg="12"
-          className="d-flex justify-content-center flex-column align-items-center pt-5"
+          className="d-flex justify-content-center flex-column align-items-center pt-5 maincontainer"
         > <button className="paybutt1 mt-2 mb-2" onClick={goto} >
             {btext}
           </button>
@@ -1016,16 +1016,18 @@ const ConfirmAndPay = () => {
             {/* <button className="paybutt1" onClick={goto} > */}
             Confirm and Pay
           </Button>
+          <p className="mt-2 paytext1 text-center">NOTE: Please make sure that your device uses a mic and camera</p>
         </Col>
       </Row>
-      {loader && <Loader />}
+      
+    </div>
+    {loader && <Loader />}
       {error && (
         <Error onClick={Close} tittle={errorMessage} congrats={congrats} />
       )}
       {apt && (
         <Error onClick={dialog_Close} tittle={errorMessage} congrats={true} />
         )}
-    </div>
         </div>
   );
 };

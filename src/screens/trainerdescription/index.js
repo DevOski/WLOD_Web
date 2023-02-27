@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {
-    BasicExample,
+  TrainerHed,
     Loader,
     OffcanvasExample,
     // TrainerSideBar,
@@ -63,42 +63,51 @@ export default function Trainerdescription() {
   return (
     <div className="wi55">
       <div className="navshow">
-            <BasicExample/>
+            <TrainerHed/>
         </div>
         <div className="sidenavshow">
-        <NavSidebar />
+        <TrainerSideBar/>
         </div>
-      <div className='mobilediv center-screen'>
+      <div className='mobiledivtr center-small-screen maincontainer'>
 
-      <Row>
-        <Col xs="2">
-        </Col>
-        {/* <CardHome /> */}
-        <Col xs="8"  style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+      <Row className='maincontainer' style={{
+        textAlign:'center',
+            // border:'solid',
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
+          marginLeft:'1%',
+          marginRight:'1%'}}>
+        <Col lg='4' md="2" sm="1" className='maincontainer'></Col>
+        <Col lg='4' md="8" sm="10" className='maincontainer'
+        style={{
+            // border:'solid',
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
+          // marginLeft:'1%',
+          // marginRight:'1%',
           paddingTop:'30px'
         }}>
-        <div class="text-center">
+        <div className='maincontainer'>
         <h3> Consultant Description </h3>
-        <div style={{width:'450px'}}>
-        <TextField className="mt-4 w-100"   onKeyPress={enterKye} id="outlined-basic" label="Add Description" variant="outlined" value={trdesc} onChange={e => settrdesc(e.target.value)} multiline maxRows={10} sx={{width: 600}}/>
+        <div className='maincontainer'>
+        <TextField className="mt-4 w-100" onKeyPress={enterKye} id="outlined-basic" label="Add Description" variant="outlined" value={trdesc} onChange={e => settrdesc(e.target.value)} multiline maxRows={10} />
         </div>
     
-        <Row className="mt-4">
-            <Col xs="2">
+        <Row className="mt-4 maincontainer">
+            <Col xs="2" className='maincontainer'>
             </Col>
-            <Col xs="8">
+            <Col xs="8" className='maincontainer'>
           <Button onClick={HandleSubmit}>Submit</Button>
 
             </Col>
-            <Col xs="2">
+            <Col xs="2" className='maincontainer'>
             </Col>
           </Row>
         </div>
         </Col>
-        <Col xs="2">
+        <Col lg='4' md="2" sm="1" className='maincontainer'>
         </Col>
         </Row>
       </div>

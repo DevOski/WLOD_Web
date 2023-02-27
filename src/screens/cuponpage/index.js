@@ -105,7 +105,7 @@ const Cupon = () => {
     }
   return (
     <>
-      <div className="of">
+      <div className="of maincontainer ">
       <div className="navshow">
             <BasicExample/>
         </div>
@@ -117,15 +117,15 @@ const Cupon = () => {
           <img className="header-logo" src={logo} />
           </Navbar.Brand>
         </Navbar> */}
-        <Container fluid>
-        <div className="mobilediv">
+        <Container fluid className="maincontainer">
+        <div className="mobilediv maincontainer">
 
-        <Row class="d-flex justify-content-center align-items-center gap-5 pt-5">
-        <Col lg='4' md="3" sm="1"></Col>
-        <Col lg='4' md="6" sm="10" className="center-screen" >
-              <Card className="cuoponcard">
+        <Row class="d-flex justify-content-center align-items-center gap-5 pt-5 maincontainer">
+        <Col lg='4' md="3" sm="1" xs='1' className="maincontainer"></Col>
+        <Col lg='4' md="6" sm="10" xs="10" className="center-screen maincontainer" >
+              <Card className="cuoponcard maincontainer">
             <Form className="w-60 d-flex justify-content-center  align-items-center flex-column">
-              <Form.Group className="mb-3 cuoponinput" controlId="formBasicEmail">
+              <Form.Group className="mb-3 cuoponinput maincontainer" controlId="formBasicEmail">
                 <Form.Label>Apply Coupon</Form.Label>
                 <Form.Control
                   type="numberic"
@@ -137,7 +137,7 @@ const Cupon = () => {
                 <Form.Text className="text-muted">
                 </Form.Text>
               </Form.Group>
-              <div className="coupon-submit">
+              <div className="coupon-submit maincontainer">
               <Button
                 variant="primary"
                 onClick={handleCoupon}
@@ -148,7 +148,7 @@ const Cupon = () => {
             </Form>
             </Card>
           </Col>
-        <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="3" sm="1" xs="1" className="maincontainer"></Col>
 
         </Row>
       </div>

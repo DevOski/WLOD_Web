@@ -49,13 +49,13 @@ const TrainerList = () => {
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-        <div className="mobilediv">
+        <div className="mobilediv maincontainer">
       
-      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pb-5">
-        <Col lg="1" md="0" sm="0" xs="0" ></Col>
+      <Row className="d-flex justify-content-center flex-column align-items-center gap-5 pb-5 maincontainer">
+        <Col lg="1" md="0" sm="0" xs="0" className="maincontainer" ></Col>
         <Col
           lg="10" md="12" sm="12" xs="12" 
-          className="d-flex justify-content-center flex-column align-items-center "
+          className="d-flex justify-content-center flex-column align-items-center maincontainer"
         >
           <h3>Choose a Consultant</h3>
           {trainerList?.map((item, index) => {
@@ -63,11 +63,11 @@ const TrainerList = () => {
               <div
                 key={index}
                 onClick={()=>navigate("/trainer",{state:{trainer: item}})}
-                className="wwtrailist pt-5"
+                className="wwtrailist pt-5 maincontainer"
               >
                 {/* <div className="d-flex justify-content-space-between align-items-center"> */}
-                <Row>
-                  <Col lg="4" md="4" sm="4" xs="5">
+                <Row className="nav-b">
+                  <Col lg="4" md="4" sm="4" xs="6" className="nav-b">
                   {/* <div className="imgtrainerlist"> */}
                     <img
                       style={{ width: "100%", height: "100%" }}
@@ -75,8 +75,8 @@ const TrainerList = () => {
                     />
                   {/* </div> */}
                   </Col>
-                  <Col lg="8" md="8" sm="8" xs="7">
-                  <div className="padingtrainer">
+                  <Col lg="8" md="8" sm="8" xs="6" className="nav-b">
+                  <div className="padingtrainer nav-b">
                     <h5> {item.tr_name}</h5>
                     <p> {item?.type}</p>
                     <p
@@ -103,7 +103,7 @@ const TrainerList = () => {
 
          
         </Col>
-        <Col  lg="1" md="0" sm="0" xs="0" ></Col>
+        <Col  lg="1" md="0" sm="0" xs="0" className="maincontainer"></Col>
       </Row>
       </div>
       {loader && <Loader />}

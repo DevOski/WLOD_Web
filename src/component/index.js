@@ -9,7 +9,7 @@ import Error2 from "./errorscreen/index2"
 import Error3 from "./errorscreen/index3"
 import SideBar from './sidebar/index'
 import SideMainBar from './sidemainbar(extra)/index'
-
+import TrainerHed from "./trainerhed/index";
 import TrainerSideBar from "./trainersidebar";
 
-export{TopBar,Navbarmenu,CardHome,Visitcom,Loader,Error,BasicExample,Error2,Error3,SideBar,TrainerSideBar,SideMainBar}
+export{TopBar,Navbarmenu,CardHome,Visitcom,Loader,Error,BasicExample,Error2,Error3,SideBar,TrainerSideBar,SideMainBar,TrainerHed}

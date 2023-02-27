@@ -86,33 +86,33 @@ const VType = () => {
     }, 100);
   };
   return (
-    <div className="of">
+    <div className="of maincontainer">
       <div className="navshow">
             <BasicExample/>
         </div>
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-      <div className="mobilediv">
+      <div className="mobilediv maincontainer">
 
-      <Row className="pt-5 mt-5">
-      <Col lg="3" md="3" sm="1" xs="1"></Col>
-          <Col lg="6" md="6" sm="10" xs="10"
+      <Row className="pt-5 mt-5 maincontainer">
+      <Col lg="3" md="3" sm="1" xs="1" className="maincontainer"></Col>
+          <Col lg="6" md="6" sm="10" xs="10" className="maincontainer"
           >
           <div
             onClick={goto}
-            className="d-flex justify-content-between align-items-center visitbox"
+            className="d-flex justify-content-between align-items-center visitbox maincontainer"
             >
-            <div className="fs-4 pb-2">
+            <div className="fs-4 pb-2 maincontainer">
               {userName} {last} 
             </div>
 
-            <div>
+            <div className="maincontainer">
               <IoIosArrowForward className="iconcolor" />
             </div>
           </div>
         </Col>
-      <Col lg="3" md="3" sm="1" xs="1"></Col>
+      <Col lg="3" md="3" sm="1" xs="1"className="maincontainer" ></Col>
 
       </Row>
     </div>

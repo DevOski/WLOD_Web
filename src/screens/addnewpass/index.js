@@ -106,15 +106,15 @@ const [email, setemail] = useState('')
         <div className="sidenavshow">
         <NavSidebar />
         </div>
-      <Row>
-      <Col lg='4' md="3" sm="1"></Col>
-        <Col lg='4' md="6" sm="10" className="center-screen" >
-          <Card className="newpasscard">
-           <div className="boxaddneww"> 
+      <Row className="maincontainer">
+      <Col lg='4' md="3" sm="1" className="maincontainer"></Col>
+        <Col lg='4' md="6" sm="10" className="center-screen maincontainer" >
+          <Card className="newpasscard maincontainer">
+           <div className="boxaddneww maincontainer"> 
            <label>New Password</label>
-           <div className="inputwidth">
+           <div className="inputwidth maincontainer">
 
-           <div className="c_lass">
+           <div className="c_lass maincontainer">
             <input type='text' placeholder="Enter your password" className="form-control"
              onChange={(event) => setpassword(event.target.value)}
              onKeyPress={enterKye}
@@ -123,7 +123,7 @@ const [email, setemail] = useState('')
              </div>
             <label>Confirm Password</label>
             
-            <div className="inputwidth">
+            <div className="inputwidth maincontainer">
             <input type='text' placeholder="Renter your password" className="form-control"
              onChange={(event) => setcpassword(event.target.value)}
              onKeyPress={enterKye}
@@ -131,14 +131,14 @@ const [email, setemail] = useState('')
             />
             </div>
             
-           <div className="bwidth">
+           <div className="bwidth maincontainer">
            <Button onClick={UpdatePass} className="newpassbuttsub">Submit</Button>
            </div>
            </div>
            
            </Card>
         </Col>
-        <Col lg='4' md="3" sm="1"></Col>
+        <Col lg='4' md="3" sm="1" className=""></Col>
       </Row>
       {loder && <Loader />}
         {error2 && <Error2 onClick={Close2} tittle={errorMessage} />}

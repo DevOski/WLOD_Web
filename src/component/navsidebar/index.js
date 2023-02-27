@@ -104,7 +104,7 @@ console.log(t_type,'t_type=====>');
     <div className="sidenav" style={{display:'flex',flexDirection:'row',justifyContent: 'space-between',position:'fixed',width:'100%',zIndex:1000,height:'70px'}}>
          
          <div style={{width:'60px'}}><button style={{height:'100%',width:'100%',border:'none'}} onClick={handleclick}><i className="fa fa-bars fa-large"></i></button></div>
-         <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}><img style={{width: "50%"}} src={logo} /> </div>
+         <div className='nav-b' style={{display:'flex',alignItems:'center',justifyContent:'center'}}><img style={{width: "50%"}} src={logo} /> </div>
          <div style={{width:'40px'}}>
            <button onClick={handleLogout} className="sidenav" style={{height:'100%',width:'100%',border:'darkgrey'}}>
                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
@@ -112,16 +112,16 @@ console.log(t_type,'t_type=====>');
                <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
                </svg>
            </button>
-         </div>
+         </div> 
     </div>
     // {/* #c02130  */}
      
     ) : (
-      <div className="sidenav" style={{display:'flex',flexDirection:'row',width:'100%',zIndex:1000,height:'70px'}}>
+      <div className="sidenav nav-b" style={{display:'flex',flexDirection:'row',width:'100%',zIndex:1000,height:'70px'}}>
 
-        <div style={{display:'flex',alignItems:'center'}}><img style={{width: "90%"}} src={logo} /> </div>
-        <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',alignItems:'center',width:'100%'}}>
-          <div style={{margin:'0px 8px 0px 0px'}}>
+        <div className="nav-b" style={{display:'flex',alignItems:'center'}}><img style={{width: "90%"}} src={logo} /> </div>
+        <div className="nav-b" style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',alignItems:'center',width:'100%'}}>
+          <div className="nav-b" style={{margin:'0px 8px 0px 0px'}}>
             <Button style={{padding:'6px 18px'}} onClick={handlesignIn}>
               Signin
             </Button>
@@ -135,22 +135,22 @@ console.log(t_type,'t_type=====>');
    </div>)}
 
    {show &&
-     <div style={{minHeight:'80vh',position:'fixed',top:70,bottom: 0,width:'100%',backgroundColor:'rgba(255,255,255,0.3)',zIndex:1000}}>
-       <div style={{minHeight:'80vh',position:'fixed',top:70,bottom: 0,backgroundColor:'white',width:'270px',border:'solid lightgrey'}}>
-         <div>
-           <div>
+     <div className='b-navside' style={{minHeight:'80vh',position:'fixed',top:70,bottom: 0,width:'100%',zIndex:1000}}>
+       <div className='maincontainer' style={{minHeight:'80vh',position:'fixed',top:70,bottom: 0,backgroundColor:'white',width:'270px',border:'solid lightgrey'}}>
+         <div className='maincontainer'>
+           <div className='maincontainer'>
                <h4 className='pt-3 pb-2' style={{padding:'30px'}}>Hi {userName},</h4>
            </div>
           <hr></hr>
-          <div style={{display:'flex',flexDirection:'column',margin:'50px 0px 50px 40px'}}>
+          <div className='maincontainer' style={{display:'flex',flexDirection:'column',margin:'50px 0px 50px 40px'}}>
             
                <a href='/' className='pt-2 pb-2 navlink'>Home</a>
              <a href='/visit' className='pt-2 pb-2 navlink'>Recent Session </a>
              <a href='/chat' className='navlink pt-2 pb-2'>Message</a>
              </div>
-             <div className='pt-4 mt-4'>
+             <div className='pt-4 mt-4 maincontainer'>
              <Link className='pt-4 mt-4'>
-             <div  style={{marginLeft:'12%',marginRight:'12%'}}>
+             <div className='maincontainer' style={{marginLeft:'12%',marginRight:'12%'}}>
              <Button onClick={handleLogout} >
                Logout
              </Button>
@@ -158,7 +158,7 @@ console.log(t_type,'t_type=====>');
              </Link>
            </div>
          </div>
-       </div>
+       </div> 
      </div>
      }
          </>
